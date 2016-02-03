@@ -1,0 +1,17 @@
+<ul>
+	<foreach name="cert" item="ce">
+	<li data-id="{$ce.pkid}" onclick="editcertli(this)">
+	<h3>
+	<span>{$ce.finish_time}</span>  —“<span>{$ce.certificate}</span>”证书&nbsp;&nbsp;&nbsp;
+	（<span>{$ce.status}</span>）
+	<if condition="$pre neq true">
+	<span class="edit-add">
+	<span>
+	<i class="fa-pencil-square-o"></i>
+	</span><a href="javascript:;">编辑</a>
+	</span>
+	</if>
+	</h3>
+	</li>
+	</foreach>
+</ul>

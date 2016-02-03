@@ -1,0 +1,576 @@
+<extend name="Public/layout" />
+<block name="title"><title>高顿实习-个人中心</title></block>
+<block name="content">
+<neq name="exist.back_bool" value="true">
+    <div class="box-t">
+        <a href="javascript:;" onclick="closeBack()"><img src="__PUBLIC__/static/images/close-t.png"></a>
+    </div>
+</neq>
+<div class="center-content">
+	<div class="row">
+		<!-- LEFT START -->
+		<div class="col-md-9">
+            <!--公用标签-->
+            {$titleHtml}
+            <!--公用标签-->
+			<div class="left-section-style left-section-message" style="padding-bottom: 0px" id="base-div">
+		        <div class="container-fluid container-content">
+		        	<div class="row">
+		        	<div class="model-title">
+						<span class="titlebg">基本信息</span>
+						<span class="linebg"></span>
+						<span onclick="editbase()" class="edit-base-span <if condition='$exist.base_bool eq false'>dn</if>">
+						<i class="fa fa-pencil" id="edit-base-span-icon"></i><b>编辑</b>
+						</span>
+					</div>
+			        <div class="personal_message_content pdb3 padding-none">
+			        	<div class="row">
+							<!-- 基本信息-->
+			        		<!--<div class="basic_information col-md-12 <if condition='$exist.base_bool eq true'>pt13</if>">-->
+			        		<div class="basic_information col-md-12">
+								<if condition="$exist.base_bool eq true">
+										{$baseInfoHtml}
+								</if>
+			        		</div>
+			        		<!-- 编辑基本信息 -->
+				        	<div class="input_column personal_message_column col-md-12 mb40 pdt13 <if condition='$exist.base_bool eq true'>dn</if>">
+				                <div class="container-fluid" id="userinfo-form">
+				                	<if condition="$exist.base_bool eq false">	
+										<include file="resume_base_edit" />
+				                	</if>
+				                </div>
+			        		</div>
+							<!-- 基本信息结束-->
+			        	</div>
+					</div>
+					</div>
+				</div>
+			</div>
+	            
+	        <div class="left-section-style other-information-colunm" <neq name='exist.back_bool' value='true'>style="margin-top:0px"</neq>>
+	                <!--闭屏-->                
+	            <!-- <div class="md-overlay"></div>   -->
+
+            	<div class="container-fluid container-content">
+		            <div class="row">
+
+		            	<if condition="$exist.expect_bool neq true">
+						<!--添加实习意向开始-->
+						<div id="practice-wish-div" class="<if condition='($exist.expect_bool eq true) or ($exist.base_bool neq true)'>dn</if>">
+				            <div class="practice-wish">
+				              	<div class="model-title">
+				                 	<span class="titlebg">实习意向</span>
+				                 	<span class="linebg"></span>
+				            	</div>        
+				       			<include file="resume_expect_add" />
+				            </div>
+			            </div>
+						<!--实习意向结束-->
+						</if>
+
+		<!-- 模块开始 -->
+					                                      
+						<div class="all-module <if condition='$exist.expect_bool neq true'>dn</if>" id="module-list" data="{$exist.expect_bool}">
+							<!--教育背景模块-->
+							
+							<div class="module-block education-module <if condition='$exist.education_bool neq true'>dn</if>" id="education-div" name="education-div" data="{$exist.education_bool}">
+									<div class="model-title">
+										<span class="titlebg">教育背景</span>
+										<span class="linebg"></span>
+										<span class="add-chat" ><i>+</i><a href="javascript:;">添加</a></span>
+									</div>
+									<div class="input_column col-md-12 dn" id="input-education">
+										<div class="row">
+										<div class="container-fluid">
+										<form id="form-education-add" role="form" class="basic-information-colunm">
+											<div class="form-group col-md-12 input-distance">
+												<div class="col-md-3  close-distance ml0">
+													<input type="text" class="form-control normal-input edu-add-schoolname" id="education-1" placeholder="学校名称" name="school_name">
+												</div>
+												<div class="col-md-3  close-distance">
+													<input type="text" class="form-control normal-input edu-add-majortitle" id="education-2" placeholder="就读专业" name="major_title">
+												</div>
+												<div class="col-md-3 close-distance">
+													<select class="form-control edu_degree edu-add-greee normal-input sel-color-gray"  id="sun-3" name="degree">
+															<option value="" >学历</option>
+														<foreach name="degree2" item="de">
+																<option value="{$key}" >{$de}</option>
+														</foreach>
+													</select>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="col-md-4 close-distance ml0">
+													<input type="text" readonly="readonly" class="form-control normal-input edu-add-starttime laydate-icon" id="education-3" placeholder="入学时间" name="start_time"  onclick="getdate('education-3',event)">
+												</div>
+												<span class="col-md-1 underline" style="width:20px;">
+												&nbsp;</span>	
+												<div class="col-md-4 close-distance ml0">
+													<input type="text" readonly="readonly" class="form-control normal-input edu-add-finishtime laydate-icon" id="education-4" placeholder="毕业时间" name="finish_time" onclick="getdate('education-4',event)">
+												</div>	
+											</div>
+											<div class="form-group col-md-12">                              
+												<button type="submit" class="btn btn-info confirm-button information-submit-button" onclick="return saveedu2(this)">{$Think.config.L_SAVE}</button>
+												<button type="button" class="btn confirm-button information-cancel-button">{$Think.config.L_CANCLE}</button>	
+											</div>
+										</form>
+										</div>
+										</div>
+									</div>
+									<div class="container-fluid experience-distance " id="input-information-education">
+										{$educationHtml}
+									</div>
+							</div>
+
+							<!--实习模块-->
+								<div class="module-block pratice-exprience-module <if condition='$exist.practice_bool neq true'>dn</if> " id="exprience-div" name="exprience-div" data="{$exist.practice_bool}">
+									<div class="model-title">
+										<span class="titlebg">实习经历</span>
+										<span class="linebg"></span>
+										<span class="add-chat"><i>+</i><a href="javascript:;">添加</a></span>
+									</div>
+									<div class="input_column col-md-12 dn" id="input-exprience" >
+										<div class="row">
+										<div class="container-fluid">
+										<form role="form" class="basic-information-colunm add-priactice-form" id="form-exprience">
+											<div class="form-group col-md-12 input-distance">
+												<div class="col-md-4  close-distance ml0">
+												<input type="text" readonly="readonly" class="form-control normal-input priactice-start-time laydate-icon" id="exprience-1" name="start_time" placeholder="开始时间" onclick="getdate('exprience-1',event)">
+												</div>
+												<span class="col-md-1 underline" style="width:20px;">
+												&nbsp;</span>	
+												<div class="col-md-4  close-distance ml0">
+												<input type="text" readonly="readonly" class="form-control normal-input priactice-finish-time laydate-icon" id="exprience-2" name="finish_time" placeholder="结束时间" onclick="getdate('exprience-2',event)">
+												</div>
+											</div>
+
+											<div class="form-group col-md-12">
+												<div class="col-md-3  close-distance ml0">
+												<input type="text" class="form-control normal-input priactice-organization" id="exprience-3" placeholder="企业名称" name="organization">
+												</div>
+												<div class="col-md-4  close-distance">
+												<input type="text" class="form-control normal-input priactice-quarters" id="exprience-4" placeholder="岗位名称" name="quarters">
+												</div>
+											</div>
+
+											<div class="form-group col-md-12">
+									<textarea class="form-control textarea-style priactice-content normal-input input-grey-style" rows="6" id="exprience-5" name="content" placeholder="用心填写实习经历，可以有效增加面试机会哦！友情提示：1.实习期间的主要工作？2.获得了哪些奖励或成绩？3.锻炼了哪些职场技能？4.提升了哪些软性素养？"></textarea>
+											</div>
+
+											<div class="form-group col-md-12">                              
+											<input type="submit" class="btn btn-info confirm-button information-submit-button" value="{$Think.config.L_SAVE}" onclick="return savepriactice(this)">	
+											<button class="btn confirm-button information-cancel-button">{$Think.config.L_CANCLE}</button>	
+											</div>
+										</form>
+										</div>
+										</div>
+									</div>
+									<div class="container-fluid experience-distance" id="input-information-experience">
+										{$practiceHtml}	
+									</div>
+								</div>
+
+								<!--校园经历-->
+								<div class="module-block school-activity <if condition='$exist.school_acticity_bool neq true'>dn</if>" id="activity-div" name="activity-div" data="{$exist.school_acticity_bool}">
+									<div class="model-title">
+										<span class="titlebg">校园经历</span>
+										<span class="linebg" id="linebg-school"></span>
+										<span class="add-chat-hover add-chat-school"><i>+</i>
+										<a href="javascript:;">添加</a>
+											<ul class="certification-honor" >
+                                              <li><span class="lesson-activities-column" onclick="schoolAdd(this,1)">+&nbsp;课外活动</span></li>
+                                              <li><span onclick="schoolAdd(this,2)">+&nbsp;校内职务</span></li>
+                                            </ul>
+										</span>
+									</div>
+									<!-- 课外活动form -->
+									<div class="input_column col-md-12 dn" id="input-activity">
+										<div class="row">
+										<div class="container-fluid">
+										<form role="form" class="basic-information-colunm form-activity-add" id="form-activity">
+											<div class="title">
+									    		<div class="form-title">课外活动</div>
+									   		</div>
+											<div class="form-group col-md-12 input-distance">
+												<div class="col-md-4  close-distance ml0">
+													<input type="text" readonly="readonly" class="form-control normal-input activity-period laydate-icon" id="activity-1" placeholder="开始时间" name="period" onclick="getdate('activity-1',event)">
+												</div>
+												<span class="col-md-1 underline" style="width:20px;">&nbsp;</span>
+												<div class="col-md-4  close-distance ml0">
+													<input type="text" readonly="readonly" class="form-control normal-input activity-period2 laydate-icon" id="activity-1-2" placeholder="结束时间" name="period_end" onclick="getdate('activity-1-2',event)">
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="">
+													<textarea class="form-control textarea-style normal-input activity-description input-grey-style" rows="6" placeholder="请输入具体的活动内容，不超过32个中文字符。例如：世博会志愿者。" id="activity-2" name="description"onkeydown="return charlen(this,event)"></textarea >
+												</div>
+											</div>
+											<div class="form-group col-md-12">                              
+												<button type="submit" class="btn btn-info confirm-button information-submit-button" onclick="return saveactivity(this)">{$Think.config.L_SAVE}</button>	
+												<button type="button" class="btn confirm-button information-cancel-button" data-cancle="activity">{$Think.config.L_CANCLE}</button>	
+											</div>
+										</form>
+										</div>
+										</div>
+									</div>
+									<!-- 校内职务form -->
+									<div class="input_column col-md-12 dn" id="input-school-position">
+							                <div class="row">
+							                <div class="container-fluid">
+							                <form role="form" class="basic-information-colunm form-position-add" id="form-school-position">
+							                	<div class="title">
+									    		<div class="form-title">校内职务</div>
+									   			</div>
+												<div class="form-group col-md-12 input-distance">
+												     <div class="col-md-4  close-distance ml0 w160">
+															<input type="text" readonly="readonly" class="form-control normal-input school-start laydate-icon" id="school-position-1" name="start_time" placeholder="开始时间" onclick="getdate('school-position-1',event)">
+													</div>
+													<span class="col-md-1 underline" style="width:20px;">&nbsp;</span>
+													<div class="col-md-4  close-distance ml0 w160">
+															<input type="text" readonly="readonly" class="form-control normal-input school-finish laydate-icon" id="school-position-2" name="finish_time" placeholder="结束时间" onclick="getdate('school-position-2',event)">
+													</div>
+					                           		<div class="col-md-3  close-distance" id="school-position-3">
+														<input type="text" class="form-control normal-input school-job" placeholder="职务名称" name="job_title">
+													</div>  
+											    </div>
+							                    <div class="form-group col-md-12">
+													<div class="">
+													<textarea class="form-control textarea-style normal-input school-description" rows="6" placeholder="用心填写职务经历，更丰富地展示自己！友情提示：1.任职期间的主要事迹？例如举办晚会、策划比赛、参加辩论赛、拉赞助、写新闻等。2.获得了哪些奖励或成绩？3.锻炼了哪些职场技能？4.提升了哪些软性素养？" id="school-position-4" name="description"></textarea>
+													</div>		
+											    </div>
+							                    <div class="form-group col-md-12">                              
+											       <button type="submit" onclick="return saveschool(this)" class="btn btn-info confirm-button information-submit-button">{$Think.config.L_SAVE}</button>
+							                       <button type="button" class="btn confirm-button information-cancel-button" data-cancle="school">{$Think.config.L_CANCLE}</button>	
+							                       
+											    </div>
+							                </form>
+							                </div>
+							                </div>
+							        </div>
+
+									<!-- 课外活动 -->
+									<div class="container-fluid experience-distance school-acticity-ul" id="input-information-activity">
+										{$activityHtml}
+									</div>
+									<!-- 校内职务 -->
+									<div class="container-fluid experience-distance pdt0 school-acticity-ul" id="input-information-position">
+										{$schoolHtml}
+							        </div>
+
+								</div>
+
+							<!--证书-->
+								<div class="module-block certification <if condition='$exist.cert_prize_bool neq true'>dn</if>" id="card-div" name="card-div" data="{$exist.cert_prize_bool}">
+								    <div class="model-title">
+								         <span class="titlebg">证书和荣誉</span>
+								         <span class="linebg" id="cert-linebg"></span>
+								         <span class="add-chat-hover add-chat-honor"><i>+</i>
+								         <a href="javascript:;">添加</a>
+								         	<ul class="certification-honor">
+                                              <li><span class="lesson-activities-column" onclick="schoolAdd(this,3)">+&nbsp;证书</span></li>
+                                              <li><span onclick="schoolAdd(this,4)">+&nbsp;荣誉</span></li>
+                                            </ul>
+								         </span>
+								    </div>
+								    <!-- 荣誉证书form -->
+								    <div class="input_column col-md-12 dn" id="input-certification">
+								        <div class="row">
+								        <div class="container-fluid">
+								        <form role="form" class="basic-information-colunm form-certification-add" id="form-certification">
+								        	<div class="title">
+									    		<div class="form-title">证书</div>
+									   		</div>
+											<div class="form-group col-md-12 input-distance">
+											      	<div class="col-md-4  close-distance ml0">
+														<input type="text" readonly="readonly" class="form-control normal-input cert-finish-time laydate-icon" id="certification-1" name="finish_time" onclick="getdate('certification-1',event)" placeholder="输入日期">
+													</div>
+
+											    <div class="col-md-3  close-distance" id="certification-2">
+													<select class="form-control normal-input cert-select sel-color-gray"  id="sun-3" onclick="getcert(this)">
+															<option value="">证书分类</option>
+															<foreach name="certificate" item="cert">
+																<option value="{$key}">{$cert}</option>
+															</foreach>
+													</select>
+												</div>
+								               	<div class="col-md-4  close-distance" id="certification-3">
+												   <select class="form-control certificate-option normal-input cert-id cert-select sel-color-gray"  id="sun-43" name="certificate_id">
+												   			<option value="">证书名称</option>
+					<!-- 							   			<foreach name="certopt" item="ct">
+												   				<option value="{$key}">{$ct}</option>
+												   			</foreach> -->
+													</select>
+													<input type="text" name="certificate_name" class="form-control certificate-option normal-input dn" placeholder="输入证书名称" id="cert-name-other" disabled="disabled">
+													<span class="error-info col-md-4 necessary span-info-error cert-repeat dn"></span>
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+								              	<div class="col-md-2  close-distance ml0" id="certification-4">
+													<select class="form-control cert-status sel-color-gray"  id="sun-3" name="status">
+														<option value="2">通过</option>
+														<option value="1">在读</option>
+													</select>
+												</div>
+								            </div>
+											<div class="form-group col-md-12">                              
+									       		<button type="submit" class="btn btn-info confirm-button information-submit-button" onclick="return savecert(this)">{$Think.config.L_SAVE}</button>	
+									        	<button type="button" class="btn confirm-button information-cancel-button" data-cancle="cert">{$Think.config.L_CANCLE}</button>	
+									      	</div>
+									    </form>
+								        </div>
+								        </div>
+								    </div>
+								    <!-- 获奖荣誉form -->
+								    <div class="input_column col-md-12 dn" id="input-honor">
+										<div class="row">
+										<div class="container-fluid">
+										<!--模块信息输入栏开始 -->
+										<form role="form" class="basic-information-colunm form-honor-add " id="form-honor">
+											<div class="title">
+									    		<div class="form-title">荣誉</div>
+									   		</div>
+											<div class="form-group col-md-12 input-distance">
+												<div class="col-md-4  close-distance ml0">
+													<input type="text" readonly="readonly" class="form-control normal-input prize-period laydate-icon" id="honor-1" placeholder="获奖时间" name="period" onclick="getdate('honor-1',event)">
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="">
+													<textarea class="form-control textarea-style normal-input prize-description input-grey-style" rows="6" placeholder="请输入奖项名称，例如：管理会计案例分析大赛校级二等奖，不超过32个中文" id="honor-4" name="description" onkeydown="return charlen(this,event)"></textarea>
+												</div>
+											</div>
+											<div class="form-group col-md-12">                              
+												<button type="submit" class="btn btn-info confirm-button information-submit-button" onclick="return saveprize(this)">{$Think.config.L_SAVE}</button>	
+												<button type="button" class="btn confirm-button information-cancel-button" data-cancle="honor">{$Think.config.L_CANCLE}</button>	
+											</div>
+										</form>
+										</div>
+										</div>
+									</div>
+
+								    <!-- 荣誉证书 -->
+								    <div class="container-fluid experience-distance cert-prize-ul" id="input-information-certification">
+										{$certHtml}
+								    </div>
+								    <!-- 获奖荣誉 -->
+								    <div class="container-fluid experience-distance pdt0 cert-prize-ul pdlr0" id="input-information-honor">
+										{$prizeHtml}
+									</div>
+								</div>
+								<!-- Dear HR -->
+							    <div class="module-block school-activity <if condition='$exist.introduce_bool neq true'>dn</if>" id="introduce-div" name="introduce-div" data="{$exist.introduce_bool}">
+									<div class="model-title">
+										<span class="titlebg">Dear HR</span>
+										<span class="linebg"></span>
+										<span class="add-chat introduce-edit-i"><i class="fa fa-pencil"></i><a href="javascript:;" onclick="editintroduce(this)">编辑</a></span>
+									</div>
+									<div class="input_column col-md-12 mb30 dn" id="input-introduce">
+									<div class="row">
+									<div class="container-fluid">
+									<form role="form" class="basic-information-colunm form-introduce-add" id="form-introduce">
+										<div class="form-group col-md-12 input-distance">
+											<div class="">
+												<textarea class="form-control textarea-style normal-input introduce-description input-grey-style" rows="6" placeholder="用心写下想对HR说的话，例如自我评价、兴趣爱好、性格特征、HR选择你的理由等等。（限300字以内）" id="introduce-2" name="dear_hr"onkeydown="return charlen3(this,300,event)" onKeyUp="javascript:checkWord(this);"onMouseDown="javascript:checkWord(this);"></textarea>
+												<p class="introduce-number limit-counts">还可以输入<span id="wordCheck">300</span>字</p>
+											</div>
+										</div>
+										<div class="form-group col-md-12">                              
+											<button type="submit" class="btn btn-info confirm-button information-submit-button" onclick="return saveintroduce(this)">{$Think.config.L_SAVE}</button>	
+											<button type="button" class="btn confirm-button information-cancel-button" data-cancle="introduce">{$Think.config.L_CANCLE}</button>
+										</div>
+									</form>
+									</div>
+									</div>
+									</div>
+									<div class="container-fluid experience-distance" id="input-information-introduce">
+										<p class="p-textarea p-introduc">{$introduceHtml}</p>
+									</div>
+								</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+				<!--第三部分实习意向-->
+			<div class="left-section-style left-section-message  <if condition='$exist.expect_bool neq true'>dn</if>"
+                 id="expect-div2" name="expect-div2">
+		        <div class="container-fluid container-content">
+			        <div class="">
+			        	<div class="row">
+							<div class="module-block education-module" id="expect-div" data="{$exist.expect_bool}">
+								<div class="model-title">
+									<span class="titlebg">实习意向</span>
+									<span class="linebg"></span>
+									<span class="add-chat">
+									<span class="edit_icon">
+									<i class="fa fa-pencil"></i>
+									<a href="javascript:;" onclick="editexpect(this)">编辑</a>
+									</span>
+									</span>
+								</div>
+								<div class="container-fluid  Practice_intention" id="input-information-expect">
+										{$expectHtml}
+								</div>
+							</div>
+			        	</div>
+					</div>
+				</div>
+			</div>
+				<!-- 第三部分结束 -->
+			</div>
+	<!-- LEFT END -->
+	<!-- RIGHT START-->
+	<div class="col-md-3">
+		    <div class="right-section">
+				<include file="menu" />
+                {$resumeHtml}
+		        <div class="right-section-style module-menu" id="module-menu">
+                    <div class="right-section-style complete-circle height-rejust">
+                        {$resumeRateHtml}
+                    </div>
+                    <ul class="content right-menu">
+		                  	<li class="right-menu-li" data="{$exist.base_bool}">
+		                  		<a href="#base-div" class="menu-a-font">
+		                  		<i class="icon-base" icon="icon-base"></i><span>基本信息</span></a>
+		                  	</li>
+			                <li class="right-menu-li <if condition='$exist.education_bool eq false'>dn</if>" data="{$exist.education_bool}">
+			                	<a href="#education-div" class="menu-a-font">
+			                	<i class="icon-education" icon="icon-education"></i><span>教育背景</span></a>
+			                	<i class="del-right-menu" onclick="delmenu(this,event)"></i>
+			                </li>
+			                <li class="right-menu-li <if condition='$exist.practice_bool eq false'>dn</if>" data="{$exist.practice_bool}">
+			                	<a href="#exprience-div" class="menu-a-font">
+			                	<i class="icon-experice" icon="icon-experice"></i><span>实习经历</span></a>
+			                	<i class="del-right-menu" onclick="delmenu(this,event)"></i>
+			                </li>
+			                <li class="right-menu-li <if condition='$exist.school_acticity_bool eq false'>dn</if>" data="{$exist.activity_bool}">
+			                	<a href="#activity-div" class="menu-a-font">
+			                	<i class="icon-school" icon="icon-school"></i><span>校园经历</span></a>
+			                	<i class="del-right-menu" onclick="delmenu(this,event)"></i>
+			                </li>
+			                <li class="right-menu-li <if condition='$exist.cert_prize_bool eq false'>dn</if>" data="{$exist.cert_bool}">
+			                	<a href="#card-div" class="menu-a-font">
+			                	<i class="icon-honor" icon="icon-honor"></i><span>证书和荣誉</span></a>
+			                	<i class="del-right-menu" onclick="delmenu(this,event)"></i>
+			                </li>
+			               	<li class="right-menu-li <if condition='$exist.introduce_bool eq false'>dn</if>" data="{$exist.introduce_bool}">
+			                	<a href="#introduce-div" class="menu-a-font">
+			                	<i class="icon-dearhr" icon="icon-dearhr"></i><span>Dear HR</span></a>
+			                	<i class="del-right-menu" onclick="delmenu(this,event)"></i>
+			                </li>
+			                <li class="right-menu-li <if condition='$exist.expect_bool eq false'>dn</if>" data="{$exist.expect_bool}">
+			                	<a href="#expect-div2" class="menu-a-font">
+			                	<i class="icon-expect" icon="icon-expect"></i><span>实习意向</span>
+			                	</a>
+			                </li>
+		              </ul>
+		               <!-- 圆球拖动导航 -->
+						<div class="dragger-module-menu <if condition='($exist.base_bool neq true) or ($exist.expect_bool neq true)'>dn</if>" id="dragger-menu">
+						    <div class="dragger-button" id="menu-button"></div>
+						    <div class="right-section-style module-menu dragger-module-content">
+						        <ul class="content right-menu-nav">
+						              <li data="{$exist.education_bool}" module="education">
+						              <a href="#education-div"><i class="icon-education"></i><span>教育背景</span></a>
+						              </li>
+						              <li data="{$exist.practice_bool}" module="practice">
+						              <a href="#exprience-div">
+						              <i class="icon-experice"></i><span>实习经历</span>
+						              </a>
+						              </li>
+						              <li data="{$exist.school_acticity_bool}" module="school_acticity">
+						              <a href="#activity-div">
+						              <i class="icon-school"></i><span>校园经历</span>
+						              </a>
+						              </li>
+						              <li data="{$exist.cert_prize_bool}" module="cert_prize">
+						              <a href="#card-div">
+						              <i class="icon-honor"></i><span>证书和荣誉</span>
+						              </a>
+						              </li>
+						         	  <li data="{$exist.introduce_bool}" module="introduce">
+						              <a href="#introduce-div">
+						              <i class="icon-dearhr"></i><span>Dear HR</span>
+						              </a>
+						              </li>
+						              <li data="{$exist.expect_bool}" module="expect">
+						              <a href="#expect-div2">
+						              <i class="icon-expect"></i><span>实习意向</span>
+						              </a>
+						              </li>
+						         </ul>
+						    </div>
+						</div>
+		        </div>
+		    </div>  
+	</div>
+	<!-- RIGHT END -->
+	</div>
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+    <div class="login-wrap" id="login-wrap" style="display: none;"></div>
+    <include file="resume_other_box" />
+</div>
+<!-- 主要内容结束 -->
+</block>
+<block name="style">
+<link rel="stylesheet" href="__PUBLIC__/static/core/css/fonts/linecons/css/linecons.css">
+<link rel="stylesheet" href="__PUBLIC__/static/core/css/fonts/fontawesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-forms.css">
+<link rel="stylesheet" href="__PUBLIC__/static/css/jquery.circliful.css">
+<link rel="stylesheet" href="__PUBLIC__/static/core/js/select2/select2.css">
+<link rel="stylesheet" href="__PUBLIC__/static/core/js/select2/select2-bootstrap.css">
+<link rel="stylesheet" href="__PUBLIC__/static/core/js/cropper/cropper.min.css">
+<link rel="stylesheet" href="__PUBLIC__/static/core/js/dropzone/css/dropzone.css">
+<link rel="stylesheet" href="__PUBLIC__/static/css/student_resume.css">
+<link rel="stylesheet" href="__PUBLIC__/static/css/email-success.css">
+</block>
+<block name="script">
+    <script src="__PUBLIC__/static/js/jquery.circliful.js"></script>
+    <script src="__PUBLIC__/static/js/common.js"></script>
+	<script src="__PUBLIC__/static/core/js/resizeable.js"></script>
+	<script src="__PUBLIC__/static/core/js/joinable.js"></script>
+    <script src="__PUBLIC__/static/core/js/select2/select2.min.js"></script>
+    <script src="__PUBLIC__/static/core/js/jquery-ui/jquery-ui.min.js"></script>
+	<script src="__PUBLIC__/static/core/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+    <script src="__PUBLIC__/static/core/js/multiselect/js/jquery.multi-select.js"></script>
+    <script src="__PUBLIC__/static/js/laydate.js"></script>
+    <script src="__PUBLIC__/static/js/lazyload-min.js"></script>
+    <script src="__PUBLIC__/static/core/js/cropper/cropper.min.js"></script>
+    <script src="__PUBLIC__/static/core/js/ajaxupload.js"></script>
+	<script src="__PUBLIC__/static/js/student_common.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/static/css/cityStyle.css">
+	<script src="__PUBLIC__/static/js/cityScript.js?v=1110"></script>
+	<script>
+		stuMenuIndex();
+		var pub = "__PUBLIC__/static/";
+		var home_abc=true;
+		//获取热门城市
+		function hotcity(cy,bool){
+			$.ajax({
+			   type: "get",
+			   url: "/Student/hotcity",
+			   async: false,
+			   dataType:'json',
+			   success: function(msg){
+			   		var test_new2 = new citySelector.cityInit(cy,msg,bool);
+			   }
+			});
+		}
+
+		function hotcity2(obj){}
+		hotcity('inputTest20');
+		hotcity('homecity10',true);
+		laydate.skin('molv');
+		myAddEvent(document, 'mousewheel', onMouseWheel);
+		myAddEvent(document, 'DOMMouseScroll', onMouseWheel);
+	</script>
+	<script src="__PUBLIC__/static/js/student_resume.js"></script>
+</block>
+<block name="floor">
+<!--弹出修改照片框-->
+<include file="head_pic_crop"/>
+</block>

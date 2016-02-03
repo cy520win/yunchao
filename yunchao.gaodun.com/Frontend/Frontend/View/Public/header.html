@@ -1,0 +1,91 @@
+<div id="header">
+    <div class="header">
+        <div class="logo-gd">
+            <a href="/"><img alt="高顿实习" src="__PUBLIC__/static/images/sy-logo-new1.png"></a>
+        </div>
+        <!-- 头部导航 -->
+        <div class="header-nav">
+            <span></span>
+            <a <eq name="CONTROLLER_NAME" value="Index">class="active-nav"</eq> href="/">首页</a>
+            <span></span>
+            <a <eq name="CONTROLLER_NAME" value="Members">class="active-nav"</eq> href="/Members/index">人才管理</a>
+            <span></span>
+           
+            <a <eq name="CONTROLLER_NAME" value="Enterprise">class="active-nav"</eq> href="/Enterprise/lists">企业</a>
+            <span></span>
+            <a <eq name="CONTROLLER_NAME" value="Post">class="active-nav"</eq> href="/Post/index">职位</a>
+            <span></span>
+-           <a <eq name="CONTROLLER_NAME" value="Statistics">class="active-nav"</eq> href="/Statistics/index">统计报名</a>
+            <span></span>
+
+            <notempty name="Think.session.account.account_id">
+                <!-- 企业登录 -->
+                <eq name="Think.session.account.account_type" value="1">
+                    <a class="<eq name='CONTROLLER_NAME' value='ResumePost'>active-nav</eq> last-nav"
+                       href="/ResumePost/add">
+                    发布职位
+                    </a>
+                    <span></span>
+                <else/>
+                <!-- 学生登录 -->
+                        <a class="<eq name='CONTROLLER_NAME' value='Student'><eq name='ACTION_NAME' value='index'>active-nav</eq></eq> last-nav" href="/Student/index">我的简历</a>
+                        <span></span>
+                </eq>
+            </notempty>
+        </div>
+        <notempty name="Think.session.account.account_id">
+            <!-- 登录下拉 -->
+            <div class="user-header">
+                <p>
+                    <i><notempty name="Think.session.account.account_name">
+                        {$Think.session.account.account_name}<else/>{$Think.session.account.account_email}
+                    </notempty></i>
+                </p>
+                <span></span>
+                <ul>
+                    <eq name="Think.session.account.account_type" value="1">
+                          <li>
+                            <a href="/ResumePost/index">投递箱</a>
+                        </li>
+                        <li>
+                            <a href="/Invitation/index">邀请箱</a>
+                        </li>
+                        <li>
+                            <a href="/Enterprise/index">企业信息</a>
+                        </li>
+                        <li>
+                            <a href="/Enterprise/account">账号设置</a>
+                        </li>
+                        <else/>
+                        <li>
+                            <a href="/Delivery/student">投递箱</a>
+                        </li>
+                        <li>
+                            <a href="/Invitation/center">邀请函</a>
+                        </li>
+                        <li>
+                            <a href="/Collect/index">收藏夹</a>
+                        </li>
+                        <notempty name="Think.session.account.account_email">
+                        <li>
+                            <a href="/PostSubscribe/expect">订阅栏</a>
+                        </li>
+                        <li>
+                            <a href="/Student/account">账号设置</a>
+                        </li>
+                        </notempty>
+                    </eq>
+                    <li>
+                        <a href="javascript:logout();">退出</a>
+                    </li>
+                </ul>
+            </div>
+        <else/>
+            <div class="user-login">
+                <a href="/Account/login/btn/regin" class="first-a">注册</a>
+                <a href="/Account/login" class="last-a">登录</a>
+            </div>
+        </notempty>
+    </div>
+</div>
+<div class="header-h"></div>

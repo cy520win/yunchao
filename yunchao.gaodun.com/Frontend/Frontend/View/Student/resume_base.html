@@ -1,0 +1,116 @@
+<div class="left-section-style left-section-message left-section-message-fn" id="base-div">
+    <div class="basic-information-content" style="width:100%">
+            <neq name="baseTitleBool" value="TRUE">
+            <div class="model-title">
+                <span class="titlebg">基本信息</span>
+                <span class="linebg basic-line"></span>
+            </div>
+            </neq>
+        <div class="personal_message_content pdb3">
+
+            <!--个人照片上传开始-->
+            <div class="personal-photo basic-personal-photo marginl15">
+                <img class="up-photo up-photo-headpic" src="<notempty name='headpic'>{$headpic}<else/>__PUBLIC__/static/images/new_nophoto_student.png</notempty>" >
+            </div>
+            <!-- 个人照片上传结束-->
+
+            <!-- 基本信息开始-->
+            <div class="basic_information paddingl20 w635">
+                <div class="personal_information-area">
+
+                    <dl class="mb0">
+                        <dd>
+                            <span class="school-span-title">
+                                {$baseInfo.name}
+                                <notempty name="baseInfo.name">
+                                    <notempty name="baseInfo.gender">
+                                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                                    </notempty>
+                                </notempty>
+                                <if condition="$baseInfo.gender eq 1">
+                                    男
+                                    <else/>
+                                    女
+                                </if>
+                                <notempty name="baseInfo.gender">
+                                    <notempty name="baseInfo.detail_major">
+                                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                                    </notempty>
+                                </notempty>
+                                <notempty name="baseInfo.detail_major">
+                                    {$baseInfo.birth_date}
+                                </notempty>
+                            </span>
+                        </dd>
+                        <dd>
+                            <notempty name="baseInfo.graduate_school">
+                                {$baseInfo.graduate_school}
+                            </notempty>
+                            <notempty name="baseInfo.major_type_text">
+                                <notempty name="baseInfo.graduate_school">
+                                    <notempty name="baseInfo.major_type_text">
+                                        &nbsp;|&nbsp;
+                                    </notempty>
+                                </notempty>{$baseInfo.major_type_text}
+                                <notempty name="baseInfo.detail_major">（{$baseInfo.detail_major}）</notempty>
+                            </notempty>
+                        </dd>
+                        <dd>
+                            <notempty name="baseInfo.education_text">
+                                {$baseInfo.education_text}
+                            </notempty>
+                            <notempty name="baseInfo.graduate_year">
+                                <notempty name="baseInfo.education_text">
+                                    <notempty name="baseInfo.graduate_year">
+                                        &nbsp;|&nbsp;
+                                    </notempty>
+                                </notempty>
+                                {$baseInfo.current_grade_text}毕业
+                            </notempty>
+                        </dd>
+                        <dd>
+                            <notempty name="baseInfo.contact_email">
+                                <eq name="postReumeNone" value="true">
+                                {$baseInfo.contact_email}
+                                <else/>
+                                {$baseInfo.contact_email|invite_cutemail}
+                                </eq>
+                            </notempty>
+                        </dd>
+                        <dd>
+                            <notempty name="baseInfo.contact_mobile">
+                                <eq name="postReumeNone" value="true">
+                                {$baseInfo.contact_mobile}
+                                <else/>
+                                {$baseInfo.contact_mobile|invite_cutemobile}
+                                </eq>
+                                <eq name="baseInfo.mobile_type" value="2">
+                                    （中国大陆以外号码）
+                                </eq>
+                            </notempty>
+                        </dd>
+                        <dd style="color:#a5a5a5;">
+                            <notempty name="baseInfo.id_number">
+                                {$baseInfo.id_number}（身份证）
+                            </notempty>
+                            <if condition="$baseInfo.politics_status eq 1">
+                                <notempty name="baseInfo.id_number">
+                                    &nbsp;|&nbsp;
+                                </notempty>
+                                党员
+                            </if>
+                            <notempty name="baseInfo.living_city">
+                                <if condition="$baseInfo.politics_status eq 1 or $baseInfo['id_number']">
+                                    &nbsp;|&nbsp;
+                                </if>
+                                现居{$baseInfo.living_city}
+                            </notempty>
+                        </dd>
+                    </dl>
+
+                </div>
+            </div>
+            <!-- 基本信息结束-->
+        </div>
+    </div>
+</div>

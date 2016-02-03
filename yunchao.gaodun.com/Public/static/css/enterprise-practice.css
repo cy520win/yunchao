@@ -1,0 +1,718 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*不合适简历  enterprise_fail_resume*/
+
+.fail-resume-left{width:100%; height:auto; background:#ffffff; padding-bottom:20px; border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0; overflow:hidden;}
+.fail-resume-left > h1{width:100%; font-size:20px; line-height:40px; color:#6d97d2;height:40px; margin:10px 0 0 0; padding:0 0 0 40px;}
+.fail-resume-left > h1 >a{width:100%;color:#6d97d2;display:block;}
+.fail-resume-left > span{ display:block; width:70%; height:1px; background:#bfbfbf; margin:0 0 10px 40px;}
+.fail-resume-left > p{ margin: 0;}
+.fail-resume-left > p a{width:100%; display:block; font-size:16px; line-height:40px; color:#656565;height:40px; margin:0; padding:0 0 0 50px;}
+.fail-resume-left > p > a > i{ font-style:normal; background:#fe8b25; min-width:16px; height:16px; line-height:16px; text-align:center; color:#fff9f5; border-radius:5px; float:right; font-size:12px; margin-right:18%; font-family:"Arial"; margin-top:13px;}
+.fail-resume-left > p:hover{ background:#fafafa;}
+.fail-resume-left > .resume-active{background:#7de0ec !important; color:#ffffff !important; font-size:17px;}
+.fail-resume-left > .resume-active >a{background:#7de0ec !important;display:block; color:#ffffff;}
+
+
+.fail-resume-list{width:87%; height:80px; margin:30px auto 0; background:#ffffff;border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0; overflow:hidden;}
+.fail-resume-list > div{float:left; height:80px;line-height:0px; text-align:center; font-size:16px; position:relative;}
+.fail-resume-list > div >*{width:100%; position:absolute; top:50%; transform:translateY(-50%); display:block;color:#656565;}
+.fail-resume-list > div > a{font-size:16px;color:#656565;}
+.fail-resume-list > div > a:hover{color:#6d97d2; text-decoration:underline;}
+.fail-resume-list >.student{ width:150px; }
+.fail-resume-list >.name{ width:184px;}
+.fail-resume-list >.resume{width:130px; background:none;}
+.fail-resume-list >.resume >a{ color: #6d97d2;text-decoration: underline;}
+.fail-resume-list >.audition{width:160px;}
+.fail-resume-list >.date{width:150px;}
+
+
+.treat-resume-header >p.p32{ width:150px;}
+.treat-resume-header >p.p33{ width:185px;}
+.treat-resume-header >p.np1{ width:130px;}
+.treat-resume-header >p.p34{ width:160px;}
+.treat-resume-header >p.p35{ width:150px;}
+
+
+
+.fail-resume-right{width:100%; height:auto; padding-bottom:90px; background:#fafafa; position:relative; overflow:hidden;min-height: 858px;}
+
+.resume-right-top{ width:100%; padding:25px 6% 0; height:80px; margin-bottom: 30px; background:#ffffff;border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0; overflow:hidden;}
+.resume-right-top > p{ font-size:20px; color:#6d97d2; float:left;}
+.resume-right-top > i{ width:79%; height:1px; background:#bfbfbf; display:block; float:left; margin-top:5px; margin-top:15px; margin-left:10px;}
+.resume-right-top > a{ display:block; float:right; font-size:14px; margin-top:6px; line-height:14px; color:#bfbfbf;}
+.resume-right-top > a >img {transform:rotate(0deg);transition:0.3s;}
+.resume-right-top > a >img , .fail-resume-right-top > a >span {display:block; float:left;}
+.resume-right-top > a >span{ text-decoration:underline; margin-left:5px; margin-top:1px;}
+
+.resume-right-top > a:hover img{transform:rotate(180deg);-ms-transform:rotate(180deg);-o-transform:rotate(180deg);-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);}
+.resume-right-top > a:hover{color:#bfbfbf;}
+
+.resume-list{ width:87%; height:80px; margin:30px auto 0; background:#ffffff;border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0; overflow:hidden;}
+.resume-list > p{ width:20%; text-align:center; line-height:80px; float:left; font-size:16px; color:#656565;}
+
+
+/* 投递箱 */
+
+.fail-resume-right > .prompt{width:100%; height:30px; background:#feecdc; line-height:30px; text-align:center; font-size:16px; color:#fe8b25;}
+.list-right{width:30%; height:80px; float:left; text-align:center;}
+.toblue{ color:#6d97d2 !important; text-decoration:underline;}
+.list-right >span{transition:0.3s; height:26px;float:left; border-radius:5px; background:#6d97d2; text-align:center; line-height:26px; font-size:14px; color:#ffffff; margin:27px 0 0 10px;cursor:pointer;padding:0 15px;}
+.list-right >span:hover{ background:#05b5c3;}
+/*.list-right >span:nth-child(1){ margin:27px 10px 0 25px;}*/ 
+.readed{ background:#f4f4f4 !important;}
+.drop-box{ margin-left:6.5%;}
+
+.treat-resume-list{width:87%; height:80px; clear: both; margin:30px auto 0; background:#ffffff;border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0;/* overflow:hidden*/;}
+.treat-resume-list > .list-left{ width:75%; height:80px; float:left;}
+.treat-resume-list > .list-left > div{ float:left; height:80px;line-height:20px; text-align:center; font-size:16px; padding:0 1%; position:relative;}
+
+/*.treat-resume-list > .list-left > div >*{width:100%; position:absolute; top:50%; transform:translateY(-50%); display:block;color:#656565;}*/
+.treat-resume-list > .list-left > div > a{font-size:16px;color:#656565;}
+.treat-resume-list > .list-left > div > a:hover{color:#6d97d2; text-decoration:underline;}
+.treat-resume-list > .list-left >.student{ width:23%; padding-left: 4%;}
+.treat-resume-list > .list-left >.name{ width:36%;}
+.treat-resume-list > .list-left >.date{ width:18%;}
+.treat-resume-list > .list-left >.read{ width:23%;}
+.treat-resume-list > .list-left >.read >a{color:#6d97d2;text-decoration:underline;}
+.treat-resume-list > .list-right{width:25%; height:80px; float:left; }
+.post-invite-list > div >p, .post-invite-list > div >a{ position: static !important; transform:none !important; margin-top: 30px;}
+
+.interview-box{ width:220px; position:absolute;  height:100px; background:#01dbce; opacity:0.8; font-size:14px; color:#ffffff; text-align:center; line-height:100px; top:80px; right:80px;}
+.interview-box >div{position:relative; width:100%; height:100%;}
+.interview-box >div > span{ position:absolute; cursor:pointer; top:10px; right:10px; color:#ffffff; width:11px; height:11px; line-height:11px;}
+
+
+
+
+
+
+
+
+
+
+
+/* 已下线职位 */
+.resume-right-top >i.line{ width:85% !important;}
+.offline-left{ width:75%; height:80px; float:left;line-height:80px;}
+.offline-left >p{width:20%; float:left; text-align:center;font-size:16px; color:#656565;}
+.offline-left >p >a{font-size:16px; color:#656565;}
+.offline-left >p:hover a{color:#6d97d2; text-decoration:underline;}
+.offline-right{width:25%; height:80px; float:left; overflow:hidden; text-align:center;}
+.offline-right > span{ width:70px; height:26px; line-height:26px; text-align:center;border-radius:5px; background:#6d97d2;font-size:14px; display:block; margin:27px auto 0; color:#ffffff; cursor:pointer;}
+
+
+
+.offline-resume-list{width:87%; height:80px; margin:30px auto 0; background:#ffffff;border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0;/* overflow:hidden;*/}
+.offline-resume-list > div{float:left; height:80px;line-height:20px; text-align:center; font-size:16px; padding:0 1%; position:relative;}
+.offline-resume-list > div >p ,.offline-resume-list > div >a{width:100%; position:absolute; top:50%; transform:translateY(-50%); display:block;color:#656565;}
+.offline-resume-list > div > a{font-size:16px;color:#656565;}
+.offline-resume-list > div > a:hover{color:#6d97d2; text-decoration:underline;}
+.offline-resume-list >.name{ width:26%; margin-left: -2%; }
+.offline-resume-list >.city{ width:13%; background:none;  margin-left: -1%;}
+.offline-resume-list >.education{ width:13%;}
+.offline-resume-list >.num{ width:16%;}
+.offline-resume-list >.date{ width:13%;}
+.offline-resume-list >.online{ width:21%;}
+.offline-resume-list >.online >span{width:70px; margin:27px auto; height:26px; line-height:26px; text-align:center;border-radius:5px; background:#6d97d2;font-size:14px; display:block;color:#ffffff; cursor:pointer;}
+
+
+
+
+
+/*允许面试*/
+
+.allow-resume-list{width:87%; height:80px; margin:30px auto 0; background:#ffffff;border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0; /*overflow:hidden;*/}
+.allow-resume-list > div{float:left; height:80px;line-height:20px; text-align:center; font-size:16px; padding:0 1%; position:relative;}
+.allow-resume-list > div >*{width:100%; position:absolute; top:50%; transform:translateY(-50%); display:block;color:#656565;}
+.allow-resume-list > div > a{font-size:16px;color:#656565;}
+.allow-resume-list > div > a:hover{color:#6d97d2; text-decoration:underline;}
+/*.allow-resume-list >.student{ width:16%; }
+.allow-resume-list >.name{ width:26%; }
+.allow-resume-list >.resume{ width:13%; background:none;}
+.allow-resume-list >.audition{ width:13%;}*/
+
+.allow-resume-list >.student{ width:18%;  margin-right: 2%; }
+.allow-resume-list >.name{ width:29%; }
+/*.allow-resume-list >.resume{ width:13%; background:none;}*/
+.allow-resume-list >.audition{ width:18%;}
+.allow-resume-list >.audition >a{color:#6d97d2;text-decoration:underline;}
+
+.allow-resume-list >.date{ width:13%;}
+.allow-resume-list >.read{ width:18%;}
+.allow-resume-list >.read >a{color:#6d97d2;text-decoration:underline;}
+
+
+
+
+/*有效职位*/
+.effective-resume-list{width:87%; height:80px; margin:30px auto 0; background:#ffffff;border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0;  position: relative;}
+.effective-resume-list > .list-left{ width:67%; height:80px; float:left;}
+.effective-resume-list > .list-left > div{ float:left; height:80px;line-height:20px; text-align:center; font-size:16px; padding:0 1%; position:relative;}
+
+.effective-resume-list > .list-left > div >*{width:100%; position:absolute; top:50%; transform:translateY(-50%); display:block;color:#656565;}
+.effective-resume-list > .list-left > div > a{font-size:16px;color:#656565;}
+.effective-resume-list > .list-left > div > a:hover{color:#6d97d2; text-decoration:underline;}
+.effective-resume-list > .list-left >.name{ width:29%; }
+.effective-resume-list > .list-left >.city{ width:13%; background:none;}
+.effective-resume-list > .list-left >.education{ width:13%;}
+.effective-resume-list > .list-left >.num{ width:20%;}
+.effective-resume-list > .list-left >.date{width:24%;}
+.effective-resume-list > .list-right{width:32%; height:80px; float:left; }
+
+.offline-box{ width:260px;height:190px; border:1px solid #d7d7d7; background:#ffffff; position:absolute; top:80px;  z-index:99;right:69px; border-radius:5px;  box-shadow:0px 0px 5px #d7d7d7;}
+.offline-box >p{ font-size:18px; color:#656565; text-align:center; line-height:18px; margin:30px auto 15px;}
+.offline-box >span{ font-size:12px;color:#656565; width:185px; margin:0 auto; display:block;}
+.offline-box > a{ display:block; float:left; width:80px; height:32px; line-height:32px; text-align:center; font-size:16px; margin-top:20px; color:#ffffff; border-radius:5px;}
+.offline-box > .yes{ background:#ff7800; margin:20px 20px 0 40px;}
+.offline-box > .no{background:#dddddd;}
+.offline-box > a:hover{color:#ffffff;}
+.offline-box > i{ width:17px; height:9px;background:url(../images/sharp.png) no-repeat; position: absolute; top: -9px;right: 40px;}
+
+/* 邀请箱 */
+.invitation-resume-list{width:87%; height:80px; margin:30px auto 0; background:#ffffff;border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0; overflow:hidden;}
+.invitation-resume-list > div{float:left; height:80px;line-height:20px; text-align:center; font-size:16px; padding:0 1%; position:relative;}
+.invitation-resume-list > div >*{width:100%; position:absolute; top:50%; transform:translateY(-50%); display:block;color:#656565;}
+.invitation-resume-list > div > a{font-size:16px;color:#656565;}
+.invitation-resume-list > div > a:hover{color:#6d97d2; text-decoration:underline;}
+.invitation-resume-list >.student{ width:21%; }
+.invitation-resume-list >.name{ width:35%; }
+.invitation-resume-list >.state{ width:21%; background:none;}
+.invitation-resume-list >.date{ width:13%; padding:0 5%}
+
+
+
+/* 职位发布 */
+.job-posting{width:100%; height:auto; padding-bottom:80px; background:#ffffff; overflow:hidden; min-height: 805px;}
+.job-posting > .job-posting-title{ width:87%; line-height:22px; font-size:22px; color:#656565;margin:30px auto 0;}
+.job-posting > .job-posting-title > span{ width:85%; display:block; margin-top:12px; height:1px; background:#bfbfbf; float:right;}
+
+.job-posting > .details{ width:86%; height:auto; margin:0 auto; overflow:hidden;}
+.job-posting > .details > .details-title{ font-size:20px; clear:both; line-height:20px; margin-top:40px; color:#6d97d2;}
+
+.job-posting > .details > .details-title >span{ width:88%; display:block; margin-top:12px; height:1px; background:#bfbfbf; float:right;}
+
+.job-drop-box{ padding:0 20px !important; float:left; margin-bottom:0 !important;}
+/*.job-drop-box >input[type="text"]{color:#bfbfbf;}*/
+.job-description{margin-bottom:10px;}
+.job-description >p{font-size:16px; color:#656565 !important; line-height:18px;}
+.job-description > span{ color:#ff5d39; float:left; line-height:16px; margin:3px 5px 0;}
+.no-resize{ resize:none;}
+.mb{ margin-bottom:20px;}
+.mr{float:left; color:#656565; font-size:16px; margin:0 15px 0 20px;}
+.mr >span{color:#ff5d39; float:left; line-height:16px; margin:3px 5px 0;}
+.cl{ clear:both;}
+
+.job-posting > .details > .prompt{color:#ff5d39; font-size:14px; padding-left:24px; line-height:40px;}
+
+/*职位标签*/
+.position-pag-area{float:left;padding-left:40px;margin-bottom:25px;}
+.choosen-area{float:left;margin-top:33px;background:url("../images/enterprise-practice/below-line.png") repeat-x bottom;width:100%;}
+
+.position-pag-area span.position-pag-title{font-size:16px;color:#656565;}
+.choosen-area span.choosen-pag{color:#a5a5a5;font-size:14px;display:block;float:left;padding-left:20px;}
+.choosen-pag-area{float:left;}
+.choosen-area span.limit-math{color:#63cdff}
+.choose-pag-area li{float:left;height:26px;line-height:26px;border-radius:5px;border:1px solid #bfbfbf;padding:0 10px;box-sizing: border-box;margin-right: 10px;margin-bottom: 10px;transition: 0.3s;cursor: pointer;color:#656565;font-size:14px;}
+.choose-pag-area li:hover{background-color:#7de0ec;color:#ffffff;border:1px solid #7de0ec;}
+.choose-area{float:left;margin-top:20px;width:100%;}
+.choose-area .change-account{width:100%;text-align: center;font-size:14px;color:#00acf0;display:block;cursor: pointer;overflow: hidden;}
+.choose-area .choose-pag-title{color:#a5a5a5;font-size:14px;width: 100%;float: left;margin-bottom:12px;margin-left:20px;}
+.choose-area .choose-pag-area{width:700px;float:left;}
+.choose-area .choose-pag-area{margin-left:20px;}
+.choosen-pag-area{width:82%;float:left;overflow:hidden; height:auto;margin-bottom:0px;}
+.choosen-pag-area li{float:left;padding:0 8px;background-color:#7de0ec;margin-left:15px;margin-bottom:10px;}
+
+.choose-pag-area .input-area{float:left;margin-right:10px;}
+.choose-pag-area .input-area input{width: 192px;float: left;;border-radius: 5px 0 0 5px;height: 26px;border: 1px solid #bfbfbf;border-right: none;box-sizing: border-box;padding-left: 11px;transition: 0.3s;}
+.choose-pag-area .input-area .focusen{outline:none;border:1px solid #63cdff;border-right:none;}
+.choose-pag-area .input-area span.click-down{float:left;width:49px;height:26px;float:left;line-height:26px;color:#ffffff;font-size:14px;text-align: center;background:#bfbfbf;border-radius:0 5px 5px 0px;cursor: pointer;transition:0.3s;}
+.choose-pag-area .input-area span.actived{color:#ffffff;background-color:#63cdff;}
+.choosen-pag-area li span.pag-title{float:left;font-size:14px;color:#ffffff;height:30px;line-height:30px;display:block;}
+.choosen-pag-area li span.close-button{width:10px;height: 10px;background:url("../images/enterprise-practice/close-small.png") no-repeat center center;float:left;margin-top:10px;margin-left:8px;cursor: pointer;color:transparent;}
+.increate-pag{visibility: hidden;padding-left:25px;}
+.marginb10{margin-bottom: 8px;}
+.detailed-address > input { margin-top:28px !important;}
+.job-posting > .details > .delivery{ width:240px; margin:20px auto 0; height:42px; border:none; background:none !important;}
+.job-posting > .details > .delivery > span{ width:100px; transition:0.3s; height:42px; text-align:center; line-height:42px; font-size:18px; color:#ffffff; border-radius:5px; display:block;  cursor:pointer; float:left;}
+.job-posting > .details > .delivery > span.preview{ background:#ff7800; margin-right:40px;}
+.job-posting > .details > .delivery > span.release{ background:#63cdff; float: none; margin:0 auto;}
+.job-posting > .details > .delivery > span.release:hover{background-color:#34B9F7;}
+.job-posting > .details > .delivery > span.preview:hover{ background:#34B9F7;}
+
+/*职位列表*/
+.slide-icon{ width:12px; height:6px; float:right; margin-top:15px;display:block; background:url(../images/enterprise_basic_information/job_list.png) 0 0 no-repeat;}
+.slide-icon-1{width:6px; height:12px; float:right; margin-top:15px;display:block; background:url(../images/enterprise_basic_information/job_list.png) 0 -6px no-repeat;}
+.job-list{width:100%;height:auto;padding-bottom: 90px; min-height: 1306px; background: #fafafa;overflow: hidden;}
+
+.job-list > .job-list-serch{ width:100%; margin-bottom:30px; position:relative; height:51px; background:#ffffff; border-bottom:1px solid #e8e8e8;}
+.job-list-serch >input{ width:100%; padding-left:110px; font-size: 16px; color: #656565; height:50px;border:none; outline:none;}
+/*.job-list-serch >input:focus{color: #656565;}*/
+.job-list-serch > .serch-left{width:100px; z-index:3; top:0px; position:absolute; cursor:pointer; height:50px; background:#6d97d2; float:left;}
+.job-list-serch > .serch-left > p{ line-height:50px; margin:0; height:50px; color:#ffffff; font-size:18px; padding-left:20px;}
+.job-list-serch > .serch-left > span{width: 0; height: 0; border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 8px solid #fff; float:right; position:absolute; top:22px; right:15px;}
+.job-list-serch > .serch-left >ul{ width:100px;padding:0; margin:0; transition:.3s; height:0px; background:#6d97d2; position:absolute;top:50px; left:0; overflow:hidden;}
+.job-list-serch > .serch-left >ul >li{width:100px; height:45px; line-height:45px;  text-align:center; font-size:18px; color:#ffffff;}
+.job-list-serch > .serch-left >ul >li:hover{ background:#65e0ef;}
+
+.job-list-serch > .serch-right{width:60px;top:0px; right:0;position:absolute; height:50px; background:url(../images/enterprise_basic_information/serch-button.jpg) no-repeat; cursor:pointer;}
+
+.npm{ margin:0; padding:0;}
+
+.job-list > .col-md-6:nth-child(2){ clear:both;}
+.job-list > .col-md-6 > .search-results{width:100%; border:1px solid #f3f3f3; border-bottom:1px solid #e7e7e7; border-top:1px solid #fff; margin-bottom:20px; height:auto; overflow:hidden; padding:0 10% 16px; background:#ffffff; transition:0.3s;}
+.search-results >.results-title{ width:100%; height:auto; margin-bottom:10px; overflow:hidden;line-height:25px; margin-top:30px; border-bottom:1px solid #bfbfbf;}
+.search-results >.results-title > a { color:#6d97d2; max-width: 260px; overflow: hidden; white-space: nowrap; font-size:20px;/* border-bottom:1px solid #6d97d2; */ display:block; line-height:26px;float:left;}
+.search-results >.results-title > a:hover{ border-bottom:1px solid #6d97d2;}
+.search-results >.results-title > p{ background:url(../images/student-deliver/citylogo.png) left no-repeat; float:right; font-size:12px; color:#656565; padding-left:13px; vertical-align:bottom;}
+.search-results >p{ font-size:14px; line-height:14px; color:#a5a5a5; margin-bottom:14px;}
+.search-results >p >span{color:#666666;}
+
+.search-results >p:nth-child(even){clear:both; float:left;}
+.search-results >p:nth-child(odd){float:right;}
+.search-results > a{ font-size:18px; display:block; color:#656565; clear:both; line-height:18px; padding:18px 0 0; margin:0;}
+.search-results > a:hover{color:#6d97d2; text-decoration:underline;}
+
+
+/*.job-list > .col-md-6 > .search-results:hover{ border:1px solid #63cdff;}*/
+
+.job-list > .results-list:nth-child(even){padding-left:20px; padding-right:10px;}
+.job-list > .results-list:nth-child(odd){padding-left:10px; padding-right:20px;}
+
+
+/* 职位信息 */
+.position-information-left{ width:100%; padding:0 6%;border: 1px solid #ededed; background:#ffffff; border-top: none; border-radius: 1px; border-bottom: 1px solid #e2e2e2;overflow:hidden;padding-bottom: 23px}
+.position-information-left > .information-title{ width:100%; margin-top:30px; overflow:hidden; border-bottom:1px solid #e9e9e9; padding-bottom:6px;margin-bottom: 10px}
+.position-information-left > .information-title >h2{font-size:24px; color:#6d97d2; padding:0; margin:0; float:left;}
+.position-information-left > .information-title >p{  background: url(../images/enterprise_basic_information/city-logo.png) left no-repeat !important; line-height:18px;  float: left;  font-size: 14px;  color: #656565;  margin-left: 20px; padding-left:13px; margin-top:8px;  vertical-align: bottom;}
+.position-information-left > .information-title >span{ clear:both; display:block; font-size:14px; color:#656565;}
+.position-information-left > p{ width: 11%;padding: 0;clear:both; float:left; font-size:16px; height:30px; line-height:30px;margin-top:11px; color:#656565; margin-bottom:0;}
+.position-information-left >.well-fare>span{float:left;font-size:16px; height:30px; line-height:30px; color:#ffffff; background:#85e2e5; padding:0 15px; margin-top:11px; margin-right:10px;}
+.position-information-left >.well-fare{padding: 0;}
+#well-fare-man,#well-fare-date{width: 100%;}
+.enterprise-job-description{width:100%;	padding:0 6%;background:#ffffff;height:auto;overflow:hidden;	border:1px solid #ededed;border-top:none;border-radius:1px;	border-bottom:none;
+margin-top:30px; padding-bottom:45px;}
+
+.enterprise-job-description > .title { width: 100%; height: 20px; font-size: 20px;color: #6d97d2;  line-height: 20px; margin-top: 30px;}
+
+.enterprise-job-description > .title > span { width: 89%; height: 1px;display: block; float: right;  margin-top: 10px; background: #6d97d2;}
+
+.enterprise-job-description > p{ color:#656565; font-size:16px; line-height:16px; margin-left:20px; margin-bottom:10px;}
+.enterprise-job-description > p.mt{ margin-top:25px;}
+.job-prompt{ background:#feecdc;height:50px; padding-left:8%; font-size:14px; color:#fe8b25; line-height:50px;}
+.job-prompt >span{ width:auto; display: inline-block;}
+.job-prompt >span>a{color:#fe8b25;text-decoration:underline;}
+.job-prompt >a { color:#6d97d2; text-decoration:underline;}
+.job-prompt >a:hover{ color:#6d97d2; text-decoration:underline;}
+
+.j-two{ height:80px;}
+.job-prompt span{line-height:30px;height:50px;}
+.job-prompt .left-area{float:left;padding-top:10px;}
+.job-prompt .right-area{float:right;padding-top:10px;}
+.job-prompt .right-area a{color:#6d97d2;margin-right:50px;display:block;} 
+.job-prompt >span>a{line-height:30px;}
+.delivery-style{display:block;}
+
+.resume-box-e{ width: 600px; height: 375px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -207px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 2001;}
+.resume-box-e > .resume-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 20px; color: #ffffff;}
+.resume-box-e > .resume-box-title >img { float: right; padding-right: 20px; display: block; padding-top: 17px; cursor: pointer;opacity: 1;filter: alpha(opacity=100);}
+.resume-box-e > p{ font-size: 24px; color: #656565; text-align: center; line-height: 24px; margin: 38px 0 20px 0;}
+.resume-box-e > span{ display: block; margin-top: 10px; text-align: center; font-size: 18px; line-height: 16px; color: #a5a5a5;}
+.resume-box-e > .resume{width: 350px; height: 105px; margin:20px 0 0 148px;} 
+.resume-box-e > .resume > div{ position: relative; float: left; margin-right: 25px; width: 138px; height: 98px; border: 1px solid #dadada; border-radius: 5px;}
+.resume-box-e > .resume > div > img{ position: absolute; top: 10px; left: 16px;}
+.resume-box-e > .resume > div >p{ text-align: center; margin-top: 72px;}
+.resume-box-e > .resume > div >span{ width: 20px; display: none; height: 20px; position: absolute; top: 82px; left: 122px; background: url(../images/account/resume-ok.png) no-repeat;}
+.resume-box-e > .resume > div.active{ border: 1px solid #63cdff;}
+.resume-box-e > .resume > div.active >span{ display: block;}
+.resume-box-e > .resume > div >.prompt{ font-size: 16px; line-height: 16px; padding-top: 14px; color: #fff; text-align: center;background: url(../images/prompt-e.png) no-repeat; width: 230px; height: 48px; top: -48px; left: -30px; position: absolute; }
+.resume-box-e > .resume > div >.prompt >a{ color: #0060ff; text-decoration: underline;}
+.resume-box-e > .button{ width: 270px; height: 50px;margin-top: 26px; margin-left: 177px;}
+.resume-box-e > .button a{ display: block; border-radius: 5px; font-size: 20px; color: #ffffff; background: #dadada; float: left; width: 110px; height: 42px; line-height: 42px; text-align: center; margin-right: 25px;}
+.resume-box-e > .button a:first-child{ background: #63cdff;}
+
+
+
+
+.job-resume{ width:100%; height:132px; background:#fff;border: 1px solid #ededed;border-bottom: 1px solid #e2e2e2; border-top:none;}
+.job-resume > p{ width:100%; height:40px;margin-bottom: 0}
+.job-resume > span{ width:100px; display:block; background:#63cdff;height:42px; text-align:center; margin:0 auto; line-height:42px; border-radius:5px; transition:0.3s; cursor:pointer; font-size:18px; color:#ffffff; position:relative;}
+/*.job-resume > span:hover{ background:#48b1e3;}*/
+.deliveryed{background:#dddddd !important;}
+.job-resume >span >.resume-box{box-shadow: 0px 0px 2px rgba(0,0,0,0.5); background:#01dbce;width:220px;height:100px; position:absolute; opacity:0.8; top:-110px; left:-60px; z-index:3; display:none; cursor:default;}
+.resume-box >p{ padding-left:40px; font-size:14px; color:#ffffff; line-height:14px; text-align:left; margin:0;}
+.resume-box >p:nth-child(1){ margin-top:28px; margin-bottom:10px; cursor:default;}
+.resume-box >i{width:0;height:0; position:absolute;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid #01dbce; top:97px; left:102px;}
+
+.job-prompt-preview{ background:#feecdc; display:none;height:50px; padding-left:8%; font-size:16px; color:#fe8b25; line-height:50px;}
+.job-prompt-preview >a { color:#6d97d2; text-decoration:underline;}
+.job-prompt-preview >a:hover{ color:#6d97d2; text-decoration:underline;}
+
+.company-profile{width: 100%;height: auto;background: #ffffff;overflow: hidden; border:1px solid #ededed; border-top:none; margin-bottom:30px;}
+.company-profile > .company-profile-logo{width: 182px; height: 182px; line-height:178px; margin:25px auto 0;border: 1px solid #e9e9e9;border-radius:1px; text-align:center;vertical-align:middle; margin-bottom:20px;}
+.company-profile > .company-profile-logo >img{ width:178px; height:auto; vertical-align:middle;}
+.company-profile > h2{ font-size:20px; color:#656565; text-align:center; padding:0; margin:0;}
+.company-profile > span{ width:100%; height:1px; background:#dfdfdf; display:block; margin-top:20px;margin-bottom: 20px}
+.company-profile > p{ padding:0 20px; margin:0 0 20px 0; font-size:16px;line-height: 16px; color:#656565;overflow: hidden;width: 260px;white-space: nowrap}
+
+.company-profile > .company-map{ width:100%; height:200px; border:1px solid #dddddd;}
+
+
+
+/* 邀请箱(推荐简历) */
+.invitation-num{margin-right:7%; float:right; margin-top: 35px; font-size: 16px; color: #656565; line-height: 16px;}
+.invitation-num >span{color: #6d97d2; font-weight: bold; margin-left: 2px;}
+
+.toblue{ color:#6d97d2 !important; text-decoration:underline;}
+.list-right-resume >span{ width:70px; height:26px;float:left; border-radius:5px; background:#6d97d2; text-align:center; line-height:26px; font-size:14px; color:#ffffff; margin-top:27px; cursor:pointer;}
+.list-right-resume >span:nth-child(1){ margin:27px 10px 0 25px;}
+.readed{ background:#f4f4f4 !important;}
+.drop-box{ margin-left:6.5%;}
+
+.treat-resume-list{width:90%; height:80px; clear: both; margin:30px auto 0; background:#ffffff;border:1px solid #e6e6e6; border-top:none;border-bottom:1px solid #d0d0d0;}
+.treat-resume-list > .list-left-resume{ width:64%; height:80px; float:left;}
+.treat-resume-list > .list-right-resume{width:36%; height:80px; float:left; overflow:hidden; text-align:center;}
+.treat-resume-list > .list-left-resume > div{ float:left; height:80px;line-height:20px; text-align:center; font-size:16px; padding:0 1%; position:relative;}
+
+.treat-resume-list > .list-left-resume > div >*{width:100%;display:block;color:#656565;}
+.treat-resume-list > .list-left-resume > div > a{font-size:16px;color:#656565;}
+.treat-resume-list > .list-left-resume > div > a:hover{color:#6d97d2; text-decoration:underline;}
+.treat-resume-list > .list-left-resume >.student{ width:23%; }
+.treat-resume-list > .list-left-resume >.name{ width:26%;}
+.treat-resume-list > .list-left-resume >.date{ width:28%;}
+.treat-resume-list > .list-left-resume >.read{ width:23%;}
+.treat-resume-list > .list-left-resume >.read >a{color:#6d97d2;text-decoration:underline;}
+
+.toblack{ color:#b2b2b2 !important; cursor: default; position:relative;}
+.toblack:link {text-decoration:none !important}
+.toblack:hover .fail-invitation{ display:block;}
+.toblack:visited{ text-decoration:none !important;}
+.toblack:active{ text-decoration:none !important;}
+
+.box-height{ margin-top: 25px !important; margin-right: 10px;}
+.box-height >div > a { height: 30px !important;  }
+.box-height >div >a > span{ line-height: 30px !important; text-align: left;}
+.box-height > .select2-container > .select2-choice{}
+
+.interview-box1{ width:220px; position:absolute;  height:110px;overflow: hidden; background:#01dbce; opacity:0.8; font-size:14px; color:#ffffff; text-align:center; line-height:24px; top:237px; right:59px;}
+.interview-box1 >div{position:relative; margin-top: 15px; width:100%; height:100%;}
+.interview-box1 >span{ position:absolute; cursor:pointer; top:10px; right:10px; color:#ffffff; width:11px; height:11px; line-height:11px;}
+
+
+
+.fail-invitation{background: #01dbce;width: 160px; top:-18px; left:75px; display:none; height: 80px;opacity: 0.8;position:absolute;  box-shadow: 0px 0px 2px rgba(0,0,0,0.5);}
+.fail-invitation >p{padding-left:25px;font-size: 14px;color:#ffffff;line-height:14px;text-align:left; margin: 0}
+.fail-invitation >i {    width: 0;  height: 0;  position: absolute;  border-bottom: 10px solid transparent;  border-top: 10px solid transparent;  border-right: 10px solid #01dbce;  top: 29px;  left: -7px;}
+.fail-invitation >p:nth-child(1) {padding-top: 20px;margin-bottom: 10px;}
+
+
+
+
+
+
+
+
+
+
+
+
+/*信息综合页*/
+.center-content{ margin:50px auto 0; width:100%; max-width:1200px; height: auto; overflow: hidden;}
+.center-content > .content-l{ width:280px; height:auto; float: left;; overflow:hidden; border:1px solid #ededed; border-top:none; border-bottom:1px solid #e2e2e2; padding:10px 0; background:#ffffff;}
+.center-content > .content-l >ul >li{ height:40px; cursor: pointer; line-height:40px; padding-left:35px; font-size: 16px; color: #656565;}
+.center-content > .content-l >ul >li.l-active{ background: #7de0ec; color: #ffffff; cursor: default;}
+.center-content > .content-r{ width:780px; padding:50px 50px 0;background:#ffffff; float: right;  height: auto; min-height: 1080px;}
+.div-r{ width: 100%; overflow: hidden; display: none;}
+.help-center{}
+.help-center > .help-top{ width:100%; display: block; margin-top: 40px;}
+.help-center > .help-top >p{ width:100%; height: 1px; background:#bfbfbf;}
+.help-center > .help-top > span{ display: block; cursor: pointer; width: 98px; height: 38px; background: #f4f4f4; margin-top: -40px; border: 1px solid #bfbfbf; border-top-right-radius: 5px; border-top-left-radius: 5px; text-align: center; line-height: 38px; float: left;}
+.help-center > .help-top > span.first-sx{ margin-left: 20px; margin-right: 5px;font-size: 18px}
+.help-center > .help-top > span.last-zr{ margin-left: 129px;font-size: 18px}
+.help-center > .help-top > span.active-s{ background: #ffffff !important; cursor: default; border-bottom: 1px solid #ffffff;}
+
+.help-center > .qadiv > .help-qa{ margin-top: 30px;}
+.help-center > .qadiv > .help-qa >p{font-size: 16px; line-height: 22px; margin-bottom: 10px;}
+.help-center > .qadiv > .help-qa > .help-q{  color: #fe8b25;}
+.help-center > .qadiv > .help-qa > .help-a{  color: #656565;}
+.pd-l{ padding-left: 20px;}
+.step >p{width:668px;overflow:hidden;width:95%;}
+/*帮助中心*第三方插件*/
+.slimScrollDiv{margin-top:25px;margin-bottom:12px;}
+.step >.help-a{color:#656565;font-size:16px;line-height:26px;}
+.step >.help-q{color:#fe8b25;font-size:16px;line-height:26px;}
+.step >.enterprise-user{font-size:18px;color:#656565;margin-top:}
+.step >.student-user{font-size:18px;color:#656565;margin-top:22px;margin-bottom:0px;}
+.step >.step-title{color:#fe8b25;font-size:16px;color:#656565;margin-top:48px;margin-bottom:16px;margin-bottom:0px;}
+.step >.help-a >span.font-red{color:#ff4949;}
+.step .step-photo{margin-left:20px;margin-top:20px;margin-bottom:6px}
+.step >.step1{margin-top:5px;}
+.step10 >.help-a{margin-bottom:0px;}
+.step9 >.step-title{margin-bottom:10px;}
+.about-us{ width: 100%; overflow: hidden;}
+.div-r > .title{ width: 100%; overflow: hidden;}
+.div-r > .title >p{ font-size: 24px; color: #656565; line-height: 24px;}
+.div-r > .title >span{ width: 100%; height: 1px; background: #bfbfbf; display: block; margin-top: 15px;}
+
+.introduction-us{ margin-top: 30px; overflow: hidden;}
+.introduction-us >h1{ font-size: 18px; color: #fe8b25; line-height: 16px; margin-bottom: 8px; font-weight: normal;}
+.introduction-us >h1 >span{ width: 8px; height: 7px; background: #fe8b25; display: inline-block; margin-right: 18px;}
+.introduction-us >p{ font-size: 16px; color: #656565; text-indent: 2em;}
+.introduction-us > li{ list-style: inherit; font-size: 14px;line-height: 22px; text-indent: 2em;color:#656565}
+.introduction-us > span{ display: block; margin-top: 10px; font-size: 16px ; text-indent: 2em; color:#656565}
+
+
+.contact-information{ margin-top: 30px; overflow: hidden;}
+.contact-information >h1{font-size: 18px; color: #fe8b25; line-height: 18px; margin-bottom: 15px; font-weight: normal;}
+.contact-information >p{ font-size: 16px; color: #656565; line-height: 16px; margin-bottom: 12px;}
+
+/*发布弹框*/
+.release-wrap{width: 100%;height:100%;  background-color: rgba(0,0,0,0.25); z-index:999;position:fixed;top:0;left: 0; right: 0; bottom: 0;}
+.release-box{  width: 550px;height: 245px;box-shadow:0px 0px 5px #9c9c9c; overflow: hidden;position: fixed; border-radius: 5px; top: 50%; left: 50%; margin-left: -275px; margin-top: -125px; z-index:1000;}
+.release-box >h1{ width: 100%; height: 50px; background:#57d5e4; border-top-right-radius: 5px;border-top-left-radius: 5px; margin:0;line-height: 50px; padding-left: 20px; font-size: 24px; color: #ffffff;}
+.release-box > .box-content{ width:100%;  overflow: hidden;height: 195px; background: #fff;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;}
+.release-box > .box-content >p{ font-size: 18px; color: #656565; margin: 0; line-height: 20px; text-align: center;}
+.release-box > .box-content >p.first-p{ margin: 34px 0 16px; font-size: 22px;}
+.release-box > .box-content >span{ display: block; margin-top: 33px; font-size: 18px; cursor: pointer; background: #dddddd; color: #ffffff; float: left; width: 100px; height: 42px; text-align: center; line-height: 42px; border-radius:5px; transition:.3s;}
+.release-box > .box-content >span:hover{ background: #dddddd;}
+.release-box > .box-content >span:first-of-type{ margin-left: 155px; margin-right: 40px; background: #63cdff;}
+.release-box > .box-content >span.yes:hover{background: #34B9F7;}
+.release-box > .box-content >span.no:hover{background: #BFBFBF;}
+
+.release-box-copy-fn h1 .close-button {display: block;width: 19px;height: 19px;background: url("../images/close-icon.png") no-repeat center center;float: right;margin-top: 15px;margin-right: 20px;cursor: pointer;}
+.release-box-copy-fn p.first-p{ margin: 60px 0 16px;font-size: 20px;}
+.release-box-copy-fn .box-content>span.confirm-button{margin-left: 225px;}
+/*各种弹窗*/
+
+/* enterprise_position_information  */
+
+/*邮箱验证框*/
+.mailbox-verification{width: 600px;height: 350px;box-shadow: 0px 0px 5px #9c9c9c; background: #fff;border-radius: 5px; z-index: 9999; position: fixed; top: 50%; left: 50%; margin-top: -175px; margin-left: -300px;}
+.mailbox-verification >.mailbox-verification-title{ width: 100%; position: relative; font-size: 24px; color: #ffffff; height: 50px; background: #57d5e4; line-height: 50px; padding-left: 20px;}
+.mailbox-verification >.mailbox-verification-title >span{ position: absolute; cursor:pointer; background: url(../images/close-icon.png) no-repeat; width: 19px; height: 19px; top: 16px; right: 20px;}
+.mailbox-verification > p{ font-size: 14px; color: #656565; margin-bottom: 24px; line-height: 14px;padding-left: 115px;}
+.mailbox-verification > p.ptop{ text-align: center; font-size: 24px; line-height: 24px; margin-top: 29px; padding-left: 0;}
+.mailbox-verification > p >span{ color: #63cdff;}
+.mailbox-verification > a{ width: 190px; height: 42px; transition:.3s; display: block; border-radius: 5px; margin: 0 auto; text-align: center; line-height: 42px; font-size: 18px; color: #ffffff; background: #63cdff; margin:  0 auto;}
+.mailbox-verification > a:hover{ background:#34B9F7; color: #fff;}
+.mailbox-verification >p.pa{ text-align: center; padding-left: 0; margin-top: 20px;}
+.mailbox-verification >p.pa >span{ color: #63cdff;cursor: pointer}
+.mailbox-verification >p.pa >span:hover{ text-decoration: underline}
+.mailbox-verification >p.pa >a{ color: #63cdff;}
+.mailbox-verification >p.pa >a:hover{ text-decoration: underline}
+
+
+/*创建简历框*/
+.create-resume-box{ width: 600px; overflow: hidden; height: 250px;box-shadow: 0px 0px 5px #9c9c9c; border-radius: 10px; background: #fff; z-index: 9999; position: fixed; top: 50%; left: 50%; margin-top: -125px; margin-left: -300px;}
+.create-resume-box > .create-resume-box-title{ width: 100%; position: relative; font-size: 24px; color: #ffffff; height: 50px; background: #57d5e4; line-height: 50px; padding-left: 20px;}
+.create-resume-box > .create-resume-box-title >span{position: absolute; cursor:pointer; background: url(../images/close-icon.png) no-repeat; width: 19px; height: 19px; top: 16px; right: 20px;}
+.create-resume-box > p{ color: #656565; font-size: 20px; line-height: 20px; text-align: center; margin: 45px 0 65px;}
+.create-resume-box > a{ font-size: 18px; color: #ffffff;transition:.3s; text-align: center; border-radius: 5px;display: block; margin: 0 auto;  width: 180px; height: 42px; line-height: 42px; background:#63cdff;}
+/*.create-resume-box > a:hover{ background:#63cdff; color: #fff;}*/
+
+/*投递成功*/
+.success-box{ width: 600px; overflow: hidden; height: 250px;box-shadow: 0px 0px 5px #9c9c9c; border-radius: 5px; background: #fff; z-index: 9999; position: fixed; top: 50%; left: 50%; margin-top: -125px; margin-left: -300px;}
+.success-box > .create-resume-box-title{ width: 100%; position: relative; font-size: 24px; color: #ffffff; height: 50px; background: #57d5e4; line-height: 50px; padding-left: 20px;}
+.success-box > .create-resume-box-title >span{position: absolute; cursor:pointer; background: url(../images/close-icon.png) no-repeat; width: 19px; height: 19px; top: 16px; right: 20px;}
+.success-box > p{ color: #656565; font-size: 20px; line-height: 20px; text-align: center; margin: 45px 0 65px;}
+.success-box > a{ font-size: 18px; color: #ffffff;transition:.3s; text-align: center; border-radius: 5px;display: block; margin: 0 auto;  width: 180px; height: 42px; line-height: 42px; background:#63cdff;}
+.success-box > a:hover{background-color: #34B9F7}
+/*no-one*/
+.no-one {text-align: center; display: block;font-size: 22px; min-height: 733px; clear: both; color: rgba(230, 230, 230, 0.7);font-weight: bold; padding-top: 200px;text-shadow: 1px 1px 2px #FFF, 0 0 0 #000;}
+.no-one-perfect{ text-align: center; font-size: 20px; color: #656565; padding-top: 70px; display: block;}
+.goto-perfect{ width: 200px; border-radius: 5px; transition:.3s; height: 42px; background: #63cdff; font-size: 18px; color: #ffffff; line-height: 42px; text-align: center; display: block; margin: 40px auto 0;}
+.goto-perfect:hover{ background:#63cdff; color: #fff;}
+.no-one-small{padding-top: 20px;min-height: 200px !important;}
+
+/*待处理简历*/
+.treat-resume-header{ width:90%; height: 40px; background: #7de0ec; margin: 0 auto -30px; clear:both; overflow: hidden;}
+.treat-resume-header >p{float:left; text-align: center; height: 40px; line-height: 40px; font-size: 16px; color: #ffffff;}
+.treat-resume-header >p.p1{ width:20%;padding-left: 3%;}
+.treat-resume-header >p.p2{ width:20%; padding-left: 2%;}
+.treat-resume-header >p.p3{ width:15%; margin-left: 4%;}
+.treat-resume-header >p.p4{ width:16%;}
+.treat-resume-header >p.p5{ width:25%;}
+
+/*推荐简历库*/
+.treat-resume-header >p.p6{ width:50%;}
+.treat-resume-header >p.p7{ width:16.66%;}
+.treat-resume-header >p.p8{ width:16.66%; margin-left: 4%;}
+.treat-resume-header >p.p9{ width:16.66%;}
+.treat-resume-header >p.p10{ width:15%;}
+
+
+/*已允许面试*/
+.treat-resume-header >p.p11{ width:20%;margin-right: 2%;}
+.treat-resume-header >p.p12{ width:26%;}
+.treat-resume-header >p.p13{ width:13%; margin-left: 4%;}
+.treat-resume-header >p.p14{ width:18%;}
+.treat-resume-header >p.p15{ width:13%;}
+
+
+
+/*已下线职位*/
+.treat-resume-header >p.p16{ width:23%; /*margin-left: 3%;*/}
+.treat-resume-header >p.p17{ width:15%;}
+.treat-resume-header >p.p18{ width:11%; padding-right: 1%;}
+.treat-resume-header >p.p19{ width:17%;}
+.treat-resume-header >p.p20{ width:16%;}
+.treat-resume-header >p.p21{ width:12%;}
+
+
+/*待学生反馈*/
+.treat-resume-header >p.p22{ width:23%;}
+.treat-resume-header >p.p23{ width:25%; margin-left: 4%;}
+.treat-resume-header >p.p24{ width:25%;margin-left: 3%;}
+.treat-resume-header >p.p25{ width:17%;}
+
+
+/*待学生反馈*/
+.treat-resume-header >p.p22{ width:23%;}
+.treat-resume-header >p.p23{ width:25%; margin-left: 4%;}
+.treat-resume-header >p.p24{ width:25%;margin-left: 3%;}
+.treat-resume-header >p.p25{ width:17%;}
+
+
+
+/*有效职位*/
+.treat-resume-header >p.p26{ width:21%;}
+.treat-resume-header >p.p27{ width:7%;}
+.treat-resume-header >p.p28{ width:9%;}
+.treat-resume-header >p.p29{ width:15%;}
+.treat-resume-header >p.p30{ width:14%;}
+.treat-resume-header >p.p31{ width:12%; margin-left: 11%;}
+
+
+/*不合适简历*/
+.treat-resume-header >p.p32{ width:150px;}
+.treat-resume-header >p.p33{ width:185px;}
+.treat-resume-header >p.np1{ width:130px;}
+.treat-resume-header >p.p34{ width:160px;}
+.treat-resume-header >p.p35{ width:150px;}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #a5a5a5;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #a5a5a5;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #a5a5a5;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #a5a5a5;
+}
+
+.drop-box > div > a{ height: 35px !important;}
+input.detailed-address-margin{margin-top: 28px !important;}
+#inputTest{cursor: default;}
+.margin50{margin-bottom: 50px;}
+.company-profile > p.practice-situation{white-space:inherit;overflow: visible;line-height:30px;}
+/**/
+.no-margin{margin-top:0px;}
+
+
+/* 职位发布 */
+.q-time1{width: 100%; padding-left: 20px; height: auto; margin-top: 20px; overflow: hidden; clear: both; }
+.q-time2{ width: 100%; height: 60px; padding-left: 33px; overflow: hidden; clear: both;}
+.q-time2 >p{ float: left; width: 104px; margin-top: 12px;  cursor: pointer;  font-size: 16px; line-height: 16px; color: #656565;}
+.q-time2 i{ font-style: normal; display: block; float: left;}
+.q-time2 >p:first-child{ margin-right: 50px;}
+.q-time2 >p >span{ width: 14px; margin-right: 8px;background: url(../images/q-radio2.png) no-repeat; height: 14px; float: left; display: block; }
+.q-time2 >p >span.active{background: url(../images/q-radio1.png) no-repeat;}
+.time-right{ margin-left: 20px; height: 60px; float: left; overflow: hidden;display: none;}
+.time-right >p{ clear: both; padding-top: 7px; margin: 0;  font-size: 12px; color: #fe8b25; line-height: 12px;}
+.w190{ width: 199px; float: left; margin-bottom: 0;}
+.w190 >input{ outline: none; background: #fff !important;  padding-left: 10px;}
+.time-line{ width: 20px; height: 1px; margin:19px 10px 0; display: block; float: left; background:#bfbfbf; }
+.mat0{ margin-top: 0px;}
+.q-mial{ width: 100%; height: auto; margin-bottom: 25px; overflow: hidden; margin-left: 15px; }
+.q-mial >p{ font-size: 16px; margin: 18px 0 0; color: #656565; line-height: 16px; }
+.q-mial >p >span{ color: #fe8b25; }
+.q-mial > input{ width: 348px; outline: none; margin-top: 9px; border-radius: 5px; font-size: 14px; color: #656565; height: 38px; line-height: 38px; padding-left: 10px; }
+.copy-post-info{position: absolute;right: 0;top:76px;padding-top:30px;width: auto;padding-bottom:20px;}
+.copy-post-info button{margin-top: 0;height: 32px;padding: 0;width: 80px;margin-left: 0;}
+.copy-post-info .button{margin-top: 16px;}
+/*.list-right >span{ width:70px; transition:0.3s; height:26px;float:left; border-radius:5px; background:#6d97d2; text-align:center; line-height:26px; font-size:14px; color:#ffffff; margin:27px 0 0 10px;cursor:pointer;}*/
+.list-right >span{transition:0.3s; height:26px;float:left; border-radius:5px; background:#6d97d2; text-align:center; line-height:26px; font-size:14px; color:#ffffff; margin:27px 0 0 10px;cursor:pointer;padding:0 15px;}
+.list-right >span:hover{background:#05b5c3;}
+
+/* 复制框*/
+.copy-box{ width:260px; height:190px; border:1px solid #d7d7d7; background:#ffffff; position:absolute; top:80px;  z-index:99;right:0; border-radius:5px;  box-shadow:0px 0px 5px #d7d7d7;}
+.copy-box >p{ font-size:18px; color:#656565; text-align:center; line-height:18px; margin:30px auto 15px;}
+.copy-box >span{ padding-top:35px; font-size:18px; line-height:30px;color:#656565; width:185px; margin:0 auto; display:block; text-align:center;}
+.copy-box > a{ display:block; float:left; width:80px; height:32px; line-height:32px; text-align:center; font-size:16px; margin-top:20px; color:#ffffff; border-radius:5px;}
+.copy-box > .yes{ background:#ff7800; margin:20px 20px 0 40px;}
+.copy-box > .no{background:#dddddd;}
+.copy-box > a:hover{color:#ffffff;}
+.copy-box > i{ width:17px; height:9px;background:url(../images/sharp.png) no-repeat; position: absolute; top: -9px;right: 40px;}
+
+/*多专业筛选*/
+.div-wrap{ width:500px; height:40px; position:relative;}
+.div-wrap > span.five{ position:absolute; top:-25px; right:1px; font-size:14px; color:#fe8b25;}
+#div{ width:500px; height:40px; font-size:14px; padding:8px 12px; line-height:14px; border:1px solid #e4e4e4 ;cursor:pointer; border-radius:5px; outline:none; overflow:hidden; position:relative;}
+#div >p{ position:absolute; top: 13px; left: 20px;}
+#div >span{background: #f5f5f5;text-align: center;color: #717272;width: 35px;-webkit-border-radius: 0px; -webkit-background-clip: padding-box; -moz-border-radius: 0px;-moz-background-clip: padding;border-radius: 0px;background-clip: padding-box; border-left:1px solid #e4e4e4;top:0; right:0; position:absolute;}
+#div >span:before{ position: relative; transition:.3s; transform:rotate(0deg);font-weight: bold;display: block;  font-family: 'FontAwesome'; content: ''; line-height:38px; text-align:center;}
+.div1 >span:before{transform:rotate(-180deg) !important;-webkit-transform:rotate(-180deg) !important;-moz-transform:rotate(-180deg) !important;-ms-transform:rotate(-180deg) !important; }
+#div >ul{ list-style:none; cursor:pointer; outline:none; padding:0; margin:0;margin-top:-8px;}
+#div >ul >li{ float:left; padding:1px; background:#f7f7f7; margin:5px 5px 0 0; padding:7px; font-size:12px; line-height:12px; color:#656565;}
+#div >ul >li >span{font-size:14px; padding-left:5px; color:#656565; cursor:default;}
+#div >ul >li >span:hover{ color:#a5a5a5; font-weight:bold;}
+
+.div-wrap > .list{ width: 500px; margin-top: 5px; display: none; padding-bottom: 20px;  padding-top: 10px;overflow: hidden; height: auto; border-radius: 5px; border:1px solid #f5f5f5; background: #fff; position: relative; z-index: 999; margin: 2px 0 0 0;}
+.div-wrap > .list >li{ width: 100px; background: #f7f7f7; float: left; font-size: 14px; color: #a5a5a5; height: 40px; cursor: pointer; line-height: 40px; padding-left: 30px; margin: 10px 0 0 20px}
+.div-wrap > .list >li:hover{ background: #7de0ec; color: #fff;}
+
+/*2015-07-27 14:01:40  星期一*/
+.offline-resume-list{overflow:initial;}
+.offline-resume-list .copy-box >span,.treat-resume-list .copy-box>span{text-align: left;}
+.offline-resume-list .copy-box > i{right: 70px;}
+.treat-resume-list .fn-allow{right: 100px}
+.treat-resume-list .fn-improper{right: 20px;}
+.treat-resume-list > .list-right{overflow:initial;position: relative;}
+.treat-resume-list{overflow:initial; }
+.list-right >span{position: relative;}
+
+/*2015-08-06 09:58:49  星期四*/
+.reflush-box{right: 180px;}
+/*2015-08-07 10:05:27  星期五*/
+.list-right >span.no-pointer{background-color:#b2b2b2}
+.readed {background: #dddddd !important;font-weight:normal;}
+.treat-resume-list{position:relative;overflow:initial;}
+.list-right >span{padding:0 10px;font-weight: normal;}
+
+/*对话框样式修改*/
+.permit-interview-box2{width:260px;height: 224px;border: 1px solid #d7d7d7;background: #ffffff;position: absolute;z-index: 99;right: 0px;border-radius: 5px;box-shadow: 0px 0px 5px #d7d7d7;font-weight: normal;}
+.permit-interview-box2  >span{ font-size: 18px;color: #656565;width: 208px;margin: 0 auto;display: block;font-weight: normal;}
+.permit-interview-box2 > .yes{background: #ff7800;margin: 20px 20px 0 40px;}
+.permit-interview-box2 > .yes{margin-top:17px;}
+.permit-interview-box2 > .no{margin-top:17px;}
+.permit-interview-box2 > a{display: block;float: left;width: 80px;height: 32px;line-height: 32px;text-align: center;font-size: 16px;margin-top: 20px;color: #ffffff;border-radius: 5px;}
+.permit-interview-box2 > .no{background: #dddddd;}
+.permit-interview-box2 > a{display: block;float: left;width: 80px;height: 32px;line-height: 32px;text-align: center;font-size: 16px;margin-top: 20px;color: #ffffff;border-radius: 5px;}
+.permit-interview-box2 > i {width: 17px;height: 9px;background: url(../images/sharp.png) no-repeat;position: absolute;
+  top: -9px;right: 120px;}
+.refuse-interview-box2 > i{width: 17px;height: 9px;background: url(../images/sharp.png) no-repeat;position: absolute;top: -9px;right: 45px;}
+.permit-interview-box2 >span{font-size:16px;width:228px;}
+.treat-resume-list{position:relative;overflow:initial;}
+.treat-resume-list .fn-allow{right: 0}
+/*2015-12-07*/
+.resume-right-list .treat-resume-header{width: 87%;}
+dd,.left_column_title{ cursor : pointer;  }
+.enterprise-new{  width: 262px !important; height: 270px !important;  overflow: hidden; display: table;  }
+.enterprise-new >a{ width: 200px; height: 200px; display: table-cell; text-align: center;vertical-align: middle}
+.enterprise-new >a >img{ max-width: 200px; max-height: 200px;margin:0 auto !important;}
+.offline-resume-list-fn{width: 90%}
+input.priactice-organization{color: #bfbfbf;}
+#accept-end,#accept-start,#post-end,#post-start{height: 38px;}
+.date-tip-email{display: block;}
+.time-right >p.date-tip-error{color:#ff5d39}
+html .select2-drop .select2-results li.select2-result-selectable .select2-result-label{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.allow-resume-list-fn> div{line-height:0;}
+.fail-resume-list-fn>div{line-height:20px}
+#resume-inputcity{background: #ffffff;cursor: default;}
+.post-invite-list >.date >p{ font-size: 14px;}
+/*2015-12-30*/
+.effective-post-list-fn,.fail-post-list-fn{padding-bottom: 140px;}

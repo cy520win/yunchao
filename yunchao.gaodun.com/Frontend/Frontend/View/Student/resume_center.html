@@ -1,0 +1,175 @@
+<div class="left-section-style left-section-message left-section-message-fn">
+    <div class="container-fluid container-content">
+        <div class="personal_message_content">
+            <div class="row">
+                <!-- 基本信息开始-->
+                <if condition='$exist.base_bool eq true'>
+                    <div class="basic_information col-md-12">
+                        <?php if($inviteView == TRUE):?>
+                            <include file="Student::resume_base_invite" />
+                        <?php endif;?>
+                        <?php if($inviteView == FALSE):?>
+                            <include file="Student::resume_base" />
+                        <?php endif;?>
+                    </div>
+                </if>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="left-section-style other-information-colunm look-main">
+    <div class="container-fluid container-content">
+        <div class="row">
+            <div class="all-module" id="module-list">
+                <!--教育背景模块-->
+                <if condition='$exist.education_bool eq true'>
+                    <div class="module-block education-module" id="education-div" name="education-div">
+                        <div class="model-title">
+                            <span class="titlebg">教育背景</span>
+                            <span class="linebg view-linebg"></span>
+                        </div>
+
+                        <div class="container-fluid experience-distance top_distance" id="input-information-education">
+                            <ul>
+                                <foreach name="education" item="ed">
+                                    <li data-id="{$ed.pkid}" onclick="editeduli(this)">
+                                        <h3>
+                                            <span>{$ed.start_time}</span>&nbsp;至&nbsp;<span>{$ed.finish_time}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>{$ed.school_name}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>{$ed.major_title}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            （<span>{$ed.degree}</span>）
+                                        </h3>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                </if>
+
+                <!--实习模块-->
+                <if condition='$exist.practice_bool eq true'>
+                    <div class="module-block pratice-exprience-module" id="exprience-div" name="exprience-div">
+                        <div class="model-title">
+                            <span class="titlebg">实习经历</span>
+                            <span class="linebg view-linebg"></span>
+                        </div>
+                        <div class="container-fluid experience-distance top_distance" id="input-information-experience">
+                            <ul>
+                                <foreach name="practice" item="pr">
+                                    <li data-id="{$pr.pkid}">
+                                        <h3>
+                                            <span>{$pr.start_time}</span>&nbsp;至&nbsp;<span>{$pr.finish_time}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>{$pr.organization}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>{$pr.quarters}</span>
+                                        </h3>
+                                        <p>{$pr.content}</p>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                </if>
+
+                <!--校园经历-->
+                <if condition='$exist.school_acticity_bool eq true'>
+                    <div class="module-block school-activity" id="activity-div" name="activity-div">
+                        <div class="model-title">
+                            <span class="titlebg">校园经历</span>
+                            <span class="linebg view-linebg"></span>
+                        </div>
+                        <div class="container-fluid experience-distance top_distance" id="input-information-activity">
+                            <ul>
+                                <foreach name="activity" item="ac">
+                                    <li data-id="{$ac.pkid}">
+                                        <h3>
+                                            <span>{$ac.period}&nbsp;至&nbsp;{$ac.period_end}</span> 
+                                            <span>{$ac.description}</span>
+                                        </h3>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                        <div class="container-fluid experience-distance top_distance pdt0" id="input-information-position">
+                            <ul>
+                                <foreach name="school" item="sc">
+                                    <li data-id="{$sc.pkid}">
+                                        <h3>
+                                                    <span>{$sc.start_time}&nbsp;至&nbsp;{$sc.finish_time}&nbsp;&nbsp;&nbsp;{$sc.job_title}
+                                                    </span>
+                                        </h3>
+                                        <p >{$sc.description}</p>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                </if>
+
+                <!--证书-->
+                <if condition='$exist.cert_prize_bool eq true'>
+                    <div class="module-block certification" id="card-div" name="card-div">
+                        <div class="model-title">
+                            <span class="titlebg">证书和荣誉</span>
+                            <span class="linebg view-linebg special-linebg"></span>
+                        </div>
+                        <div class="container-fluid experience-distance top_distance" id="input-information-certification">
+                            <ul>
+                                <foreach name="cert" item="ce">
+                                    <li data-id="{$ce.pkid}" onclick="editcertli(this)">
+                                        <h3>
+                                            <span>{$ce.finish_time}</span>  —“<span>{$ce.certificate_name}</span>”证书&nbsp;&nbsp;&nbsp;
+                                            （<span>{$ce.status}</span>）
+                                        </h3>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                        <div class="container-fluid experience-distance top_distance pdt0" id="input-information-honor">
+                            <ul>
+                                <foreach name="prize" item="pr">
+                                    <li data-id="{$pr.pkid}" onclick="editprizeli(this)">
+                                        <h3>
+                                            <span>{$pr.period}</span> —
+                                            <span>{$pr.description}</span>
+                                        </h3>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                </if>
+
+                <if condition='$exist.introduce_bool eq true'>
+                    <div class="module-block school-position pdb15" id="introduce-div" name="introduce-div">
+                        <div class="model-title">
+                            <span class="titlebg">Dear HR</span>
+                            <span class="linebg view-linebg"></span>
+                        </div>
+                        <div class="container-fluid experience-distance top_distance" id="input-information-introduce">
+                            <p class="p-textarea p-introduc">{$introduceHtml}</p>
+                        </div>
+                    </div>
+
+                </if>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="left-section-style other-information-colunm">
+    <div class="container-fluid container-content">
+        <div class="row">
+            <!--实习意向模块-->
+            <if condition='$exist.expect_bool eq true'>
+                <div class="module-block education-module" id="education-div" style="display:block;" name="education-div">
+                    <div class="model-title">
+                        <span class="titlebg">实习意向</span>
+                        <span class="linebg view-linebg"></span>
+                    </div>
+                    <div class="container-fluid  Practice_intention" id="input-information-education2">
+                        {$expectHtml}
+                    </div>
+                </div>
+            </if>
+        </div>
+    </div>
+</div>

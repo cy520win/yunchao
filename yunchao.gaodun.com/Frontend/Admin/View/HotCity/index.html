@@ -1,0 +1,116 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-md-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">热门城市</h3>
+
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <form action="/index.php?s=Admin/HotCity/index" method="post">
+                                <label class="control-label" for="field-1"
+                                       style="padding-top:5px;float:left;margin-right:8px;">查询:</label>
+                                <input name="region_name" type="text" class="form-control" id="field-1"
+                                       placeholder="请输入热门城市名称"
+                                       style="width:20%;float:left;margin-right:8px;"
+                                       value="<present name='where.region_name'>{$where.region_name}</present>">
+
+                                <button class="btn btn-warning" style="float:left;">搜索</button>
+                            </form>
+
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <button class="btn btn-red" style="float:right;"
+                                            onclick="javascript:location.href='/index.php?s=/Admin/HotCity/add'">增加热门城市
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-10">
+
+                                </div>
+                                <div class="col-md-2">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+
+                    <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                        <thead>
+                        <tr>
+
+                            <th data-priority="1">排序号</th>
+                            <th data-priority="6">城市</th>
+                            <th data-priority="6">城市编号</th>
+                            <th data-priority="6">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <notempty name="hotCityList">
+                            <foreach name="hotCityList" item="hotCityItem">
+                                <tr>
+                                    <td>
+                                        {$hotCityItem.order_num}
+                                    </td>
+                                    <td>
+                                        {$hotCityItem.region_name}
+                                    </td>
+                                    <td>
+                                        {$hotCityItem.region_id}
+                                    </td>
+                                    <td>
+                                        <a href="/index.php?s=Admin/HotCity/edit/id/{$hotCityItem.id}"
+                                           class="btn btn-secondary btn-sm btn-icon icon-left">
+                                            修改
+                                        </a>
+                                        <a href="/index.php?s=Admin/HotCity/delete/id/{$hotCityItem.id}"
+                                           class="btn btn-danger btn-sm btn-icon icon-left">
+                                            删除
+                                        </a>
+                                    </td>
+                                </tr>
+                            </foreach>
+                            <else />
+                            <tr>
+                                <td colspan="6">
+                                    暂无数据
+                                </td>
+                            </tr>
+                        </notempty>
+                        </tbody>
+
+                    </table>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align:right;">
+                            {$page}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

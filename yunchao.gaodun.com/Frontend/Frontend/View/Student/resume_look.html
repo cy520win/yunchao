@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+    <title>高顿实习-学生简历</title>
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/bootstrap.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-core.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-forms.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/public.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/personal_center.css">
+    <!--<link rel="stylesheet" href="__PUBLIC__/static/css/resume_look.css">-->
+    <link rel="stylesheet" href="__PUBLIC__/static/css/print.css" media="print">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/resume_view_rebuild.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/resume_view_student.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/email-success.css">
+    <!--[if lte IE 9]>
+    <script src="__PUBLIC__/static/js/respond.min.js"></script>
+    <script src="__PUBLIC__/static/js/jsml5.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/static/css/ie8.css">
+    <![endif]-->
+    <script src="__PUBLIC__/static/js/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("#down-area").bind('click',
+                    function(av){
+                        av.stopPropagation();
+                        var au=$(this).children("ul");
+                        if(au.is(":hidden")){
+                            au.removeClass("dn")
+                        }else{
+                            au.addClass("dn")
+                        }
+                    }
+            )
+            $(document).click(function(){
+                var e=$("#down-area").children('ul');
+                if(!e.is(":hidden")){
+                    e.addClass("dn")
+                }
+            })
+        });
+
+        function editschoolli(){}
+        function editactivityli(){}
+        function editcertli(){}
+        function editprizeli(){}
+    </script>
+</head>
+<body class="personal_center" id="look_page">
+<!--中间部分  主要内容开始 -->
+<div class="center-content">
+    <div class="row">
+        <!--<div class="function-area">-->
+        <!--<a class="printer" href="javascript:window.print()" target="_blank">-->
+        <!--<img src="__PUBLIC__/static/images/printer.png" alt="">-->
+        <!--</a>-->
+        <!--<div class="down-load-area" id="down-area">-->
+        <!--<img src="__PUBLIC__/static/images/load_down.png" alt="">-->
+        <!--<ul class="choose-save-model dn">-->
+        <!--<li><a href="/Resume/resumeDownload/type/1">PDF</a></li>-->
+        <!--<li><a href="/Resume/resumeDownload/type/2">DOC</a></li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
+        {$titleHtml}
+        <!-- LEFT START -->
+        <div class="col-md-12">
+            <div class="container review-contant">
+                <div class="left-section-style left-section-message left-section-message-fn2">
+                    <div class="container-fluid container-content">
+                        <div class="personal_message_content">
+                            <div class="row">
+                                <!-- 基本信息开始-->
+                                <div class="col-md-12 pt13">
+                                    <if condition='$exist.base_bool eq true'>
+                                        {$baseInfoHtml}
+                                    </if>
+                                </div>
+                                <!-- 基本信息结束-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-section-style other-information-colunm look-main">
+                    <div class="container-fluid container-content">
+                        <div class="row">
+                            <div class="all-module" id="module-list">
+                                <!--教育背景模块-->
+                                <if condition='$exist.education_bool eq true'>
+                                    <div class="module-block education-module" id="education-div" name="education-div">
+                                        <div class="model-title">
+                                            <span class="titlebg">教育背景</span>
+                                            <span class="linebg view-linebg"></span>
+                                        </div>
+                                        <div class="container-fluid experience-distance top_distance" id="input-information-education">
+                                            {$educationHtml}
+                                        </div>
+                                    </div>
+                                </if>
+
+                                <!--实习模块-->
+                                <if condition='$exist.practice_bool eq true'>
+                                    <div class="module-block pratice-exprience-module" id="exprience-div" name="exprience-div">
+                                        <div class="model-title">
+                                            <span class="titlebg">实习经历</span>
+                                            <span class="linebg view-linebg"></span>
+                                        </div>
+                                        <div class="container-fluid experience-distance top_distance" id="input-information-experience">
+                                            {$practiceHtml}
+                                        </div>
+                                    </div>
+                                </if>
+
+                                <!--课外活动-->
+                                <if condition='$exist.school_acticity_bool eq true'>
+                                    <div class="module-block school-activity" id="activity-div" name="activity-div">
+                                        <div class="model-title">
+                                            <span class="titlebg">校园经历</span>
+                                            <span class="linebg view-linebg"></span>
+                                        </div>
+                                        <div class="container-fluid experience-distance top_distance" id="input-information-activity">
+                                            {$activityHtml}
+                                        </div>
+                                        <div class="container-fluid experience-distance top_distance pdt0" id="input-information-position">
+                                            {$schoolHtml}
+                                        </div>
+                                    </div>
+                                </if>
+
+                                <!--证书-->
+                                <if condition='$exist.cert_prize_bool eq true'>
+                                    <div class="module-block certification" id="card-div" name="card-div">
+                                        <div class="model-title">
+                                            <span class="titlebg">证书和荣誉</span>
+                                            <span class="linebg view-linebg special-linebg"></span>
+
+                                        </div>
+                                        <div class="container-fluid experience-distance top_distance" id="input-information-certification">
+                                            {$certHtml}
+                                        </div>
+                                        <div class="container-fluid experience-distance top_distance pdt0" id="input-information-honor">
+                                            {$prizeHtml}
+                                        </div>
+
+                                    </div>
+                                </if>
+
+                                <if condition='$exist.introduce_bool eq true'>
+                                    <div class="module-block school-position pdb15" id="introduce-div" name="introduce-div">
+                                        <div class="model-title">
+                                            <span class="titlebg">Dear HR</span>
+                                            <span class="linebg view-linebg"></span>
+                                        </div>
+                                        <div class="container-fluid experience-distance top_distance" id="input-information-introduce">
+                                            <p class="p-textarea p-introduc">{$introduceHtml}</p>
+                                        </div>
+                                    </div>
+
+                                </if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="left-section-style other-information-colunm expect-info">
+                    <div class="container-fluid container-content">
+                        <div class="row">
+                            <!--实习意向模块-->
+                            <if condition='$exist.expect_bool eq true'>
+                                <div class="module-block education-module" id="education-div" style="display:block;" name="education-div">
+                                    <div class="model-title">
+                                        <span class="titlebg">实习意向</span>
+                                        <span class="linebg view-linebg"></span>
+                                    </div>
+
+                                    <div class="container-fluid  Practice_intention" id="input-information-education2">
+                                        {$expectHtml}
+                                    </div>
+                                </div>
+                            </if>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT END -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

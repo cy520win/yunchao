@@ -1,0 +1,19 @@
+<ul>
+	<foreach name="school" item="sc">
+	<li data-id="{$sc.pkid}" onclick="editschoolli(this)">
+		<h3>
+			<span>{$sc.start_time}至{$sc.finish_time}&nbsp;&nbsp;&nbsp;{$sc.job_title}
+
+			<if condition="$pre neq true">
+			<span class="edit-add">
+			<span>
+			<i class="fa-pencil-square-o"></i>
+			</span><a href="javascript:;">编辑</a>
+			</span>
+			</if>
+			</span>
+		</h3>
+		<p class="p-textarea">{$sc.description}</p>
+	</li>
+	</foreach>    
+</ul>

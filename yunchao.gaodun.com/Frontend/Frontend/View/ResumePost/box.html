@@ -1,0 +1,55 @@
+<!--各类弹出框-->
+<div class="q-wrap"></div>
+<div class="q-box q-allow">
+    <div class="q-title">
+        <p>允许面试</p>
+        <img class="q-close" data-action="q-allow" onclick="closePop(this)" src="__PUBLIC__/static/images/q-close.png">
+    </div>
+    <div class="q-div">
+        <p class="p1">确定面试选中的学生吗</p>
+        <span class="span1">(确定后请尽快与学生进行电话沟通并安排面试。)</span>
+        <textarea class="q-tarea" data-action="allow_word" data-value="100" onKeyUp="javascript:checkWord(this);"
+                  onKeyDown="javascript:checkWord(this);">你好，同学！你的简历已通过我们的审核，近期我们会电话联系你，请保持电话畅通。</textarea>
+        <p class="p2"><span id="allow_word">0</span>/100</p>
+        <a href="javascript:;" class="allow-ok" id="allow">确 认</a>
+        <a href="javascript:;" class="q-cancel" data-action="q-allow" onclick="closePop(this)">取 消</a>
+    </div>
+</div>
+<div class="q-box q-fail">
+    <div class="q-title">
+        <p>不合适</p>
+        <img class="q-close" data-action="q-fail" onclick="closePop(this)" src="__PUBLIC__/static/images/q-close.png">
+    </div>
+    <div class="q-div">
+        <p class="p1">确定拒绝选中的学生面试吗</p>
+        <span class="span2">请选择拒绝理由：</span>
+        <div class="q-radio"><span data-value="1" class="active"></span><p>非常荣幸收到你的简历，但你的简历与该职位条件不太匹配，祝你找到满意的工作。</p></div>
+        <div class="q-radio"><span data-value="2"></span><p>我们已招到合适的人选，希望下次有机会合作。</p></div>
+        <div class="q-radio"><span data-value="3"></span><p>其他理由：</p></div>
+        <textarea readonly class="q-tarea" style="height: 110px;" data-action="fail_word" data-value="50" maxlength="50"
+                  onKeyUp="javascript:checkWord(this);" onKeyDown="javascript:checkWord(this);"></textarea>
+        <p class="p2"><span id="fail_word">0</span>/50</p>
+        <a href="javascript:;" class="fail-ok" id="fail">确 认</a>
+        <a href="javascript:;" class="q-cancel" data-action="q-fail" onclick="closePop(this)">取 消</a>
+    </div>
+</div>
+<!-- 小卡片 -->
+<div class="small-card" id="fail-card">
+    <p class="p1">操作成功</p>
+    <p class="p2">此条信息移动到了“回收站”</p>
+</div>
+
+<div class="small-card" id="allow-card">
+    <p class="p1">操作成功</p>
+    <p class="p2">此条信息移动到了“面试箱”</p>
+</div>
+
+<div class="small-card">
+    <p class="p1">操作成功</p>
+    <p class="p2">此条信息移动到了“待定简历”</p>
+</div>
+
+<div class="small-card" id="forward-card">
+    <p class="p3">转发成功</p>
+</div>
+

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+    <title>高顿实习-个人中心-上传照片</title>
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/bootstrap.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-core.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-forms.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-components.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-skins.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/jquery.circliful.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/public.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/personal_center.css">
+    <script src="__PUBLIC__/static/core/js/jquery-1.11.1.min.js"></script>
+    <script src="__PUBLIC__/static/js/jquery.circliful.js"></script>
+    <script src="__PUBLIC__/static/js/common.js"></script>
+
+</head>
+<body class="personal_center">
+<!--导航-->
+<div class="header">
+    <div class="nav-logo">
+        <div class="dropdown username-select">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">844648@qq.com
+
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu username-select-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">我的简历</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">我的投递</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">账户设置</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">退出</a></li>
+            </ul>
+        </div>
+    </div>
+    <nav class="navbar horizontal-menu">
+        <div class="navbar-content">
+            <div class="navbar-inner">
+                <!-- logo-->
+
+                <!-- 移动端下拉菜单 -->
+                <div class="nav navbar-mobile">
+                    <div class="mobile-menu-toggle">
+                        <a href="#" data-toggle="mobile-menu-horizontal">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-mobile-clear"></div>
+                <ul class="navbar-nav">
+                    <li>
+                        <a href="index.html">
+
+                            <span class="title">首页</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="enterprise.html">
+
+                            <span class="title">企业</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="resume.html">
+
+                            <span class="title">简历</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="school-picture">
+        <img src="__PUBLIC__/static/images/school-picture.png" alt="">
+
+    </div>
+</div>
+
+<!--中间部分-->
+<div class="center-content">
+    <!--       中间部分右区-->
+    <div class="row">
+        <div class="col-md-9">
+            <div class="left-section">
+                <div class="container">
+                    <div class="upphoto-area">
+                        <img  id="upload"  class="droppable-area up-photo" src="__PUBLIC__/static/images/nophoto.png">
+                    </div>
+                    <button class="btn btn-info confirm-button perfect-file-button">完善资料</button>
+                </div>
+
+
+            </div>
+        </div>
+        <!--       中间部分左区-->
+        <div class="col-md-3">
+            <div class="right-section">
+                <div class="right-section-style function-colunm">
+                    <ul class="colunm-inner">
+                        <li class="deliver"><a href="">投递箱</a></li>
+                        <li class="invite"><a href="">邀请涵</a></li>
+                        <li class="notice"><a href="">关注度</a></li>
+                        <li class="subscribe"><a href="">订阅栏</a></li>
+                    </ul>
+
+                </div>
+                <div class="right-section-style complete-circle">
+                    <h3>简历完整度<span style="float:right;">预览简历</span></h3>
+                    <div id="myStat2" class="resume-circle" data-dimension="160" data-text="72%" data-width="13" data-fontsize="30" data-percent="72" data-fgcolor="#05c0d1" data-bgcolor="#caeef1"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--屏蔽 -->
+
+<div class="footer">
+    <div class="copyright">
+        Copyright © 2013 gaodun.com All Rights Reserved&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;沪ICP备14010294号-2
+    </div>
+</div>
+<link rel="stylesheet" href="__PUBLIC__/static/core/js/cropper/cropper.min.css">
+<link rel="stylesheet" href="__PUBLIC__/static/core/js/dropzone/css/dropzone.css">
+<script src="__PUBLIC__/static/core/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/static/core/js/TweenMax.min.js"></script>
+<script src="__PUBLIC__/static/core/js/resizeable.js"></script>
+<script src="__PUBLIC__/static/core/js/joinable.js"></script>
+<script src="__PUBLIC__/static/core/js/xenon-api.js"></script>
+<script src="__PUBLIC__/static/core/js/xenon-toggles.js"></script>
+<script src="__PUBLIC__/static/core/js/cropper/cropper.min.js"></script>
+<script src="__PUBLIC__/static/core/js/jquery-ui/jquery-ui.min.js"></script>
+<script src="__PUBLIC__/static/core/js/dropzone/dropzone.min.js"></script>
+<script src="__PUBLIC__/static/core/js/xenon-custom.js"></script>
+<style>
+    .photomodify{
+        position:absolute;
+        left:50%;
+        margin-left:-180px;
+        top:150px;
+        z-index:1002;
+    }
+    .background-color{
+        background: rgba(0,0,0,0.6);
+        position:fixed;
+    }
+    .photo_form{
+        width:354px;
+        padding:0px;
+        height:293px;
+
+    }
+    .photomodify h1{
+        line-height: 50px;
+        color:#ffffff;
+        background:#57d5e4;
+        font-size:24px;
+        margin:0px;
+    }
+    .photomodify h1 span{
+        margin-left:25px;
+
+    }
+    .button-small{
+        height:32px;
+        width:80px;
+        font-size:16px;
+        padding:0px;
+    }
+    .photomodify_footer{
+        text-align:center;
+        background:#ffffff;
+        padding-bottom:10px;
+    }
+    .img-container{
+        margin-bottom: 0px;
+
+    }
+</style>
+<script src="__PUBLIC__/static/core/js/ajaxupload.js"></script>
+<script src="__PUBLIC__/static/core/js/upload.js"></script>
+<!--弹出修改照片框-->
+<div class="photomodify" style="display: none">
+    <h1><span>请选择裁剪区域</span></h1>
+
+    <div class="panel-body photo_form">
+        <div class="img-container">
+            <img id="headpic_img" class="img-responsive"/>
+        </div>
+        <div style="display: none">
+            <div id="img-1-x"></div>
+            <div id="img-1-y"></div>
+            <div id="img-1-w"></div>
+            <div id="img-1-h"></div>
+        </div>
+        <div class="photomodify_footer">
+            <input type="hidden" name="img">
+            <button id="crop-img" class="btn btn-info  confirm-button button-small">保存</button>
+            <button id="close" class="btn confirm-button information-cancel-button button-small">取消</button>
+        </div>
+    </div>
+
+
+
+</div>
+<div class="md-overlay background-color"></div>
+</body>
+</html>

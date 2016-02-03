@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+
+.message-wrap{ width: 1200px; height: auto; overflow: hidden; margin: 50px auto 0;}
+.message-wrap >.message-l{ float: left; width: 280px; overflow: hidden; height: auto;float: left;overflow: hidden;border: 1px solid #ededed;border-top: none;border-bottom: 1px solid #e2e2e2;background: #ffffff;} 
+.message-wrap >.message-l > .mes-l-title{ width: 230px; margin: 20px auto 0; padding-bottom: 12px; border-bottom: 1px solid #bfbfbf; font-size: 22px; color: #06bad2; line-height: 22px;}
+.message-wrap >.message-l > .mes-news{ width: 250px; font-size: 16px; color: #ffffff; padding-left: 30px; margin-top: 10px; background: #7de0ec; height: 40px; line-height: 40px;}
+.message-wrap >.message-r{ width: 878px;border: 1px solid #ededed; border-top:none;height: auto; overflow: hidden; float: right; background: #fff;margin-bottom: 40px;}
+.message-wrap >.message-r > .message-r-t{ width: 878px; z-index: 99; position: relative; height: 80px; border-bottom: 1px solid #ededed;background: #fff;}
+.message-r-t > .message-del{ width: 150px; float: left; height: auto; padding-top: 32px; padding-left: 45px;}
+.message-r-t > .message-del > span{ display: block; float: left; line-height: 18px; font-size: 18px; color: #656565;}
+.message-r-t > .message-del > span.qx-box{ width: 18px; cursor: pointer; margin-right: 5px;  height: 18px; background:url(../images/mes1.png) no-repeat;}
+.message-r-t > .message-del > span.del-box{ width: 15px; cursor: pointer; height: 18px; margin-left: 30px; background:url(../images/mes4.png) no-repeat;}
+.message-r-t > .message-del > span.qx-box.active{ background:url(../images/mes2.png) no-repeat;}
+.message-r-t > .message-del > span.del-box.active{ background:url(../images/mes3.png) no-repeat;}
+.message-r-t > .message-page{ width:  72px; height: 26px; float: right; margin-right: 45px; margin-top: 28px;}
+.message-r-t > .message-page >span{ display: block; cursor: pointer; float: left;width: 26px; height: 26px; }
+.message-page > span.page-l{background:url(../images/mes7.png) no-repeat; margin-right: 10px;}
+.message-page > span.page-r{background:url(../images/mes6.png) no-repeat;}
+.message-page > span.page-l.active{background:url(../images/mes5.png) no-repeat; cursor: default;}
+.message-page > span.page-r.active{background:url(../images/mes8.png) no-repeat; cursor: default;}
+.message-wrap >.message-r > .message-r-m{ width: 878px; height: auto;}
+.message-r-m >ul{width: 100%; height: auto;}
+.message-r-m >ul >li{ width: 100%; transition:.3s; position: relative; height: 49px;line-height: 49px; border-bottom: 1px solid #ededed;}
+.message-r-m >ul >li > span.dx-box{display: block; float: left; cursor: pointer; margin: 17px 20px 0 45px;  width: 16px; height: 16px; background:url(../images/mes1.png) no-repeat; background-size: cover;}
+.message-r-m >ul >li > span.dx-box.active{ background:url(../images/mes2.png) no-repeat; background-size: cover;}
+.message-r-m >ul >li > a{ font-size: 16px; font-weight: bold; color: #a5a5a5; width: 587px; overflow: hidden; float: left;text-overflow :ellipsis;white-space: nowrap;}
+.message-r-m >ul >li > a >span{ font-size: 16px; color: #656565;}
+.message-r-m >ul >li > div{ float: right;}
+.message-r-m >ul >li > div >span{ display: block; float: left;}
+.message-r-m >ul >li > div >span.del-li{background: url(../images/mes3.png) no-repeat;visibility: hidden;  cursor: pointer; margin: 17px 45px 0 20px; width: 12px; height: 15px; display: block; background-size: cover;}
+.message-r-m >ul >li.active{ background: #e5e5e5;}
+.message-r-m >ul >li.active > div >span.del-li{ visibility: visible;}
+.message-r-m >ul >li.readed > a{ font-weight: normal;}
+.mes-have{background:url(../images/mes-box1.png) no-repeat; display: none; top: 50px; left: 14px;}
+.mes-new{ position: absolute; z-index: 99; width: 230px; height: 160px;}
+.mes-new >p{ text-align: center; font-size: 18px; color: #656565; line-height: 18px; margin-top: 36px;}
+.mes-new >div{ width: 200px; height: 32px; margin-top: 32px; margin-left: 25px;}
+.mes-new >div >span{ display: block; cursor: pointer; font-size: 16px; color: #fff; float: left; width: 80px; border-radius: 5px; margin-right: 20px; background: #ccc; height: 32px; line-height: 32px;  text-align: center;}
+.mes-new >div >span:first-child{ background: #ff7800;}
+
+.mes-one{ background:url(../images/mes-box3.png) no-repeat; float: none;display: none;  right: -5px; top: 33px;}
+
+
+.mes-no{ position: absolute; z-index: 99;top: 50px;display: none; left: 38px;  background:url(../images/mes-box2.png) no-repeat; width: 200px; height: 90px;}
+.mes-no >p{ text-align: center; font-size: 16px; line-height: 16px; color: #ffffff; margin-top: 40px;}
+.mes-wrap{ width: 100%; display: none; height:100%; position: fixed; top: 0; left: 0; opacity: 0; z-index: 98px;}
+
+
+
+
+
+/*details*/
+
+.mes-back{display: block; float: left; margin-top: -4px; cursor: pointer;}
+.detail-con{ width: 790px; height: auto; overflow: hidden;  margin: 0 auto;}
+.detail-con > .detail-title{ margin-top: 30px; color: #656565; font-size: 18px;}
+.detail-con > .detail-title >span{ font-weight: bold;}
+.detail-con > .detail-title >i{ font-style: normal; font-size: 14px; vertical-align: bottom; margin-left: 20px;color: #a5a5a5;}
+.detail-con > .detail-line{ width: 100%; height: 1px; display: block; background: #eeeeee; margin: 10px 0;}
+.detail-con > p{  font-size: 16px; color: #656565; line-height: 24px;}
+.mes-detail{background:url(../images/mes-box1.png) no-repeat; display: none; top: 50px; left: 25px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+body{ background: #f4f4f4;}
+*::-webkit-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+*:-moz-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+*:-ms-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+
+
+.ipad-wrap{ width: 100%; max-width: 1200px; margin: 0 auto; height: auto; overflow: hidden;}
+.div-wrap{ display: none;}
+.interview{ width: 420px; margin: 15px auto; overflow: hidden; border-radius: 5px; height:40px;border: 1px solid #fff; -webkit-box-sizing:border-box; box-sizing:border-box; }
+.interview >li{ width: 139px; font-size: 18px; transition:0.3s;  -webkit-transition:0.3s; cursor: pointer; border-right: 1px solid #fff; height: 38px; line-height: 38px; float: left;-webkit-box-sizing:border-box; box-sizing:border-box;}
+.interview >li:last-child{ border-right: none; width: 140px;}
+.interview >li.active{ background: #fff; color: #63cdff;}
+
+
+.interview-wrap{width: 84%; box-shadow: 0px 2px 2px 0px rgb( 221, 221, 221 ); display: block; height: 130px;overflow: hidden;padding: 0 4%; margin: 20px auto; background: #fff;}
+.interview-wrap > .title{ margin-top: 30px; width: 100%;  overflow: hidden;  font-size: 22px; line-height: 22px; color: #63cdff;}
+.interview-wrap > .title >p.p1{ float: left;}
+.interview-wrap > .title >p.p1>a{ color: #63cdff;}
+.interview-wrap > .title >p.p1 >span{margin-left: 10px;background: url(../../images/account/city-logo-b.png) 0 2px no-repeat;padding-left: 10px;font-size: 16px;color: #a5a5a5;line-height: 16px;}
+.interview-wrap > .title >p.p2{ float: right; font-size: 16px; line-height: 20px; color: #a5a5a5;}
+.interview-wrap > .line{ margin-top: 10px; width: 100%; height: 1px; background: #e3e3e3;}
+.interview-wrap > .describe{ width: 100%; height: auto; overflow: hidden; margin-top: 22px; }
+.interview-wrap > .describe >p.p1{ float: left; font-size: 16px; line-height: 16px; color: #999999;}
+.interview-wrap > .describe >p.p1 >a{ color: #656565;}
+.interview-wrap > .describe >p.p1 >i{ font-style: normal; padding: 0 10px;}
+.interview-wrap > .describe >p.p2{ float: right; font-size: 18px; line-height: 18px; color: #656565;}
+
+
+
+/* �ֻ� */
+.phone-wrap{ display:none;}
+.div-wrap-p{ display:none}
+.div-wrap-phone{ width: 95%; display:block; margin-top: 12px; padding-left: 5%; background: #fff; height: auto; overflow: hidden; position: relative;}
+.div-wrap-phone >p.title{ font-size: 16px; color: #656565; line-height: 16px; margin-top: 17px;}
+.div-wrap-phone >p.title >span{ color: #999999; font-size: 12px;}
+.div-wrap-phone >p.company-name{ font-size: 14px; line-height: 14px; color: #999999; margin-top: 18px; margin-bottom: 10px;}
+.div-wrap-phone >p.state-phone{ font-size: 14px;line-height: 14px; color: #999999; margin-bottom: 17px;}
+.div-wrap-phone >p.state-phone >span{ font-size: 14px; color: #656565; margin-right: 16px;}
+.div-wrap-phone > img{ position: absolute; right: 5%; top: 49px;}
+
+.none-phone{ font-size: 18px; text-align: center; color: #a5a5a5; margin-top:260px;}
+
+
+@media all and (min-width:992px) {
+	
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+     
+
+}
+
+@media ( max-width: 767px){
+	.interview{ width: 255px; height: 30px; margin-top: 8.5px;}
+	.interview >li{ width: 84px; height: 30px; line-height: 30px; font-size: 13px;}
+	.interview >li:last-child{ border-right: 0px solid #fff; width: 85px;}
+ 	.phone-wrap{ display:block;}
+ 	.ipad-wrap{ display:none;}
+ 	.none-phone{ font-size: 16px; text-align: center; color: #a5a5a5; margin-top:60%;}
+ }
+
+@media ( max-width: 414px){
+}
+
+@media ( max-width: 320px){
+	.interview{ width: 222px; height: 30px; margin-top: 8.5px;}
+	.interview >li{ width: 73px; height: 30px; line-height: 30px; font-size: 13px;}
+	.interview >li:last-child{ border-right: 0px solid #fff; width: 74px;}
+}
+
+
+
+
+

@@ -1,0 +1,58 @@
+.city-box{position:absolute; z-index:9999; background:#fff; border:none;width:490px; padding:15px 15px 5px;box-shadow: 0px 0px 1px 2px rgb( 245, 245,245 );border-radius: 4px;margin-top: 4px;}
+.city-box:before,.city-box:after{ display:block; width: 0; height: 0; border-width: 10px; border-style:solid; position: absolute; left:20px; z-index:9998;}
+.rightSelector:before,.rightSelector:after{left:280px;}
+.city-box:before{border-color: transparent transparent #ffffff; top: -17px; z-index:10001;}
+.city-box:after{border-color: transparent transparent #c8c8c8; top: -20px;}
+.city-box *{padding:0; margin:0; font-size:14px; font-family:"Microsoft YaHei"; color:#666;}
+.prov-city{padding-bottom:10px; margin-bottom:15px;}
+.provence:after,.provence ul:after,.prov-city ul:after,#js_provCitys:after{content:" "; display:block; height:0; clear:both;}
+.provence div{font-weight:bold;}
+.provence ul{list-style-type:none; font-weight:normal; padding-top:15px; margin:0 -5px; *zoom:1;}
+.provence li,.prov-city li,#js_provCitys li{float:left; padding:5px; margin:0 5px 8px; background:#fafafa; cursor:pointer; color:#999;}
+.provence li{padding:0; height:40px; line-height:40px; width:14.5%; position:relative; margin:0 5px 8px;}
+.provence li li{padding:5px; height:auto; line-height:normal; margin:0 5px 10px;}
+.provence span:hover,.prov-city li:hover,#js_provCitys li:hover{background:#6d97d2;color: #fff;}
+.prov-city p,.city-title-sp3{font-weight:normal; margin-bottom:10px;text-align: center;color: #6d97d2;font-size: 16px;}
+.prov-city ul,#js_provCitys{position:initial; border:none; *zoom:1; list-style:none; margin:0 -5px;}
+.prov-city li,#js_provCitys li{width:70px; font-size:14px; font-family:"Microsoft YaHei";padding: 0;}
+#js_provCitys{position:absolute; top:38px; left:-15px; z-index:99999; width:490px; background:#fff; border:1px solid #6d97d2; *zoom:1; padding:0; padding-top:10px; margin:0;}
+.provence span{display:block; height:100%; border:1px solid #fafafa; background:#fafafa; width:100%;}
+#js_cityBox .del-city-box {position: absolute;right:14px;top:4px;cursor: pointer;display: block;}
+.provinceName[now-item=true]:hover{color:#666}
+.del-city-box:hover{background-color:#ddd;}
+.city-title-sp{width: 41%;display: inline-block;border-bottom: 1px solid #6d97d2;margin-bottom: 4px;}
+.city-title-sp2{width: 18%;display: inline-block;font-weight: normal;}
+.prov-city li, #js_provCitys li{width:14.5%;height:40px;text-align: center;line-height:40px;}
+.provence div{font-size:16px;color:#6d97d2;text-align:center;}
+.prov-city p{font-weight:bold; margin-bottom:10px;font-family: "Microsoft YaHei" !important;}
+
+/*------------------------------------------------*/
+.div-wrap-city{ width:522px; height:40px; position:relative;}
+.div-wrap-city>span.five {position: absolute;top:9px;right:-74px;font-size: 14px;color: #fe8b25;}
+#inputTest10,#inputTest2,#inputTest20{padding:8px 12px;cursor: pointer;background-color: #f4f4f4;border: 2px solid #f0f0f0;outline: none;}
+#inputTest10 >span,#inputTest2>span,#inputTest20>span{
+  background: #f4f4f4;
+  text-align: center;
+  color: #717272;
+  border-radius: 0px;
+  background-clip: padding-box;
+  top:16px;
+  right: 10px;
+  position: absolute;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #bfbfbf;
+  transition: 0.3s;
+}
+.city-span-btn>span{transform:rotate(-180deg) !important;
+transform:rotate(-180deg);
+-ms-transform:rotate(-180deg); 	/* IE 9 */
+-moz-transform:rotate(-180deg); 	/* Firefox */
+-webkit-transform:rotate(-180deg); /* Safari 和 Chrome */
+-o-transform:rotate(-180deg); 	/* Opera */
+}
+#inputTest10 >ul,#inputTest2>ul,#inputTest20>ul{ list-style:none; cursor:pointer; outline:none; padding:0; margin:0;margin-top:-8px;}
+#inputTest10 >ul >li,#inputTest2 >ul >li,#inputTest20 >ul >li{ float:left; padding:1px; background:#ffffff; margin:5px 5px 0 0; padding:7px; font-size:12px; line-height:12px; color:#656565;}
+#inputTest10 >ul >li >span,#inputTest2 >ul >li >span,#inputTest20 >ul >li >span{font-size:14px; padding-left:5px; color:#656565; cursor:default;}
+#inputTest10 >ul >li >span:hover,#inputTest2 >ul >li >span:hover,#inputTest20 >ul >li >span:hover{ color:#a5a5a5; font-weight:bold;}
+.div-wrap-city #inputTest-li{background:#f4f4f4;}

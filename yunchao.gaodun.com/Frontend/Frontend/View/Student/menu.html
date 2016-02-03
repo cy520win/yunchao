@@ -1,0 +1,58 @@
+<div class="right-section-style function-colunm student-menu-icon">
+    <ul class="colunm-inner ul-red">
+        <li class="colunm-inner-a">
+        <a href="/Delivery/student" id="<if condition='ACTION_NAME eq student'>colunm-inner-a-active</if>" >
+        <i class="deliver icon-menu <if condition='ACTION_NAME eq student'>colunm-inner-aa</if>" ></i>投递箱<if condition="$Think.session.rednote.delivery_red eq TRUE"><img src="__PUBLIC__/static/images/small-red.png" class="s-red-x" alt="高顿实习"></if></a>
+        </li>
+        <li class="colunm-inner-b">
+        <a href="/Invitation/center" id="<if condition='ACTION_NAME eq center'>colunm-inner-a-active</if>">
+        <i class="invite icon-menu <if condition='ACTION_NAME eq center'>colunm-inner-bb</if>" ></i>邀请函<if condition="$Think.session.rednote.invite_red eq TRUE"><img src="__PUBLIC__/static/images/small-red.png" class="s-red-x" alt="高顿实习"></if>
+        </a>
+        </li>
+        <li class="colunm-inner-c">
+        <a href="/Delivery/read" id="<if condition='ACTION_NAME eq read'>colunm-inner-a-active</if>" >
+        <i class="notice icon-menu <if condition='ACTION_NAME eq read'>colunm-inner-cc</if>" ></i>关注度</a>
+        </li>
+        <li class="colunm-inner-f" id="colunm-inner-lastli">
+        <a href="/Collect/index" id="<if condition='ACTION_NAME eq collect'>colunm-inner-a-active</if>">
+        <i class="collected icon-menu <if condition='ACTION_NAME eq collect'>colunm-inner-ff</if>"></i>收藏夹</a>
+        </li>
+    </ul>
+</div>
+<style>
+    .fail-invitation {
+background: #01dbce none repeat scroll 0 0;
+    height: 80px;
+    left: 30px;
+    opacity: 0.8;
+    position: absolute;
+    top: 90px;
+    width: 170px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+}
+.fail-invitation > p {
+ color: #ffffff;
+    font-size: 14px;
+    line-height:14px;
+    margin: 0;
+    padding-left: 25px;
+    text-align: left;
+}
+.fail-invitation > p:nth-child(1) {
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+.fail-invitation > i {
+ border-bottom: 10px solid #01dbce;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+    left: 80px;
+    position: absolute;
+    top: -7px;
+    width: 0;
+}
+ul.colunm-inner > li > a{ position: static;}
+ul.ul-red > li{ position: relative;}
+ul.colunm-inner > li > a >img.s-red-x{ position: absolute; top: 39px; left: 56px;}
+</style>

@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+body{ background: #f4f4f4; font-family: Arial;}
+*::-webkit-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+*:-moz-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+*:-ms-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+
+
+.ipad-wrap{ width: 100%; max-width: 1200px; margin: 0 auto; height: auto; overflow: hidden;}
+.preview-wrap{width: 84%; height: auto;overflow: hidden;border-bottom: 1px solid #e6e6e6; padding: 0 4% 30px;margin: 20px auto;background: #fff;}
+.preview-title{ margin-top: 30px; overflow: hidden; position: relative; width: 100%; height: auto; font-size: 20px; line-height: 20px; color: #656565;  font-family: Arial;}
+.preview-title > p{ position: relative; z-index: 10; display: block; float: left; overflow: hidden; background: #fff; padding-right: 5px;}
+.preview-title >span{ width: 100%; height: 1px; z-index: 9; background: #e3e3e3; position: absolute; top: 11px; left: 0;}
+
+.div-en{ width: 84%; margin:20px auto 0; clear: both; overflow: hidden;height: auto; }
+.div-en >span { width: 110px; margin-left: 5px; height: 154px; display: block; float: left; }
+.div-en >span >img{ max-width: 100%;}
+.div-en-r{ width: 77%; float: right;}
+.div-en-r >p.p1{ font-size: 16px; line-height: 16px; color: #656565; }
+.div-en-r >p.p2{ font-size: 16px; line-height: 28px; margin-top: 6px; color: #656565; }
+.div-en-r >p.p3{ font-size: 16px; line-height: 16px; margin-bottom: 12px; margin-top: 6px; color: #656565; }
+.div-en-r >p > span{ color: #656565; font-size: 16px; font-weight: bold; }
+.div-en-r >span.span1{ font-size: 14px; line-height: 14px; color: #a5a5a5; }
+.con-wrap{ width: 100%; height: auto; overflow: hidden; margin-top: 10px;}
+.con-wrap > .wrap-l{ width: 35%; float: left; overflow: hidden; }
+.con-wrap > .wrap-l >span{width: 10px; margin-right: 10px; display: block; float: left; background: #59d9e5; height: 10px; border-radius: 50%;}
+.con-wrap > .wrap-l >p{ font-size: 16px;  line-height: 16px; color: #656565; }
+.con-wrap > .wrap-r{ width: 65%; font-size: 16px; color: #656565; line-height: 20px; float: left; overflow: hidden; }
+.con-wrap > .con-font{ font-size: 16px; padding-left: 20px; color: #a5a5a5; line-height: 20px; }
+.w100{ width: 100% !important; margin-bottom: 20px;}
+.mat0{margin-top:0px;}
+
+.w18{ width: 18% !important;}
+.w82{ width: 82% !important;}
+.preview-hr{ font-size: 16px; color: #656565; line-height: 22px; }
+.preview-int{ font-size: 16px; overflow: hidden; clear: both; margin-bottom: 20px; line-height: 16px; color: #656565; }
+.preview-int p{ float: left; }
+.preview-int >div{ width: 50%; float: left; }
+
+.invitation-ipad-wrap{ width: 92%; height: auto; margin: 10px auto -15px; overflow: hidden; }
+.invitation-ipad-wrap >div{ width: 100px; height: 35px; float: right; border-radius: 5px;}
+.c-e-p{ border: 1px solid #63cdff; overflow: hidden; margin-right: 10px;}
+.c-e-p >a{ display: block; width: 49px; margin-top: 1px; height: 33px; line-height: 33px; font-size: 16px; float: left; background: #fff; text-align: center; color: #63cdff; }
+.c-e-p >a.active{ background: #63cdff; color: #fff; }
+.c-e-p >a:first-child{ margin-left: 1px; font-family: "Microsoft Yahei";border-bottom-left-radius: 5px; border-top-left-radius: 5px; }
+.c-e-p >a:last-child{ border-bottom-right-radius: 5px; border-top-right-radius: 5px; }
+
+.invitation-no{ border: 1px solid #b2b2b2; font-family: "Microsoft Yahei"; font-size: 16px; color: #b2b2b2; line-height: 33px;}
+.invitation-no >img{ margin-left: 10px; margin-right: 2px; }
+
+.invitation-ing{ width: 90px !important; font-family: "Microsoft Yahei"; cursor: pointer; border: 1px solid #63cdff; font-size: 16px; color: #63cdff; line-height: 33px;}
+.invitation-ing >img{ margin-left: 8px; margin-right: 10px; }
+
+
+/* 手机 */
+.phone-wrap{ display:none;}
+.basic-wrap {width: 80%; padding: 0 5% 15px;border-radius: 5px;-webkit-border-radius: 5px;box-shadow: 0px 2px 2px 0px rgb( 221, 221, 221 );margin: 20px auto 0;height: auto; overflow: hidden; background: #fff;}
+.basic-wrap >.title{width: 100%; position: relative;margin-top: 12px;border-bottom: 1px solid #dfdfdf;margin-bottom: 12px;font-size: 16px;height: 28px;line-height: 28px;color: #656565;}
+.c-e-x{ width: 58px; height: 21px; border: 1px solid #63cdff; border-radius: 3px; position: absolute; right: 0; top: 0;}
+.c-e-x >a{ width: 28px; color: #63cdff; font-size: 10px; background: #fff; float: left; margin-top: 1px; height: 19px;display: block; line-height: 19px; text-align: center; }
+.c-e-x >a:first-child{ margin-left: 1px; font-family: "Microsoft Yahei"; border-bottom-left-radius: 3px; border-top-left-radius: 3px;}
+.c-e-x >a:last-child{ border-bottom-right-radius: 3px; border-top-right-radius: 3px;}
+.c-e-x >a.active{ background: #63cdff;  color: #fff;}
+.basic-con{ width: 100%; height: auto; overflow: hidden; }
+.basic-con >.basic-l{ width: 78%; float: left; overflow: hidden; }
+.basic-con >.basic-r{ width: 20%; float: left; margin-right: 2%; overflow: hidden;}
+.basic-con >.basic-r >img{ max-width: 100%; }
+.basic-con >.basic-l >.basic-name{  font-size: 14px; margin-bottom: 10px; color: #656565; }
+.basic-con >.basic-l >span{ font-size: 12px; margin-bottom: 10px; line-height: 12px; color: #898989; display: block;}
+.basic-con >.basic-l >span >i{ font-style: normal; color: #656565; }
+.basic-con >.basic-title{ font-size: 13px; color: #656565; line-height: 15px; margin-bottom: 10px; }
+.basic-con >.basic-font{ font-size: 13px; color: #898989; line-height: 15px;margin-bottom: 10px; }
+.basic-wrap >.basic-line{ width: 100%; margin-bottom: 12px; margin-top: 5px;  height: 0px; border-bottom: 1px dashed #e6e6e6; }
+.basic-con >.many-font{ font-size: 13px; color: #a5a5a5; line-height: 15px; word-break: break-all;}
+.basic-con >.basic-con-l{ width: 22%; float: left; overflow: hidden; }
+.basic-con >.basic-con-r{ width: 78%; float: left; overflow: hidden; }
+.basic-int{ font-size: 13px; overflow: hidden; clear: both; line-height: 15px; color: #898989; margin-bottom: 10px;}
+.basic-int >p{ float: left;  word-break: break-all; }
+
+
+/* 手机邀请 */
+.h{ width: 100%; height: 60px; overflow: hidden; }
+.invitation-wrap-phone{ width: 100%; z-index: 9; position: fixed; left: 0; bottom: 0; height: 54px; background: #efefef; }
+.invitation-wrap-phone >a{ width: 90%; border-radius: 5px; font-size: 16px; color: #fff; display: block; height: 40px; margin: 7px auto; background: #63cdff; text-align: center; line-height: 40px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.none-phone{ font-size: 18px; text-align: center; color: #a5a5a5; margin-top:260px;}
+
+
+@media all and (min-width:992px) {
+	
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+     .div-en{ width: 96%; }
+
+}
+
+@media ( max-width: 767px){
+	.interview{ width: 255px; height: 30px; margin-top: 8.5px;}
+	.interview >li{ width: 84px; height: 30px; line-height: 30px; font-size: 13px;}
+	.interview >li:last-child{ border-right: 0px solid #fff; width: 85px;}
+ 	.phone-wrap{ display:block;}
+ 	.ipad-wrap{ display:none;}
+ 	.none-phone{ font-size: 16px; text-align: center; color: #a5a5a5; margin-top:60%;}
+ }
+
+@media ( max-width: 414px){
+}
+
+@media ( max-width: 320px){
+	
+}
+
+
+
+
+

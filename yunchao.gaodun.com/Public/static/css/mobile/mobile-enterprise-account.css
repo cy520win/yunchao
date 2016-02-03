@@ -1,0 +1,149 @@
+body{ background: #f4f4f4;}
+*::-webkit-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+*:-moz-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+*:-ms-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+.ipad-wrap{ width: 100%; max-width: 1200px; margin: 0 auto; height: auto; overflow: hidden;}
+
+.main-information-wrap{ width: 84%; height: auto;overflow: hidden; border-bottom: 1px solid #e6e6e6; padding: 0 4% 30px; margin: 20px auto; background: #fff;min-height:550px;}
+.title-wrap{ width: 100%; height: auto; overflow: hidden;  margin-top: 30px;}
+.title-wrap > .cen-wrap{ width: 100%; float: left; height: auto; overflow: hidden;}
+.title-wrap > .cen-wrap > .center{height: 20px; margin: 0 0 0 100px;}
+.title-wrap > .cen-wrap > .center > span{ display: block; margin-top: 10px; width: 100%; height: 1px; background: #e3e3e3;}
+.title-wrap > .title-left{ width: 115px;font-size: 20px; color: #656565; line-height: 20px; height: 20px; float: left; margin-left: -100%;}
+.identifymail{float:left;margin-top:20px;}
+.student-remind-area{float:left;}
+.identifymail ul.student-remind-area li{float:left;height:60px;border-bottom:1px solid #eeeeee;width:100%;color:#656565;font-size:18px;}
+.student-remind-area li span.left-area{display:block;float:left;line-height:58px;}
+.student-remind-area li ul.right-area{display:block;float:right;}
+.student-remind-area li ul.right-area li{float:left;line-height:58px;width:66px;font-size:16px;/*background:url("../../images/no-choose.png") no-repeat left center;*/padding-left:22px;margin-left:20px;cursor: pointer;transition:0.4s;}
+.student-remind-area li ul.right-area li:last-child{width:100px;}
+.waiting-remind-mail{float:left;width:275px;height:80px;}
+.identifymail ul.student-remind-area li:first-child span{}
+.identifymail ul.student-remind-area li.waiting-remind-mail{float:left;line-height:18px;}
+.identifymail ul.waiting-remind-mail li.waiting-remind-title{height:20px;margin-top:20px;border:none;}
+.identifymail ul.waiting-remind-mail li.waiting-remind-explain{font-size:14px;color:#a5a5a5;border:none;line-height: 16px;margin-top:12px;}
+.waiting-remind-area{float:right;min-width:328px;position:relative;}
+.waiting-invited-phone{position:relative;}
+.waiting-remind-area span{line-height:99px;float:left;font-size:16px;margin-left:7px;}
+.bi-wrap > .arrive-send-phone {width: 100px;height: 40px;line-height: 40px;margin-left: 2%;margin-right: 2%;padding-left: 10px;border: 2px solid #dddddd;background-color: #ffffff;border-radius: 5px;position:relative;margin-top:30px;}
+.arrive-send p{height:40px;font-size:14px;}
+.ipad-triangle {position: absolute;transition: 0.6s;-webkit-transition: 0.6s;-webkit-transform: rotate(0deg);transform: rotate(0deg);top: 17px;right: 10px;width: 0;height: 0;border-right: 6px solid transparent;border-left: 6px solid transparent;border-top: 7px solid #999999;}
+.rive-send-phone .ipad-triangle {top: 17px;}
+.waiting-invited-phone .arrive-send-slide {width: 110px;left: 127px;top:76px;height: auto;overflow: auto;position: absolute;border-radius: 5px;border: 2px solid #ccc;background: #fff;visibility: hidden;z-index: -1;}
+.waiting-invited-phone > ul.arrive-send-slide >li {width: 100px;padding-left: 10px;height: 30px;line-height: 30px;color: #a5a5a5;font-size: 14px;border-bottom:none;}
+.height98{height:100px !important;}
+.focused{border:2px solid #dddddd !important;}
+
+/*当前手机样式*/
+.margint20{margin-top:18px;}
+.margint30{margin-top:30px;}
+.margint20{margin-top:20px;}
+.marginl10{margin-left:10px;}
+.margint40{margin-top:40px;}
+.margint28{margin-top:28px;}
+.width67{width:67%;}
+.main-phone-resume {width: 90%;height: auto;overflow: hidden;min-height: 400px;margin: 20px 5% 67px;}
+.phone-resume-center{ width: 100%; margin-top: 0px; margin-bottom: 30px; border-radius: 5px; -webkit-border-radius: 5px; box-shadow: 0px 2px 2px 0px rgb( 221, 221, 221 ); height: auto; overflow: hidden; background: #fff;}
+.phone-resume-wrap{ display: block; font-size: 14px; color: #656565; position: relative; width: 100%;height: 40px; line-height: 40px; padding-left: 18px; border-bottom: 1px solid #f2f2f2;}
+.send-right-area{float:right;display:block;width:auto;font-size:12px;color:#a5a5a5;text-align: right;margin-right:12px;}
+.send-left-area{float:left;display:block;font-size:13px;}
+.phone-resume-wrap >img{width: 6px;height: 9px;display: block; padding-right:20px;width:7px;height:12px;float:right;margin-top:15px;margin-right:12px;}
+.current-diag-phone{width:90%;margin:0 auto;}
+.current-diag-phone h3,.no-invited-phone h3,.invited-box-remind h3{font-size:15px;color:#656565;font-weight: normal;margin-top:0px;margin-bottom:5px;}
+.current-diag-phone p{font-size:18px;color:#a5a5a5;}
+.change-number-phone{width:100px;height:42px;text-align: center;background-color:#63cdff;float:left;border-radius:5px;outline:5px;border:none;color:#ffffff;font-size:16px;cursor: pointer;font-family: "微软雅黑";float:left;clear:both;margin-top:40px;}
+.no-invited-phone{width:90%;margin: 0 auto;}
+.no-invited-phone span.three-day-phone ,.invited-box-remind span.three-day-phone{color:#a5a5a5;font-size:10px;}
+.waiting-invited-phone .waiting-title-fonter{font-size:16px;line-height:30px;float:left;font-size:12px;}
+.waiting-invited-phone .waiting-title-after{font-size:12px;line-height:30px;}
+.bi-wrap > .arrive-send-phone{width:100px;height:40px;line-height:40px;margin-left:2%;margin-right:2%;padding-left:10px;}
+.arrive-send-phone .ipad-triangle{top:17px;}
+
+.waiting-invited-phone > .arrive-send-slide >li{width:90px;}
+.bi-wrap > .arrive-send-slide >li:hover{background-color:#f7f7f7;}
+.cast-resume-phone ,.accept-invite-phone{float:left;}
+.cast-resume-phone h3 ,.accept-invite-phone h3{font-size:15px;font-weight: normal;margin-bottom:22px;margin-top:0px;}
+.cast-resume-phone ul ,.accept-invite-phone ul{float:left;}
+.cast-resume-phone ul li ,.accept-invite-phone ul li{float:left;width:80px;background:url("../../images/account/no-choosen-logo.png") no-repeat center left;padding-left:18px;}
+.cast-resume-phone ul li:last-child ,.accept-invite-phone ul li:last-child{margin-right:0px;}
+.box-phone-public {
+    position: fixed;
+    overflow: hidden;
+    display: block;
+    z-index: 100001;
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+    top: 0px;
+    left: 0;
+}
+.box-phone-public > .box-title-public {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    font-size: 18px;
+    color: #ffffff;
+    height: 47px;
+    line-height: 47px;
+    background: #63cdff;
+}
+.box-phone-public .content-center{width:90%;margin:0 auto;margin-top:16px;}
+.focused{border:2px solid #dddddd !important;}
+.cast-resume-phone ul li.choosed, .accept-invite-phone ul li.choosed{background:url('../../images/account/choosen-logo.png') no-repeat left center;color:#63cdff}
+.pad-choosen{background:url('../../images/choosen.png') no-repeat left center}
+.pad-no-choosen{background:url('../../images/no-choose.png') no-repeat left center}
+@media all and (min-width:992px) {
+	
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+.waiting-remind-area{float:left;}
+.waiting-remind-area span{float:left;}
+.bi-wrap > .arrive-send-phone{float:left;}
+.main-information-wrap{min-height: 784px;}
+}
+
+@media ( max-width: 767px){
+    .phone-wrap{ display: block;}
+    .ipad-wrap{ display: none;}
+    .pas-mail{ width: 64%; height: 30px; margin-top: 8.5px;}
+    .pas-mail > li{ height: 30px; line-height: 30px; font-size: 13px;box-sizing: border-box;}
+    .bi-wrap > .arrive-send-phone{height:30px;line-height:30px;width:70px;}
+    .arrive-send p{height:30px;box-sizing: border-box;line-height:30px;font-size:10px;}
+    .ipad-triangle {
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top: 5px solid #999999;
+}
+    .arrive-send-phone .ipad-triangle{top:12px;}
+    .bi-wrap > .arrive-send-phone{width:80px;margin-top:0px;height:30px;}
+    .waiting-invited-phone .arrive-send-slide{top:35px;width:90px;box-sizing: border-box;left:92px;}
+    .waiting-invited-phone > ul.arrive-send-slide >li{width:70px;font-size:12px;}
+    .waiting-invited-phone{margin-top:15px;}
+}
+
+@media ( max-width: 414px){
+}
+
+@media ( max-width: 320px){
+    .cast-resume-phone ul li{font-size:10px;width: 75px;}
+    .send-left-area{font-size:10px;}
+    .cast-choose-phone ul li{font-size:10px;width: 75px;}
+    .cast-resume-phone ul li, .accept-invite-phone ul li{font-size:10px;width:75px;}
+}
+
+

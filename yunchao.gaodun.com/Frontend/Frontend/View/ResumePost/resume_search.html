@@ -1,0 +1,70 @@
+<form action="{$search_form}" method="get">
+    <div class="row">
+    <div class="form-group top-distance col-md-4 no_padding drop-box">
+        <select class="form-control edu_degree" id="post_id" placeholder="全部岗位" name="pt">
+            <option></option>
+            <option value="">请选择职位</option>
+            <foreach name="postList" key="key" item="postItem">
+                <option value="{$key}" <eq name="param.pt" value="$key">selected</eq>>{$postItem}</option>
+            </foreach>
+        </select>
+    </div>
+    <div class="form-group top-distance col-md-4 no_padding drop-box mar20">
+        <select class="form-control edu_degree" id="degree_id" placeholder="请选择学历" name="dt">
+            <option></option>
+            <option value="">请选择学历</option>
+            <foreach name="degreList" key="key" item="postItem">
+                <option value="{$key}" <eq name="param.dt" value="$key">selected</eq>>{$postItem}</option>
+            </foreach>
+        </select>
+    </div>
+    <div class="form-group top-distance expertise-choose">
+         <div class="div-wrap">
+            <div id="div">
+                <empty name="majorLi">
+                        <p>请选择专业（最多选5项）</p>
+                </empty>
+                <span><i></i></span>
+                <ul class="major-ul">
+                        <notempty name="majorLi">
+                            <foreach name="majorLi" item="mli">
+                                <li>{$mli}
+                                    <span class="span">×</span>
+                                    <input type="hidden" name="major_wish[]" value="{$key}">
+                                </li>
+                            </foreach>
+                        </notempty>
+                </ul>
+            </div>
+                <ul class="list">
+                    <li data-id="0">不限</li>
+                    <foreach name="majorList" key="key" item="majorItem">
+                        <li data-id="{$key}">{$majorItem}</li>
+                    </foreach>
+                    <span class="list-comfirm" id="major-btn">确定</span>
+                </ul>
+        </div>
+     </div>
+     </div>
+     <div class="row">
+        <div class="form-group top-distance col-md-4 no_padding drop-box">
+                <input type="text" class="form-control normal-input input-grey-style priactice-organization" id="resume-inputcity" placeholder="学生所在地" name="ct" value="{$param.ct}" readonly>
+        </div>
+        <div class="form-group top-distance col-md-4 no_padding drop-box mar20">
+               <select class="form-control edu_degree" id="student-year-id" placeholder="学生毕业年份" name="gt">
+                 <option value="">学生毕业年份</option>
+                <foreach name="grade" item="grade">
+                    <option value="{$key}" <if condition="$param.gt eq $key">selected</if> >{$grade}</option>
+                </foreach>
+               </select>
+        </div>
+       <div class="form-group top-distance col-md-4 no_padding drop-box mar20">
+            <input type="text" class="form-control normal-input input-grey-style priactice-organization" id="period-start-wait" placeholder="可到岗时间开始" name="ps" onclick="getdate('period-start-wait',event)" value="{$param.ps}">
+        </div>
+        <div class="until-line"></div>
+        <div class="form-group top-distance col-md-4 no_padding drop-box mar10">
+            <input type="text" class="form-control normal-input input-grey-style priactice-organization" id="period-end-wait" placeholder="可到岗时间结束" name="pe" onclick="getdate('period-end-wait',event)" value="{$param.pe}">
+        </div>
+        <button type="submit" class="submit-choose mar20">提交筛选</button>
+     </div>
+</form>

@@ -1,0 +1,18 @@
+<ul>
+	<foreach name="education" item="ed">
+	<li data-id="{$ed.pkid}" onclick="editeduli(this)">
+		<h3>
+		<span>{$ed.start_time}</span>至<span>{$ed.finish_time}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>{$ed.school_name}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>{$ed.major_title}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		（<span>{$ed.degree}</span>）
+
+		<if condition="$pre neq true">
+		<span class="edit-add"><i class="fa-pencil-square-o"></i>
+		<a href="javascript:;">编辑</a>
+		</span>
+		</if>
+		</h3>
+	</li>
+	</foreach>
+</ul>

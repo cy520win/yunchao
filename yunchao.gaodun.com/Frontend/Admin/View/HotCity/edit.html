@@ -1,0 +1,64 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">修改城市排序</h3>
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <form role="form" class="form-horizontal" action="/index.php?s=/Admin/HotCity/update" method="post">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="field-1">热门城市名称：</label>
+
+                        <div class="col-sm-2">
+                            <input style="background-color: #FFFFFF" type="text" class="form-control"
+                                   id="field-1"
+                                   value="{$info.region_name}" disabled>
+                            <input type="hidden" name="id" value="{$info.pkid}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="field-1">排序号：</label>
+
+                        <div class="col-sm-2">
+                            <input type="num" class="form-control"
+                                   id="order_num" name="order_num"
+                                   value="{$info.order_num}">
+                            <span id="error"
+                                  style="color: #ff2f32;display: none">请输入1-100的数字
+                        </span>
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-top:10px;">
+
+                        <div class="col-sm-12" style="margin:auto text-align:center;">
+                            <div class="container" style="width:145px;">
+                                <button type="submit" class="btn btn-turquoise">保存</button>
+                                <button type="button" class="btn btn-red"
+                                        onclick="javascript:location.href='/index.php?s=/Admin/HotCity/index'">返回
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</block>
+<block name="script">
+
+</block>

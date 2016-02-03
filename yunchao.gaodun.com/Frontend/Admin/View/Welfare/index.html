@@ -1,0 +1,123 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-md-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">福利标签</h3>
+
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-10" style="width: 950px">
+                                    <button class="btn btn-red" style="float:right;"
+                                            onclick="javascript:location.href='/index.php?s=/Admin/Welfare/add'">增加福利标签
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-10">
+
+                                </div>
+                                <div class="col-md-2">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+
+                    <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                        <thead>
+                        <tr>
+
+                            <th data-priority="1">ID</th>
+                            <th data-priority="6">福利标签名称</th>
+                            <th data-priority="6">创建时间</th>
+                            <th data-priority="6">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <notempty name="welfareList">
+                            <foreach name="welfareList" item="welfareItem">
+                                <tr>
+                                    <td>
+                                        {$welfareItem.id}
+                                    </td>
+                                    <td>
+                                        {$welfareItem.title}
+                                    </td>
+                                    <td>
+                                        {$welfareItem.create_time}
+                                    </td>
+                                    <td>
+                                        <a href="/index.php?s=Admin/Welfare/edit/id/{$welfareItem.id}"
+                                           class="btn btn-secondary btn-sm btn-icon icon-left">
+                                            修改
+                                        </a>
+                                        <a href="javascript:void(0);" data-id="{$welfareItem.id}"
+                                           class="btn btn-danger btn-sm btn-icon icon-left delete">
+                                            删除
+                                        </a>
+                                    </td>
+                                </tr>
+                            </foreach>
+                            <else />
+                            <tr>
+                                <td colspan="6">
+                                    暂无数据
+                                </td>
+                            </tr>
+                        </notempty>
+                        </tbody>
+
+                    </table>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align:right;">
+                            {$page}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        $(function(){
+            $('.delete').click(function(){
+                var id = $(this).attr('data-id');
+                $.post('/index.php?s=/Admin/Welfare/checkDelete',{'id' : id},function(data){
+                    if(data.msg)
+                    {
+                        if(!window.confirm(data.msg))
+                        {
+                            return false;
+                        }
+                    }
+                    location.href = '/index.php?s=/Admin/Welfare/delete/id/' + id;
+                },'json');
+
+            });
+        });
+    </script>
+</block>

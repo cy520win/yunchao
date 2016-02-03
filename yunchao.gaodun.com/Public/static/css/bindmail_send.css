@@ -1,0 +1,245 @@
+@charset "utf-8";
+.bindmail_page{
+    background-color:#f3f5f8; 
+    position:relative;
+}
+/*logo区域logo样式*/
+.login-logo{
+    margin:0 auto;
+    width:780px;
+    height:60px;
+    margin-bottom:18px;
+    padding-left:23px;
+    background:url("../images/logo.png") no-repeat left center;
+    position:absolute;
+    top:98px;
+    left:50%;
+    margin-left:-390px;
+    z-index:4;
+ }
+.login-container{
+    width:55%;
+}
+.login-form{ 
+    width:600px; 
+    background-color:#ffffff; 
+    border-radius: 5px;
+    padding-bottom:160px;
+    position:absolute;
+    top:168px;
+    left:50%;
+    margin-left:-300px;
+    z-index:3;
+  }
+
+.sign-form{
+    padding-bottom:24px;
+    
+    }
+    
+.login-input{
+   border-radius: 5px;
+   background-color: rgb( 255, 255, 255 );
+   width:90%; 
+   float:left;
+}
+
+.md-content-form{
+    padding:2px 20px 0px 50px;
+}
+        
+.input-group-addon{
+    font-size:16px;    
+    color:#c0c0c0;
+    border-radius: 4px;
+}
+.input-group.input-group-minimal.focused .input-group-addon{
+
+    border:none;
+}
+.input-group.input-group-minimal .input-group-addon{
+    background:#fff;
+ 
+}       
+
+.login-page-login{
+    display:none;
+}
+.sign-form-content{
+    padding-top:70px;
+    margin-top:10px;
+}
+
+.bindmail_send_form h3{
+   font-size:26px;
+   color:#656565;
+
+}
+.bindmail_send_form p{
+
+   font-size:16px;
+   color:#a5a5a5;
+
+}
+.bindmail_send_form p a{
+   color:#09a2d5;
+   text-decoration:underline;
+}
+.login-button{
+   margin-top:34px;
+   width:100%;
+}
+.bindmail_bottom_section{
+   margin-top:44px;
+   
+}
+#verify_page{padding-top:0px;}
+#verify_page .bindsuccess{
+    width:500px;
+    background:#ffffff;
+    text-align: center;
+    height: 270px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+#verify_page .bindsuccess-content{
+    margin:0 auto;
+    text-align:center;
+    color:#656565;
+    width: 180px;
+    display: block;
+}
+#verify_page .bindsuccess-content span{
+    display:block;
+    float: left;
+    font-size:26px;
+    line-height:42px;
+    margin-left: 20px;
+}
+#verify_page .bindsuccess-content img{
+  width: 41px;
+  height: 41px;
+  display: block;
+  float: left;
+}
+#verify_page .bindsuccess-content p{
+   font-size:16px;
+    line-height:40px;
+    margin-top:20px;
+    padding-bottom:100px;
+}
+#verify_page .bindsuccess-content p a{
+    color:#0bbbea;
+    text-decoration: underline;
+}
+#verify_page #footer{position:fixed;bottom: 0;}
+#verify_page .login-logo{width: 500px;margin: 0 auto;padding-top: 290px;
+  height: 60px;
+  background: url("../images/logo.png") no-repeat left center;
+  position: static; 
+  padding-left: 0;
+}
+#verify_page .login-logo a{position: relative;top: -94px;}
+#verify_page .bindsuccess{ padding-top:80px;}
+#verify_page .bindsuccess-content { position: relative;}
+#verify_page .bindsuccess-content img{ position: absolute; left: -20px;}
+#verify_page .bindsuccess-content span{ margin-bottom: 34px; line-height: 26px; text-align: center; float: none; padding-top: 7px;}
+#verify_page .bindsuccess-content p{ line-height: 16px;}
+.bindsuccess p > a{ color: #63cdff;}
+.bindmail_send_form{
+    width:80%;
+    margin:0 auto;
+    padding-top:100px;
+    padding-bottom:30px;
+}
+.login-button{line-height:30px;}
+#bind-success .bindmail_send_form{
+    width:80%;
+    margin:0 auto;
+    padding-top:80px;
+    padding-bottom:30px;
+}
+#bind-success .bindsuccess{
+    position:absolute;
+    top:215px;
+    left:50%;
+    margin-left:-250px;
+    width:500px;
+    background:#ffffff;
+    text-align: center;
+   
+
+}
+#bind-success .bindsuccess-content{
+    width:50%;
+    margin:0 auto;
+    text-align:left;
+     color:#656565;
+
+}
+#bind-success .bindsuccess-content span{
+    display:block;
+    font-size:26px;
+   
+    background:url("../images/small-right.png") no-repeat left center;
+    line-height:42px;
+    text-align:center;
+    margin-top:70px;
+}
+#bind-success .bindsuccess-content p{
+   font-size:16px;
+    line-height:40px;
+    margin-top:20px;
+    padding-bottom:60px;
+
+
+}
+#bind-success .bindsuccess-content p a{
+    color:#0bbbea;
+    text-decoration: underline;
+    
+    }
+
+    .login-form{
+width:780px;
+
+}
+.linetop20{
+ padding-top:10px;
+ float:left;
+
+}
+.bindmail_bottom_section span{
+float:left;
+display:block;
+
+}
+.bindmail_send_form p a{
+display:block;
+line-height:40px;
+
+}
+.width50{
+width:auto;
+
+}
+.width100{
+width:100%;
+
+}
+.login-form{
+margin-left:-390px;
+
+}
+.bindmail_send_form{
+width:65%;
+
+}
+#bind-success .login-logo{width: 500px;
+  margin: 0 auto;
+  padding-top: 290px;
+  height: 60px;
+  background: url("../images/logo.png") no-repeat left center;
+  position: static;
+  padding-left: 0;
+}

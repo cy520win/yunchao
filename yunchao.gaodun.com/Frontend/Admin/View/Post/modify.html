@@ -1,0 +1,362 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+<div class="col-sm-12">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">修改职位信息</h3>
+            <div class="panel-options">
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">&ndash;</span>
+                    <span class="expand-icon">+</span>
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <form role="form" class="form-horizontal" action="/index.php?s=/Admin/Post/save" method="post">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">职位名称：</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" name="title" class="form-control" id="field-1" value="{$info.title}">
+                        <input type="hidden" name="pkid" value="{$info.pkid}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">企业名称：</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" style="border: 0;background-color: #ffffff" name="title"
+                               class="form-control"
+                               id="field-1"
+                               value="{$info.full_name}" disabled>
+                        <input type="hidden" name="enterprise_id" value="{$info.enterprise_id}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">每周至少：</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" name="week_available">
+                            <foreach name="list['weeklist']" item="weekItem" key="key">
+                                <option value="{$key}" <if condition='$info.week_available eq $key'>selected</if>>
+                                    {$weekItem}
+                                </option>
+                            </foreach>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-5">省份：</label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="province_id" id="province_id">
+                            <option value="0">省</option>
+                            <foreach name="list['provincelist']" item="provinceItem">
+                                <option value="{$provinceItem.region_id}"
+                                <if condition="$info['province_id'] eq $provinceItem['region_id']">selected</if>>
+                                    {$provinceItem.region_name}
+                                </option>
+                            </foreach>
+                        </select>
+                    </div>
+                    <label class="col-sm-2 control-label" for="field-5">城市：</label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="city_id" id="city_id">
+                            <option value="0">市</option>
+                            <foreach name="list['citylist']" item="cityItem">
+                                <option value="{$cityItem.region_id}"
+                                <if condition="$info['city_id'] eq $cityItem['region_id']">selected</if>>
+                                {$cityItem.region_name}
+                                </option>
+                            </foreach>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-5">实习地址：</label>
+
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="field-1" name="address" value="{$info.address}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-5">名额数量：</label>
+
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="field-1" name="quota" value="{$info.quota}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-5">留用机会：</label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="keep_on">
+                            <option value="0">请选择</option>
+                            <option value="1" <if condition='$info.keep_on eq 1'>selected</if> >有</option>
+                            <option value="2" <if condition='$info.keep_on eq 2'>selected</if> >未留</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">学历要求：</label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="education">
+                            <foreach name="list['edulist']" item="eduItem" key="key">
+                                <option value="{$key}" <if condition='$info.education eq $key'>selected</if>>
+                                    {$eduItem}
+                                </option>
+                            </foreach>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">专业分类：</label>
+
+<!--                     <div class="col-sm-2">
+                        <select class="form-control" name="major_wish">
+                            <eq name="info.major_wish" value="0">
+                                <option value="0" selected>不限</option>
+                                <foreach name="list['majorlist']" item="majorItem" key="key">
+                                    <option value="{$key}">
+                                        {$majorItem}
+                                    </option>
+                                </foreach>
+                                <else />
+                                <option value="0">不限</option>
+                                <foreach name="list['majorlist']" item="majorItem" key="key">
+                                    <option value="{$key}" <if condition='$info.major_wish eq $key'>selected</if>>
+                                    {$majorItem}
+                                    </option>
+                                </foreach>
+                            </eq>
+                        </select>
+                    </div> -->
+                        <div class="col-sm-10" id="major-input-div">
+                            <eq name="info.major_wish" value="0">
+                                <input type="checkbox" name="major_wish[]" value="0" class="major-input" {:majorChecked(0,$major)}>不限
+                                <foreach name="list['majorlist']" item="majorItem" key="key">
+                                    <input type="checkbox" name="major_wish[]" value="{$key}" class="major-input">{$majorItem}
+                                </foreach>
+                            <else/>
+                                <input type="checkbox" name="major_wish[]" value="0" class="major-input" {:majorChecked(0,$major)}>不限
+                                <foreach name="list['majorlist']" item="majorItem" key="key">
+                                    <input type="checkbox" name="major_wish[]" value="{$key}" class="major-input" {:majorChecked($key,$major)}>{$majorItem}
+                                </foreach>
+                            </eq>
+                        </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">职位分类：</label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="category_id">
+                            <foreach name="list['categorylist']" item="categoryItem" key="key">
+                                <option value="{$key}" <if condition='$info.category_id eq $key'>selected</if>>
+                                    {$categoryItem}
+                                </option>
+                            </foreach>
+                        </select>
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<label class="col-sm-2 control-label" for="field-1">在读年级：</label>-->
+
+                    <!--<div class="col-sm-4 control-label">-->
+                        <!--<foreach name="list['gradelist']" item="gradeItem" key="key">-->
+                            <!--<label>-->
+                                <!--<input type="checkbox" class="cbr cbr-secondary" value="{$key}"-->
+                                       <!--name="current_grade[]" <if-->
+                                    <!--condition="$info['gradeInfo'][$key] neq 0">checked="true-->
+                                <!--"</if>>-->
+                                <!--{$gradeItem}-->
+                            <!--</label>-->
+                            <!--&nbsp;-->
+                        <!--</foreach>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">毕业年份：</label>
+
+                    <div class="col-sm-6 control-label" id="graduate_year">
+                        <foreach name="list['graduatelist']" item="graduateItem" key="key">
+                            <label>
+                                <input type="checkbox" class="cbr cbr-secondary" value="{$key}"
+                                       name="graduate_year[]" <if
+                                    condition="$info['graduateInfo'][$key] neq 0">checked="true
+                                "</if>>
+                                {$graduateItem}
+                            </label>
+                            &nbsp;
+                        </foreach>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">职位描述：</label>
+
+                    <div class="col-sm-10">
+                            <textarea name="description" class="form-control" cols="15" id="field-5"
+                                      style="height:150px;">{$info.description}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">状态：</label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="status">
+                            <option value="1" <if condition='$info.status eq 1'>selected</if>>显示</option>
+                            <option value="2" <if condition='$info.status eq 2'>selected</if>>隐藏</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">首页展示：</label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="home_show">
+                            <option value="1" <if condition='$info.home_show eq 1'>selected</if>>是</option>
+                            <option value="2" <if condition='$info.home_show eq 2'>selected</if>>否</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">热门岗位：</label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="is_hot">
+                            <option value="1" <if condition='$info.is_hot eq 1'>selected</if>>是</option>
+                            <option value="2" <if condition='$info.is_hot eq 2'>selected</if>>否</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-5">排序号：</label>
+
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="field-1" name="order_num" value="{$info.order_num}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">日薪范围：</label>
+
+                    <div class="col-sm-2">
+                        <select class="form-control" name="salary_range">
+                            <foreach name="list['salarylist']" item="salaryItem" key="key">
+                                <option value="{$key}" <if condition='$info.salary_range eq $key'>selected</if>>
+                                    {$salaryItem}
+                                </option>
+                            </foreach>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group" style="padding-top:10px;">
+
+                    <div class="col-sm-12" style="margin:auto text-align:center;">
+                        <div class="container" style="width:145px;">
+                            <button type="submit" class="btn btn-turquoise">保存</button>
+                            <button type="button" class="btn btn-red"
+                                    onclick="javascript:location.href='/index.php?s=/Admin/Post/index'">返回
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+
+            $('#province_id').change(function()
+            {
+                var id = $(this).val();
+                $.get('/index.php?s=/Admin/Post/cityList',{parentId : id},function(data){
+                    $("#city_id").html(data);
+                })
+            });
+
+            $('form').submit(function(){
+                var parm = $(this).serialize();
+                var bool = true;
+
+                var length = $('.cbr:checked').length;
+                var length2 = $('.major-input:checked').length;
+                if(length < 1)
+                {
+                    $('#graduate_year').css({'border':'1px solid #ffcc00','width':'350px'});
+                    bool = false;
+                }
+                if(length2 < 1)
+                {
+                    $('#major-input-div').css({'border':'1px solid #ffcc00'});
+                    bool = false;
+                }
+                var province_id = $('#province_id').val();
+                if(province_id <710000){
+                    if($('#city_id').val()<1 || !$('#city_id').val()){
+                        $('#city_id').css({'border':'1px solid #ffcc00'});
+                        bool = false;
+                    }                    
+                }
+
+                $.ajax({
+                    type: "post",
+                    async:false,
+                    url: "/index.php?s=/Admin/Post/checkMessage",
+                    dataType:"json",
+                    data: parm,
+                    success: function(msg){
+
+                        if(msg.title){
+                            $('input[name=title]').css('border','1px solid #ffcc00');
+                            bool = false;
+                        }
+                        if(msg.address){
+                            $('input[name=address]').css('border','1px solid #ffcc00');
+                            bool = false;
+                        }
+                        if(msg.quota){
+                            $('input[name=quota]').css('border','1px solid #ffcc00');
+                            bool = false;
+                        }
+                        if(msg.description){
+                            $('textarea[name=description]').css('border','1px solid #ffcc00');
+                            bool = false;
+                        }
+                        if(msg.province_id){
+                            $('#province_id').css('border','1px solid #ffcc00');
+                            bool = false;
+                        }
+
+                    },
+                    error:function(){}
+                });
+
+                return bool;
+            });
+        })
+    </script>
+</block>

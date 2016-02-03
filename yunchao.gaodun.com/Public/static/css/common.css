@@ -1,0 +1,137 @@
+@charset "utf-8";
+body{
+margin:0px;
+padding:0px;
+font-family: "微软雅黑";
+}
+
+a{
+text-decoration: none;
+outline: none !important;
+}
+li,dl,ol{
+list-style: none;
+}
+a:hover{
+text-decoration: none;
+}
+/*body背景渐变*/
+.login_page{padding-top:5%;;background: #63cdff;}
+/*页头*/
+.header{
+background:#63cdff;
+position:relative;
+top:0px;
+width: 100%;
+height: 215px;
+}
+/*页尾*/
+#footer{bottom:0px;width:100%; height:100px; background:#63cdff;  margin-top: 30px;}
+.footer{ width:100%;max-width: 1200px; height: 100px;margin: 0 auto; font-size: 14px; color: #fffefe; background: none !important;}
+.footer > *{ float: left; display: block;}
+.footer > .footer-l{width: 348px; height: 100px;} 
+.footer > .footer-l >p{ line-height: 14px; padding-left: 50px;color: #fffefe; }
+.footer > .footer-l >p:first-child{ margin: 28px 0 18px;}
+.footer > span{ background:url(../images/h-t/v-line-f.png) no-repeat; width: 2px; height: 80px; margin-top: 10px;}
+.footer > .footer-c{ width:495px;height: 100px;}
+.footer > .footer-c >p{ text-align: center; font-size: 16px; line-height: 16px;}
+.footer > .footer-c >p:first-child{ margin: 28px 0 14px 0;}
+.footer > .footer-c >p >a{ font-size: 16px;line-height: 16px; color: #fffefe; padding-right: 27px;}
+.footer > .footer-c >p >a:hover{ text-decoration: underline;}
+.footer > .footer-r{ width:353px;height: 100px;}
+.footer > .footer-r >*{ display: block; float: left; margin-top: 16px;}
+.footer > .footer-r > .wechat-img{ width:68px; height: 68px; margin-left: 60px;}
+.footer > .footer-r > .wechat{ overflow: hidden;}
+.footer > .footer-r > .wechat >p{font-size: 14px; color: #fffefe; padding-left: 10px; line-height: 14px; position: relative;}
+.footer > .footer-r > .wechat >p:first-child{ margin: 12px 0 17px;}
+.footer > .footer-r > .wechat >p >img{ position: absolute; top: -5px; left: 105px;}
+/*底尾copyright*/
+.copyright{
+font-family:"微软雅黑";
+color:#ffffff;
+width:600px;
+margin:0 auto; 
+line-height: 44px;
+text-align: center;
+}
+
+/*错误提示*/
+.error-info{
+display:inline;
+margin-top:4px;
+float:left;
+font-size: 14px; 
+font-family: "Microsoft YaHei"; 
+color:#ff5d39;
+line-height: 1.699;
+text-align: center;
+clear:both;
+background:url("../images/errorlogo.png") no-repeat left center;
+padding-left:16px;
+}
+.error-info-span{
+display:inline;
+
+font-size: 14px; 
+font-family: "Microsoft YaHei"; 
+color:#ff5d39;
+line-height: 1.699;
+text-align: left;
+clear:both;
+background:url("../images/errorlogo.png") no-repeat left center;
+padding-left:16px;
+}
+/*成功提示*/
+.login-success{
+background:url("../images/right.png") no-repeat center center;
+display:inline;
+float:left;
+height:40px;
+margin-left:10px;
+margin-top:18px;
+}
+/*input placeholder 字体样式*/
+.form-control::-webkit-input-placeholder {
+color:#c0c0c0;
+font-size:12px;
+}
+
+.form-control:-moz-placeholder {
+color:#c0c0c0;
+font-size:12px;
+
+}
+.form-control:-ms-input-placeholder {
+color:#c0c0c0;
+font-size:12px;
+}
+
+/*铵钮健样式*/
+.login-button{
+width:90%;
+border-radius: 5px;
+background-color: rgb( 99, 205, 255 );
+height: 42px;
+font-size:18px;  
+margin-top:12px;
+color: rgb( 255, 255, 255 );
+line-height: 0.991;
+text-align: center;
+margin-bottom:10px;
+border:none;
+}
+/*input 边框线样式*/
+.focused{
+border:solid 1px #63cdff;    
+border-radius: 5px;   
+}
+/*按钮修改*/
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info{
+background:#63cdff;
+outline:none;
+border: none;
+}
+.no-spacing{ letter-spacing: 0 !important;}
+.error-border {
+    border: 1px solid #ff5d38;
+}

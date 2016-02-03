@@ -1,0 +1,12 @@
+Public/Public/Public/static/css/new-public.css    新的公共样式
+Public/Public/Public/static/css/account.css       账户系统css
+Public/Public/static/js/account.js         账户系统js
+
+Public/Public/Public/static/css/mail.css          邮箱验证css
+Public/Public/static/js/mail.js            邮箱验证js
+
+Public/Public/Public/static/css/password.css       找回密码css
+Public/Public/static/js/password.js         找回密码js
+
+Public/Public/Public/static/css/third.css       第三方绑定css
+Public/Public/static/js/third.js         第三方绑定js

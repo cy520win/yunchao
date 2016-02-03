@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*待处理简历*/
+.treat-resume-header{height: 40px; background: #7de0ec; margin: 0 auto -30px; clear:both; overflow: hidden;}
+.treat-resume-list > .list-left{width:76%;}
+.treat-resume-header >p{float:left; text-align: center; height: 40px; line-height: 40px; font-size: 16px; color: #ffffff;}
+.treat-resume-header >p.p1{ width:68px;margin-left:44px;}
+.treat-resume-header >p.p2{ width:68px;margin-left:78px;}
+.treat-resume-header >p.p3{ width:68px; margin-left:60px;}
+.treat-resume-header >p.p4{ width:68px;padding:0px;margin-left:40px;}
+.treat-resume-header >p.p6{ width:68px;padding:0px;margin-left:40px;}
+.treat-resume-header >p.p5{ width:68px;margin-left:70px;}
+.treat-resume-list > .list-left >.student{padding-left:0px;width:18%;height:24px;margin-top:25px;overflow: hidden;text-align: left;}
+.treat-resume-list > .list-left >.name{text-align:center;width:150px;overflow:hidden;padding:0px;height:24px;line-height:24px;margin-top:25px;}
+.treat-resume-list > .list-left >.accept{width:21%;height:24px;line-height:24px;margin-top:25px;}
+.treat-resume-list > .list-left >.read{width:75px;padding:0px;height:24px;margin-top:25px;line-height:24px;}
+.treat-resume-list > .list-left >.date{width:100px;padding:0px;margin-top:25px;}
+.treat-resume-list > .list-right{width:22%;margin-right:0px;}
+.list-right >span.first-ms{margin-left:18px;}
+.treat-resume-list > .list-left >.read >a{font-size:14px;font-weight: normal;}
+.treat-resume-list > .list-left > div.choosed-button{margin-left:15px;}
+.permit-interview-box >span.arrange-interview{color:#656565;font-size:14px;margin-top:8px;}
+.permit-interview-box >span.comfirm-allowed{margin-top:19px;}
+.refuse-interview-box >span.confirm-refuse{text-align: center;margin-top:35px;margin-bottom:14px;}
+.all-choose-area .color-bg{background-color:#5dd8e7;color:#ffffff;}
+.permit-interview-box span.title{line-height:22px;}
+.refuse-interview-box{right:2px;}
+.refuse-interview-box span{line-height: 22px;}
+.all-choose-area{position:relative;}
+.choose-notice{position:absolute;background-color:#33e1d7;width:220px;padding-top:17px;padding-bottom:17px;opacity: 0.8;left:148px;top:30px;z-index:20;box-shadow: 0.5px 0.866px 2px 1px rgba( 0, 0, 0 ,0.2);}
+.choose-notice span{padding-left:28px;font-size:14px;color:#ffffff;}
+.position-adjust-2{left:48px;top: 42px;}
+.position-adjust-3{left:48px;top: 42px;}
+.permit-interview-box, .refuse-interview-box{height:188px;}
+.permit-interview-box >span{margin-top:18px;line-height: 22px;}
+.refuse-interview-box span{line-height: 24px;} 
+.post-invite-list > div >p{margin-top: 0;}       

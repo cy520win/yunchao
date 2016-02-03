@@ -1,0 +1,208 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-md-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="/index.php?s=/Admin/Tag/index" <neq name="param_form[tag]" value="user">class=panel-active-span</neq> >公有标签</a></h3>
+                <h3 class="panel-title panel-title-join">
+                <a href="/index.php?s=/Admin/Tag/index/tag/user" <eq name="param_form[tag]" value="user">class=panel-active-span</eq> >用户私有标签</a></h3>
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-10" style="width: 950px">
+                                    <button class="btn btn-red" style="float:right;"
+                                            onclick="javascript:location.href='/index.php?s=/Admin/Tag/add'">发布公有标签
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-10">
+
+                                </div>
+                                <div class="col-md-2">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                             <eq name="param_form[tag]" value="user">
+                                <form action="/index.php?s=/Admin/Tag/index/tag/user" method="post">
+                            <else/>
+                                <form action="/index.php?s=/Admin/Tag/index" method="post">
+                            </eq>
+                            <label class="control-label" for="field-1" style="padding-top:5px;float:left;margin-right:8px;">查询:</label>
+
+                            <input name="title" type="text" class="form-control" id="field-1" placeholder="标签名称" style="width:20%;float:left;margin-right:8px;"value="{$param_form['title'] ? $param_form['title'] : ''}">
+                            <label  for="field-5"  style="width:8%;float:left;margin-right:8px;padding-top:5px;text-align:right;">适用范围：</label>
+
+                            <div class="col-sm-8" style="width:14%;float:left;margin-right:8px;">
+                                <select class="form-control" name="range">
+                                    <option value="0" >请选择</option>
+                                    <foreach name="rangeList" key="key" item="rangeItem">
+                                        <option value="{$key}" <present
+                                            name="param_form.range"><eq
+                                            name='param_form.range' value="$key">selected</eq></present>>
+                                            {$rangeItem}
+                                        </option>
+                                    </foreach>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control datetimepicker" id="field-1" placeholder="开始时间" style="width:150px;float:left;margin-right:8px;" name="time" value="{$param_form['time'] ? $param_form['time'] : ''}">
+                             <input type="text" class="form-control datetimepicker" id="field-1" placeholder="结束时间" style="width:150px;float:left;margin-right:8px;" name="end" value="{$param_form['end'] ? $param_form['end'] : ''}">
+                            <button class="btn btn-warning" style="float:left;">搜索</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+
+                    <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th data-priority="1">ID</th>
+                            <th data-priority="6">标签名称</th>
+                            <eq name="param_form[tag]" value="user">   
+                            <th data-priority="6">转化标签</th>
+                            </eq>
+                            <th data-priority="6">创建人</th>
+                            <th data-priority="6">标签适用范围</th>                        
+                            <th data-priority="6">创建时间</th>                           
+                            <th data-priority="6">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <notempty name="tagList">
+                            <foreach name="tagList" item="tagItem">
+                                <tr>
+                                    <td>
+                                        {$tagItem.id}
+                                    </td>
+                                    <td>
+                                        {$tagItem.title}
+                                    </td>
+                                    <eq name="param_form[tag]" value="user">   
+                                    <td>
+                                        <a class="btn btn-info btn-sm operate change" data-id="{$tagItem.id}" aa="{$tagItem.type}" bb="{$tagItem.title}" cc="{$tagItem.range}" dd="{$tagItem.is_delete}">转化</a>
+                                    </td>
+                                    </eq>
+                                    <td>
+                                        {$tagItem.typer}                                    
+                                    </td>
+                                    <td>
+                                        <empty name="tagItem.rangeInfo">
+                                            无
+                                        <else /> 
+                                           {$tagItem.rangeInfo} 
+                                        </empty>
+                                    </td>                                    
+                                    <td>
+                                        {$tagItem.create_time}
+                                    </td>                                   
+                                    <td>                                        
+                                        <eq name="param_form[tag]" value="user">
+                                        <if condition="$tagItem.is_delete eq 1">
+                                        <else/>
+                                            <a href="javascript:void(0);" data-id="{$tagItem.id}"
+                                           class="btn btn-danger btn-sm btn-icon icon-left delete" aa="user">
+                                            删除
+                                        </a>
+                                        </if>                                         
+                                        <else/>
+                                           <a href="/index.php?s=Admin/Tag/edit/id/{$tagItem.id}"
+                                           class="btn btn-secondary btn-sm btn-icon icon-left">
+                                            修改
+                                        </a>                                       
+                                        <a href="javascript:void(0);" data-id="{$tagItem.id}"
+                                           class="btn btn-danger btn-sm btn-icon icon-left delete" aa="sys">
+                                            删除
+                                        </a>                                     
+                                        </eq>                                        
+                                    </td>
+                                </tr>
+                            </foreach>
+                            <else />
+                            <tr>
+                                <td colspan="6">
+                                    暂无数据
+                                </td>
+                            </tr>
+                        </notempty>
+                        </tbody>
+
+                    </table>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align:right;">
+                            {$page}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script src="__PUBLIC__/static/js/datepicker/bootstrap-datepicker.js"></script>
+    <script src="__PUBLIC__/static/js/chartdate.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.change').click(function(){
+                var cid = $(this).attr('data-id');
+                var type = $(this).attr('aa');                 
+                var title = $(this).attr('bb');                 
+                var range = $(this).attr('cc');                 
+                var is_delete = $(this).attr('dd');                 
+                if(type==2){
+                    if(window.confirm('确认将私有标签转化为公有标签？')){
+                        $.ajax({
+                            type: 'post',
+                            url: '/index.php?s=/Admin/Tag/change', 
+                            data: 'id='+cid+'&type='+type+'&title='+title+'&range='+range+'&is_delete='+is_delete, 
+                            dataType: 'json', 
+                            success: function(data) {  
+                                if(data.msg==false){
+                                    alert(data.error);
+                                }else{                            
+                                    alert(data.error);                                 
+                                }                        
+                            },
+                            error: function(data) {                               
+                            }
+                        })
+                    }
+                }               
+            });
+            $('.delete').click(function(){
+                var id = $(this).attr('data-id');
+                var tag = $(this).attr('aa');
+                if(window.confirm('确定要删除吗？')){
+                    location.href = '/index.php?s=/Admin/Tag/delete/id/' + id+'/tag/'+tag;
+                }                
+            });
+        });
+    </script>
+</block>

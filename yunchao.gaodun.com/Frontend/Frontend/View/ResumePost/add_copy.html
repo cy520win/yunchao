@@ -1,0 +1,310 @@
+<extend name="Common:resumepost_frame" />
+<block name="title"><title>高顿实习-发布职位</title></block>
+<block name="right">
+    <div class="col-md-9 margin50">
+        <form id="postForm">
+            <div class="job-posting">
+                <div class="job-posting-title">
+                        复制发布
+                        <span></span>
+                </div>
+                <eq name="view" value="1">
+                <div class="details">
+                    <div class="details-title">
+                        职位信息
+                        <span></span>
+                    </div>
+                    <div class="form-group top-distance col-md-6 no_padding job-drop-box">
+                        <div class="job-description"><span>*</span><p>职位类别</p></div>
+                        <select class="form-control edu_degree validate-require" id="details-1" placeholder="请选择职位类别"
+                                name="category_id" data-placeholder="职位类别不可为空">
+                            <option></option>
+                            <foreach name="list['categoryList']" key="key" item="categoryItem">
+                                <option value="{$key}" <eq name="info.category_id" value="$key">selected
+                            </eq>>{$categoryItem
+                                }</option>
+                            </foreach>
+                        </select>
+                    </div>
+                    <div class="form-group top-distance col-md-6 no_padding job-drop-box">
+                        <div class="job-description"><span>*</span><p>职位名称</p></div>
+                        <input type="text" placeholder="请输入职位名称" data-placeholder="职位名称不可为空"
+                               class="form-control input-border-info margin-left validate-require"
+                               name="title" value="{$info.title}">
+                    </div>
+
+                    <div class="form-group top-distance col-md-6 no_padding job-drop-box cl">
+                        <div class="job-description"><span>*</span><p>实习天数(每周)</p></div>
+                        <select name="week_available" class="form-control edu_degree validate-require" id="details-2"
+                                placeholder="请选择实习天数" data-placeholder="实习天数不可为空">
+                            <option></option>
+                            <foreach name="list['weekList']" key="key" item="weekItem">
+                                <option value="{$key}" <eq name="info.week_available" value="$key">selected
+                            </eq>>{$weekItem}</option>
+                            </foreach>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group top-distance col-md-6 no_padding job-drop-box">
+                        <div class="job-description"><span></span><p>实习名额</p></div>
+                        <input type="text" placeholder="请输入数字" data-placeholder="实习名额不可为空"
+                               class="form-control input-border-info margin-left validate-onlyNumberSp"
+                               name="quota" value="{$info.quota}">
+                    </div>
+
+                    <div class="form-group top-distance col-md-5 no_padding job-drop-box cl">
+                        <div class="job-description"><span>*</span><p>实习地点</p></div>
+                        <input name="city" type="text" class="form-control normal-input detailed-address-city" id="inputTest20"
+                               placeholder="请选择实习地点" data-placeholder="实习地点不可为空" value="{$info.region_name}" readonly
+                               style="margin-bottom: 0px;background-color: #FFFFFF;cursor: pointer">
+                    </div>
+
+                    <div class="form-group top-distance col-md-7 no_padding job-drop-box detailed-address">
+                        <input name="address" type="text" placeholder="请输入详细地址" data-placeholder="详细地址不可为空"
+                               class="form-control input-border-info margin-left validate-require detailed-address-margin"
+                               value="{$info.address}">
+                    </div>
+
+
+                    <div class="col-md-12 top-distance no_padding job-drop-box">
+                        <div class="job-description"><span>*</span><p>职位介绍</p></div>
+                    <textarea placeholder="请输入职位介绍" data-placeholder="职位介绍不可为空"
+                              class="form-control textarea-style col-md-12 no_padding scrollable validate-require"
+                              cols="5"  onKeyUp="javascript:checkWord(this);"
+                              onMouseDown="javascript:checkWord(this);" name="description">{$info.description}</textarea>
+                        <div class="rest-word-area mb col-md-6 fmr14"><span class="rest-word">还可以输入<span
+                                id="wordCheck">1000</span>个字</span></div>
+                    </div>
+
+
+                    <div class="details-title">
+                        用人要求
+                        <span></span>
+                    </div>
+
+                    <div class="form-group top-distance col-md-4 no_padding job-drop-box">
+                        <div class="job-description"><span>*</span><p>学历</p></div>
+                        <select name="education" class="form-control edu_degree validate-require" id="details-2"
+                                placeholder="请选择学历" data-placeholder="学历不可为空">
+                            <option></option>
+                            <foreach name="list['eduList']" key="key" item="eduItem">
+                                <option value="{$key}" <eq name="info.education" value="$key">selected
+                            </eq>>{$eduItem}</option>
+                            </foreach>
+                        </select>
+                    </div>
+                    <div class="form-group top-distance col-md-8 no_padding">
+                        <div class="job-description">
+                          <span>*</span>
+                          <p>专业</p>
+                        </div>
+                        <div class="div-wrap">
+                            <span class="five">最多选5项</span>
+                            <div id="div">
+                                <empty name="majorLi">
+                                    <p>请选择专业</p>
+                                </empty>
+                                <span><i></i></span>
+                                <ul class="major-ul">
+                                    <notempty name="majorLi">
+                                        <foreach name="majorLi" item="mli">
+                                            <li>{$mli}
+                                            <span class="span">×</span>
+                                            <input type="hidden" name="major_wish[]" value="{$key}">
+                                            </li>
+                                        </foreach>
+                                    </notempty>
+                                </ul>
+                            </div>
+                            <div class="error-area dn"><span class="col-md-8 error-info-span">专业不可为空</span></div>
+                            <ul class="list">
+                                <li data-id="0">不限</li>
+                                <foreach name="list['majorList']" key="key" item="majorItem">
+                                    <li data-id="{$key}">{$majorItem}</li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="enterpraise_radio top-distance mb col-md-12 no_padding" id="radio02">
+                        <div class="mr"><span>*</span>毕业年份：</div>
+                        <!--更新多选 2015-09-01-->
+                        <div class="welfare-q we-w ">
+                            <ul id="graduate" data-placeholder="毕业年份不可为空">
+                                <foreach name="graduateList" key="key" item="graduateItem">
+                                    <li data-value="{$key}"
+                                    <if condition="$graduateItem.flag eq 'y'">
+                                        class="active-w" data-type="false"
+                                        <else/>
+                                        data-type="true"
+                                    </if>>
+                                    <span></span><i>{$graduateItem.name}</i>
+                                    </li>
+                                    <if condition="$graduateItem.flag eq 'y'">
+                                        <input type="hidden" name="graduate[]"
+                                               class="graduate" value="{$key}">
+                                    </if>
+                                </foreach>
+                            </ul>
+                        </div>
+                        <!--更新多选 2015-09-01-->
+                    </div>
+                    <div class="details-title">
+                        职位福利
+                        <span></span>
+                    </div>
+                    <div class="form-group top-distance col-md-6 no_padding job-drop-box">
+                        <div class="job-description"><span>*</span><p>日薪</p></div>
+                        <select name="salary_range" class="form-control edu_degree validate-require" id="details-2"
+                                placeholder="请选择薪资" data-placeholder="日薪不可为空">
+                            <option></option>
+                            <foreach name="list['rangeList']" key="key" item="rangeItem">
+                                <option value="{$key}" <eq name="info.salary_range" value="$key">selected
+                            </eq>>{$rangeItem}</option>
+                            </foreach>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group top-distance col-md-6 no_padding job-drop-box">
+                        <div class="job-description"><span></span><p>是否有机会留用</p></div>
+                        <select name="keep_on" class="form-control edu_degree" id="details-2" placeholder="请选择是否留用">
+                            <option></option>
+                            <option value="1" <eq name="info.keep_on" value="1">selected
+                        </eq>>是</option>
+                            <option value="2" <eq name="info.keep_on" value="2">selected
+                        </eq>>否</option>
+                        </select>
+                        <div class="error-area"><span class="col-md-5">
+                                                        &nbsp;</span></div>
+                    </div>
+                    <div class="position-pag-area">
+                        <span class="position-pag-title">职位标签：</span>
+                        <div class="choosen-area" id="chooen-area-list">
+                            <span class="choosen-pag">已选标签(<span class="limit-math">0/10</span>):</span>
+                            <ul class="choosen-pag-area">
+                                {$choosedHtml}
+                            </ul>
+                            <div class="error-info increate-pag marginb10" style="margin-left: 20px">您已添加10个标签了，不能再添加了</div>
+                        </div>
+                        <div class="choose-area">
+                            {$showLiHtml}
+                        </div>
+                    </div>
+
+                    <div class="details-title">
+                        时间设置
+                        <span></span>
+                    </div>
+
+                    <div class="q-time1">
+                        <div class="job-description"><span>*</span><p>企业简历接收时间</p></div>
+                    </div>
+
+                    <div class="q-time2">
+                        <p class="time-two" data-id="1"><span <neq name="info.receive_type" value="2">class="active"</neq> ></span><i>马上收简历</i></p>
+                        <p data-id="2"><span <eq name="info.receive_type" value="2">class="active"</eq> ></span><i>预收时间段</i></p>
+                        <input type="hidden" name="receive_type" class="attend-type-date" id="receive-input" value="{$info.receive_type|default=1}">
+                        <div class="time-right" <eq name="info.receive_type" value="2">style="display:block"</eq> >
+                            <div class="form-group w190 no_padding">
+                                 <input type="text" class="normal-input w190 laydate-icon input-grey-style pad12" name="receive_start" id="accept-start" placeholder="开始日期" value="{$info.receive_start}" <neq name="info.receive_type" value="2">disabled</neq> >
+
+                            </div>
+                            <span class="time-line"></span>
+
+                            <div class="form-group w190 no_padding">
+                                 <input type="text" class="normal-input w190 laydate-icon input-grey-style pad12" name="receive_finish" id="accept-end" placeholder="截止日期" value="{$info.receive_finish}" <neq name="info.receive_type" value="2">disabled</neq> >
+
+                            </div>
+                            <p class="date-tip-accept">{$info.receive_tips}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="q-time1 mat0">
+                        <div class="job-description"><span>*</span><p>期望学生到岗时间</p></div>
+                    </div>
+
+                    <div class="q-time2">
+                        <p class="time-two" data-id="1"><span <neq name="info.attend_type" value="2">class="active"</neq> ></span><i>马上到岗</i></p>
+                        <p data-id="2"><span <eq name="info.attend_type" value="2">class="active"</eq> ></span><i>到岗时间段</i></p>
+                        <input type="hidden" name="attend_type" class="attend-type-date" id="attend-input" value="{$info.attend_type|default=1}">
+                        <div class="time-right" <eq name="info.attend_type" value="2">style="display:block"</eq>>
+                            <div class="form-group w190 no_padding">
+                                <input type="text" class="normal-input w190 laydate-icon input-grey-style pad12" name="attend_start" id="post-start" placeholder="开始日期" value="{$info.attend_start}" <neq name="info.attend_type" value="2">disabled</neq> >
+
+                            </div>
+                            <span class="time-line"></span>
+                            <div class="form-group w190 no_padding">
+                                <input type="text" class="normal-input w190 laydate-icon input-grey-style pad12" name="attend_finish" id="post-end" placeholder="截止日期" value="{$info.attend_finish}" <neq name="info.attend_type" value="2">disabled</neq> >
+
+                            </div>
+                            <p class="date-tip-post">{$info.attend_tips}</p>
+                        </div>
+                    </div>
+
+                    <div class="details-title">
+                        收简历邮箱设置
+                        <span style=" width: 78%;"></span>
+                    </div>
+                    <div class="q-mial">
+                        <p>除<span>{$info.subscribe_email}</span>外，你还可以添加一个邮箱同时收到学生的投递提醒邮件</p>
+                        <input type="text" name="receive_email" id="receive_email" placeholder="填写收简历邮箱，例如：xxx@xxx.com （选填）" value="{$info.receive_email}">
+                        <span class="error-info-span date-tip-email"></span>
+                    </div>
+
+                    <div class="prompt">* 标星内容为必填项目，未填写将无法发布职位。</div>
+
+                    <div class="delivery">
+                        <!--<span class="preview" id="preview">预览</span>-->
+                        <span class="release information-submit-button" id="pt_save">发布</span>
+                    </div>
+                </div>
+                    <else/>
+                    <div class="no-one-perfect">发布职位前需要去完善企业信息</div>
+                    <a class="goto-perfect" href="/Enterprise/index">完善企业信息</a>
+                    </eq>
+            </div>
+        </form>
+
+
+        <!-- RIGHT END -->
+
+    </div>
+    <div class="release-wrap" style="display: none"></div>
+    <div class="release-box release-box-copy-fn" style="display: none ">
+        <h1>提示 <span class="close-button yes"></span></h1>
+        <div class="box-content">
+            <p class="first-p">职位发布成功！</p>
+         <span class="confirm-button no">确定</span>
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/static/js/lazyload-min.js"></script>
+    <script src="__PUBLIC__/static/js/validate.js"></script>
+    <script src="__PUBLIC__/static/js/resume_post_add.js"></script>
+    <script src="__PUBLIC__/static/js/laydate.js"></script>
+    <script src="__PUBLIC__/static/js/position-post.js"></script>
+    <script>
+        laydate.skin('molv');
+        hotcity("inputTest20");//获取热门城市
+        function hotcity(cy){
+            $.ajax({
+                type: "get",
+                url: "/Enterprise/hotcity",
+                async: false,
+                dataType:'json',
+                success: function(msg){
+                    LazyLoad.css(["__PUBLIC__/static/css/cityStyle.css"], function () {
+                        LazyLoad.js(["__PUBLIC__/static/js/cityScript_post.js"], function () {
+                            var test = new citySelector.cityInit(cy,msg);
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+</block>
+

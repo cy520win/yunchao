@@ -1,0 +1,15 @@
+<ul>
+	<foreach name="prize" item="pr">
+	<li data-id="{$pr.pkid}" onclick="editprizeli(this)">
+	<h3>
+	<span>{$pr.period}</span> — 
+	<span>{$pr.description}</span>
+        <if condition="$pre neq true">
+            <span class="edit-add"><span>
+            <i class="fa-pencil-square-o"></i>
+            </span><a href="javascript:;">编辑</a></span>
+        </if>
+	</h3>
+	</li>
+	</foreach>
+</ul>

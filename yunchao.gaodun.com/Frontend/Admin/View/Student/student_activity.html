@@ -1,0 +1,23 @@
+<if condition="$tpl eq true">
+		<div class="activity-div">
+				<div class="col-sm-4">
+					<input type="month" class="form-control-month form-control-period form-active" name="activity_experience[period]" data="period">
+					<span onclick="deldiv(this,4)" class="delbutton">删除</span>
+					<span onclick="saveact(this)" class="delbutton">保存</span>
+					<textarea class="form-control form-active" name="activity_experience[description]" cols="6" rows="5" data="description"></textarea>
+				</div>
+		</div>	
+</if>
+
+<if condition="$tpl eq false">
+<foreach name="active" item="actItem">
+		<div class="activity-div">
+				<div class="col-sm-4">
+					<input type="month" class="form-control-month form-control-period form-active" name="activity_experience[period]" data="period" value="{$actItem.period|ymdTOym=###}">
+					<span onclick="cur4deldiv(this,{$actItem.pkid})" class="delbutton">删除</span>
+					<span onclick="cur4saveact(this,{$actItem.pkid})" class="delbutton">保存</span>
+					<textarea class="form-control form-active" name="activity_experience[description]" cols="6" rows="5" data="description">{$actItem.description}</textarea>
+				</div>
+		</div>	
+</foreach>
+</if>

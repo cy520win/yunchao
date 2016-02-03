@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+body{ background: #f4f4f4;}
+*::-webkit-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+*:-moz-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+*:-ms-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+
+
+.ipad-wrap{ width: 100%; max-width: 1200px; margin: 0 auto; height: auto; overflow: hidden;}
+
+.main-information-wrap{ width: 84%; height: auto;overflow: hidden; border-bottom: 1px solid #e6e6e6; padding: 0 4% 30px; margin: 20px auto; background: #fff;}
+.title-wrap{ width: 100%; height: auto; overflow: hidden;  margin-top: 30px;}
+.title-wrap > .cen-wrap{ width: 100%; float: left; height: auto; overflow: hidden;}
+.title-wrap > .cen-wrap > .center{height: 20px; margin: 0 0 0 115px;}
+.title-wrap > .cen-wrap > .center > span{ display: block; margin-top: 10px; width: 100%; height: 1px; background: #e3e3e3;}
+.title-wrap > .title-left{ width: 115px;font-size: 20px; color: #656565; line-height: 20px; height: 20px; float: left; margin-left: -100%;  }
+
+.main-information-wrap > .edit-information{ width: 715px; height: auto; margin: 30px auto 0;}
+.edit-information >.edit-wrap{ width: 100%; float: left; height: auto; overflow: hidden;}
+.edit-information >.edit-left{ float: left; height: 154px;border-radius: 5px;overflow: hidden;background: #fff;border: 1px solid #cecece;width: 114px;margin-left: -100%;}
+.edit-information >.edit-left >img{width: 114px;height: auto;overflow: hidden;margin: 1px;border-radius: 5px; display: block;}
+.edit-information >.edit-wrap > .edit-right{ margin-left: 150px;}
+.edit-right >p.p1{ font-size: 16px; margin-top: 2px; line-height: 16px; color: #656565;}
+.edit-right >p >span{ padding: 0 5px;} 
+.edit-right >p.p2{ font-size: 16px; margin-top: 6px; line-height: 24px; color: #656565;}   
+.edit-right >p.p3 { font-size: 16px; line-height: 16px; margin-top: 12px; color: #656565;}    
+.edit-right >p.p4 { font-size: 14px; line-height: 14px; margin-top: 12px; color: #a5a5a5;}    
+
+.font-wrap{ width: 710px; margin: 0 auto; height: auto; overflow: hidden;}
+.font-wrap >p.p1{ font-size: 16px; line-height: 16px; color: #656565; margin-top: 25px;}
+.font-wrap >p.p1 >span{ color: #a5a5a5;}
+.font-wrap >p.p2{  font-size: 16px; color: #a5a5a5; line-height: 16px; margin-top: 15px;}
+.font-wrap >p.p3{  font-size: 16px; color: #a5a5a5; line-height: 16px; margin-top: 8px;}
+.many{ width: 100%; height: auto; margin-top: 15px; overflow: hidden; font-size: 16px; line-height: 24px; color: #a5a5a5;}
+.many > p.p4{ width: 3%; float: left; }
+.many > p.p5{ width: 97%; float: left;}
+
+.font-wrap >p.p6 { font-size: 16px; margin-top: 15px; color: #656565; line-height: 24px;}
+
+.main-intention-wrap{width: 84%; height: auto;overflow: hidden; border-bottom: 1px solid #e6e6e6; padding: 0 4% 30px; margin: 0 auto 50px; background: #fff;}
+.main-intention-wrap >.edit-intention{ width: 83%; height: auto; overflow: hidden; margin: 20px auto 0;}
+.edit-intention >h5{ margin: 0; padding: 0; font-size: 16px; line-height: 16px; width: 100%; font-weight: normal;}
+.edit-intention >p{ width: 50%; float: left;font-size: 16px; line-height: 16px; margin-top: 20px;}
+
+
+/*  手机  */
+.phone-wrap{ display: none;}
+.phone-wrap >img { width: 78px; height: 78px; border-radius: 50%; display: block; margin: 12px auto;}
+.basic-wrap{ width: 80%; padding: 0 5% 15px; border-radius: 5px;  -webkit-border-radius: 5px;box-shadow: 0px 2px 2px 0px rgb( 221, 221, 221 ); margin: 0 auto 12px; height: auto; overflow: hidden; background: #fff;}
+.basic-wrap >.title{ width: 100%; position: relative; margin-top: 12px; border-bottom: 1px solid #dfdfdf; margin-bottom: 12px; font-size: 16px; height: 28px; line-height: 28px; color: #656565;}
+.c-e-x{ width: 58px; height: 21px; border: 1px solid #63cdff; border-radius: 3px; position: absolute; right: 0; top: 0;}
+.c-e-x >a{ width: 28px; color: #63cdff; font-size: 10px; background: #fff; float: left; margin-top: 1px; height: 19px;display: block; line-height: 19px; text-align: center; }
+.c-e-x >a:first-child{ margin-left: 1px; font-family: "Microsoft Yahei"; border-bottom-left-radius: 3px; border-top-left-radius: 3px;}
+.c-e-x >a:last-child{ border-bottom-right-radius: 3px; border-top-right-radius: 3px;}
+.c-e-x >a.active{ background: #63cdff;  color: #fff;}
+
+
+.basic-wrap-w{ width: 100%; font-size: 14px; line-height: 24px; height: auto; margin-top:1px; overflow: hidden;}
+.basic-wrap-w >.wrap-w-l{ width: 30%; height: auto; color: #a5a5a5; float: left;}
+.basic-wrap-w >.wrap-w-r{ width: 70%; word-break: break-all; height: auto; color: #656565; float: left;}
+.dotted-line{ width: 100%; height: 0px; margin: 12px 0; border-bottom: 1px dashed  #EDEDED; border-top:1px dashed #fcfcfc;}
+.basic-wrap >p.p1-phone{ width: 100%; font-size: 14px;  line-height: 24px; color: #656565;}
+.basic-wrap >span.span1-phone{ font-size: 14px; display: block; margin-top: 8px; line-height: 24px; color: #a5a5a5;}
+.lh-phone{ line-height: 24px !important;}
+.big-l{ width: 39% !important;}
+.big-r{ width: 61% !important;}
+.basic-l{ width: 78%; float: left; overflow: hidden;   }
+.basic-r{  width: 20%; float: left; margin-right: 2%; overflow: hidden;}
+
+.basic-r >img{ max-width: 100%; }
+.w36{ width: 36% !important; }
+.w64{ width: 64% !important; }
+
+.mat20{margin-top:20px;}
+/* 手机邀请 */
+.h{ width: 100%; height: 60px; overflow: hidden; }
+.invitation-wrap-phone{ width: 100%; z-index: 9; position: fixed; left: 0; bottom: 0; height: 54px; background: #efefef; }
+.invitation-wrap-phone >a{ width: 90%; border-radius: 5px; font-size: 16px; color: #fff; display: block; height: 40px; margin: 7px auto; background: #63cdff; text-align: center; line-height: 40px;}
+
+
+.invitation-ipad-wrap{ width: 92%; height: auto; margin: 10px auto -15px; overflow: hidden; }
+.invitation-ipad-wrap >div{ width: 100px; height: 35px; float: right; border-radius: 5px;}
+.c-e-p{ border: 1px solid #63cdff; overflow: hidden; margin-right: 10px;}
+.c-e-p >a{ display: block; width: 49px; margin-top: 1px; height: 33px; line-height: 33px; font-size: 16px; float: left; background: #fff; text-align: center; color: #63cdff; }
+.c-e-p >a.active{ background: #63cdff; color: #fff; }
+.c-e-p >a:first-child{ margin-left: 1px; font-family: "Microsoft Yahei";border-bottom-left-radius: 5px; border-top-left-radius: 5px; }
+.c-e-p >a:last-child{ border-bottom-right-radius: 5px; border-top-right-radius: 5px; }
+
+.invitation-no{ border: 1px solid #b2b2b2; font-size: 16px; color: #b2b2b2; line-height: 33px;}
+.invitation-no >img{ margin-left: 10px; margin-right: 2px; }
+
+.invitation-ing{ width: 90px !important; cursor: pointer; border: 1px solid #63cdff; font-size: 16px; color: #63cdff; line-height: 33px;}
+.invitation-ing >img{ margin-left: 8px; margin-right: 10px; }
+
+
+
+
+
+
+
+@media all and (min-width:992px) {
+	
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+      .main-information-wrap > .edit-information{ width: 640px;}
+      .main-intention-wrap >.edit-intention{width: 100%;}
+	  .font-wrap{ width: 580px;}
+
+}
+
+@media ( max-width: 767px){
+	.phone-wrap{ display: block;}
+	.ipad-wrap{ display: none;}
+}
+
+@media ( max-width: 414px){
+}
+
+@media ( max-width: 320px){
+}
+
+
+
+
+

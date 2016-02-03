@@ -1,0 +1,582 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿教育</title></block>
+<block name="right-first">
+<div class="row">
+<div class="col-md-12"><h3 style="margin:0;margin-bottom:20px;">增加新学员</h3></div>
+</div>
+</block>
+<block name="right-main">
+
+<form role="form" class="form-horizontal" action="/index.php?s=/Admin/Student/save" method="post" id="addstuform">
+<div class="col-md-12">
+					
+					<ul class="nav nav-tabs nav-tabs-justified">
+						<li class="active">
+							<a href="#home-3" data-toggle="tab">
+								<span class="visible-xs"><i class="fa-home"></i></span>
+								<span class="hidden-xs">个人基本信息</span>
+							</a>
+						</li>
+						<li>
+<!-- 							<a href="#profile-3" data-toggle="tab">
+								<span class="visible-xs"><i class="fa-user"></i></span>
+								<span class="hidden-xs">个人经历</span>
+							</a> -->
+						</li>
+						<li>
+<!-- 							<a href="#messages-3" data-toggle="tab">
+								<span class="visible-xs"><i class="fa-envelope-o"></i></span>
+								<span class="hidden-xs">个人期望</span>
+							</a> -->
+						</li>
+				
+					</ul>
+					
+					<div class="tab-content">
+						<div class="tab-pane active" id="home-3">		
+        <div class="row">
+				<div class="col-sm-12">
+					
+					<div class="panel panel-default">
+					
+						<div class="panel-body">
+							
+							<div class="form-horizontal">
+						
+                            <div class="form-group">
+									<label class="col-sm-2 control-label" >姓名：<span style="color:red">*</span></label>
+									
+									<div class="col-sm-2">
+										<input type="text" class="form-control"  name="student[name]" required>
+									</div>
+								</div>
+				
+						<div class="form-group">
+									<label class="col-sm-2 control-label" >性别：</label>
+									
+								<div class="col-sm-2">
+										<select class="form-control" name="student[gender]">
+											<option value="1">男</option>
+											<option value="2">女</option>
+										</select>
+									</div>
+								</div>
+							<div class="form-group">
+									<label class="col-sm-2 control-label" >最高学历：</label>
+									<div class="col-sm-2">
+										<select class="form-control" name="student[education]">
+												<foreach name="degree" item="majorItem">
+													<option value="{$key}">{$majorItem}</option>
+												</foreach>
+										</select>
+									</div>
+							</div>
+							<div class="form-group">
+									<label class="col-sm-2 control-label" >专业分类：</label>
+									<div class="col-sm-2">
+										<select class="form-control" name="student[major_type]">
+												<foreach name="majortype" item="majorItem">
+													<option value="{$key}">{$majorItem}</option>
+												</foreach>
+										</select>
+									</div>
+							</div>
+							<div class="form-group">
+									<label class="col-sm-2 control-label" >就读专业：</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control"  name="student[detail_major]">
+									</div>
+							</div>
+							<div class="form-group">
+									<label class="col-sm-2 control-label" >出生日期：</label>
+									<div class="col-sm-3">
+										<input type="date" class="form-control"  name="student[birth_date]">
+									</div>
+							</div>
+							<div class="form-group">
+									<label class="col-sm-2 control-label" >毕业年份：</label>
+									<div class="col-sm-2">
+										<select class="form-control" name="student[graduate_year]">
+												<foreach name="grade" item="gradeItem">
+													<option value="{$key}">{$gradeItem}</option>
+												</foreach>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="field-5">邮箱：<span style="color:red">*</span></label>
+									
+								<div class="col-sm-3">
+										<input type="email" class="form-control"  name="student[login_email]" required >
+									</div>
+								</div>		
+								
+						<div class="form-group">
+									<label class="col-sm-2 control-label" >邮箱认证：</label>
+									
+								<div class="col-sm-2">
+										<select class="form-control" name="student[email_verify]">
+											<option value="1">已验证</option>
+											<option value="2" selected="true">未验证</option>
+										</select>
+									</div>
+								</div>
+									<div class="form-group">
+									<label class="col-sm-2 control-label" >就读学校：</label>
+									
+									<div class="col-sm-2">
+										<input type="text" class="form-control"  name="student[graduate_school]">
+									</div>
+								</div>
+								
+                                <div class="form-group">
+									<label class="col-sm-2 control-label" for="field-4">学员照片：</label>
+									<div class="user-image col-sm-2">
+									<a href="javascript:;">
+										<img src="" class="img-responsive img-rounded headpic" alt="照片显示区域" />
+										<input type="hidden" name="student[avatar]" class="heapcic-2">
+									</a>
+								</div>
+									
+									<div class="col-sm-4">
+										<input type="file" class="form-control" id="field-4" onchange="upimageuser()" name="headpic">
+									</div>
+								</div>
+						
+                                        <div class="form-group">
+									<label class="col-sm-2 control-label" >手机号：</label>
+								
+									<div class="col-sm-3">
+										<input type="textarea" class="form-control"  name="student[contact_mobile]">
+									</div>
+								</div>
+							<div class="form-group">
+									<label class="col-sm-2 control-label" >政治面貌：</label>
+									<div class="col-sm-3">
+										<select class="form-control" name="student[politics_status]">
+								        <option value="1">党员</option>
+								        <option value="2" selected="true">其他</option>
+										</select>
+									</div>
+								</div>
+                    
+							</div>
+							                 	
+						</div>
+					</div>
+					
+				</div>
+			</div>
+</div>
+
+<!-- 第二部分开始 -->
+		<div class="tab-pane" id="profile-3">
+			<div class="row">
+				<div class="col-sm-12">
+				<div class="panel panel-default">
+				<div class="panel-body">
+				<div class="form-horizontal" id="maintext">
+
+					<!-- 第二次模板开始 -->
+
+					<div class="form-group" id="education-div">
+							<h3><label class="col-sm-12 control-label" >教育背景&nbsp;&nbsp;
+							<span class="student-add" onclick="addedu(this);">添加</span>
+							</label></h3>
+							<div class="education-div">
+								<div class="col-sm-4">
+										<input type="month" class="form-control-month" name="education[1][start_time]">
+										<input type="month" class="form-control-month" name="education[1][finish_time]">
+								</div>
+								<div class="col-sm-4">
+										<input type="text" class="form-control-month form-control-school" name="education[1][school_name]" placeholder="输入学校名">
+								</div>	
+								<div class="col-sm-3">
+										<input type="text" class="form-control-month form-control-major" name="education[1][major_title]" placeholder="输入专业">
+								</div>
+								<div class="col-sm-1">
+										<span onclick="deldiv(this,1)" class="delbutton">删除</span>
+								</div>
+							</div>
+					</div>
+					
+					<div class="form-group" id="prize-div">
+							<h3><label class="col-sm-12 control-label" >获奖荣誉&nbsp;&nbsp;
+							<span class="student-add" onclick="addprize(this);">添加</span>
+							</label></h3>
+							<div class="prize-div">
+								<div class="col-sm-4">
+										<input type="month" class="form-control-month form-control-period" name="prize_experience[period]"><span onclick="deldiv(this,2)" class="delbutton">删除</span>
+										<textarea class="form-control" name="prize_experience[description]" cols="6" rows="5"></textarea>
+								</div>							
+							</div>
+	
+					</div>
+
+					<div class="form-group" id="practice-div">
+							<h3><label class="col-sm-12 control-label" >实习经历&nbsp;&nbsp;
+							<span class="student-add" onclick="addpractice(this);">添加</span>
+							</label></h3>
+							<div class="practice-div">
+								<div class="col-sm-4">
+										<input type="month" class="form-control-month" name="practice[start_time]">
+										<input type="month" class="form-control-month" name="practice[finish_time]">
+								</div>
+								<div class="col-sm-4">
+										<input type="text" class="form-control-month form-control-school" name="practice[organization]" placeholder="输入企业名">
+								</div>	
+								<div class="col-sm-3">
+										<input type="text" class="form-control-month form-control-major" name="practice[quarters]" placeholder="输入岗位名称">
+								</div>								
+								<div class="col-sm-1">
+										<span onclick="deldiv(this,3)" class="delbutton">删除</span>
+								</div>	
+								<div class="col-sm-8 practice-content">
+										<textarea class="form-control" name="practice[content]" cols="6" rows="5"></textarea>
+								</div>
+							</div>
+					</div>
+
+					<div class="form-group" id="activity-div">
+							<h3><label class="col-sm-12 control-label" >课外活动&nbsp;&nbsp;
+							<span class="student-add" onclick="addactivity(this);">添加</span>
+							</label></h3>
+							<div class="activity-div">
+								<div class="col-sm-4">
+									<input type="month" class="form-control-month form-control-period" name="activity_experience[period]"><span onclick="deldiv(this,4)" class="delbutton">删除</span>
+									<textarea class="form-control" name="activity_experience[description]" cols="6" rows="5"></textarea>
+								</div>
+							</div>	
+					</div>
+
+					<div class="form-group" id="schooljob-div">
+							<h3><label class="col-sm-12 control-label" >校内职务&nbsp;&nbsp;
+							<span class="student-add" onclick="addschooljob(this);">添加</span>
+							</label></h3>
+							<div class="col-sm-12" style="display:none" >							
+								<div class="col-sm-3" id="schooljob-option">
+									<select name="job_experience[job_id]" class="form-control">
+										<foreach name="schooljob" item="schooljobItem">
+											<option value="{$schooljobItem.pkid}">{$schooljobItem.title}</option>
+										</foreach>
+									</select>
+								</div>
+							</div>
+							<div class="schooljob-div">
+								<div class="col-sm-4">
+										<input type="month" class="form-control-month" name="job_experience[start_time]">
+										<input type="month" class="form-control-month" name="job_experience[finish_time]">
+								</div>
+								<div class="col-sm-3" style="padding-left:0;">
+									<select name="job_experience[job_id]" class="form-control">
+										<foreach name="schooljob" item="schooljobItem">
+											<option value="{$schooljobItem.pkid}">{$schooljobItem.title}</option>
+										</foreach>
+									</select>
+								</div>								
+								<div class="col-sm-1">
+										<span onclick="deldiv(this,5)" class="delbutton">删除</span>
+								</div>	
+								<div class="col-sm-7 schooljob-text">
+										<textarea class="form-control" name="job_experience[content]" cols="6" rows="5"></textarea>
+								</div>	
+							</div>
+					</div>
+
+					<div class="form-group" id="card-div">
+							<h3><label class="col-sm-12 control-label" >证书&nbsp;&nbsp;
+							<span class="student-add" onclick="addcard(this);">添加</span>
+							</label></h3>
+							<div class="col-sm-12" id="card-option" style="display:none">
+								<select class="form-control" id="major-type" onchange="majorcard(this)">
+										<option value="">请选择</option>
+										<foreach name="majortype" item="typeItem">
+											<option value="{$key}">{$typeItem}</option>
+										</foreach>			
+								</select>
+							</div>
+							<div class="card-div">
+								<div class="col-sm-12">
+									<div class="col-sm-3">
+										<input type="month" class="form-control-month form-control-period" name="student_certificate[finish_time]">
+									</div>
+									<div class="col-sm-3">
+										<select class="form-control" id="major-type" onchange="majorcard(this)">
+										<option value="">请选择</option>
+										<foreach name="majortype" item="typeItem">
+											<option value="{$key}">{$typeItem}</option>
+										</foreach>			
+										</select>
+									</div>
+									<div class="col-sm-3" >
+									<select class="form-control col-sm-3" name="student_certificate[certificate_id]" id="major-card">	
+									</select>
+									</div>
+									<div class="col-sm-2">
+									<select class="form-control col-sm-3" name="student_certificate[status]">
+												<option value="1">在读</option>
+												<option value="2">通过</option>	
+									</select>
+									</div>
+									<div class="col-sm-1">
+											<span onclick="deldiv(this,6)" class="delbutton">删除</span>
+									</div>
+								</div>
+							</div>	
+					</div>
+					<!-- 第二次模板结束 -->
+				</div>               	
+				</div>
+				</div>
+				</div>
+			</div>
+			<style>
+				#maintext h3>label{text-align: left;padding-bottom: 10px;padding-top: 0;margin-top: 0;float: left;font-size: 15px;}
+				#maintext .form-control-month{line-height: 1.2;height: 28px;margin-top: 5px;}
+				#maintext .form-control-school{width: 100%;}
+				#maintext .student-add{font-size: 12px;cursor: pointer;color: #95cd62;}
+				#maintext .form-control-period{margin-bottom: 10px;margin-top: 5px;}
+				#maintext .schooljob-text{margin-top: 10px;clear: both}
+				#maintext .schooljob-div{clear: both}
+				#maintext textarea{resize:none;width: 280px;}
+				#maintext .education-div{clear: both;display: block;height: 33px;}
+				#maintext .practice-div{clear: both;display: block;}
+				#maintext .delbutton{line-height: 1.2;color: #95cd62;display: inline-block;cursor: pointer;float: right;}
+			</style>
+		</div>
+<!-- 第二部分结束 -->
+
+	<div class="tab-pane" id="messages-3">
+							
+        <div class="row">
+				<div class="col-sm-12">
+					
+					<div class="panel panel-default">
+				    <div class="form-horizontal">
+						<div class="panel-body">					
+						<div class="form-group">
+							<label class="col-sm-2 control-label" >期望实习城市：</label>	
+								<div class="col-sm-2">
+										<select class="form-control" onchange="citychild(this)">
+										<option value="">请选择</option>
+										<foreach name="city" item="cityItem">
+											<option value="{$cityItem.region_id}">{$cityItem.region_name}</option>
+										</foreach>
+										</select>
+								</div>
+								<div class="col-sm-2">
+										<select class="form-control" name="post_subscribe[expect_city]" id="city-child">
+										</select>									
+								</div>	
+						</div>
+
+					  	<div class="form-group">
+							<label class="col-sm-2 control-label" >每周可实习天数：</label>
+									<div class="col-sm-2">
+										<select class="form-control" name="post_subscribe[week_available]">
+												<foreach name="workday" item="dayItem">
+													<option value="{$key}">{$dayItem}</option>
+												</foreach>
+										</select>
+									</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label" >期待日薪：</label>
+									<div class="col-sm-2">
+										<select class="form-control" name="post_subscribe[salary_range]">
+												<foreach name="salary" item="salaryItem">
+													<option value="{$key}">{$salaryItem}</option>
+												</foreach>
+										</select>
+									</div>
+						</div>
+
+						<div class="form-group">
+								<label class="col-sm-2 control-label" >期望实习岗位：</label>
+								<div class="col-sm-2">
+										<select class="form-control" name="post_subscribe[expect_cateory]">
+													<foreach name="postcate" item="postcateItem">
+														<option value="{$postcateItem.pkid}">{$postcateItem.title}</option>
+													</foreach>
+										</select>
+								</div>
+						</div>  
+
+						<div class="form-group">
+								<label class="col-sm-2 control-label" >可实习时间：</label>
+								<div class="col-sm-2">
+										<input type="date" class="form-control"  value="" name="post_subscribe[period_start]">
+								</div>
+								<label class="col-sm-1 control-label"  style="text-align:center;">至</label>
+								<div class="col-sm-2">
+										<input type="date" class="form-control"  value="" name="post_subscribe[period_finish]">
+								</div>
+						</div>
+
+						<div class="form-group">
+								<label class="col-sm-2 control-label" >公司规模：</label>
+								<div class="col-sm-2">
+										<select class="form-control" name="post_subscribe[scale_id]">
+													<foreach name="scale" item="scaleItem">
+														<option value="{$scaleItem.pkid}">{$scaleItem.title}</option>
+													</foreach>
+										</select>
+								</div>
+						</div> 
+
+						<div class="form-group">
+								<label class="col-sm-2 control-label" >公司行业：</label>
+								<div class="col-sm-2">
+										<select class="form-control" name="post_subscribe[industry_id]">
+													<foreach name="industry" item="industryItem">
+														<option value="{$industry.pkid}">{$industryItem.title}</option>
+													</foreach>
+										</select>
+								</div>
+						</div> 
+	   	
+					</div>
+                     </div>
+					</div>
+				</div>
+			</div>
+			
+					
+						</div>
+				
+					</div>
+					
+					
+				</div>
+</block>
+<block name="right-second">
+	<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+						<div role="form" class="form-horizontal">
+                        <div class="form-group" style="padding-top:10px;">
+                           <div class="col-sm-12" style="margin:auto text-align:center;">
+                           <div class="container" style="width:145px;">
+                                <button type="submit" class="btn btn-turquoise">提交</button>                                 
+                                <a href="javascript:history.back(-1);" class="btn btn-red">返回</a>  
+                                </div>
+                            </div>
+                        </div>
+						</div>               	
+						</div>
+					</div>
+				</div>
+		</div>
+		</form>
+</block>
+<block name="script">
+<script src="__PUBLIC__/static/js/ajaxfileupload.js"></script>
+<script src="__PUBLIC__/static/js/admin/ajaxup.js"></script>
+<script>
+function addedu(obj){
+	var div = $(obj).parents('#education-div');
+	var len	 = $(div).find('.education-div').length;
+	var str  = '<div class="education-div"><div class="col-sm-4"><input type="month" class="form-control-month" name="education['+len+'][start_time]"><input type="month" class="form-control-month" name="education['+len+'][finish_time]"></div><div class="col-sm-4"><input type="text" class="form-control-month form-control-school" name="education['+len+'][school_name]" placeholder="输入学校名"></div>	<div class="col-sm-3"><input type="text" class="form-control-month form-control-major" name="education['+len+'][major_title]" placeholder="输入专业"></div><div class="col-sm-1"><span onclick="javascript:deldiv(this,1)" class="delbutton">删除</span></div></div>';
+	$(div).append(str);
+}
+
+function addprize(obj){
+	var div = $(obj).parents('#prize-div');
+	var len	 = $(div).find('.prize-div').length;
+	var str  = '<div class="prize-div"><div class="col-sm-4"><input type="month" class="form-control-month form-control-period" name="prize_experience['+len+'][period]"><span onclick="deldiv(this,2)" class="delbutton">删除</span><textarea class="form-control" name="prize_experience['+len+'][description]" cols="6" rows="5"></textarea></div></div>';
+	$(div).append(str);
+}
+
+function addpractice(obj){
+	var div = $(obj).parents('#practice-div');
+	var len	 = $(div).find('.practice-div').length;
+	var str  = '<div class="practice-div"><div class="col-sm-4"><input type="month" class="form-control-month" name="practice['+len+'][start_time]"><input type="month" class="form-control-month" name="practice['+len+'][finish_time]"></div><div class="col-sm-4"><input type="text" class="form-control-month form-control-school" name="practice['+len+'][organization]" placeholder="输入企业名"></div><div class="col-sm-3"><input type="text" class="form-control-month form-control-major" name="practice['+len+'][quarters]" placeholder="输入岗位名称"></div><div class="col-sm-1"><span onclick="deldiv(this,3)" class="delbutton">删除</span></div><div class="col-sm-8 practice-content"><textarea class="form-control" name="practice[content]" cols="6" rows="5"></textarea></div></div>';
+	$(div).append(str);	
+}
+
+function addactivity(obj){
+	var div = $(obj).parents('#activity-div');
+	var len	 = $(div).find('.activity-div').length;
+	var str  = '<div class="activity-div"><div class="col-sm-4"><input type="month" class="form-control-month form-control-period" name="activity_experience['+len+'][period]"><span onclick="deldiv(this,4)" class="delbutton">删除</span><textarea class="form-control" name="activity_experience['+len+'][description]" cols="6" rows="5"></textarea></div></div>';
+	$(div).append(str);	
+}
+
+function addschooljob(obj){
+	var div = $(obj).parents('#schooljob-div');
+	var len	 = $(div).find('.schooljob-div').length;
+	var select = $('#schooljob-option').html();
+	var str  = '<div class="schooljob-div"><div class="col-sm-4"><input type="month" class="form-control-month" name="job_experience['+len+'][start_time]"><input type="month" class="form-control-month" name="job_experience['+len+'][finish_time]"></div><div class="col-sm-3">'+select+'</div><div class="col-sm-1"><span onclick="deldiv(this,5)" class="delbutton">删除</span></div><div class="col-sm-7 schooljob-text"><textarea class="form-control" name="job_experience['+len+'][content]" cols="6" rows="5"></textarea></div></div>';
+	$(div).append(str);		
+}
+
+function addcard(obj){
+	var div = $(obj).parents('#card-div');
+	var len	 = $(div).find('.card-div').length;
+	var select = $('#card-option').html();
+	var str  = '<div class="card-div"><div class="col-sm-12"><div class="col-sm-3"><input type="month" class="form-control-month form-control-period" name="student_certificate['+len+'][finish_time]"></div><div class="col-sm-3">'+select+'</div><div class="col-sm-3" ><select class="form-control col-sm-3" name="student_certificate['+len+'][certificate_id]" id="major-card"></select></div><div class="col-sm-2"><select class="form-control col-sm-3" name="student_certificate['+len+'][status]"><option value="1">在读</option><option value="2">通过</option></select></div><div class="col-sm-1"><span onclick="deldiv(this,6)" class="delbutton">删除</span></div></div></div>';
+	$(div).append(str);		
+}
+
+function deldiv(obj,id){
+	if(id==1){
+		$(obj).parents('.education-div').remove();
+	}
+	if(id==2){
+		$(obj).parents('.prize-div').remove();
+	}
+	if(id==3){
+		$(obj).parents('.practice-div').remove();
+	}
+	if(id==4){
+		$(obj).parents('.activity-div').remove();
+	}
+	if(id==5){
+		$(obj).parents('.schooljob-div').remove();
+	}
+	if(id==6){
+		$(obj).parents('.card-div').remove();
+	}
+}
+
+function majorcard(obj){
+	var url = "/index.php?s=/Admin/Certificate/getMajorCard";
+	var data = {'id':$(obj).val()}
+	$.post(url,data,function(data){
+			$(obj).parent().next().find('select').html(data.data);
+			return;
+	},'json')
+}
+
+function citychild(obj){
+	var url = "/index.php?s=/Admin/Student/getCity";
+	var data = {'id':$(obj).val()}
+	$.post(url,data,function(data){
+			$('#city-child').html(data.data);
+			return;
+	},'json')
+}
+
+	$(function(){
+		$('#addstuform').submit(function(){
+			var bool = true;
+			$.ajax({
+				   type: "post",
+				   async:false,
+				   url: "/index.php?s=/Admin/Student/checkMail",
+				   dataType:"json",
+				   data: {'mail':$('input[name=login_email]').val()},
+				   success: function(data){
+						if(data==false){
+							$('input[name=login_email]').css('border','1px solid #ffcc00');
+							bool = false;
+						}
+				   },
+				   error:function(){}
+				});
+				return bool;
+		})
+	})
+</script>
+</block>

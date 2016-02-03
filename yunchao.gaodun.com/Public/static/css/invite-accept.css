@@ -1,0 +1,20 @@
+@charset "utf-8";
+/*待处理简历*/
+.treat-resume-header{height: 40px; background: #7de0ec; margin: 0 auto -30px; clear:both; overflow: hidden;}
+.treat-resume-list > .list-left{width:76%;}
+.treat-resume-header >p{float:left; text-align: center; height: 40px; line-height: 40px; font-size: 16px; color: #ffffff;}
+.treat-resume-header >p.p1{ width:13%;padding-left:3%;}
+.treat-resume-header >p.p2{ width:20%; padding-left:2%;}
+.treat-resume-header >p.p3{ width:15%; margin-left: 1%;}
+.treat-resume-header >p.p4{ width:14%;}
+.treat-resume-header >p.p5{ width:22%;}
+.treat-resume-list > .list-left >.student{padding-left:0px;width:18%;}
+.treat-resume-list > .list-left >.name{text-align:center;width:25%;overflow:hidden;}
+.treat-resume-list > .list-left >.accept{width:21%;}
+.treat-resume-list > .list-left >.read{width:16%;}
+.treat-resume-list > .list-left >.date{width:19%;}
+.treat-resume-list > .list-right{width:24%;}
+.list-right >span.first-ms{margin-left:18px;}
+.treat-resume-list > .list-left >.read >a{font-size:14px;font-weight: normal;}
+
+                 

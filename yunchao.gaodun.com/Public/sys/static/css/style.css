@@ -1,0 +1,88 @@
+body{
+font-family: "微软雅黑";
+font-size:14px;
+    font-weight: normal;
+
+
+}
+.page-body.skin-white .sidebar-menu .main-menu li.has-sub > a:before{
+
+color:black;
+
+}
+.sidebar-menu.fixed .sidebar-menu-inner{position: static;}
+.settings-pane .user-info .user-image, .settings-pane .user-info .user-details{
+-webkit-display:table-cell;
+-moz-display:table-cell;
+
+display:table-cell;
+
+}
+.sidebar-menu{
+width:260px;
+
+}
+
+.sidebar-menu .logo-env{
+padding:24px 45px;
+
+}
+
+.sidebar-menu .logo-env .settings-icon a i{
+
+line-height: 30px;
+    font-size: 18px;
+
+}
+.uk-nestable-item{
+
+line-height:36px;
+
+}
+.list-label{
+margin-left:15px;
+
+
+}
+.list-label-add{
+height:100%;
+display:inline-block;
+float:right;
+margin-top:2px;
+padding-right:15px;
+    
+}
+.list-label-add ul li{
+float:left;
+margin-left:8px;
+
+}
+.user-info-navbar .user-info-menu > li > a .badge{font-size: 9px}
+.span-info{color: red;display: inline-block;}
+.hd{display: inline-block;}
+.search-member-mail{padding-left: 0;}
+.option-pad{padding-left: 2px;padding-right: 2px;}
+#search-table-member{height: 450px;overflow-y:scroll;overflow-x:hidden; }
+.user-info-navbar{margin-bottom: 15px;}
+.page-container .main-content{padding: 15px;padding-top: 30px;}
+footer.main-footer{margin-left: 0;margin-right: 0;padding: 20px 0;}
+.table-recom-list a:hover{text-decoration: underline;}
+.remark-span,.remove-span{color: #cc3f44;border-bottom: 1px solid #cc3f44;cursor: pointer;}
+.recruit-page ul{float: right;}
+.recruit-depart{float: left;width: 20%;}
+#opt-depart{width: 70%;float: left;padding: 5px 0;}
+.hot-rank{float: right;text-align: right;}
+.depart-info{font-size: 12px;margin-left: 30px;}
+.error-border{border: 1px solid rgb(255, 204, 0);}
+td.msg-content{width:200px;height: 30px;}
+.info-content{margin:40px auto 100px auto;float:none;border:2px solid #f5f5f5;padding: 40px 10px;}
+.info-label{text-align: right;}
+.info-title{border-bottom:1px solid #f5f5f5;}
+.depart-info{font-size: 12px;margin-left: 30px;}
+.panel-title-contact{padding: 0;margin: 0;float: left;margin-left: 20px;font-size: 17px;}
+.panel-title-contact a{text-decoration: underline;}
+.opt-category-area{width: 40%;}
+#opt-cate,#opt-hot{padding:5px 12px;}
+#recurit-btn-winter{margin-bottom: 4px;}
+.panel-title-join{margin-left: 20px;text-decoration: underline;}
+.panel .panel-heading > .panel-title > a.panel-active-span{color: #95cd62}

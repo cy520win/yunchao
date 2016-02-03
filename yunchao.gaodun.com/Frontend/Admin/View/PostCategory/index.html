@@ -1,0 +1,166 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+<div id="less-classify" class="col-md-12">
+		<div class="panel" id="class-panel">	
+		<div class="panel-heading">
+				<h3 class="panel-title title-category">岗位分类 <a href="javascript:addonecate();" id="new-cate" class="btn btn-red">新增一级分类<a/><a href="/index.php?s=/Admin/PostCategory/english" id="new-cate-eng" >设置英文名称<a/></h3>
+		</div>
+
+					<notempty name="cate" >
+							<foreach name="cate" item="cateItem">
+							<!-- one -->
+								<div class="class-one" item="{$key}" ><div class="class-box"><span class="open-cate" onclick="opencate(this)">+</span><div class="class-title" >{$cateItem.title}</div><div class="class-modify"><span class="list-english">{$cateItem.title_en}</span><span onclick="addtwocate({$key},{$cateItem.pkid},this)" class="add-span">新增分类</span><span onclick="upcate(this)" class="mod-span">修改</span><span onclick="delcate(1,this)" class="del-span">删除</span></div><input type="hidden" name="cate[{$key}]"><input type="hidden" class="post" value="{$cateItem.pkid}"><input type="hidden" class="parent" value="{$cateItem.parent_id}"></div>
+							<!-- two -->
+								
+								<foreach name="cateItem.second" item="secondItem" key="tkey">
+									<div class="class-two"><div class="class-box class-box-one"><div class="class-title class-title-one">{$secondItem.title}</div><div class="class-modify"><span class="list-english">{$secondItem.title_en}</span><span onclick="addthreecate({$key},{$tkey},this,{$secondItem.pkid})" class="add-span">新增分类</span><span onclick="upcate(this)" class="mod-span">修改</span><span onclick="delcate(2,this)" class="del-span">删除</span></div><input type="hidden" name="cate[{$key}][{$tkey}]"><input type="hidden" class="post" value="{$secondItem.pkid}"><input type="hidden" class="parent" value="{$secondItem.parent_id}"></div>
+
+							<!-- three -->
+										<foreach name="secondItem.second" item="thirdItem" key="ykey">
+											<div class="class-box class-box-two"><div class="class-title class-title-one">{$thirdItem.title}</div><div class="class-modify"><span class="list-english">{$thirdItem.title_en}</span><span onclick="upcate(this)" class="mod-span">修改</span><span onclick="delcate(3,this)" class="del-span">删除</span></div><input type="hidden" name="cate[{$key}][{$tkey}][{$ykey}]"><input type="hidden" class="post" value="{$thirdItem.pkid}"><input type="hidden" class="parent" value="{$thirdItem.parent_id}"></div>
+										</foreach>
+									</div>
+								</foreach>
+								</div>
+							</foreach>
+						<else/>
+					</notempty>
+
+					<script>
+							function addonecate(){
+								var len = $('.class-one').length;
+								var str = '<div class="class-one" item="'+len+'"><div class="class-box"><span class="open-cate" onclick="opencate(this)">+</span><div class="class-title">默认分类'+(len+1)+'</div><div class="class-modify"><span onclick="addtwocate2('+len+',this)" class="add-span">新增分类</span><span onclick="upcate(this)" class="mod-span">修改</span><span onclick="delcate(1,this)" class="del-span">删除</span></div><input type="hidden" name="cate['+len+']"><input type="hidden" class="post" value=""><input type="hidden" class="parent" value="0"></div></div>';
+								$('#class-panel').append(str);
+							}
+
+							function addtwocate(id,par,obj){
+
+								var len = $(obj).parents('.class-one').find('.class-two').length;
+								var str = '<div class="class-two"><div class="class-box class-box-one"><div class="class-title class-title-one">默认分类1-1</div><div class="class-modify"><span onclick="addthreecate('+id+','+len+','+'this)" class="add-span">新增分类</span><span onclick="upcate(this)" class="mod-span">修改</span><span onclick="delcate(2,this)" class="del-span">删除</span></div><input type="hidden" name="cate['+id+']['+len+']"><input type="hidden" class="post" value=""><input type="hidden" class="parent" value="'+par+'"></div></div>';
+								$(obj).parents('.class-one').append(str);
+								closeAllcate();
+								$(obj).parents('.class-one').find('.class-two').show();
+								$(obj).parents('.class-box').find('.open-cate').text('-');
+								$(obj).parents('.class-box').find('.open-cate').attr('onclick','closecate(this)');
+							}
+
+							function addtwocate2(id,obj){
+								return	alert('请先修改再保存');
+							}
+
+
+							function addthreecate(id,id2,obj,par){
+								var len = $(obj).parents('.class-two').find('.class-box-two').length;
+								var str = '<div class="class-box class-box-two"><div class="class-title class-title-one">默认分类1-1-1</div><div class="class-modify"><span onclick="upcate(this)" class="mod-span">修改</span><span onclick="delcate(3,this)" class="del-span">删除</span></div><input type="hidden" name="cate['+id+']['+id2+']['+len+']"><input type="hidden" class="post" value=""><input type="hidden" class="parent" value="'+par+'"></div>';
+								$(obj).parents('.class-two').append(str);
+							}
+
+							function upcate(obj){
+								var p = $(obj).parent().prev('.class-title');
+								var t = $(p).text();
+								$(p).html('<input type="text" value="'+t+'" class="input-class">');
+								$(obj).attr('onclick','savecate(this)');
+								$(obj).text('保存');
+							}
+
+							function savecate(obj){
+								var p = $(obj).parent().prev('.class-title');
+								var t = $(p).find('.input-class').val();
+								var a = $(obj).parent().next().val(t);
+
+								var v = $(obj).parent().nextAll('.post').val();
+								var a = $(obj).parent().nextAll('.parent').val();
+								$.post("/index.php?s=/Admin/PostCategory/add",{'t':t,'v':v,'p':a},function(data){
+									if(data.status==true){
+										window.location.reload();
+									}else{	
+										alert(data.msg);
+										return ;
+									}
+								},'json')	
+							}
+
+							function delcate(id,obj){
+								if(window.confirm('确定删除吗？')){
+									if(!$(obj).parent().nextAll('.post').val()){
+											if(id===1){
+												$(obj).parents('.class-one').remove();
+											}else if(id===2){
+												$(obj).parents('.class-two').remove();
+											}else if(id===3){
+												$(obj).parents('.class-box-two').remove();
+											}
+											return;
+									}
+									id = parseInt(id);
+									$.post("/index.php?s=/Admin/PostCategory/del",{'v':$(obj).parent().nextAll('.post').val(),},function(data){
+										if(data.status==true){
+											// window.location.reload();									
+											if(id===1){
+												$(obj).parents('.class-one').remove();
+											}else if(id===2){
+												$(obj).parents('.class-two').remove();
+											}else if(id===3){
+												$(obj).parents('.class-box-two').remove();
+											}
+										}else{	
+											alert(data.msg);
+											return ;
+										}
+									},'json')	
+									
+								}
+							}
+
+							function opencate(obj){
+								closeAllcate();
+								$(obj).parents('.class-one').find('.class-two').show();
+								$(obj).text('-');
+								$(obj).attr('onclick','closecate(this)');
+							}
+
+							function closecate(obj){
+								$(obj).parents('.class-one').find('.class-two').hide();
+								$(obj).text('+');
+								$(obj).attr('onclick','opencate(this)');
+							}
+
+							function closeAllcate(){
+								$('.class-one').find('.class-two').hide();
+								$('.class-one').find('.open-cate').text('+');
+								$('.class-one').find('.open-cate').attr('onclick','opencate(this)');	
+							}
+					</script>
+				</div>
+				</div>
+		<!-- 无限极分类结束 -->
+</block>
+<block name="style">
+<style>
+#new-cate{color: #ffffff;margin-left: 20px;}
+#new-cate-eng{float:right;border-bottom: 1px solid rgb(44, 46, 47);margin-top: 10px;}
+#less-classify .title-category{width: 100%;}
+#less-classify .class-box{background: #f6f6f6;height: 36px;margin-bottom: 10px;line-height:36px;padding: 2px;}
+#less-classify .class-title{float: left;padding-left: 10px;}
+#less-classify .class-box-one{margin-left: 40px;}
+#less-classify .list-english{margin-right: 10px;}
+#less-classify .class-modify{float: right;width:auto;}	
+#less-classify .add-span{background-color: #00b19d;cursor: pointer;color: #ffffff;padding: 3px 19px;}
+#less-classify .mod-span{background-color:#555555;cursor: pointer;color: #ffffff;padding: 3px 12px; }
+#less-classify .del-span{background-color:#cc3f44;cursor: pointer;color: #ffffff;padding: 3px 12px; }
+#less-classify .open-span{background-color:#114f8e;cursor: pointer;color: #ffffff;padding: 3px 12px; }
+#less-classify .class-box-two{margin-left: 80px;}
+#less-classify .button-class{text-align: center;}
+#less-classify .input-class{width:300px;height: 34px; border: 1px solid #ccc;padding-left: 5px;}
+#less-classify .class-two{display: none;}
+#less-classify .open-cate{float: left;display: inline-block;width: 36px;height: 36px;text-align: center;color: #666666;font-size: 20px;cursor: pointer;}
+
+</style>
+<link rel="stylesheet" href="__PUBLIC__/static/js/uikit/uikit.css">
+</block>
+<block name="script">
+	<script src="__PUBLIC__/static/js/uikit/js/uikit.min.js"></script>
+	<script src="__PUBLIC__/static/js/uikit/js/addons/nestable.min.js"></script>
+	<script src="__PUBLIC__/static/js/xenon-custom.js"></script>
+</block>

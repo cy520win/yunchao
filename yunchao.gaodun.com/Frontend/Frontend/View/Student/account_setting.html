@@ -1,0 +1,202 @@
+<extend name="Public/layout" />
+<block name="title"><title>高顿实习-账号设置</title></block>
+<block name="style">    
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/custom.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/account-modify.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/select-modify.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/js/select2/select2.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/js/select2/select2-bootstrap.css">
+</block>
+<block name="script">
+<script src="__PUBLIC__/static/core/js/TweenMax.min.js"></script>
+<script src="__PUBLIC__/static/core/js/resizeable.js"></script>
+<script src="__PUBLIC__/static/core/js/joinable.js"></script>
+<script src="__PUBLIC__/static/js/pwd_reset.js"></script>
+<script src="__PUBLIC__/static/core/js/select2/select2.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $("#invitation_wait").select2({
+            placeholder: '25',
+            allowClear: true,
+            minimumResultsForSearch: -1, // Hide the search bar
+            formatResult: function(state)
+            {
+                return '<div style="display:inline-block;position:relative;width:20px;height:15px;margin-right: 0px;top:2px;"></div>'
+                        + state.text;
+            }
+        })
+        $('.select2-offscreen').change(function(){
+            var obj = $(this);
+            var type = obj.attr('data-type');
+            var name = obj.attr('id');
+            var id = obj.attr('data-id');
+            var number = obj.children('option:selected').val();
+            $.post('/Student/traceSave',{id : id,name : name,type : type,number : number,hours : 72},function(data){
+                if(data.status == 'success'){
+                    obj.attr('data-type','edit');
+                    if(type == 'add'){
+                        obj.attr('data-id',data.id);
+                    }
+                }
+            },'json')
+        })
+
+    });
+</script>
+</block>
+<block name="content">
+<div class="center-content">
+    <div class="tabs-vertical-env">
+     	<ul class="nav tabs-vertical nav-tabs-title">
+			<h3>账号设置</h3>
+				<li id="passwd" class="active"><a href="#v-home" data-toggle="tab">修改密码</a></li>
+				<li id="verify"><a href="#v-messages" data-toggle="tab">邮箱验证</a></li>
+                <li id="remind"><a href="#v-remind" data-toggle="tab">邮件提醒</a></li>
+                <li id="phone-btn"><a href="#mobile-certificated" data-toggle="tab">手机验证</a></li>
+		</ul>
+		<div class="departure"></div>
+        <div class="tab-content">
+            <!-- 修改密码start -->
+			<div class="tab-pane active" id="v-home">
+			    <form role="form" class="form-horizontal" id="form-modify-password">
+					<h4>当前密码</h4>		
+					<div class="form-group has-info">
+			            <input type="password" class="form-control accountset-input" onblur="checkpwd(this)" id="pwd">
+						<span class="error-info clear-fix"></span>	
+					</div>
+			         <h4>新密码</h4>		
+					<div class="form-group has-info">
+			            <input type="password" class="form-control accountset-input" onblur="checkrepwd(this)" id="setpwd">
+			            <span class="error-info clear-fix"></span>	
+			        </div>
+			        <h4>重复新密码</h4>		
+					<div class="form-group has-info">
+			            <input type="password" class="form-control accountset-input" id="setpwd2">
+			            <span class="error-info clear-fix"></span>	
+			        </div>
+			        <button class="btn btn-info comfirm-modify-button information-submit-button" onclick="javascript:return modifysuccess(1)">确认修改</button>
+			    </form>
+			    <div id="modify_passwd_success" class="modify-success">
+			        <span></span>
+			        <h4>密码修改成功</h4>
+			    </div>      
+			</div>
+            <!-- 修改密码end -->
+            <!-- 邮箱验证start -->
+			<div class="tab-pane tab-pane-identify" id="v-messages">
+			<if condition="$user.email_verify eq 2">
+            <!--邮箱验证页面-->
+                <div class="identifymail" id="firstmail" style="display:block">
+		            <h4>账号邮箱：{$Think.session.account.account_email}</h4>
+		             <p>此邮箱未验证</p>
+		             <button class="btn btn-info identify-button mt38 information-submit-button" onclick="activemail()">验证</button>
+		        </div>
+		    </if>
+            <!--登录邮箱页面-->
+		         <div class="signmailidentify" id="secondmail">
+		             <div>
+		                <h3>我们已将验证邮件发送至您的邮箱：</h3>
+                        <div><span>
+                        	<a href="javascript:;" style="color: #a5a5a5;text-decoration: none;font-size:24px;cursor: default">{$Think.session.account.account_email}</a>
+                        </span></div>
+		                 <h4 style="font-size: 20px;  color: #828282;  line-height: 49px; margin-bottom: 0;">点击邮件内的链接即可完成验证。</h4>
+						<p style="width: 400px;height: 60px;overflow: hidden;">如没有收到验证邮件，
+						<span ><a href="javascript:activemail(2);" style="color:#5dd8e7 !important;text-decoration:
+						underline;font-size:14px;">请点此重新发送</a></span></p>
+		             </div>
+		             <div class="width:400px;">
+		             <notempty name="user.href">
+		             <a class="btn btn-info confirm-button mt5" id="tag-mail" role="button" target="_blank"
+                        style="width:150px;margin-left: 0" href="{$user.href}">登录邮箱验证</a>
+		             </notempty>
+		             </div>
+		         </div>
+		        <if condition="$user.email_verify eq 1">
+            <!--发送成功页面 -->
+		          <div id="sendcomplete"class="identifymail sendcomplete">
+		              <h4>账号邮箱：{$Think.session.account.account_email}</h4>
+		              <p>此邮箱已验证</p>
+		          </div>
+		        </if>
+			</div>
+            <!-- 邮箱验证end -->
+            <!-- 邮件提箱start -->
+            <div class="tab-pane tab-pane-identify no-padding" id="v-remind">
+                <!--新的简历接受邮箱 -->
+                <div id="receive_resume_mail" class="identifymail sendcomplete">
+                    <ul class="student-remind-area">
+                        <li>
+                            <ul class="waiting-remind-mail">
+                                <li class="waiting-remind-title">未处理邀请过多提醒邮件</li>
+                                <li class="waiting-remind-explain">当未处理【邀请】达到选定数量时，我们将会每隔3天给你发送
+                                    提醒邮件</li>
+                            </ul>
+                            <div class="waiting-remind-area">
+                                <span>待处理邀请达到</span>
+                                <div class="form-group top-distance no_padding drop-box">
+                                    <select class="form-control edu_degree" id="invitation_wait" placeholder="25"
+                                            data-type="{$trace_type.invitation_wait}"
+                                            data-id="{$trace_result[3]['pkid']}">
+                                        <foreach name="trace_number" key="key" item="trace_item">
+                                            <option value="{$key}"
+                                            <if condition="$trace_result[3]['number'] eq $key">
+                                                selected</if>>
+                                            {$trace_item}
+                                            </option>
+                                        </foreach>
+                                    </select>
+                                </div>
+                                <span>封后发送</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--密码修改成功页-->
+                <div class="modify-success" id="receive_mail_success">
+                    <span></span>
+                    <h4>接收简历邮箱已修改成功！</h4>
+                </div>
+            </div>
+            <!-- 邮件提箱end -->
+            <!-- 手机验证start -->
+            <div class="tab-pane tab-pane-identify no-padding" id="mobile-certificated">
+                   
+                    <div id="receive_resume_mail" class="identifymail sendcomplete phone-tab-fn <if condition="$mobile.verify eq TRUE">dn</if>">
+                       <h4 class="mobile-certification-title">验证手机，使用手机找回密码更方便！</h4>
+                      <div class="form-group has-info">
+                        <input type="text" class="form-control accountset-input certificate-mobile-input" id="use-mobile" placeholder="手机号码" 
+                        <notempty name="mobile.mobile">
+                        value="{$mobile.mobile}"
+                        <else/>
+                        value="{$mobile.contact_mobile}"
+                        </notempty> >
+                       <span class="error-info clear-fix right-phone right-phone-fn">&nbsp;</span>  
+                      </div>
+                       <div class="form-group has-info">
+                        <input type="text" class="form-control accountset-input certificate-mobile-input" id="use-number" placeholder="请输入验证码">
+                        <button class="acquire-mobile-message acquire-message-code" id="check-mobile-btn" onclick="checkCode(this)">获取短信验证码</button>
+                        <span class="error-info clear-fix right-code right-code-fn">&nbsp;</span>  
+                      </div>
+                    <button class="account-comfirm" id="submit-mobile-btn">提&nbsp;交</button>
+                    </div>
+                    <!--手机验证成功提示框-->
+                    <div class="modify-success modify-success-phone" id="receive_mail_success">
+                        <span></span>
+                        <h4 class="phone-certification-success">手机验证成功!</h4>
+                    </div>
+                     <!--当前手机页-->
+                    <div class="current-phone <if condition="$mobile.verify eq FALSE">dn</if>" id="receive_mail_success">
+                        <span></span>
+                        <h4 class="phone-certification-success">当前手机：{$mobile.mobile}</h4>
+                        <span class="phone-certificated">此手机已验证</span>
+                        <!-- <button class="change-phone-number">更换手机号</button> -->
+                    </div>
+                    
+                </div>
+            <!-- 手机验证end -->
+		</div>
+    </div>	
+</div>
+<div class="login-wrap" id="login-wrap"></div>
+<include file="Account/send_success" />
+</block>

@@ -1,0 +1,130 @@
+<div class="upload-header-area">
+        <div class="personal-photo pdl0 basic-personal-photo">
+            <img id="upload" class="droppable-area up-photo" src="<notempty name='headpic'>{$headpic}<else/>__PUBLIC__/static/images/new_nophoto_student.png</notempty>" onclick="uploadHead('upload')">
+            <div class="upload-header">上传头像</div>
+        </div>
+        <p class="limit-upload-file">大小：小于5M</p>
+ </div>
+<form role="form" class="basic-information-colunm" id="edit-base-form">
+    <div class="form-group col-md-12 input-pad-info">
+        <div class="base-edit-left">
+            <span class="red-dot-area">*</span> 
+            <input type="text" class="form-control normal-input input-default input-grey-style width260" value="{$baseInfo.name}" name="name" id="user-name" onkeydown="return charlen2(this,12,event)" placeholder="姓名，限制12个字">
+            <span class="error-info col-md-4 necessary span-info-error"></span>
+        </div>
+        <div class="">
+            <span class="red-dot-area">*</span> 
+            <div>
+                <span class="sex-choose <if condition='$baseInfo.gender neq 2'>span-checked</if>" onclick="getgender(this,1)">男</span>
+                <span class="sex-choose sex-women <if condition='$baseInfo.gender eq 2'>span-checked</if>"onclick="getgender(this,2)">女</span>
+                <input type="hidden" name="gender" value="{$baseInfo.gender|default=1}" id="edit-gender">
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-12 input-pad-info">
+        <div class="base-edit-left">
+            <span class="red-dot-area">*</span>
+            <input type="text" class="normal-input laydate-icon input-grey-style width190 pad12" value="{$baseInfo.birth_date}" name="birth_date" id="user-birth" readonly="readonly" onclick="getdate('user-birth',event)" placeholder="出生年月">
+            <span class="error-info col-md-12 necessary"></span>
+        </div>
+        <div class="base-edit-right">
+            <span class="red-dot-area">*</span>
+            <div class="icon-i"><input type="text" class="normal-input input-grey-style width270 pad12" placeholder="现居地" id="homecity10" readonly name="living_city" value="{$baseInfo.living_city}"><i onclick="hotcity2(this)" ></i></div>
+            <span class="error-info col-md-12 necessary"></span>
+        </div>
+    </div>
+    <div class="form-group col-md-12 input-pad-info">
+        <div class="">
+        <span class="red-dot-area">*</span>
+        <input type="text" class="form-control normal-input input-grey-style width480" name="graduate_school" value="{$baseInfo.graduate_school}" id="user-graduate-school" onkeydown="return charlen2(this,20,event)" placeholder="就读学校，限制20个字">
+        <span class="error-info col-md-4 necessary"></span>
+        </div>
+    </div>
+    <div class="form-group col-md-12 input-pad-info">
+        <div class="base-edit-left">
+            <span class="red-dot-area">*</span>        
+            <select class="form-control user-major-type input-grey-style width190"  id="sun-3" name="major_type" value="$baseInfo.major_type_text" id="user-major_type">
+            <option value="">专业分类</option>
+            <foreach name="majorType" item="mt">
+                <option value="{$key}" <if condition="$baseInfo.major_type eq $key">selected</if> >{$mt}</option>
+            </foreach>
+            </select>
+            <span class="error-info col-md-4 necessary"></span>
+        </div>
+        <div class="base-edit-right">
+            <span class="red-dot-area">*</span>
+            <input type="text" class="form-control normal-input input-grey-style width270" name="detail_major" value="{$baseInfo.detail_major}" id="user-detail-major" placeholder="输入具体专业，限制17个字" onkeydown="return charlen2(this,17,event)">
+            <span class="error-info col-md-4 necessary" id="detail-major-span"></span>
+        </div>
+    </div>
+    <div class="form-group col-md-12 input-pad-info">
+        <div class="base-edit-left">
+            <span class="red-dot-area">*</span>
+            <select class="form-control user-education input-grey-style width190" id="sun-1" name="education">
+            <option value="">最高学历</option>
+            <foreach name="degree2" item="degree">
+                <option value="{$key}" <if condition="$baseInfo.education eq $key">selected</if> >{$degree}</option>
+            </foreach>
+            </select>
+            <span class="error-info col-md-4 necessary"></span>
+        </div>
+        <div class="base-edit-right">
+            <span class="red-dot-area">*</span>
+            <select class="form-control user-current-grade input-grey-style width270" id="sun-2" name="graduate_year" style="width:270px;">
+                <option value="">毕业年份</option>
+                <foreach name="grade" item="grade">
+                    <option value="{$key}" <if condition="$baseInfo.graduate_year eq $key">selected</if> >{$grade}</option>
+                </foreach>
+            </select>
+            <span class="error-info col-md-4 necessary" id="graduate-year-span"></span>
+        </div>
+    </div>
+    <div class="form-group col-md-12 input-pad-info">
+        <div class="base-edit-left">
+            <span class="red-dot-area">*</span>
+            <input type="text" class="form-control normal-input input-grey-style width480" placeholder="联系邮箱" name="contact_email" id="contact_email" value="<notempty name='baseInfo.contact_email'>{$baseInfo.contact_email}<else/>{$baseInfo.login_email}</notempty>">
+            <span class="error-info col-md-12 necessary"></span>
+        </div>
+    </div>
+    <div class="form-group col-md-12 input-pad-info">
+        <div class="base-edit-left">
+            <span class="red-dot-area">*</span>
+            <select id="mobile_type" name="mobile_type"
+                    class="form-control user-major-type input-grey-style width110">
+                <option value="1" <eq name="baseInfo.mobile_type" value="1">selected</eq>>中国大陆</option>
+                <option value="2" <eq name="baseInfo.mobile_type" value="2">selected</eq>>其它地区</option>
+            </select>
+        </div>
+        <div class="base-edit-right">
+            <input type="text"
+                   class="form-control normal-input input-grey-style width382" value="{$baseInfo.contact_mobile}"
+                   name="contact_mobile" id="user-mobile" placeholder="手机号码">
+            <span class="error-info col-md-4 necessary span-info-error"></span>
+        </div>
+    </div>
+    <div class="form-group col-md-12 input-pad-info">
+        <div class="base-edit-left">
+            <span class="red-dot-area">&nbsp;</span>
+            <input type="text" class="form-control normal-input input-grey-style width480" placeholder="身份证号" name="id_number" id="id_number" value="{$baseInfo.id_number}">
+            <span class="error-info col-md-12 necessary"></span>
+        </div>
+    </div>
+    <div class="form-group col-md-12 input-pad-info">  
+        <div class="base-edit-left">
+            <span class="red-dot-area">&nbsp;</span>
+            <span class="Party-choosen <if condition='$baseInfo.politics_status eq 1'>span-checked</if>" onclick="getpolitics(this,1)">党员</span>
+            <span class="Party-choosen none-Party <if condition='$baseInfo.politics_status neq 1'>span-checked</if>" onclick="getpolitics(this,2)">非党员</span>
+            <input type="hidden" name="politics_status" id="edit-politics-status" value="{$baseInfo.politics_status|default=2}">
+            <div class="necessary-area"><span class="red-dot">*</span><p class="necessary-notice">标星项目为必填项</p></div>
+            
+        </div>
+    </div>
+    <div class="form-group col-md-12 information-button input-pad-info">
+        <div class="base-edit-left">                           
+            <button  class="btn btn-info confirm-button information-submit-button mb25 ml0 mt0" onclick="return savebase(this)">{$Think.config.L_SAVE}</button>
+            <if condition="$edit eq true">
+            <button class="btn confirm-button information-cancel-button mb25 ml0 mt0" onclick="return caclebase(this)">{$Think.config.L_CANCLE}</button> 
+            </if> 
+        </div>
+    </div>
+</form>

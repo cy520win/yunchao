@@ -1,0 +1,32 @@
+<div class="input_column col-md-12 input-school-edit" id="input-school-position">
+<div class="row">
+<div class="container-fluid">
+	<form role="form" class="basic-information-colunm form-position-edit" id="form-school-position">
+	<input type="hidden" value="{$base.pkid}" name="school_id">
+	<div class="form-group col-md-12 input-distance adjust-2">
+	<div class="col-md-4  close-distance ml10 w160">
+	<input type="text" readonly="readonly" class="form-control normal-input school-start2 laydate-icon" id="school-position-11" name="start_time" value="{$base.start_time}"  onclick="getdate('school-position-11',event)" placeholder="输入开始日期">
+	</div>
+	<span class="col-md-1 underline" style="width:20px;">&nbsp;</span>
+	<div class="col-md-4  close-distance ml10 w160">
+	<input type="text" readonly="readonly" class="form-control normal-input school-finish2 laydate-icon" id="school-position-12" name="finish_time" value="{$base.finish_time}" onclick="getdate('school-position-12',event)" placeholder="输入截止日期">
+	</div>
+	
+	<div class="col-md-3  close-distance" id="school-position-3">
+	<input type="text" class="form-control normal-input school-job2" placeholder="职务名称" name="job_title" value="{$base.job_title}">
+	</div>  
+	</div>
+	<div class="form-group col-md-12">
+	<div class="">
+	<textarea class="form-control textarea-style normal-input school-description2" rows="6" placeholder="请输入文本" id="school-position-4" name="description">{$base.description}</textarea>
+	</div>		
+	</div>
+	<div class="form-group col-md-12">                              
+	<button type="submit" onclick="return saveschool2(this)" class="btn btn-info confirm-button information-submit-button">{$Think.config.L_SAVE}</button>
+	<button type="button" class="btn confirm-button information-cancel-button" onclick="cancle(this)">{$Think.config.L_CANCLE}</button>
+	<button type="button" class="btn confirm-button delete_button" onclick="return delschool(this,{$base.pkid})">{$Think.config.L_DELETE_SINGLE}</button>	
+	</div>
+	</form>
+</div>
+</div>
+</div>

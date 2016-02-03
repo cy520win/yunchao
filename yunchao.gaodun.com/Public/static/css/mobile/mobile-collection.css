@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+body{ background: #f4f4f4;}
+
+.list-wrap-ipad{ width: 90%;position: relative; border: 1px solid #ededed; border-bottom: 1px solid #e2e2e2; border-top: none; height: auto; overflow: hidden; padding: 20px 2%; background: #fff; margin: 20px auto 0;} 
+.list-wrap-ipad >.a-wrap{ display: block; float: left; overflow: hidden; margin-right: 20px;}
+.list-wrap-ipad >.a-wrap >a{ width: 78px; display: table-cell; vertical-align: middle;  height: 78px; border: 1px solid #e0e0e0; }
+.list-wrap-ipad >.a-wrap >a >img{ max-width: 100%; }
+.list-wrap-ipad >.list-cen{ overflow: hidden; }
+.list-cen >a{ font-size: 20px; line-height: 20px; color: #06bad2;}
+.list-cen >a >img{ margin: 0 8px 0 20px; }
+.list-cen >a >span{ font-size: 14px; line-height: 14px; color: #656565; }
+.list-cen >p{ font-size: 16px;  line-height: 16px; color: #656565; margin: 15px 0;  }
+.list-cen > span{ font-size: 12px; line-height: 12px; color: #656565; display: block; }
+.list-wrap-ipad >i{ position: absolute; top: 20px; right: 4%; font-style: normal;  font-size: 12px; line-height: 12px; color: #a5a5a5;}
+.list-wrap-ipad >p{ font-size: 12px;cursor: pointer; line-height: 12px; color: #06bad2; position: absolute; bottom: 20px; right: 4%;}
+.list-wrap-ipad >p >img{ margin-top: -3px; margin-right: 5px; }
+.list-wrap-ipad >.wrap-wrap{ width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 99; background: #ebebeb;  opacity: 0.85; }
+.wrap-wrap >img{ position: absolute; right: 22%; top: 10px; }
+
+.wrap-wrap >p{ font-size: 12px;cursor: pointer; line-height: 12px; color: #06bad2; position: absolute; bottom: 20px; right: 4%;}
+.wrap-wrap >p >img{ margin-top: -3px; margin-right: 5px; }
+
+p.none-ipad{text-shadow: 1px 1px 2px #fff,0 0 0 #000; display: block; text-align: center; margin-top: 200px; font-size: 22px; line-height: 22px;     color: hsla(0, 0%, 77%, 0.7); font-weight: bold;}
+
+
+    
+/* �ֻ� */
+.list-wrap-phone{ width: 100%; background: #fff; margin-top: 12px; height: auto; overflow: hidden; position: relative; }
+.list-wrap-phone >.list-top-phone{ width: 90%; padding: 17px 5% 0; position: relative; height: auto; overflow: hidden;}
+.list-top-l{ width: 25%; height: auto; float: left; overflow: hidden; }
+.list-top-r{ width: 74%; padding-left: 1%; height: auto; float: left; overflow: hidden; }
+.list-top-l > a >img{ width: 68px; height: 68px; border-radius: 5px; display: block; border: 1px solid #e4e4e4; }
+.list-top-l > p{ font-size: 12px;padding-left: 6px; margin-top: 5px; color: #a5a5a5; line-height: 12px; }
+.list-top-r >a.a1{ color: #1b1b1b; display: block; font-size: 16px; line-height: 16px;  }
+.list-top-r >a.a1 >span{ font-size: 12px; color: #a5a5a5; }
+.list-top-r >p.p1{ margin-top: 8px; font-size: 13px; color: #a5a5a5; overflow: hidden; width: 100%; padding-bottom: 9px; border-bottom: 1px dashed #eeeeee; }
+.list-top-r >p.p1 >span{ color: #ff9600; }
+.list-top-r >p.p1 >img{ width: 14px; margin-top: -5px;  }
+.list-top-r >a.a2{ font-size: 14px; display: block; margin-top: 10px; line-height: 14px; color: #656565; }
+.list-top-r >p.p2{ margin-top: 8px; font-size: 13px; color: #a5a5a5; margin-top: 9px; overflow: hidden; width: 100%; padding-bottom: 9px; }
+.list-top-r >p.p2 >img{width: 14px; margin-top: -5px; }
+.list-line-phone{ width: 100%; height: 1px; background: #eeeeee; }
+.list-wrap-phone >a.a3{ display: block; font-size: 13px; height: 40px; line-height: 40px; text-align: center; color: #63cdff; }
+.list-wrap-phone >a.a3 >img{ margin-top: -5px; }
+
+.list-mark-phone{ width: 100%; height:100%; background: rgba(235,235,235,0.7); position: absolute; top:0; left: 0;}
+.list-mark-phone >img{ width: 86px; height: 86px; position: absolute; top: 15px; right: 4%; }
+p.none-phone{text-shadow: 1px 1px 2px #fff,0 0 0 #000; display: block; text-align: center; margin-top: 100px; font-size: 12px; line-height: 12px;     color: hsla(0, 0%, 77%, 0.7); font-weight: bold;}
+
+
+
+
+
+
+
+
+@media all and (min-width:992px) {
+	
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+   
+
+}
+
+@media ( max-width: 767px){
+	.phone-wrap{ display: block;}
+	.ipad-wrap{ display: none;}
+}
+
+@media ( max-width: 414px){
+}
+
+@media ( max-width: 320px){
+}
+
+
+
+
+

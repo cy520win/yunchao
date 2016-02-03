@@ -1,0 +1,5 @@
+.edit-text-fn ol li{ padding: 8px;list-style-type: decimal;}
+.edit-text-fn ul li{ padding: 8px;list-style-type: disc;}
+.edit-text-fn ol{ padding-left:23px;}
+.edit-text-fn ul{ padding-left:23px;}
+.edit-text-fn a{ text-decoration: underline;}

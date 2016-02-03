@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+body{ background:#eef2f5;}
+.ipad-wrap > .top{ width: 100%; height: 215px; background: #34b9f7;text-align: center}
+.ipad-wrap > .logo{ width: 580px; height: auto; margin: -160px auto 0;text-align: left;}
+.ipad-wrap > .logo >img{ max-width: 100%;width:211px;}
+.ipad-wrap > .main{ width: 580px; height: auto; padding-bottom: 100px; background: #fff; border: 1px solid #e2e2e2; border-radius: 8px; margin: 8px auto 0;display:none; }
+.ipad-wrap > .send-success-ipad{ width: 580px; height: auto; padding-bottom: 100px; background: #fff; border: 1px solid #e2e2e2; border-radius: 8px; margin: 8px auto 0;}
+.ipad-wrap > .send-success-ipad > .success-header-ipad{font-weight: normal;color:#00abf0;font-size:30px;background:url("../images/account/certification-right.png") no-repeat left center;padding-left:60px;line-height:42px;margin-left:202px;margin-top:78px;margin-bottom:50px;}
+.send-success-ipad >.account-ipad{font-size:16px;color:#909090;margin-left:230px;}
+.account-ipad a{font-size:16px;color: #34b9f7;}
+.ipad-wrap > .main > .main-top{ width: 75%; margin:0 auto; overflow: hidden; height: auto; padding-top: 63px;}
+.ipad-wrap > .main > .main-top >p.p1{ font-size: 18px; color: #656565; line-height: 20px; padding-bottom: 35px;}
+.ipad-wrap > .main > .main-top >p.p2{font-size: 18px; color: #656565; line-height: 30px;}
+.ipad-wrap > .main > .main-top > a.login{ width: 100%; transition:.3s; display: block; margin-top: 45px; height: 42px; line-height: 42px; background:#00abf0; text-align: center;font-size: 18px; color: #ffffff; border-radius: 5px;}
+.ipad-wrap > .main > .main-top > a.login:active{background:#34b9f7;}
+.ipad-wrap > .main >span.line{ width: 75%; height: 1px; background:url("../images/account/line-row.png") repeat-x; display:block; margin: 62px auto 0;}
+.ipad-wrap > .main > .main-middle{width: 74%; margin:0 auto; overflow: hidden; height: auto; padding-top: 60px;}
+.ipad-wrap > .main > .main-middle >p{font-size: 16px; line-height: 16px; color: #a5a5a5; margin-bottom: 19px;}
+.ipad-wrap > .main > .main-middle >p:first-child{color: #656565; font-size: 18px; line-height: 20px; margin-bottom: 30px;}
+.ipad-wrap > .main > .main-middle >p >a{ font-size: 16px; transition:.3s; color:#00abf0; text-decoration: underline;}
+.ipad-wrap > .main > .main-middle >p >a:active{ color: #34b9f7;}
+.ipad-wrap > .footer{ width: 100%; height: 60px; line-height: 60px; text-align: center; background: #34b9f7; font-size: 14px; color: #ffffff; margin-top: 70px;}
+
+.ipad-wrap > .succes-wrap{ width: 100%; height: 100%; display:none; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.25); z-index: 9;}
+.ipad-wrap > .succes-box{ width: 600px; height: 400px;display:none; position: fixed;  overflow: hidden;top: 50%; margin-top: -200px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 10;}
+.ipad-wrap > .succes-box > .succes-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #34b9f7;font-size: 20px; color: #ffffff;}
+.ipad-wrap > .succes-box > .succes-box-title >img { float: right; margin-right: 44px; display: block; margin-top: 17px; cursor: pointer;}
+.ipad-wrap > .succes-box > p{ font-size: 20px; color: #656565; text-align: center; line-height: 26px; margin:60px auto 50px;}
+.ipad-wrap > .succes-box > div{ width: 78%; height: auto; overflow: hidden; margin: 0 auto;}
+.ipad-wrap > .succes-box > div >p{ font-size: 16px; color: #656565; line-height: 18px; margin-bottom: 14px; text-align: center;}
+.ipad-wrap > .succes-box > a{ width: 40%; height: 42px; transition:.3s; display: block; margin: 50px auto 0; line-height: 42px; text-align: center;border-radius: 5px; font-size: 18px; color: #ffffff; background: #34b9f7;}
+.ipad-wrap > .succes-box > a:active{ background: #34b9f7;}
+
+.phone-wrap {display: none; overflow: hidden;}
+
+
+.phone-wrap > .main >p.p1{ font-size: 17px; color: #656565; line-height: 17px; margin-top: 29px;}
+.phone-wrap > .main >p.p2{font-size: 15px; color: #656565; line-height: 20px; margin-top: 22px;}
+.phone-wrap > .main >i{ margin-top: 15px; display: block; font-style: normal; font-size: 15px; color: #a5a5a5; line-height: 20px;}
+.phone-wrap > .main >span{width: 100%; height: 1px; background: #d9d9d9; display:block;margin-top: 29px;}
+.phone-wrap > .main >p.p3{font-size: 17px; color: #656565; line-height: 17px; margin-top: 29px; margin-bottom: 28px;}
+.phone-wrap > .main >p.p4{font-size: 15px; color: #a5a5a5; line-height: 15px;  margin-bottom: 22px;}
+.phone-wrap > .main >p.p5{font-size: 15px; color: #a5a5a5; line-height: 20px;  margin-bottom: 22px;}
+.phone-wrap > .main >p >a{ color: #34b9f7; border-bottom: 1px solid #34b9f7; line-height: 15px;}
+.phone-wrap > .footer{ width: 100%; height: 35px; line-height: 35px;text-align: center; position: fixed; bottom: 0; background: #34b9f7; font-size: 12px; color: #ffffff; margin-top: 70px;}
+
+.phone-wrap > .top-enterprise {width: 100%;height: 47px; position: relative; color: #fff; background: #34b9f7;line-height: 47px;text-align: center;font-size: 16px;}
+.phone-wrap > .top-enterprise a{ position: absolute; width: 47px;height: 47px; top:0; left: 0;}
+
+
+
+
+@media all and (min-width:992px) {
+	.ipad-wrap > .logo{ width: 78%;}
+	.ipad-wrap > .main{ width: 78%;}
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+	.ipad-wrap > .footer{ position: fixed; bottom: 0;}
+}
+
+@media ( max-width: 767px){
+	.ipad-wrap{ display: none;}
+	.phone-wrap {display: block;}
+    #menu{display:none;}
+    #searcher-iphone{display:block;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

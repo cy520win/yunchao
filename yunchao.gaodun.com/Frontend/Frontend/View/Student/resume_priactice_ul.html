@@ -1,0 +1,18 @@
+<ul>
+	<foreach name="practice" item="pr">
+	<li data-id="{$pr.pkid}" onclick="editprili(this);">
+		<h3>
+		<span>{$pr.start_time}</span>至<span>{$pr.finish_time}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>{$pr.organization}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>{$pr.quarters}</span>
+
+		<if condition="$pre neq true">
+		<span class="edit-add"><span>
+		<i class="fa-pencil-square-o"></i>
+		</span><a href="javascript:;">编辑</a></span>
+		</if>
+		</h3>
+		<p class="p-textarea2">{$pr.content}</p>
+	</li>
+	</foreach>
+</ul>

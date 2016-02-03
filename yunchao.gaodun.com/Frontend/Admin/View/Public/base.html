@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Xenon Boostrap Admin Panel" />
+	<meta name="author" content="" />
+	<block name="title"><title>{$title}</title></block>
+	<link rel="stylesheet" href="__PUBLIC__/sys/static/css/fonts/linecons/css/linecons.css">
+	<link rel="stylesheet" href="__PUBLIC__/sys/static/css/fonts/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="__PUBLIC__/sys/static/css/bootstrap.css">
+	<link rel="stylesheet" href="__PUBLIC__/sys/static/css/xenon-core.css">
+	<link rel="stylesheet" href="__PUBLIC__/sys/static/css/xenon-forms.css">
+	<link rel="stylesheet" href="__PUBLIC__/sys/static/css/xenon-components.css">
+	<link rel="stylesheet" href="__PUBLIC__/sys/static/css/xenon-skins.css">
+	<link rel="stylesheet" href="__PUBLIC__/sys/static/css/custom.css">
+	<link rel="stylesheet" href="__PUBLIC__/sys/static/css/style.css">
+	<block name="style"></block>
+	<script src="__PUBLIC__/sys/static/js/jquery-1.11.1.min.js"></script>
+</head>
+<body class="page-body skin-white" action="{$Think.CONTROLLER_NAME}">
+	<div class="page-container">
+		<div class="sidebar-menu toggle-others fixed">
+			
+			<div class="sidebar-menu-inner">	
+				
+				<header class="logo-env">
+					
+					<!-- logo -->
+					<div class="logo">
+						<a href="#" class="logo-expanded">
+							<img src="__PUBLIC__/sys/static/images/logo-white-bg@2x.png" width="80" alt="" />
+						</a>
+						
+						<a href="#" class="logo-collapsed">
+							<img src="__PUBLIC__/sys/static/images/logo-white-bg@2x.png" width="40" alt="" />
+						</a>
+					</div>
+					
+					<!-- This will toggle the mobile menu and will be visible only on mobile devices -->
+					<div class="mobile-menu-toggle visible-xs">
+						<a href="#" data-toggle="user-info-menu">
+							<i class="fa-bell-o"></i>
+							<span class="badge badge-success">7</span>
+						</a>
+						
+						<a href="#" data-toggle="mobile-menu">
+							<i class="fa-bars"></i>
+						</a>
+					</div>	
+								
+				</header>
+						
+				<ul id="main-menu" class="main-menu">
+					<?php $current_controller = CONTROLLER_NAME;$current_action = ACTION_NAME;?>
+
+					<li class="<if condition='$current_controller eq Index'>opened active
+					<elseif condition='$current_controller eq AdminUser'/>opened active
+					<elseif condition='$current_controller eq Student'/>opened active
+					<elseif condition='$current_controller eq Enterprise'/>opened active
+					<elseif condition='$current_controller eq Contacts'/>opened active
+					</if>" >
+						<a href="#">
+							<i class="linecons-desktop"></i>
+							<span class="title">账户</span>
+						</a>
+						<ul>
+							<li class="<if condition='$current_controller eq Index'>active</if>">
+								<a href="/index.php/Admin">
+                                        <span class="title">系统信息</span>
+								</a>
+							</li>
+							<li class="<if condition='$current_controller eq Student'>active</if>">
+								<a href="/index.php?s=/Admin/Student/index">
+									<span class="title">学生列表</span>
+								</a>
+							</li>
+							<li class="<if condition='$current_controller eq Enterprise'>active</if>">
+								<a href="/index.php?s=/Admin/Enterprise/index">
+									<span class="title">企业列表</span>
+								</a>
+							</li>							
+						</ul>
+					</li>
+					<li class="<if condition='($current_controller eq Post) or ($current_controller eq Resume) or ($current_controller eq ResumePost)'>opened active</if>">
+						<a href="#">
+							<i class="linecons-eye"></i>
+							<span class="title">实习</span>
+						</a>
+						<ul>
+							<li class="<if condition='$current_controller eq Post'>active</if>">
+			                                <a href="/index.php?s=/Admin/Post/index">
+			                                    <span class="title">职位列表</span>
+			                                </a>
+							</li>
+							<li class="<if condition='$current_controller eq Resume'>active</if>">
+								<a href="/index.php?s=/Admin/Resume/index">
+									<span class="title">中文简历</span>
+								</a>
+							</li>
+
+			
+							<li class="<if condition='$current_controller eq ResumePost'>active</if>">
+								<a href="/index.php?s=/Admin/ResumePost/index">
+									<span class="title">投递记录</span>
+								</a>
+							</li>
+			                      
+                        </ul>
+				     </li>
+				        <li class="<if condition='($current_controller eq PostCategory) or ($current_controller eq Certificate) or ($current_controller eq MajorType) or ($current_controller eq Scale) or ($current_controller eq Industry) or ($current_controller eq HotCity) or ($current_controller eq Welfare) or ($current_controller eq Tag)'>opened active</if>">
+						<a href="#">
+							<i class="linecons-note"></i>
+							<span class="title">基础设置</span>
+						</a>
+						<ul>
+							<li class="<if condition='$current_controller eq PostCategory'>active</if>">
+								<a href="/index.php?s=/Admin/PostCategory/index">
+									<span class="title">岗位分类</span>
+								</a>
+							</li>
+
+							<li class="<if condition='$current_controller eq Certificate'>active</if>">
+								<a href="/index.php?s=/Admin/Certificate/index">
+									<span class="title">行业证书</span>
+								</a>
+							</li>
+			                <li class="<if condition='$current_controller eq MajorType'>active</if>">
+			                                <a href="/index.php?s=/Admin/MajorType/index">
+			                                    <span class="title">专业分类</span>
+			                                </a>
+			                </li>
+							<li class="<if condition='$current_controller eq Scale'>active</if>">
+								<a href="/index.php?s=/Admin/Scale/index">
+									<span class="title">企业规模</span>
+								</a>
+							</li>
+							<li class="<if condition='$current_controller eq Industry'>active</if>">
+								<a href="/index.php?s=/Admin/Industry/index">
+									<span class="title">企业行业</span>
+								</a>
+							</li>
+                            <li class="<if condition='$current_controller eq HotCity'>active</if>">
+                                <a href="/index.php?s=/Admin/HotCity/index">
+                                    <span class="title">热门城市</span>
+                                </a>
+                            </li>
+                            <li class="<if condition='$current_controller eq Welfare'>active</if>">
+                                <a href="/index.php?s=/Admin/Welfare/index">
+                                    <span class="title">福利标签</span>
+                                </a>
+                            </li>
+                            <li class="<if condition='$current_controller eq Tag'>active</if>">
+                                <a href="/index.php?s=/Admin/Tag/index">
+                                    <span class="title">标签库</span>
+                                </a>
+                            </li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+			
+		</div>
+		
+		<div class="main-content">
+					
+			<!-- User Info, Notifications and Menu Bar -->
+			<nav class="navbar user-info-navbar" role="navigation">
+				
+				<!-- Right links for user info navbar -->
+				<ul class="user-info-menu right-links list-inline list-unstyled">
+					
+					<li class="dropdown user-profile">
+						<a href="#" data-toggle="dropdown">
+							<if condition="$Think.session.admin_headpic neq ''">
+							<img src="<?php echo $_SESSION['onethink_admin']['admin_headpic'];?>" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
+							</if>
+							<span style="font-weight:bolder">
+								<?php echo $_SESSION['onethink_admin']['admin_name'];?>
+								test123
+								<i class="fa-angle-down"></i>
+							</span>
+						</a>
+						
+						<ul class="dropdown-menu user-profile-menu list-unstyled">
+							<li class="last">
+								<a href="/index.php?s=/Admin/Public/logout">
+
+									<i class="fa-lock"></i>
+									退出
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				
+			</nav>
+			
+			<block name="right-first"></block>
+
+			<!-- 右侧主区域 -->
+			<div class="row">
+					<block	name="right-main"></block>
+			</div>
+
+			<block name="right-second"></block>
+
+			<!-- 页脚 -->
+			<footer class="main-footer sticky footer-type-1">
+				<div class="footer-inner">
+					<div class="footer-text">&copy; <?php echo date('Y-m-d');?>&nbsp;<strong>高顿实习</strong></div>
+					<div class="go-up">
+						<a href="#" rel="go-top">
+							<i class="fa-angle-up"></i>
+						</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+<block name="main-box"></block>
+<script src="__PUBLIC__/sys/static/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/sys/static/js/TweenMax.min.js"></script>
+<script src="__PUBLIC__/sys/static/js/resizeable.js"></script>
+<script src="__PUBLIC__/sys/static/js/joinable.js"></script>
+<script src="__PUBLIC__/sys/static/js/xenon-api.js"></script>
+<script src="__PUBLIC__/sys/static/js/xenon-toggles.js"></script>
+<script src="__PUBLIC__/sys/static/js/xenon-custom.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($)
+{
+	setTimeout(function()
+	{
+		$(".checkbox-row input").addClass('cbr');
+		cbr_replace();
+	}, 0);
+});
+</script>
+<block name="script"></block>
+</body>
+</html>

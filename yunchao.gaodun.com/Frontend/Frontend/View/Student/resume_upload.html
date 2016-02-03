@@ -1,0 +1,227 @@
+<input type="hidden" id="pop_show" value="{$pop_show}" >
+<eq name="upload_file" value="1">
+    <div class="right-section-style upload-file-area upload-ready">
+        <h3 class="upload-file-name">
+            <span><a data-href="{$default_type[4] ? $default_type[4]['url'] : $default['url']}" href="javascript:;"
+                     onclick="runHref(this)"
+                     data-status="{$cookie_set|default=0}">{$data[4]['resume_name']}</a></span>
+        </h3>
+        <h3 id="upload-resume" class="change-resume">
+            替换当前附件简历
+        </h3>
+    </div>
+<else />
+    <div class="right-section-style upload-file-area por">
+        <h3 class="upload">上传附件简历</h3>
+        <div class="close-box" id="close-box">
+            <span>请先完成'基本信息'和'实习意向'的填写，才可使用附件简历功能。</span>
+            <a class="close-btn" href="javascript:;" onclick="closePop()">确定</a>
+            <i></i>
+        </div>
+    </div>
+</eq>
+
+<notempty name="data">
+    <div class="right-section-style upload-file-area upload-ready">
+        <div class="delivery-area upload-file">
+            <h4 class="file-resume" data-value="{$default.pkid}" data-type="{$default.url}">
+                默认投递：{$default.name}
+                <span class="pillow-icon"></span>
+            </h4>
+        </div>
+        <div class="choose-content">
+            <foreach name="default_type" key="key" item="default_item">
+                <span data-value="{$key}" data-type="{$default_item.url}">
+                   默认投递：{$default_item.name}
+                </span>
+            </foreach>
+        </div>
+        <div class="preview_resume">
+            <a data-href="{$default.url}" href="javascript:;" onclick="runHref(this)"
+               data-status="{$cookie_set|default=0}">预览简历
+            </a>
+        </div>
+    </div>
+</notempty>
+
+
+
+<!--附件上传成功-->
+<div class="sendsuccess-form delivery-style upload-file-success">
+    <h3 class="sendsuccess-title"><span class="sendsuccess-title-notice">附件简历上传成功</span>
+        <span class="sendsuccess-title-close" id="close-send-success"><img src="__PUBLIC__/static/images/close-icon.png" alt=""></span></h3>
+    <div class="right-logo">
+
+    </div>
+    <span class="upload-success">&nbsp;&nbsp;附件简历上传成功！</span>
+    <span class="upload-success-title">现在你可以投递职位啦！</span>
+    <div class="button-area">
+        <a class="btn btn-info confirm-button login-mail-certicified">确定</a>
+    </div>
+</div>
+<!--附件上传失败-->
+<div class="sendsuccess-form delivery-style upload-file-failure">
+    <h3 class="sendsuccess-title"><span class="sendsuccess-title-notice">上传附件简历</span>
+        <span class="sendsuccess-title-close" id="close-send-failure"><img src="__PUBLIC__/static/images/close-icon.png" alt=""></span></h3>
+    <span class="upload-success upload-failure">&nbsp;&nbsp;上传失败请查看格式是否符合要求</span>
+
+    <div class="button-area">
+        <a id="upload-resume2" href="javascript:;" class="btn btn-info confirm-button login-mail-certicified">上传文件</a>
+    </div>
+    <span class="upload-notice failure-notice">&nbsp;&nbsp;支持word（.docx）,pdf格式文件</span>
+</div>
+<!--loading动画-->
+
+<script>
+    $(function(){
+        var a=1;
+        var b=1;
+
+        function clickResume(){
+            $(".upload-file").on("click",function(event){
+                event.stopPropagation();
+                if(b){
+                    $(this).next().fadeIn(50);
+                    $(".file-resume span").addClass("delivery-up");
+                    b=0;
+                }else{
+                    $(this).next().fadeOut(50);
+                    $(".file-resume span").removeClass("delivery-up");
+                    b=1;
+                }
+            });
+        }
+        clickResume();
+        $(".choose-content span").on("click",function(){
+            var textB=$('.file-resume').text();
+            var urlB=$('.file-resume').attr('data-type');
+            var idB=$('.file-resume').attr('data-value');
+            var textA=$(this).html();
+            var urlA=$(this).attr('data-type');
+            var idA=$(this).attr('data-value');
+            $(this).attr('data-type',urlB);
+            $(this).attr('data-value',idB);
+            $(this).text(textB);
+            $('.file-resume').attr('data-type',urlA);
+            $('.file-resume').attr('data-value',idA);
+            $(".file-resume").text(textA).append("<span class='pillow-icon'></span>");
+            $('.preview_resume a').attr('data-href',urlA);
+            defaultChange(idA);
+        });
+
+        function defaultChange(resume_type){
+            $.post('/Resume/resumeDefaultChange',{resume_type : resume_type});
+        }
+
+        $(document).on("click",function(event){
+            event.stopPropagation();
+            $(".choose-content").fadeOut(50);
+            $(".file-resume span").removeClass("delivery-up");
+            b=1;
+        });
+        //上传简历按钮后
+        $("#close-send-failure").on("click",function(){
+            $('.upload-file-failure').fadeOut(50);
+        });
+
+        $('.login-mail-certicified, #close-send-success').on("click",function(){
+            window.location.reload();
+        });
+
+        var pop_show = $('#pop_show').val()
+        if(pop_show == 'show'){
+            $('.upload').attr('id','upload-resume');
+            new AjaxUpload('#upload-resume',{
+                action : '/Upload/uploadResume',
+                name : 'resume',
+                autoSubmit: true,
+                responseType: 'json',
+                onChange : function(file, extension){
+                    $(".spinner").fadeIn(50);
+                    $("#login-wrap").fadeIn(50);
+                },
+                onComplete : function(file, response) {
+                    $(".spinner").fadeOut(50);
+                    $("#login-wrap").fadeOut(50);
+                    if(response.status == 'success'){
+                        $('.upload-file-success').show();
+                    }else{
+                        $('.upload-file-failure').show();
+                    }
+                }
+            });
+        }else{
+            $('.upload').attr('id','pop_hide');
+        }
+
+        if($('#upload-resume').length > 0){
+            new AjaxUpload('#upload-resume',{
+                action : '/Upload/uploadResume',
+                name : 'resume',
+                autoSubmit: true,
+                responseType: 'json',
+                onChange : function(file, extension){
+                    $(".spinner").fadeIn(50);
+                    $("#login-wrap").fadeIn(50);
+                },
+                onComplete : function(file, response) {
+                    $(".spinner").fadeOut(50);
+                    $("#login-wrap").fadeOut(50);
+                    if(response.status == 'success'){
+                        $('.upload-file-success').show();
+                    }else{
+                        $('.upload-file-failure').show();
+                    }
+                }
+            });
+        }
+
+
+        new AjaxUpload('#upload-resume2',{
+            action : '/Upload/uploadResume',
+            name : 'resume',
+            autoSubmit: true,
+            responseType: 'json',
+            onChange : function(file, extension){
+                $('.upload-file-failure').fadeOut(50);
+                $(".spinner").fadeIn(50);
+                $("#login-wrap").fadeIn(50);
+            },
+            onComplete : function(file, response) {
+                $(".spinner").fadeOut(50);
+                $("#login-wrap").fadeOut(50);
+                if(response.status == 'success'){
+                    $('.upload-file-success').show();
+                    $('.upload-file-failure').hide();
+                }else{
+                    $('.upload-file-failure').show();
+                }
+            }
+        });
+
+        $('#pop_hide').click(function(){
+            $('#close-box').show();
+        })
+
+        var height=$(".upload-file-name span").height();
+        if(height<40){
+            $(".upload-file-name span").css("margin-top","20px");
+        }
+    });
+
+    function closePop(){
+        $('#close-box').css('display','none');
+    }
+
+    function runHref(obj){
+        var url = $(obj).attr('data-href');
+        if(url.indexOf('PageOffice')>0){
+            if($(obj).attr('data-status')<1){
+                $('#download-notice').show();
+                $('#login-wrap').show();
+                return false;
+            }
+        }
+        window.open(url);
+    }
+</script>

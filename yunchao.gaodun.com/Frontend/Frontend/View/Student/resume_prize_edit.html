@@ -1,0 +1,25 @@
+<div class="input_column col-md-12 input-honor-edit" id="input-honor">
+<div class="row">
+<div class="container-fluid">
+<!--模块信息输入栏开始 -->
+	<form role="form" class="basic-information-colunm form-honor-edit" id="form-honor">
+	<input type="hidden" name="prize_id" value="{$base.pkid}">
+	<div class="form-group col-md-12 input-distance">
+	<div class="col-md-4  close-distance ml10">
+	<input type="text" readonly="readonly" class="form-control normal-input prize-period laydate-icon" id="honor-2" placeholder="请输入获奖日期" name="period" value="{$base.period}" onclick="getdate('honor-2',event)">
+	</div>
+	</div>
+	<div class="form-group col-md-12">
+	<div class="col-md-12 no-padding">
+	<textarea class="form-control textarea-style normal-input prize-description" rows="6" placeholder="请输入获奖内容" id="honor-3" name="description" onkeydown="return charlen(this,event)">{$base.description}</textarea>
+	</div>
+	</div>
+	<div class="form-group col-md-12">                              
+	<button type="submit" class="btn btn-info confirm-button information-submit-button" onclick="return saveprize2(this)">{$Think.config.L_SAVE}</button>	
+	<button type="button" class="btn confirm-button information-cancel-button" onclick="cancle(this)">{$Think.config.L_CANCLE}</button>	
+	<button type="button" class="btn confirm-button delete_button" onclick="return delprize(this,{$base.pkid})">{$Think.config.L_DELETE_SINGLE}</button>
+	</div>
+	</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+body{ background: #f4f4f4;}
+*::-webkit-input-placeholder {color:#a5a5a5;font-size:16px;letter-spacing: 1px;}
+*:-moz-placeholder {color:#a5a5a5;font-size:16px;letter-spacing: 1px;}
+*:-ms-input-placeholder {color:#a5a5a5;font-size:16px;letter-spacing: 1px;}
+
+
+
+.ipad-wrap{ width: 100%; max-width: 1200px; margin: 0 auto; height: auto; overflow: hidden;}
+
+.h-center >ul{ width: 530px; border-radius: 5px; box-sizing: border-box;-webkit-box-sizing: border-box;overflow: hidden; height: 40px; margin: 15px auto; border: 1px solid #ffffff;}
+.h-center >ul >li{ float: left; cursor: pointer; border-right: 1px solid #fff; font-size: 18px; color: #fff; width: 132px; height: 38px; line-height: 38px; text-align: center;box-sizing: border-box;-webkit-box-sizing: border-box;}
+.h-center >ul >li>a{ display:block; color: #fff;}
+.h-center >ul >li:last-child{ border-right: none;}
+.h-center >ul >li.active >a{ background: #f2fbff; color: #63cdff;}
+
+.ipad-wrap-tab{ margin-top: 20px;}
+.ipad-wrap-manage{ width: 90%;height: auto; padding-bottom: 10px; position: relative; overflow: hidden;border-bottom: 1px solid #e6e6e6;margin: 0 auto 20px;background: #fff;}
+.ipad-wrap-manage > .qx-box-ipad{ margin-left: 70px; margin-top: 15px;}
+.ipad-wrap-manage > .qx-box-ipad >span{ width: 20px; height:20px; display:block;background:url(../../images/account/qx-box2.png) no-repeat; float: left;}
+.ipad-wrap-manage > .qx-box-ipad >span.active{background:url(../../images/account/qx-box1.png) no-repeat !important;}
+.ipad-wrap-manage > .qx-box-ipad >p{ float: left; font-size: 20px; line-height: 20px; color: #63cdff; margin-left: 5px;}
+.ipad-wrap-manage > ul{ float: left; overflow: hidden; margin-top: 10px;margin-left: 92px;}
+.ipad-wrap-manage > ul >li{ float: left; width: 100px; height: 30px; line-height: 30px;  color: #ffffff; cursor: pointer; margin-right: 10px; border-radius: 5px; font-size: 18px; text-align: center; background: #63cdff; }
+.mab0{ margin-bottom: 0!important;}
+
+.ipad-wrap-manage > .dx-box-ipad{width: 20px; height:20px; margin: 75px 20px 0 20px; display:block;background:url(../../images/account/qx-box2.png) no-repeat; float: left;}
+.ipad-wrap-manage > .dx-box-ipad.active{background:url(../../images/account/qx-box1.png) no-repeat !important;}
+.ipad-wrap-manage > a{ display:block; float: left;}
+.ipad-wrap-manage > a >img{ display:block; float: left; border-radius: 5px; margin-left: 10px; margin-top: 10px;max-width: 110px;height: auto;}
+.ipad-wrap-manage > .dx-div-r{ margin-left: 50px; margin-top: 20px;}
+.ipad-wrap-manage > .dx-div-r >a.title-ipad{ font-size: 24px; display:block; line-height: 24px; font-weight: normal; padding:0; margin: 0; margin-bottom: 19px; color: #63cdff;}
+.ipad-wrap-manage > .dx-div-r >a.delivery-p-ipad{ font-size: 18px; display:block; color: #999999; margin-top: 10px; line-height: 18px;}
+.ipad-wrap-manage > .dx-div-r >div.delivery-div-ipad{ margin-top: 10px; overflow: hidden;}
+.ipad-wrap-manage > .dx-div-r >div.delivery-div-ipad >span{ display:block; float: left; width: 100px;  height: 40px; line-height: 40px; cursor: pointer; text-align: center; font-size: 18px; margin-right: 10px; color: #fff; background: #63cdff; border-radius: 5px;}
+.ipad-wrap-manage > i{ position: absolute; top: 30px; right: 50px; font-size: 16px; color: #a5a5a5; font-style: normal;}
+
+.ipad-wrap-manage > .dx-div-r >a.interview-p-ipad{ display:block; font-size: 18px; color: #999999; margin-top: 29px; line-height: 18px;}
+.ipad-wrap-manage > .dx-div-r > div.interview-div-ipad{ margin-top: 29px; font-size: 20px; color: #a5a5a5; overflow: hidden;}
+.ipad-wrap-manage > img.interview-img-ipad{ margin-left: 30px;}
+
+
+.box-wrap-ipad{width: 100%;height: 100%;display: block;position: fixed; display:none; top: 0;left: 0;background: rgba(0,0,0,0.25);z-index: 99999;}
+.manage-wrap{ width: 600px; height: 250px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -125px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 100000;}
+.manage-wrap > .manage-wrap-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 24px; color: #ffffff;}
+.manage-wrap > .manage-wrap-title >img { float: right; margin-right: 44px; display: block; margin-top: 17px; cursor: pointer;}
+.manage-wrap > p.manage-p1{ font-size: 22px; color: #656565; text-align: center; line-height: 22px; margin:30px auto 0;}
+.manage-wrap > p.manage-p2{ font-size: 18px; color: #656565; text-align: center; line-height: 18px; margin:12px auto 0;}
+.manage-wrap > p.manage-p3{ font-size: 22px; color: #656565; text-align: center; line-height: 22px; margin:40px auto 60px;}
+.manage-wrap > p.manage-p4{ width: 465px; font-size: 22px; font-weight: normal; color: #656565;line-height: 32px; margin:25px auto 35px;}
+
+.manage-wrap > div.manage-a{ width: 220px; height: 42px;overflow: hidden; margin: 45px auto 0;}
+.manage-wrap > div.manage-a > a{ width: 100px; float: left; height: 42px; transition:.3s; display: block; line-height: 42px; text-align: center;border-radius: 5px; font-size: 20px; color: #ffffff; background: #63cdff;}
+.manage-wrap > div.manage-a > a:last-child{ background: #dddddd; margin-left: 20px;}
+
+.ipad-none{ font-size: 30px; color: #a5a5a5; text-align: center; margin-top: 260px;}
+
+/* 有效职位  下线职位*/
+.positions-ipad-ul{ width:266px !important; } 
+.positions-ipad{ margin: 30px 0 0 80px; overflow: hidden; height: auto;}
+.positions-ipad >a{ font-size: 24px; color: #63cdff; line-height: 24px;}
+.positions-ipad >p{ font-size: 18px; color: #999999; line-height: 18px; margin-top: 22px;}
+.positions-ipad >span{ display:block; width: 100px; color: #fff; cursor: pointer; font-size: 18px; border-radius: 5px; margin-top: 20px; height: 40px; text-align: center; line-height: 40px; background: #63cdff;}
+.positions-ipad >div{ overflow: hidden; height: auto; margin-top: 20px;}
+.positions-ipad >div >span{display:block; float: left; margin-right: 20px; width: 100px; color: #fff; cursor: pointer; font-size: 18px; border-radius: 5px; height: 40px; text-align: center; line-height: 40px; background: #63cdff;}
+.manage-wrap > p.manage-p5{ width: 370px; font-size: 18px; font-weight: normal; color: #656565;line-height: 24px; margin:10px auto -20px;}
+.manage-wrap > p.manage-p6{font-size: 18px; text-align: center; font-weight: normal; color: #656565;line-height: 30px; margin:45px auto 35px;}
+.manage-wrap > p.manage-p7{font-size: 22px; margin-top: 40px; text-align: center; font-weight: normal; color: #656565;line-height: 30px;}
+.close-btn{ margin: 0 auto !important; float: none !important;}
+
+
+.disref{ background: #b2b2b2 !important; }
+
+
+
+
+/* 手机 */
+.phone-wrap{ display: none;}
+.phone-wrap-tab{ margin-top: 15px;}
+.phone-wrap-manage{ width: 100%; position: relative; overflow: hidden; margin-bottom: 15px; height: auto; background: #fff;}
+.qx-box-phone{ margin-top: 8px; display:block;overflow: hidden; margin-left: 32px;}
+.qx-box-phone >span{width: 15px; height:15px; display:block;background:url(../../images/account/qx-box2.png) no-repeat; background-size: cover; -webkit-background-size: cover; float: left;}
+.qx-box-phone >p{ float: left; margin-top: 1px; margin-left: 5px; font-size: 13px; color: #63cdff; line-height: 12px;}
+.qx-box-phone >span.active{background:url(../../images/account/qx-box1.png) no-repeat; background-size: cover; -webkit-background-size: cover;}
+.phone-wrap-manage > ul{ margin-left: 35px; float: left; overflow: hidden;}
+.phone-wrap-manage > ul >li{ float: left; cursor: pointer; margin: 5px 5px 5px 0;  border-radius: 3px; width: 60px; text-align: center; height: 20px; line-height: 20px; font-size: 12px; color: #fff; background:#63cdff;}
+.mb0-br{ margin-bottom: 0; border-bottom: 1px solid #e8e8e8;}
+.dx-box-phone{width: 15px; margin: 46px 0 0 8px; height:15px; display:block;background:url(../../images/account/qx-box2.png) no-repeat; background-size: cover; -webkit-background-size: cover;}
+.dx-box-phone.active{background:url(../../images/account/qx-box1.png) no-repeat; background-size: cover; -webkit-background-size: cover;}
+.phone-wrap-manage > a{ display:block; float: left;}
+.phone-wrap-manage > a >img.manage-img-phone{ display:block; float: left; margin: 9px 0 10px 8px; width: 64px; height: 88px;}
+.phone-wrap-manage > .dx-div-r{ margin-left:13px; width: 70%; overflow: hidden;}
+.phone-wrap-manage > .dx-div-r >a.title-phone{ font-size: 16px; display:block; color: #63cdff; font-weight: normal; padding:0; margin: 5px 0 0 0;}
+.phone-wrap-manage > .dx-div-r >.delivery-p-phone{ display:block; white-space: nowrap; font-size: 12px; line-height: 12px; color: #999999; margin-top: 9px;}
+.phone-wrap-manage > .dx-div-r >.delivery-div-phone{ margin-top: 7px; overflow: hidden;}
+.delivery-div-phone >span{ float: left; cursor: pointer; border-radius: 3px; color: #fff; margin-right: 6px; display:block; width: 60px; height: 24px; line-height: 24px; text-align: center; background: #63cdff; font-size: 13px;}
+.phone-wrap-manage >i{ position: absolute; font-size: 11px; color: #999999;  font-style:normal; right: 4.5%; top: 14px;}
+.phone-wrap-manage > .dx-div-r >.phone-manage-p1{ font-size:12px; display:block; line-height: 12px; margin-top: 10px; color: #999999;}
+.phone-wrap-manage > .dx-div-r >.phone-manage-p2{ font-size:13px; line-height: 13px; margin-top: 17px; color: #a5a5a5;}
+.mat11{ margin-top: 11px;}
+.mal4{ margin-left: 4%;}
+
+.manage-wrap-sus{ width: 100%; display:none;  height: 100%; opacity: 0.5; position: fixed;z-index: 99999;background: #000;top: 0;left: 0;}
+.manage-wrap-box{width: 224px; height: 124px; display:none;  overflow: hidden; background: #fff; border-radius: 8px; z-index: 999999; position: fixed; top: 50%; left: 50%; margin-left: -112px; margin-top: -62px;}
+.manage-wrap-box > .phone-yes-no{ width: 100%; height: 35px; position: absolute; bottom: 0; left: 0; line-height: 35px; border-top: 1px solid #aaaaaa;}
+.manage-wrap-box > .phone-yes-no >a{  display:block; text-align: center; float: left; width: 50%; height: 35px; font-size: 15px; color: #63cdff;}
+.manage-wrap-box > .phone-yes-no >a:first-child{ box-sizing:border-box; -webkit-box-sizing:border-box;border-right: 1px solid #aaa; border-box:box-sizing;}
+.manage-wrap-box > .phone-yes-no >span{ width: 100%;font-size: 15px; color: #63cdff; display: block; text-align: center; cursor: pointer; }
+.manage-wrap-box >p.manage-phone-p1{ text-align: center; font-size: 13px; line-height: 13px; margin-top: 35px; color: #656565;}
+.manage-wrap-box >p.manage-phone-p2{ text-align: center; font-size: 13px; margin-bottom: 5px; line-height: 13px; margin-top: 22px; color: #656565;}
+.manage-wrap-box >p.manage-phone-p3{ width: 188px; margin: 0 auto; text-align: left; font-size: 11px; line-height: 18px; color: #656565;}
+.manage-wrap-box >p.manage-phone-p4{ width: 170px; margin: 32px auto 0; text-align: left; font-size: 11px; line-height: 18px; color: #656565;}
+.manage-wrap-box >p.manage-phone-p5{ width: 170px; margin: 18px auto 0; text-align: left; font-size: 11px; line-height: 18px; color: #656565;}
+
+.phone-none{font-size:18px;color: #a5a5a5; text-align: center; margin-top: 150px;}
+
+/* 有效职位  下线职位*/
+.positions-phone{ margin: 16px 0 0 4.5%;}
+.positions-phone >a.title-phone{ font-size: 16px;white-space: nowrap; color: #63cdff; display:block;}
+.positions-phone >p{ font-size: 12px; color: #999999;white-space: nowrap; margin-top: 12px; line-height: 12px;}
+.positions-phone >div{ overflow: hidden; height: auto; margin-bottom: 12px;  margin-top: 10px;}
+.positions-phone >div >span{ width: 60px; cursor: pointer; font-size: 13px; color: #ffffff; margin-right: 5px; border-radius: 3px; background: #63cdff; display:block; float: left; height: 24px; text-align: center; line-height: 24px;}
+.positions-phone >span{ width: 60px; margin-bottom: 12px; cursor: pointer; font-size: 13px; color: #ffffff; margin-top: 10px; border-radius: 3px; background: #63cdff; display:block;  height: 24px; text-align: center; line-height: 24px;}
+.manage-wrap-box >p.manage-phone-p6{ text-align: center; font-size: 13px; margin-bottom: 5px; line-height: 13px; margin-top: 12px; color: #656565;}
+
+
+
+
+@media all and (min-width:992px) {
+	
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+	.ipad-wrap-manage > .dx-box-ipad{margin: 75px 0px 0 10px;}
+	.ipad-wrap-manage > .dx-div-r{margin-left: 30px;}
+	.ipad-wrap-manage > img.interview-img-ipad{ margin-left: 10px;}
+	.ipad-wrap-manage > i{ right: 30px;}
+  	.ipad-wrap-manage > .qx-box-ipad{ margin-left: 40px;}
+  	.ipad-wrap-manage > ul{ margin-left: 70px;}
+  	.positions-ipad{ margin-left: 40px;}
+
+}
+
+@media ( max-width: 767px){
+	.phone-wrap{ display: block;}
+	.ipad-wrap{ display: none;}
+	.h-center >ul{ width: 85%; border-radius: 5px; box-sizing: border-box;-webkit-box-sizing: border-box;overflow: hidden; height: 30px; margin: 8.5px auto; border: 1px solid #ffffff;}
+	.h-center >ul >li{ float: left; cursor: pointer; border-right: 1px solid #fff; font-size: 13px; color: #fff; width: 25%; height: 28px; line-height: 28px; text-align: center;box-sizing: border-box;-webkit-box-sizing: border-box;}
+	.h-center >ul >li:last-child{ border-right: none;}
+	.h-center >ul >li.active{ background: #f2fbff; color: #63cdff;}
+	.positions-ipad-ul{ width: 50% !important;}
+	.positions-ipad-ul >li{ width: 50% !important;}
+}
+
+@media ( max-width: 320px){
+	.phone-wrap-manage > .dx-div-r{ width: 66%;}
+	.phone-wrap-manage >i{ top: 9px;}
+}
+
+
+
+
+

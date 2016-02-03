@@ -1,0 +1,25 @@
+<h3>简历完整度：<i class="{$rate_style.i}">&nbsp;{$number}%</i></h3>
+<div id="complete-circle" >
+    <div class="schedule">
+        <span id="circle" class="{$rate_style.span}" data-value="{$number}%"></span>
+    </div>
+    <notempty name="resume_text">
+        <div class="diag-no-complete {$rate_style.div}">
+            <span class="no-complete">未完成模块</span>
+            <div class="module-title-content">{$resume_text}</div>
+        </div>
+    </notempty>
+</div>
+<script>
+    $(function(){
+        $('#circle').css({width:$('#circle').attr('data-value')});
+
+        $("#complete-circle").hover(function(){
+            $(".diag-no-complete").fadeIn(300);
+        },
+        function(){
+            $(".diag-no-complete").fadeOut(300);
+        });
+
+    })
+</script>

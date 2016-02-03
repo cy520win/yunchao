@@ -1,0 +1,47 @@
+<if condition="$tpl eq true">
+<div class="schooljob-div">
+		<div class="col-sm-4">
+				<input type="month" class="form-control-month form-school" name="job_experience[start_time]" data="start_time">
+				<input type="month" class="form-control-month form-school" name="job_experience[finish_time]" data="finish_time">
+		</div>
+		<div class="col-sm-3" style="padding-left:0;">
+			<select name="job_experience[job_id]" class="form-control form-school" data="job_id">
+				<foreach name="schooljob" item="schooljobItem">
+					<option value="{$schooljobItem.pkid}">{$schooljobItem.title}</option>
+				</foreach>
+			</select>
+		</div>								
+		<div class="col-sm-2">
+				<span onclick="deldiv(this,5)" class="delbutton">删除</span>
+				<span onclick="saveschool(this)" class="delbutton">保存</span>
+		</div>	
+		<div class="col-sm-7 schooljob-text">
+				<textarea class="form-control form-school" name="job_experience[description]" cols="6" rows="5" data="description"></textarea>
+		</div>	
+</div>
+</if>
+
+<if condition="$tpl eq false">
+<foreach name="experience" item="expItem">
+<div class="schooljob-div">
+		<div class="col-sm-4">
+				<input type="month" class="form-control-month form-school" name="job_experience[start_time]" data="start_time" value="{$expItem.start_time|ymdTOym=###}">
+				<input type="month" class="form-control-month form-school" name="job_experience[finish_time]" data="finish_time" value="{$expItem.finish_time|ymdTOym=###}">
+		</div>
+		<div class="col-sm-3" style="padding-left:0;">
+			<select name="job_experience[job_id]" class="form-control form-school form-school-opt" data="job_id" key="{$expItem.job_id}">
+				<foreach name="schooljob" item="schooljobItem">
+					<option value="{$schooljobItem.pkid}">{$schooljobItem.title}</option>
+				</foreach>
+			</select>
+		</div>								
+		<div class="col-sm-2">
+				<span onclick="cur5deldiv(this,{$expItem.pkid})" class="delbutton">删除</span>
+				<span onclick="cur5saveschool(this,{$expItem.pkid})" class="delbutton">保存</span>
+		</div>	
+		<div class="col-sm-7 schooljob-text">
+				<textarea class="form-control form-school" name="job_experience[description]" cols="6" rows="5" data="description">{$expItem.description}</textarea>
+		</div>
+</div>	
+</foreach>
+</if>

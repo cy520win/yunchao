@@ -1,0 +1,163 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">修改企业帐号信息</h3>
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <form role="form" class="form-horizontal" action="/index.php?s=/Admin/Enterprise/resetAccount"
+                      method="post" id="resetForm">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">企业帐号：</label>
+
+                        <div class="col-sm-3">
+                            <input type="text" name="email" class="form-control" value="{$accountInfo.login_email}">
+                            <span style="color:#ff2f32;display: none">该帐号已被使用</span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="enId" value="{$accountInfo.enterprise_id}">
+                    <input type="hidden" name="acId" value="{$accountInfo.account_id}">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">企业密码：</label>
+
+                        <div class="col-sm-3">
+                            <input type="password" name="password" class="form-control" value="chinagdsx2015">
+                            <span style="color:#ff2f32;display: none">请输入6-16位，字母+数字的密码</span>
+                        </div>
+                        <div class="col-sm-3 control-label" style="color:#ff2f32;">默认密码为：chinagdsx2015</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">再次输入：</label>
+
+                        <div class="col-sm-3">
+                            <input type="password" name="repassword" class="form-control"
+                                   value="chinagdsx2015">
+                            <span style="color:#ff2f32;display: none">两次密码输入不一致</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="padding-top:10px;">
+
+                        <div class="col-sm-12" style="margin:auto text-align:center;">
+                            <div class="container" style="width:145px;">
+                                <button type="button" class="btn btn-turquoise" id="resetInfo">保存</button>
+                                <button type="button" class="btn btn-red"
+                                        onclick="javascript:location.href='/index.php?s=/Admin/Enterprise/index'">返回
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            $('#resetInfo').click(function(){
+                var bool = true;
+                if($('input[name=email]').val() == '') {
+                    $('input[name=email]').css('border','1px solid #ffcc00');
+                    bool = false;
+                }
+
+                if($('input[name=password]').val() == '')
+                {
+                    $('input[name=password]').css('border','1px solid #ffcc00');
+                    bool = false;
+                }
+
+                if($('input[name=password]').val() != $('input[name=repassword]').val()){
+                    $('input[name=repassword]').css('border','1px solid #ffcc00');
+                    $('input[name=repassword]').next('span').show();
+                    bool = false;
+                }
+
+                if(bool != true){
+                    return bool;
+                }
+                if($('input[name=password]').val() == 'chinagdsx2015'){
+                    if(!window.confirm('若不做修改，密码默认为“chinagdsx2015”，是否确定？')){
+                        return false;
+                    }
+                }
+                $.post('/index.php?s=/Admin/Enterprise/resetAccount', $('#resetForm').serialize(),
+                    function(data){
+                        if(data.status == 'success'){
+                            if(window.confirm('密码已被重置，是否返回列表页？')){
+                                location.href = '/index.php?s=/Admin/Enterprise/index';
+                            }else{
+                                window.location.reload();
+                            }
+                        }else{
+                            if(data.email == 'notunique'){
+                                $('input[name=email]').css('border','1px solid #ffcc00');
+                                $('input[name=email]').next('span').show();
+                            }else if(data.pass_word == 'notunique'){
+                                $('input[name=password]').css('border','1px solid #ffcc00');
+                                $('input[name=password]').next('span').show();
+                            }else{
+                                alert(data.msg);
+                            }
+                        }
+                },'json');
+
+            });
+
+            $('input[name=email]').blur(function(){
+                var mail = $('input[name=email]').val();
+                var uid = $('input[name=acId]').val();
+                $.post('/index.php?s=/Admin/Enterprise/checkMail', {'mail' : mail,'uid' : uid},
+                    function(data){
+                        if(data == false){
+                            $('input[name=email]').css('border','1px solid #ffcc00');
+                            $('input[name=email]').next('span').show();
+                        }else{
+                            $('input[name=email]').css('border','1px solid #e4e4e4');
+                            $('input[name=email]').next('span').hide();
+                        }
+                    },'json');
+            })
+
+            $('input[name=repassword]').blur(function(){
+                if($('input[name=password]').val() != $('input[name=repassword]').val()){
+                    $('input[name=repassword]').css('border','1px solid #ffcc00');
+                    $('input[name=repassword]').next('span').show();
+                }else{
+                    $('input[name=repassword]').css('border','1px solid #e4e4e4');
+                    $('input[name=repassword]').next('span').hide();
+                }
+            })
+
+            $('input[name=password]').blur(function(){
+                var pass = $('input[name=password]').val();
+                $.post('/index.php?s=/Admin/Enterprise/checkPwdRule', {'pass' : pass},
+                        function(data){
+                            if(data.status == 'fail'){
+                                $('input[name=password]').css('border','1px solid #ffcc00');
+                                $('input[name=password]').next('span').show();
+                            }else{
+                                $('input[name=password]').css('border','1px solid #e4e4e4');
+                                $('input[name=password]').next('span').hide();
+                            }
+                        },'json');
+            })
+        })
+    </script>
+</block>

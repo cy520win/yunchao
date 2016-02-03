@@ -1,0 +1,27 @@
+@charset "utf-8";
+.fail-resume-left > h1 >a{color:#06bad2;}
+.fail-resume-left > p a{color:#656565;}
+.permit-interview-box,.refuse-interview-box{
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
+  transform: translateY(30px);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition:  opacity 0.3s 0s, visi
+      bility 0s 0s,transform 0.5s 0s;
+  -ms-transition: opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;
+  transition: opacity 0.3s 0s, visibility 0.3s 0s ,transform 0.5s 0s;
+  opacity:0;
+  visibility:hidden;
+}
+.is-visible{
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}

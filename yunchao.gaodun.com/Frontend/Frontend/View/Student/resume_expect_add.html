@@ -1,0 +1,67 @@
+				            	<div class="input_column practise_wish_column col-md-12 add-expect-last">
+					            	<div class="row">
+						            	<div class="container-fluid">
+											<form role="form" class="basic-information-colunm" id="expect-form-add">
+												<div class="col-md-12 name-label expect-form-city margint40 mt12">
+													<div class="col-md-9 close-distance">
+														<div class="div-wrap-city">
+														<span class="five">最多选5项</span>
+														<div id="inputTest20" class="form-control normal-input city-text">
+																<span></span>
+										                      <ul><li id="inputTest-li">期望实习地<input type="hidden" name="city_text"></li></ul>
+										                 </div>
+										                 <span class="error-info col-md-5 necessary"></span>
+										                 </div>
+									                 </div>
+												</div>
+												<div class="form-group col-md-12 name-label marginb22">	
+													<div class="col-md-4 close-distance width260-2 margin10">
+														<select class="form-control week-available input-grey-style week-available-add"  id="sun-3" name="week_available">
+																<option value="">每周实习天数</option>
+																<foreach name="workday" item="wd">
+																	<option value="{$key}">{$wd}</option>
+																</foreach>
+														</select>
+														<span class="error-info col-md-6 necessary"></span>
+													</div>
+													<div class="col-md-4 close-distance width260-2 mgl20">
+														<select class="form-control salary-range input-grey-style salary-range-add" id="sun-1" name="salary_range">
+															<option value="">期望日薪</option>
+															<foreach name="daysalary" item="ds">
+																<option value="{$key}">{$ds}</option>
+															</foreach>
+														</select>
+														<span class="error-info col-md-6 necessary"></span>
+													</div>	
+												</div>
+												<div class="form-group col-md-12 marginb22">
+													<div class="col-md-9 close-distance width540 margin10">
+														<select class="form-control expect-cateory input-grey-style expect-cateory-add" id="sun-2" name="expect_category">
+																<option value="">期望实习岗位</option>
+																<foreach name="postcate" item="pc">
+																	<option value="{$key}">{$pc}</option>
+																</foreach>
+														</select>
+														<span class="error-info col-md-6 necessary"></span>
+													</div>	
+												</div> 
+												<div class="form-group col-md-12">
+														<div class="col-md-4 close-distance width246 margin10">
+															<input type="text" readonly="readonly" id="demo" class="form-control normal-input col-md-4 laydate-icon period-start" name="period_start" placeholder="实习开始时间" onclick="getnewdate('demo')">
+															<span class="error-info col-md-6 necessary"></span>
+														</div>
+													<span class="col-md-1 underline data-line data-line-add">&nbsp;</span>
+													<div class="col-md-4 close-distance width246 margin10">
+															<input type="text" readonly="readonly" id="demo2"
+                                                                   class="form-control normal-input col-md-4 laydate-icon period-finish" name="period_finish" placeholder="实习结束时间" onclick="getnewdate('demo2')">
+														<span class="error-info col-md-6 necessary" ></span>
+													</div>
+                                                    <p class="date_tip">不填本信息，则表示可以马上面试并开始实习</p>
+												</div>
+												<div class="form-group col-md-12 information-button" id="expect-add-button">
+													<button class="btn btn-info confirm-button information-submit-button" onclick="return saveexpect(this)" >{$Think.config.L_SAVE}</button>
+												</div>
+											</form>
+						            	</div>
+					            	</div>
+				       			</div>

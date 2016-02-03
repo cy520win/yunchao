@@ -1,0 +1,17 @@
+@charset "utf-8";
+/*待处理简历*/
+.invitation-resume-list{width:90%;}
+.treat-resume-header{margin-top:30px;}
+.invitation-resume-list div{overflow:hidden;}
+.treat-resume-header >p.p22,.treat-resume-header >p.p23,.treat-resume-header >p.p24,.treat-resume-header >p.p25{width:20%;margin-left:0;}
+.invitation-resume-list >.student{width:16%;}
+.invitation-resume-list >.name{width:26%;}
+.invitation-resume-list >.date{width:18%;padding:0;}
+.invitation-resume-list >div{width:10%;}
+.invitation-resume-list >.read{margin-left:29px;}
+.invitation-resume-list >.read a{text-decoration: underline;font-size:14px;color:#00acf0;}
+.invitation-resume-list >.read a:hover{ color: #0083b7; }
+.invitation-resume-list >.state{width:20%;margin-left: 40px;font-weight: bold;}
+/*学生已拒绝*/
+
+                 

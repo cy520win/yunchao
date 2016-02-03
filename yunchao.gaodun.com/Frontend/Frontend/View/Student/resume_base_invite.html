@@ -1,0 +1,99 @@
+<div class="personal-photo col-md-2 pdl0">
+     <img class="up-photo up-photo-headpic" src="<notempty name='headpic'>{$headpic}<else/>__PUBLIC__/static/images/new_nophoto_student.png</notempty>" >
+</div>
+<div class="col-md-10 pdl0">
+    <notempty name="baseInfo.name">
+    <div class="col-md-12 look-view">
+        <dd>
+        <span>{$baseInfo.name}</span>
+        <notempty name="baseInfo.name">
+            <notempty name="baseInfo.gender">
+                <i class="base-info-i">|</i>
+            </notempty>
+        </notempty>
+        <if condition="$baseInfo.gender eq 1">
+            <span>男</span>
+        <else/>
+            <span>女</span>
+        </if> 
+        <notempty name="baseInfo.gender">
+            <notempty name="baseInfo.detail_major">
+                <i class="base-info-i">|</i>
+            </notempty>
+        </notempty>
+        <notempty name="baseInfo.detail_major">
+           <span>{$baseInfo.birth_date}</span>
+        </notempty>
+        </dd>
+        <dd>
+            <notempty name="baseInfo.graduate_school">
+                <span >{$baseInfo.graduate_school}</span>
+            </notempty>
+            <notempty name="baseInfo.major_type_text">
+                <notempty name="baseInfo.graduate_school">
+                    <notempty name="baseInfo.major_type_text">
+                        <i class="base-info-i">|</i>
+                    </notempty>
+                </notempty>
+                <span >{$baseInfo.major_type_text}
+                <notempty name="baseInfo.detail_major">（{$baseInfo.detail_major}）</notempty>
+                </span>
+            </notempty>
+            <notempty name="baseInfo.education_text">
+                <notempty name="baseInfo.education_text">
+                    <notempty name="baseInfo.major_type_text">
+                        <i class="base-info-i">|</i>
+                    </notempty>
+                </notempty>
+                <span>{$baseInfo.education_text}</span>
+            </notempty>            
+            <notempty name="baseInfo.graduate_year">
+                <notempty name="baseInfo.education_text">
+                    <notempty name="baseInfo.graduate_year">
+                        <i class="base-info-i">|</i>
+                    </notempty>
+                </notempty>
+                <span>{$baseInfo.current_grade_text}</span>毕业
+            </notempty>
+        </dd>
+        <dd>
+            <notempty name="baseInfo.contact_email">
+                <eq name="inviteViewNone" value="true">
+                {$baseInfo.contact_email}
+                <else/>
+                {$baseInfo.contact_email|invite_cutemail}
+                </eq>
+            </notempty>      
+            <notempty name="baseInfo.contact_mobile">
+                <notempty name="baseInfo.contact_email">
+                    <notempty name="baseInfo.contact_mobile">
+                        <i class="base-info-i invite_s_span">&nbsp;|&nbsp;</i>
+                    </notempty>
+                </notempty>
+                <eq name="inviteViewNone" value="true">
+                {$baseInfo.contact_mobile}
+                <else/>
+                {$baseInfo.contact_mobile|invite_cutemobile}
+                </eq>
+            </notempty>
+        </dd>
+        <dd class="base-dd-four">
+            <notempty name="baseInfo.id_number">
+                <span>{$baseInfo.id_number}（身份证）</span>
+            </notempty>
+            <if condition="$baseInfo.politics_status eq 1">
+                    <notempty name="baseInfo.id_number">
+                        <i class="base-info-i">|</i>
+                    </notempty>
+                <span>党员</span>
+            </if>            
+            <notempty name="baseInfo.living_city">   
+                <if condition="$baseInfo.politics_status eq 1 or $baseInfo['id_number']">
+                    <i class="base-info-i">|</i>            
+                </if>      
+                <span>现居{$baseInfo.living_city}</span>
+            </notempty>
+        </dd>
+    </div>
+    </notempty>
+</div>

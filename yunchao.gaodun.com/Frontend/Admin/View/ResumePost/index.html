@@ -1,0 +1,176 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">投递列表</h3>
+							
+							<div class="panel-options">
+
+								<a href="#" data-toggle="panel">
+									<span class="collapse-icon">–</span>
+									<span class="expand-icon">+</span>
+								</a>
+							
+							</div>
+						</div>
+						<div class="panel-body">
+									<div class="form-group">
+									<div class="row">
+									<div class="col-md-9">
+										<form action="/index.php?s=/Admin/ResumePost/index" method="post">
+										<label class="control-label" for="" style="padding-top:5px;float:left;margin-right:8px;">查询:</label>
+										<input type="text" class="form-control search-input" placeholder="输入岗位 企业 学生名" style="width:40%;float:left;margin-right:8px;" name="w" value="{$search_n}">
+										<div class="col-md-3">										
+											<select name="s" id="" class="form-control">
+												<option value="">选择状态</option>
+												<foreach name="status" item="sta">
+													<option value="{$key}" <if condition="$search_s eq $key">selected</if> >{$sta}</option>
+												</foreach>
+											</select>
+											</div>
+										 <input type="submit" class="btn btn-warning" style="float:left;" value="搜索">
+		                                 </form>
+									</div>
+			</div>
+								
+			</div>
+			<div style="clear:both;display:block"></div>
+		<div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+									
+								
+								<table cellspacing="0" class="table table-small-font table-bordered table-striped">
+									<thead>
+										<tr>
+											<th data-priority="1">ID</th>
+											<th data-priority="6">岗位名</th>
+											<th data-priority="6">企业</th>
+								            <th data-priority="6">学生</th>
+											<th data-priority="3">类型</th>
+											<th>状态</th>
+                                            <th>后台处理</th>
+											<th data-priority="6">投递时间</th>
+											<th data-priority="6">查看时间</th>
+											<th data-priority="6">处理时间</th>
+										</tr>
+									</thead>
+									<tbody>
+											<notempty name="resume">
+												<foreach name="resume" item="res">
+													<tr>
+													<td>{$res.pkid}</td>
+													<td>
+                                                        <a href="{$front_url}/Post/info/id/{$res.post_id|enInt}"
+                                                           target="_blank" style="text-decoration: underline">
+                                                            {$res.title}
+                                                        </a>
+                                                    </td>
+													<td>{$res.full_name}<br>tel：{$res.telephone}</td>
+													<td>
+                                                        <a href="{$front_url}/Student/resume/id/{$res.resume_id|enInt}" target="_blank" style="text-decoration: underline">
+                                                            {$res.name}<br>{$res.contact_mobile}
+                                                            <br>{$res.contact_email}
+                                                        </a>
+                                                    </td>
+													<td>{$res.send_type|resumeType=###}</td>
+													<td id="status_{$res.pkid}">{$res.status|resumeStatus}</td>
+                                                    <td id="status_operate_{$res.pkid}">
+                                                        <a class="btn btn-info btn-sm operate"
+                                                           data-type="{$res['status'] == 1 ? 2 : 0}"
+                                                           data-id="{$res.pkid}"
+                                                           href="{$front_url}/Student/resume/id/{$res.resume_id|enInt}" target="_blank">
+                                                            查看
+                                                        </a>
+                                                        <if condition="$res['status'] lt 3">
+                                                            <button type="button"
+                                                                    class="btn btn-success btn-sm operate operate_3"
+                                                                    data-type="3" data-id="{$res.pkid}">
+                                                                允许
+                                                            </button>
+                                                            <button type="button"
+                                                                    class="btn btn-danger btn-sm operate operate_4"
+                                                                    data-type="4" data-id="{$res.pkid}">
+                                                                拒绝
+                                                            </button>
+                                                            <button type="button"
+                                                                    class="btn btn-success btn-sm operate operate_5"
+                                                                    data-type="5" data-id="{$res.pkid}">
+                                                                待定
+                                                            </button>
+                                                        </if>
+                                                    </td>
+													<td>{$res.create_time}</td>
+													<td>{$res.read_time}</td>
+													<td>{$res.deal_time}</td>
+													</tr>
+												</foreach>
+											<else/>
+											<tr>
+												<td colspan="9">暂无数据</td>
+											</tr>
+											</notempty>
+									</tbody>
+								</table>
+								<div class="row">
+								<div class="col-md-12" style="text-align:right;">
+									{$page}		
+								</div>
+							</div>
+							
+							</div>
+						</div>
+					
+					</div>
+				</div>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            $('.operate').click(function(){
+                var rpId = $(this).attr('data-id');
+                var msg_type = $(this).attr('data-type');
+                var operate = $(this);
+                var msg = '';
+                switch(msg_type){
+                    case '3':
+                        msg = '允许面试';
+                        break;
+                    case '4':
+                        msg = '拒绝面试';
+                        break;
+                    case '5':
+                        msg = '待定面试';
+                        break;
+                    default:
+                        msg = msg;
+                       break;
+                }
+                if(msg != ''){
+                    if(!window.confirm('是否确定' + msg)){
+                        return false;
+                    }
+                }
+                $.post('/index.php?s=/Admin/ResumePost/changeStatus',{'pkid' : rpId,'status' : msg_type},function(data){
+                    if(data.status == 'success'){
+                        if(msg_type == 3 || msg_type == 4 || msg_type == 5){
+                            $('#status_operate_' + rpId).children('.operate_3').remove();
+                            $('#status_operate_' + rpId).children('.operate_4').remove();
+                            $('#status_operate_' + rpId).children('.operate_5').remove();
+                            $('#status_operate_' + rpId).children('a').attr('data-type',0);
+                        }else{
+                            operate.attr('data-type',0);
+                        }
+                        if(msg_type != 0){
+                            $('#status_' + rpId).html(data.label);
+                        }
+                    }else{
+                        if(msg_type != '2'){
+                            alert(data.msg);
+                        }
+                    }
+                },'json')
+            })
+        })
+    </script>
+</block>

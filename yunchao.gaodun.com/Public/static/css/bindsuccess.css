@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+.bindmail_send_form{
+    width:80%;
+    margin:0 auto;
+    padding-top:80px;
+    padding-bottom:30px;
+}
+.bindsuccess{
+    position:absolute;
+    top:215px;
+    left:50%;
+    margin-left:-250px;
+    width:500px;
+    background:#ffffff;
+    text-align: center;
+   
+
+}
+.bindsuccess-content{
+    width:50%;
+    margin:0 auto;
+    text-align:left;
+     color:#656565;
+
+}
+.bindsuccess-content span{
+    display:block;
+    font-size:26px;
+   
+    background:url("static/images/small-right.png") no-repeat left center;
+    line-height:42px;
+    text-align:center;
+    margin-top:70px;
+}
+.bindsuccess-content p{
+   font-size:16px;
+    line-height:40px;
+    margin-top:20px;
+    padding-bottom:60px;
+
+
+}
+.bindsuccess-content p a{
+    color:#0bbbea;
+    text-decoration: underline;
+    
+    }

@@ -1,0 +1,107 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">新增热门城市</h3>
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <form action="/index.php?s=/Admin/HotCity/save" method="post" role="form"
+                      class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="field-5">热门城市：</label>
+
+                        <div class="col-sm-2">
+                            <select class="form-control" id="province_id">
+                                <option value="0">省</option>
+                                <foreach name="provinceList" item="provinceItem">
+                                    <option value="{$provinceItem.region_id}">
+                                        {$provinceItem.region_name}
+                                    </option>
+                                </foreach>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="form-control" name="region_id" id="city_id">
+                                <option value="0">市</option>
+                            </select>
+                        </div>
+                        <input type="hidden" name="order_num" value="1">
+                        <span class="form-control" id="cityError"
+                              style="color: #ff2f32;display: none;border: 0">城市选择重复或未选择城市
+                        </span>
+                    </div>
+
+                    <div class="form-group" style="padding-top:10px;">
+                        <div class="col-sm-12" style="margin:auto text-align:center;">
+                            <div class="container" style="width:145px;">
+                                <button type="submit" class="btn btn-turquoise">提交</button>
+                                <button type="button" class="btn btn-red"
+                                        onclick="javascript:location.href='/index.php?s=/Admin/HotCity/index'">返回
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            $('#province_id').change(function()
+            {
+                var id = $(this).val();
+                $.get('/index.php?s=/Admin/Post/cityList',{parentId : id},function(data){
+                    $("#city_id").html(data);
+                })
+            });
+
+            $('form').submit(function(){
+               //输入验证
+                var region_id = $('#city_id option:selected').val();
+		   if(0==region_id){
+                        $('#city_id').css('border','1px solid #ffcc00');
+                        $('#cityError').html('未选择城市');
+                        $('#cityError').show();
+                        return false;
+		   }
+		   //校验重复
+		   var bool=true;
+                $.ajax({
+                    type: "post",
+                    async:false,
+                    url: "/index.php?s=/Admin/HotCity/checkExist",
+                    dataType:"json",
+                    data: { 'region_id' : region_id },
+                    success: function(msg)
+                    {     
+                    	if('exist'==msg.result){
+	                        $('#city_id').css('border','1px solid #ffcc00');
+	                        $('#cityError').html('该城市已存在');
+	                        $('#cityError').show();
+                    		bool = false;
+                    	}
+                    },
+                    error:function(){}
+                });
+                return bool;
+            });
+        })
+    </script>
+</block>

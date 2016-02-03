@@ -1,0 +1,38 @@
+<div class="input_column col-md-12 edu-edit-form" id="edu-edit-form">        
+<div class="row">
+<div class="container-fluid">
+<form  role="form" class="basic-information-colunm form-education" id="edit-education-from">
+	<input type="hidden" value="{$rst.base.pkid}" name="edu_id">
+    <div class="form-group col-md-12 input-distance">
+		<div class="col-md-3  close-distance ml10">
+           	<input type="text" class="form-control normal-input education-1"  placeholder="学校名称" name="school_name" value="{$rst.base.school_name}" id="edu-edit-schoolname">
+		</div>
+        <div class="col-md-3  close-distance">
+			<input type="text" class="form-control normal-input education-2"  placeholder="就读专业" name="major_title" value="{$rst.base.major_title}" id="edu-edit-majortitle">
+		</div>
+		<div class="col-md-3 close-distance">
+			<select class="form-control edu_degree edu-edit-greee"  id="sun-4" name="degree">
+				<foreach name="rst.degree" item="de">
+					<option value="{$key}" <if condition="$rst.base.degree eq $key">selected</if> >{$de}</option>
+				</foreach>
+			</select>
+		</div>
+    </div>
+    <div class="form-group col-md-12">
+        <div class="col-md-4 close-distance ml10">
+			<input type="text" readonly class="form-control normal-input education-3 laydate-icon" placeholder="请输入日期" name="start_time" value="{$rst.base.start_time}" id="edu-edit-starttime" onclick="getdate('edu-edit-starttime',event)">
+		</div>
+		<span class="col-md-1 underline" style="width:20px;">&nbsp;</span>	
+		<div class="col-md-4 close-distance ml10">
+			<input type="text" readonly class="form-control normal-input education-4 laydate-icon" placeholder="请输入日期" name="finish_time" value="{$rst.base.finish_time}" id="edu-edit-finishtime" onclick="getdate('edu-edit-finishtime',event);">
+       </div>	
+    </div>
+    <div class="form-group col-md-12 del-floor ml10">                              
+      	<button type="submit" class="btn btn-info confirm-button information-submit-button" onclick="return saveedu(this)">{$Think.config.L_SAVE}</button>
+        <button type="button" class="btn confirm-button modify-cancel information-cancel-button" onclick="cancle(this)">{$Think.config.L_CANCLE}</button>	
+        <button type="button" class="btn confirm-button delete_button" onclick="return deledu(this,{$rst.base.pkid})">{$Think.config.L_DELETE_SINGLE}</button>
+    </div>
+</form>
+</div>
+</div>
+</div>

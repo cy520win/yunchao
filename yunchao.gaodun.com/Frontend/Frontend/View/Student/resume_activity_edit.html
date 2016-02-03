@@ -1,0 +1,29 @@
+<div class="input_column col-md-12 input-activity-edit" id="input-activity">
+<div class="row">
+<div class="container-fluid">
+	<form role="form" class="basic-information-colunm form-activity-edit" id="form-activity">
+	<input type="hidden" value="{$base.pkid}" name="activity_id">
+	<div class="form-group col-md-12 input-distance adjust-2">
+	<div class="col-md-4  close-distance ml10">
+		<input type="text" readonly="readonly" class="form-control normal-input activity-period2 laydate-icon" id="activity-3" placeholder="开始时间" name="period" value="{$base.period}" onclick="getdate('activity-3',event)">
+	</div>
+	<span class="col-md-1 underline" style="width:20px;">&nbsp;</span>
+	<div class="col-md-4  close-distance ml10">
+		<input type="text" readonly="readonly" class="form-control normal-input activity-period3 laydate-icon" id="activity-3-2" placeholder="结束时间" name="period_end" value="{$base.period_end}" onclick="getdate('activity-3-2',event)">
+	</div>
+
+	</div>
+	<div class="form-group col-md-12">
+	<div class="">
+		<textarea class="form-control textarea-style normal-input activity-description2" rows="6" placeholder="请输入具体活动内容" id="activity-2" name="description" onkeydown="return charlen(this,event)">{$base.description}</textarea>
+	</div>
+	</div>
+	<div class="form-group col-md-12">                              
+	<button type="submit" class="btn btn-info confirm-button information-submit-button" onclick="return saveactivity2(this)">{$Think.config.L_SAVE}</button>	
+	<button type="button" class="btn confirm-button information-cancel-button" onclick="cancle(this)">{$Think.config.L_CANCLE}</button>
+	<button type="button" class="btn confirm-button delete_button" onclick="return delactivity(this,{$base.pkid})">{$Think.config.L_DELETE_SINGLE}</button>
+	</div>
+	</form>
+</div>
+</div>
+</div>

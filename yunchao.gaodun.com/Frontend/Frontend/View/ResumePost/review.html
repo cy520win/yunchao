@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+    <title>高顿实习-职位信息预览页</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/bootstrap.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/public.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/enterprise_center.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/personal_center.css">
+    <script src="__PUBLIC__/static/core/js/jquery-1.11.1.min.js"></script>
+      <!--兼容IE8-->
+  <!--[if lte IE 9]>
+        <script src="__PUBLIC__/static/js/respond.min.js"></script>
+        <link rel="stylesheet" href="__PUBLIC__/static/css/ie8.css">
+  <![endif]-->
+</head>
+<body class="personal_center">
+<!--关闭完成条-->
+<script>
+    $(function(){
+        $(".close-complete").on("click",function(){
+            $(this).parent().fadeOut("500");
+            return false;
+        })
+    })
+</script>
+<style>
+    .enterprise-information-title{
+        text-align:left;
+
+    }
+</style>
+<!--中间部分  主要内容开始 -->
+<div class="center-content distance-bottom-2">
+    <div class="row">
+        <!-- LEFT START -->
+        <div class="col-md-12">
+            <div class="container">
+                <!--末完成职位信息度提示-->
+                <div class="review-complete">
+                    当前职位信息完成度为70%,职位信息越完善，获得学生投递的机会越多哦!
+                    <a class="close-complete close-complete-finish" href=""></a>
+                </div>
+                <!--完成职位信息度提示-->
+                <div class="review-complete finish">
+                    职位信息完成度100%，可以去发布职位啦。
+                    <a class="close-complete" href=""></a>
+                </div>
+                <!--企业简介-->
+                <div class="position-information-left">
+
+                    <div class="information-title">
+                        <h2>结构性融资部实习生</h2>
+                        <p>上海</p>
+                        <span class="enterprise-information-title">天虹基金管理有限公司</span>
+                    </div>
+                    <p>职位福利：</p><span>可留用</span><span>50~100元/天</span><span>专业培训</span><span>办公环境好</span>
+                    <p>职位要求：</p><span>本科以上</span><span>金融类</span><span>大二</span><span>大三</span><span>每周工作至少3天</span>
+                    <p>招收人数：3人</p>
+                    <p>发布日期：2015-4-10</p>
+                </div>
+                <!--职位描述-->
+                <div class="enterprise-job-description">
+                    <div class="title">
+                        职位描述
+                        <span></span>
+                    </div>
+                    <p class="mt">岗位职责： </p>
+                    <p>1、与客户方快速而深入的沟通，快速实现客户方资料的收集整理工作；</p>
+                    <p>2、及时完成尽职调查报告的撰写，有较强的文字能力及财务分析能力；</p>
+                    <p>3、交办的各种临时性工作。 </p>
+                    <p class="mt">任职要求：</p>
+                    <p>1、本科及以上学历，金融、财务相关专业背景优先；</p>
+                    <p>2、具有较强的学习能力和口头表达能力，具有较强的抗压能力和进取精神；</p>
+                    <p>3、出勤天数：每周至少保证3个工作日到岗，实习时间不少于3个月。</p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT END -->
+    </div>
+</div>
+<!-- 主要内容结束 -->
+
+<script src="__PUBLIC__/static/core/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/static/core/js/xenon-custom.js"></script>
+</body>
+</html>

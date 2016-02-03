@@ -1,0 +1,229 @@
+<extend name="Common:resumepost_frame" />
+<block name="title"><title>高顿实习-待定简历</title></block>
+<block name="right">
+    <div class="col-md-9">
+        <div class="fail-resume-right">
+            <div class="resume-right-top">
+                <p>待处理简历</p>
+                <i></i>
+                <a href="/ResumePost/index"><img src="__PUBLIC__/static/images/enterprise-practice/refresh.png"> <span>刷新</span></a>
+            </div>
+
+            <!--<gt name="total" value="30">-->
+            <!-- <div class="prompt">您目前未处理简历已达到上限30封，已无法接受新的简历，请尽快处理！</div> -->
+            <!--</gt>-->
+
+            <!--<div class="qiuz">
+                <p>还没有收到合适的简历吗？去秋招学生人气榜看看吧！</p>
+                <a href="/Special/memberJoin">学生人气榜</a>
+                <span id="qz-close"><img src="__PUBLIC__/static/images/qz-close.png" alt=""></span>
+            </div>-->
+
+            <include file="resume_search" />
+
+            <eq name="show" value="1">
+                <div class="all-choose-area">
+                    <div class="all-choose-button all-check-btn" data-check="false">全选</div>
+                    <span class="permit-meeting permit-meeting-btn" data-action="q-allow" data-type="allow" data-click="allowCheck(this,3)">允许面试</span>
+                    <span class="unsuitables permit-meeting-btn" data-action="q-fail" data-type="fail" data-click="allowCheck(this,4)">不合适</span>
+                    <span class="waiting-decide permit-meeting-btn">待&nbsp;&nbsp;定</span>
+                    <!--<div class="fadein-content">-->
+                        <!--<div class="tab-box permit-interview-box waiting-box permit-box-fn position-adjust-1">-->
+                            <!--<span class="waiting-resume">是否将此简历放入待定简历库？</span>-->
+                            <!--<a class="yes" href="javascript:;" onclick="allowCheck(this,5)">是</a>-->
+                            <!--<a class="no" href="javascript:;" onclick="refuse_post(this);">否</a>-->
+                            <!--<i></i>-->
+                        <!--</div>-->
+                        <!--<div class="tab-box permit-interview-box permit-box-fn position-adjust-2">-->
+                            <!--<span class="title">确定后，请您尽快与学生进行电话沟通并安排面试。同时，这份简历也将移动至“面试箱”。</span>-->
+                            <!--<a class="yes" href="javascript:;" onclick="allowCheck(this,3)">确定</a>-->
+                            <!--<a class="no" href="javascript:;" onclick="refuse_post(this);">取消</a>-->
+                            <!--<i></i>-->
+                        <!--</div>-->
+                        <!--<div class="tab-box refuse-interview-box permit-box-fn position-adjust-3">-->
+                            <!--<span>是否确定拒绝此学生面试，确定后此条记录将进入回收站？</span>-->
+                            <!--<a class="yes" href="javascript:;" onclick="allowCheck(this,4)">是</a>-->
+                            <!--<a class="no" href="javascript:;" onclick="refuse_post(this);">否</a>-->
+                            <!--<i></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="choose-notice choose-notice-fn dn">
+                        <span>请选择你需要操作的简历</span>
+                    </div>
+                </div>
+            </eq>
+            <notempty name="resumePostList">
+                <div class="treat-resume-header treat-resume-header-waiting">
+                    <p class="p1">学生姓名</p>
+                    <p class="p2">基本信息</p>
+                    <p class="p3">投递职位</p>
+                    <p class="p5">投递时间</p>
+                </div>
+                <foreach name="resumePostList" item="rd">
+                    <div id="check-{$rd.pkid|enInt}"
+                         class="treat-resume-list treat-resume-list-fn h-auto <neq name='rd.status' value='1'>readed</neq>">
+                        <div class="list-left post-invite-list">
+                            <div class="choosed-button choosed-button-fn" data-check="false" data-id="{$rd.pkid}"></div>
+                            <div class="student">
+                                <eq name="rd.resume_type" value="4">
+                                    <a href="javascript:;" onclick="checkBrowser(this)"
+                                       class="resume-view" data-action="/Student/resume/id/{$rd.resume_id|enInt=###}"
+                                       data-id="{$rd.pkid}">{$rd.student_name}<br><span class="name-language">（{$rd.type_text}）</span>
+                                    </a>
+                                    <else />
+                                    <a href="/Student/resume/id/{$rd.resume_id|enInt=###}"
+                                       target="_blank" class="resume-view"
+                                       data-id="{$rd.pkid}">{$rd.student_name}<br><span class="name-language">（{$rd.type_text}）</span>
+                                    </a>
+                                </eq>
+                            </div>
+                            <div class="name">
+                                    <p>{$rd.detail_major}专业 | {$rd.education_text} | {$rd.graduate_text} | {$rd.city_text}（
+                                          <switch name="rd.dateType">
+                                                <case value="1">
+                                                    对时间没有要求,可快速到岗
+                                                </case>
+                                                <case value="2">
+                                                    {$rd.period_start}以后可以开始实习
+                                                </case>
+                                                <default />
+                                                    {$rd.period_start}至{$rd.period_finish}可实习
+                                            </switch>
+                                    ）</p>
+                            </div>
+                            <div class="date"><p>{$rd.post_title}</p></div>
+                        </div>
+                        <div class="list-right">
+                            <span class="delivery-time">{$rd.time_text}</span>
+                            <!--<span class="waiting-decision waiting" data-id="{$rd.pkid|enInt}">待定</span>-->
+                            <!--<span class="allow first-ms" data-id="{$rd.pkid|enInt}">允许面试</span>-->
+                            <!--<span class="improper unsuitable" data-id="{$rd.pkid|enInt}">不合适</span>-->
+                        </div>
+                        <div class="q-line"></div>
+                        <div class="q-bottom">
+                            <span class="dd" onclick="wait_post(this)" data-id="{$rd.pkid|enInt}">待 定</span>
+                            <eq name="rd.resume_type" value="4">
+                                <span class="disable">转 发</span>
+                                    <img src="__PUBLIC__/static/images/q-hover.png" alt="">
+                                <else />
+                                <span class="forward-btn" onclick="relayPop(this)">转 发
+                                    <span class="forward-{$rd.pkid|enInt}" <empty
+                                            name="rd.forward_count">style="display:none"</empty>>
+                                        ({$rd.forward_count})
+                                    </span>
+                                </span>
+                            </eq>
+                            <span class="q-fail-d" data-id="{$rd.pkid|enInt}" onclick="openPop(this)"
+                                  data-action="q-fail" data-type="fail" data-click="improper_post(this)">不合适
+                            </span>
+                            <span class="q-allow-d" data-id="{$rd.pkid|enInt}" onclick="openPop(this)"
+                                  data-action="q-allow" data-type="allow" data-click="allow_post(this)">允许面试</span>
+                            <div class="q-forward" onmousemove="checkChildrenInput(this)" onmouseout="checkChildrenInput(this)" onmousedown="checkChildrenInput(this)">
+                                <i></i>
+                                <p>将该简历转发给其他人</p>
+                                <input type="text" class="q-input" placeholder="请输入需要转发的邮箱"
+                                       onkeyup="checkInput(this)" onblur="checkInput(this)"
+                                       onchange="checkInput(this)" onmouseout="checkInput(this)" onmousedown="checkInput(this)"
+                                       onkeydown="checkInput(this)" onfocus="checkInput(this)" onmousemove="checkInput(this)">
+                                <span>请输入有效的邮箱地址，如xx@xxx.com</span>
+                                <div>
+                                    <a href="javascript:;" class="q-cancel1" data-action="q-forward" onclick="closePop(this)">取消</a>
+                                    <a href="javascript:;" class="q-ok disable" data-type="forward"
+                                       data-action="q-forward" data-id="{$rd.pkid|enInt}" data-value="{$rd.forward_count}">
+                                        转发
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div class="tab-box fn-wait permit-interview-box waiting-box">-->
+                            <!--<span class="waiting-resume">是否将此简历放入待定简历库？</span>-->
+                            <!--<a class="yes" href="javascript:;" data-id="{$rd.pkid|enInt}" onclick="wait_post(this);">是</a>-->
+                            <!--<a class="no" href="javascript:;" onclick="refuse_post(this);">否</a>-->
+                            <!--<i></i>-->
+                        <!--</div>-->
+                        <!--<div class="tab-box fn-allow permit-interview-box">-->
+                            <!--<span class="title">确定后，请您尽快与学生进行电话沟通并安排面试。同时，这份简历也将移动至“面试箱”。</span>-->
+                            <!--<a class="yes" href="javascript:;" data-id="{$rd.pkid|enInt}" onclick="allow_post(this);">是</a>-->
+                            <!--<a class="no" href="javascript:;" onclick="refuse_post(this);">否</a>-->
+                            <!--<i></i>-->
+                        <!--</div>-->
+                        <!--<div class="tab-box fn-improper refuse-interview-box">-->
+                            <!--<span>是否确定拒绝此学生面试，确定后此记录将进入回收站？</span>-->
+                            <!--<a class="yes" href="javascript:;" data-id="{$rd.pkid|enInt}" onclick="improper_post(this);">是</a>-->
+                            <!--<a class="no" href="javascript:;" onclick="refuse_post(this);">否</a>-->
+                            <!--<i></i>-->
+                        <!--</div>-->
+                    </div>
+                </foreach>
+            </notempty>
+            <div class="no-one" <notempty name="resumePostList">style="display: none"</notempty>>没有找到符合条件的简历</div>
+        <include file="box"/>
+
+        <div class="interview-box" id="interview-box" style="display: none">
+            <div>
+                此条信息移动到了“面试箱” <span class="close">×</span>
+            </div>
+        </div>
+        <div class="interview-box" id="recovery-box" style="display: none">
+            <div>
+                此条信息移动到了“回收站” <span class="close">×</span>
+            </div>
+        </div>
+
+        <!--分页按钮-->
+        <div class="container pagination_center">
+            {$page}
+        </div>
+    </div>
+    </div>
+</block>
+
+<block name="script">
+    <script src="__PUBLIC__/static/js/laydate.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/static/js/lazyload-min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            $('#v-index').addClass('resume-active');
+            $("#qz-close").click(function(event) {
+                $(".qiuz").hide();
+            });
+        });
+        laydate.skin('molv');
+        function getdate(id,e){
+            var e = e || event
+            if(e.stopPropagation){
+                e.stopPropagation();
+            }else{
+                e.cancelBubble = true;//ie8以下
+            }
+            laydate({elem:'#'+id,format:'YYYY-MM-DD'});
+        }
+
+        hotcity("resume-inputcity");
+        //获取热门城市
+        function hotcity(cy){
+            $.ajax({
+                type: "get",
+                url: "/Enterprise/hotcity",
+                async: false,
+                dataType:'json',
+                success: function(msg){
+                    LazyLoad.css(["__PUBLIC__/static/css/cityStyle.css"], function () {
+                        LazyLoad.js(["__PUBLIC__/static/js/cityScript_post.js"], function () {
+                            var test = new citySelector.cityInit(cy,msg);
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+    <script src="__PUBLIC__/static/js/major.js"></script>
+</block>
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/recomond.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/pending.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/enterprise_watting.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/enterprise-handle.css">
+</block>
+

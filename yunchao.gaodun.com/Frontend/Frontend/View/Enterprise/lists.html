@@ -1,0 +1,206 @@
+<extend name="Public/layout" />
+<block name="title"><title>名企推荐-高顿实习</title></block>
+<block name="content">
+<!--中间部分  主要内容开始 -->
+<div class="center-content" style="padding-top: 0px">
+    <div class="row">
+        <!-- LEFT START -->
+        <div class="col-md-3">
+            <div class="left-section-style margin_border" id="param"  <empty
+                name="param">style="display: none"</empty> >
+                <div class="container-content choosen_condition">
+                    <form action="/Enterprise/lists" method="get">
+                        <input type="hidden" name="ct" value="<notempty name='param.ct'>{$param.ct}</notempty>">
+                        <input type="hidden" name="in" value="<notempty name='param.in'>{$param.in}</notempty>">
+                        <input type="hidden" name="si" value="<notempty name='param.si'>{$param.si}</notempty>">
+                        <input type="hidden" name="p" value="<notempty name='p'>{$p}</notempty>">
+                    </form>
+                    <dl>
+                        <dt>已选条件</dt>
+                        <dd id="city_name" <empty name="param.ct">class="dn"</empty>>
+                            已选城市：{$param.ct}
+                        <span class="choosen_close" data-type="city" onclick="choosen_close(this)"></span>
+                        </dd>
+                        <dd id="industry_name" <empty name="param.in">class="dn"</empty>>
+                            已选行业：{$industryList[$param['in']]|mb_substr=0,7,utf8}
+                            <span class="choosen_close" data-type="industry" onclick="choosen_close(this)"></span>
+                        </dd>
+                        <dd id="scale_name" <empty name="param.si">class="dn"</empty>>
+                            已选规模：{$scaleList[$param['si']]['title']}
+                            <span class="choosen_close" data-type="scale" onclick="choosen_close(this)"></span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="left-section-style margin_border">
+                <div class="chose_condition">
+                    <dl id="city">
+                        <dt><h3 class="left_column_title">所在城市<span class="slide-icon"></span></h3></dt>
+                        <notempty name="hotCityList">
+                            <foreach name="hotCityList" item="hotCityItem">
+                                <dd><span>{$hotCityItem}</span></dd>
+                            </foreach>
+                        </notempty>
+                        <dd id="inputTest"><span class="more">更多</span></dd>
+                    </dl>
+
+                    <dl id="industry">
+                        <dt><h3 class="left_column_title">企业行业<span class="slide-icon"></span></h3></dt>
+                            <notempty name="industryList">
+                                <foreach name="industryList" key="key" item="industryItem">
+                                    <dd><span data-value="{$key}">{$industryItem}</span></dd>
+                                </foreach>
+                            </notempty>
+                        <dd class="inputTest1" data-type="true">
+                            <span class="more">更多</span>
+                            <span class="retract">收起</span>
+                        </dd>
+                    </dl>
+
+                    <dl id="scale">
+                        <dt><h3 class="left_column_title">企业规模<span class="slide-icon"></span></h3></dt>
+                        <notempty name="scaleList">
+                            <foreach name="scaleList" key="key" item="scaleItem">
+                                <dd><span data-value="{$scaleItem.pkid}">{$scaleItem.title}</span></dd>
+                            </foreach>
+                        </notempty>
+                        <dd class="inputTest1" data-type="true"><span class="more">更多</span><span class="retract">收起</span></dd>
+                    </dl>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- LEFT END -->
+        <!-- RIGHT START-->
+
+        <div class="col-md-9">
+            <div class="left-section-style enterpraise_style">
+                <div class="container-fluid">
+                    <div class="row">
+                        <notempty name="enterpriseList">
+                            <foreach name="enterpriseList" item="enterpriseItem">
+                                <div class="col-sm-6 col-md-4 list-width">
+                                    <div class="thumbnail enterpraise_nail">
+                                        <div class="enterpraise enterprise-new">
+                                            <a href="/Enterprise/info/id/{$enterpriseItem.pkid|enInt}" target="_blank">
+                                                <img src="{$enterpriseItem.logo}">
+                                            </a>
+                                        </div>
+                                        <div class="caption">
+                                            <div class="container-contant">
+                                                <h1 class="title_enterpraise col-md-12 no_padding">
+                                                    <span class="col-md-12" style="padding-right:0px">
+                                                        <a style="color:#02b4c2;" target="_blank"
+                                                           href="/Enterprise/info/id/{$enterpriseItem.pkid|enInt}">
+                                                            <notempty name="enterpriseItem.full_name">{$enterpriseItem.full_name}<else/>未填写</notempty>
+                                                        </a>
+                                                    </span>
+                                                    <!--<span class="city col-md-3" style="padding-right:0px;float:right;">-->
+                                                        <!--{$enterpriseItem.city_name}-->
+                                                    <!--</span>-->
+                                                </h1>
+                                                <span class="information col-md-12">行业：{$enterpriseItem.industry_title}</span>
+                                                <span class="information col-md-12">规模：{$enterpriseItem.scale_title}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </foreach>
+                            <else />
+                            <div class="no-one">抱歉，暂时没有符合要求的企业，不如看看其他热招企业吧！
+                            </div>
+                        </notempty>
+
+                    </div>
+                    <div class="row">
+                        <div class="container pagination_center">
+                            {$page}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- RIGHT END -->
+    </div>
+</div>
+</block>
+<block name="script">
+    <script src="__PUBLIC__/static/js/enterprise.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/static/js/lazyload-min.js"></script>
+    <script>
+        hotcity("inputTest");
+        var pub = "__PUBLIC__"+'/static/';
+        //获取热门城市
+        function hotcity(cy){
+            $.ajax({
+                type: "get",
+                url: "/Enterprise/hotcity",
+                async: false,
+                dataType:'json',
+                success: function(msg){
+                    LazyLoad.css(["__PUBLIC__/static/css/cityStyle.css"], function () {
+                        LazyLoad.js(["__PUBLIC__/static/js/newCity.js?v=1.3"], function () {
+                            var test = new citySelector.cityInit(cy,msg);
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+    <script>
+        $(function(){
+            $("#industry ,#scale").find("dd:gt(2)").not($(".inputTest1")).addClass("dn");
+            $(".inputTest1").on("click",function(){
+                var a = $(this).attr('data-type');
+                if(a == 'true'){
+                    $(this).parent('dl').find("dd:gt(2)").not($(".inputTest1")).show();
+                    $(this).children(".more").css("display","none");
+                    $(this).children(".retract").css("display","block");
+                    $(this).attr('data-type','false')
+                }else{
+                    $(this).parent('dl').find("dd:gt(2)").not($(".inputTest1")).hide();
+                    $(this).children(".more").css("display","block");
+                    $(this).children(".retract").css("display","none");
+                    $(this).attr('data-type','true')
+                }
+            });
+        });
+
+        $(function(){
+            var chose_condition=$("#chose_condition");
+            var title=$(".left_column_title");
+            title.on("click",function(){
+                if($(this).find("span").attr("class")=="slide-icon"){
+                    $(this).find("span").attr("class","slide-icon-1");
+                    $(this).parent().siblings().hide();
+                }else{
+                    $(this).find("span").attr("class","slide-icon");
+                    $(this).parent().siblings().show();
+                    $(this).parent('dt').parent('dl').find("dd:gt(2)").not($(".inputTest1")).hide();
+                }
+            });
+
+
+            var ct = '{$param.ct}';
+            var ind = '{$param.in}';
+            var si = '{$param.si}';
+            if(ct != ''){
+                $('#city .left_column_title').find("span").attr("class","slide-icon-1");
+                $('#city .left_column_title').parent().siblings().hide();
+            }
+            if(ind != ''){
+                $('#industry .left_column_title').find("span").attr("class","slide-icon-1");
+                $('#industry .left_column_title').parent().siblings().hide();
+            }
+            if(si != ''){
+                $('#scale .left_column_title').find("span").attr("class","slide-icon-1");
+                $('#scale .left_column_title').parent().siblings().hide();
+            }
+        });
+    </script>
+</block>
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/enterprise-practice.css">
+</block>

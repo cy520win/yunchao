@@ -1,0 +1,57 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+<div class="col-sm-12">
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">增加企业规模信息</h3>
+							<div class="panel-options">
+								<a href="#" data-toggle="panel">
+									<span class="collapse-icon">–</span>
+									<span class="expand-icon">+</span>
+								</a>
+							</div>
+						</div>
+						<div class="panel-body">
+							
+							<form role="form" class="form-horizontal" action="/index.php?s=/Admin/Scale/save" method="post">
+						
+                            <div class="form-group">
+									<label class="col-sm-2 control-label" for="field-1">规模名称：</label>
+							
+									<div class="col-sm-5">
+										<textarea class="form-control" cols="8" id="field-5" name="title" required></textarea>
+									</div>
+								</div>
+							<div class="form-group">
+									<label class="col-sm-2 control-label" for="field-1">英文名称：</label>
+							
+									<div class="col-sm-5">
+										<textarea class="form-control" cols="8" id="field-5" name="title_en" required></textarea>
+									</div>
+								</div>
+				
+						<div class="form-group">
+									<label class="col-sm-2 control-label" for="field-1">描述：</label>
+									
+									<div class="col-sm-5">
+										<textarea class="form-control" cols="8" id="field-5" name="description"></textarea>
+									</div>
+								</div>
+                        <div class="form-group" style="padding-top:10px;">
+                         
+                           <div class="col-sm-12" style="margin:auto text-align:center;">
+                           <div class="container" style="width:145px;">
+                                <button type="submit" class="btn btn-turquoise">提交</button>                                 
+                                <a href="javascript:history.back(-1);" class="btn btn-red">返回</a> 
+                                </div>
+                           
+                            </div>
+                        </div>		  
+     					</form>                 	
+						</div>
+					</div>
+					
+				</div>
+</block>

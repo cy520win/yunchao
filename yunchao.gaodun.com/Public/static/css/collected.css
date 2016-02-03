@@ -1,0 +1,65 @@
+/*样式修改*/
+.message-wrap >.message-l{padding-bottom:10px;}
+.list-title-model{width:100%;box-shadow: 0px 0px 2px #bfbfbf;padding-top:30px;padding-bottom:30px;position:relative;float:left;}
+.list-container{width:88%;margin:0 auto;overflow: hidden;line-height:20px;}
+.list-title .detele{float:right;display:block;}
+.list-title .collection-position{font-size:20px;color:#06bad2;float:left;}
+.list-title .linebg{display:block;float:left;height:1px;background-color:#bfbfbf;width:77%;margin-top:9px;margin-left:30px;margin-right:14px;} 
+.list-title .delete a{font-size:14px;color:#06bad2;display:block;float:left;line-height:16px;}
+.list-title .delete a:hover{text-decoration: underline;}
+.list-title .delete img{float:left;display:block;margin-left:5px;}
+.list-title .delete{display:block;float:right;cursor: pointer;}
+.list-title .delete-no{display: block;float: right;}
+.list-title .delete-no a{font-size: 14px;color: #bfbfbf;display: block;float: left;line-height:16px;}
+.list-title .delete-no a:hover{text-decoration: underline;}
+.list-title .delete-no img {float: left;display: block;margin-left: 5px;}
+/*全部清除对话框*/
+.permit-interview-box{width: 260px;padding-bottom:30px;border: 1px solid #d7d7d7;background: #ffffff;position: absolute;top: 60px;z-index: 10000;right: 15px;border-radius: 5px;box-shadow: 0px 0px 5px #d7d7d7;font-weight: normal;}
+.permit-interview-box > i{width: 17px;height: 9px;background: url(../images/sharp.png) no-repeat;position: absolute;top: -9px;left: 175px;}
+.cancel-collected-box{top: 110px;right: -15px;}
+.cancel-collected-box > i{top: -9px;left: 195px;}
+.permit-interview-box >span{font-size: 18px;color: #656565;width: 208px;margin: 0 auto;display: block;margin-top: 29px;font-weight: normal;text-align: left;}
+.permit-interview-box > .yes{margin-top: 30px;}
+.permit-interview-box > .no{margin-top: 30px;}
+.permit-interview-box >span{font-size: 16px;color: #656565;width: 210px;margin: 0 auto;display: block;margin-top: 29px;font-weight: normal;text-align:left;}
+.permit-interview-box > .yes, .refuse-interview-box > .yes {background: #ff7800;margin: 30px 20px 0 40px;}
+.permit-interview-box > .no, .refuse-interview-box > .no {margin-top: 30px;background: #dddddd;}
+.permit-interview-box > a, .refuse-interview-box > a {display: block;float: left;width: 80px;height: 32px;line-height: 32px;text-align: center;font-size: 16px;margin-top: 20px;color: #ffffff;border-radius: 5px;}
+.message-wrap .collect-list-content{background:#fafafa;}
+.collect-list-content .collect-position-area{width:93%;margin:0 auto;margin-top:30px;float: left;margin-left: 30px;min-height: 780px;}
+.collect-list{box-shadow: 0px 0px 2px #bfbfbf;margin-bottom:30px;float:left;padding-top:20px;padding-bottom:20px;position:relative;background-color:#ffffff;}
+.collect-list .collected-photo-area{width:78px;height:78px;box-sizing:content-box;border:1px solid #e0e0e0;float:left;margin-left:20px;}
+.collect-list .collected-information-area{float:left;width:85%;margin-left:20px;margin-top:-8px;}
+.collected-information-area div{float:left;width:100%;height: 32px;
+    line-height: 32px;}
+.ready-down .collected-information-area span{opacity: 0.3;filter: alpha(opacity=30)}
+.collected-position-title span{opacity: 1;}
+.collected-position-title span{display:block;line-height:32px;float:left;display:block;}
+.collected-position-title .company-name{font-size:20px;color:#6acde0;display:block;float:left;max-width:200px;overflow:hidden;height:32px;}
+.collected-position-title .company-name a{font-size:20px;color:#6acde0;display:block;float:left;max-width:200px;overflow:hidden;height:32px;}
+.collected-position-title .company-name a:hover{text-decoration: underline;}
+.collected-position-title .city{background:url("../images/citylogo2.png") no-repeat left center;padding-left:20px;font-size:14px;color:#666666;margin-left:20px;}
+.collected-position-title .post-time{float:right;font-size:12px;color:#b3b3b3;margin-right:18px;}
+.collected-company-title span{font-size:16px;color:#656565;max-width:300px;line-height:32px;height:32px;display:block;float:left;overflow: hidden;}
+.collected-detail span{font-size:12px;color:#656565;max-width: 400px;overflow: hidden;display:block;height:28px;line-height:28px;float:left;}
+.collected-detail a.cancel-collected{color:#06bad2;float:right;margin-right:18px;cursor:pointer;font-size:12px;}
+.collected-detail a.cancel-collected:hover{text-decoration: underline;}
+.collected-detail a.delete-collect:hover{text-decoration: none;}
+.collected-information-area .collected-detail{height: 28px;line-height: 28px;}
+.page-list{margin:20px auto 58px auto;;width:26pc;height:2pc;float:left;margin-left:215px;}
+.page-list>span{float:left;display:block;margin-right:8px;padding:8px 11px;border:1px solid #e9e9e9;border-radius:5px;background:#fff;color:#999;font-size:14px;line-height:14px;cursor:pointer}
+.page-list>span:hover{background:#fafafa}
+.page-list>.point{padding:5px 0;border:none;background:0 0;line-height:16px;;cursor:default}
+.page-list>.page-list-active,.page-list>.page-list-active:hover{border:1px solid #63cdff;background:#63cdff;color:#fff;cursor:default}
+/*已下线样式*/
+.ready-down{position: relative;box-shadow:rgba(231,231,231,0.3);background:#ebebeb;}
+.ready-down >.collected-photo-area{opacity: 0.3;filter:alpha(opacity=30);}
+/*.ready-down >.collected-information-area{opacity: 0.3;filter:alpha(opacity=30);}*/
+.ready-down .collected-information-area .collected-position-title .company-name{color:#656565;opacity: 0.3;filter:alpha(opacity=30);}
+.ready-down .ready-down-logo img{position:absolute;z-index:20;opacity: 1;right:184px;top:10px;}
+.no-one {display: block;text-align: center;clear: both;padding-top: 200px;min-height: 733px;color: hsla(0,0%,90%,.7);text-shadow: 1px 1px 2px #fff,0 0 0 #000;font-weight: 700;font-size: 22px;}
+/*对话框动画样式*/
+.permit-interview-box{-webkit-transform: translateY(30px);-moz-transform: translateY(30px);-ms-transform: translateY(30px);-o-transform: translateY(30px);transform: translateY(30px);-webkit-backface-visibility: hidden;-webkit-transition:  opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;-ms-transition: opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;-moz-transition: opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;transition: opacity 0.3s 0s, visibility 0.3s 0s ,transform 0.5s 0s;opacity:0;visibility:hidden;}
+.is-visible{-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);-o-transform: translateY(0);transform: translateY(0);opacity: 1;visibility: visible;}
+.page-collect{margin: 30px auto;clear: both;width: 100%;}
+.message-wrap >.message-r{overflow:visible;}

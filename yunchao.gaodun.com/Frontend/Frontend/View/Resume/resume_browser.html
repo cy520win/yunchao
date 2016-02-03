@@ -1,0 +1,27 @@
+<div id="checkBrowser" class="sendsuccess-form delivery-style upload-file-failure" style="display: block">
+    <h3 class="sendsuccess-title"><span class="sendsuccess-title-notice">预览简历提示</span>
+        <span onclick="closeDiv()" class="sendsuccess-title-close" id="close-send-failure">
+            <img src="__PUBLIC__/static/images/close-icon.png" alt="">
+        </span>
+    </h3>
+    <span class="upload-success upload-failure">&nbsp;&nbsp;首次预览简历请下载插件</span>
+
+    <div class="button-area" <empty name="url_view">style="padding-left:415px"</empty>>
+        <a href="{$download_url}" class="btn btn-info confirm-button login-mail-certicified">下载</a>
+    </div>
+    <notempty name="url_view">
+        <a class="upload-notice failure-notice" href="{$url_view}">
+            &nbsp;&nbsp;已下载，直接预览
+        </a>
+        <else />
+        <a class="upload-notice failure-notice" href="/PageOffice/like">
+            &nbsp;&nbsp;已下载，直接预览
+        </a>
+    </notempty>
+
+</div>
+<script>
+    function closeDiv(){
+        $('#checkBrowser').remove();
+    }
+</script>

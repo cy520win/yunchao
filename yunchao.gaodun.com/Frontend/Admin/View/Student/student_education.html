@@ -1,0 +1,52 @@
+<if condition="$tpl eq true">
+	<div class="education-div">
+		<div class="col-sm-4">
+				<input type="month" class="form-control-month edu-form" name="education[1][start_time]" data="start_time">
+				<input type="month" class="form-control-month edu-form" name="education[1][finish_time]" data="finish_time">
+		</div>
+		<div class="col-sm-2">
+				<input type="text" class="form-control-month form-control-school edu-form" name="education[1][school_name]" placeholder="输入学校名" data="school_name">
+		</div>	
+		<div class="col-sm-2">
+				<input type="text" class="form-control-month form-control-major edu-form" name="education[1][major_title]" placeholder="输入专业" data="major_title">
+		</div>
+		<div class="col-sm-2">
+		<select name="education[$key][degree]" class="form-control-month form-control-major edu-form" data="degree">
+					<foreach name="major" item="majorItem">
+							<option value="{$key}">{$majorItem}</option>
+					</foreach>
+		</select>
+		</div>
+		<div class="col-sm-2">
+				
+				<span onclick="deldiv(this,1)" class="delbutton">删除</span><span onclick="saveedu(this,1)" class="delbutton">保存</span>
+		</div>
+	</div>
+</if>
+
+<if condition="$tpl eq false">
+<foreach name="edu" item="eduItem">
+<div class="education-div">
+	<div class="col-sm-4">
+			<input type="month" class="form-control-month edu-form" name="education[{$key}][start_time]" data="start_time" value="{$eduItem.start_time|ymdTOym=###}">
+			<input type="month" class="form-control-month edu-form" name="education[{$key}][finish_time]" data="finish_time" value="{$eduItem.finish_time|ymdTOym=###}">
+	</div>
+	<div class="col-sm-2">
+			<input type="text" class="form-control-month form-control-school edu-form" name="education[{$key}][school_name]" placeholder="输入学校名" data="school_name" value="{$eduItem.school_name}">
+	</div>	
+	<div class="col-sm-2">
+			<input type="text" class="form-control-month form-control-major edu-form" name="education[{$key}][major_title]" placeholder="输入专业" data="major_title" value="{$eduItem.major_title}">
+	</div>
+	<div class="col-sm-2">
+		<select name="education[$key][degree]" class="form-control-month form-control-major edu-form" data="degree">
+				<foreach name="major" item="majorItem">
+							<option value="{$key}" <if condition='$eduItem.degree eq $key'>selected</if> >{$majorItem}</option>
+				</foreach>		
+		</select>
+	</div>
+	<div class="col-sm-2">
+			<span onclick="curdeldiv(this,{$eduItem.pkid})" class="delbutton">删除</span><span onclick="cursaveedu(this,{$eduItem.pkid})" class="delbutton">保存</span>
+	</div>
+</div>
+</foreach>
+</if>

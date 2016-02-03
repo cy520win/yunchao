@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+body{
+    margin:0px;
+    padding:0px;
+    font-family: "微软雅黑";
+    background:#f4f4f4;
+}
+
+a{
+    text-decoration: none;
+    outline: none !important;
+
+}
+
+li,dl,ol{
+    list-style: none;
+}
+
+
+a:hover{
+    text-decoration: none;
+}
+
+/*按钮样式*/
+.confirm-button{
+      height:42px;
+      width:100px;
+      border-radius:5px;
+      font-size:18px;
+      margin-top:35px;
+      text-align:center;
+}
+
+
+/*下划线连接*/
+
+.underline a{
+ color:#63cdff;
+ text-decoration: underline;
+}
+/*隐藏样式*/
+.dn{
+ display:none;
+}
+/*居中样式*/
+.content{
+ margin:0 auto;
+ width:100%;
+ padding:0px;
+}
+a:hover, a:focus{
+ color:none;
+
+}
+/*输入框*/
+.input-border-info{
+    height:40px;
+    border-radius: 5px;
+    border-color:#e9e9e9;
+
+}
+.input-border-info:focus{
+    border-color:rgba(180, 230, 254,1);
+
+}
+.input-border-error{
+    border-color:#ff5d39;
+
+}
+.error-info-span{
+    display:inline;
+    
+    font-size: 14px; 
+    font-family: "Microsoft YaHei"; 
+    color:#ff5d39;
+    line-height: 1.699;
+    text-align: left;
+    clear:both;
+    background:url("../images/errorlogo.png") no-repeat left center;
+    padding-left:16px;
+}
+.error-area{
+    height:23px;
+    margin-top:3px;
+}
+.btn:hover, .btn:focus{
+    color:#ffffff;
+}

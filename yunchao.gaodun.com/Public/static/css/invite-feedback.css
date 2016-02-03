@@ -1,0 +1,14 @@
+@charset "utf-8";
+/*待处理简历*/
+.treat-resume-header >p.p22,.treat-resume-header >p.p23,.treat-resume-header >p.p24,.treat-resume-header >p.p25{width:20%;margin-left:0;}
+.invitation-resume-list >.student{width:16%;}
+.invitation-resume-list >.name{width:26%;}
+.invitation-resume-list >.date{width:18%;padding:0;}
+.invitation-resume-list >div{width:10%;}
+.invitation-resume-list >.read{margin-left:29px;}
+.invitation-resume-list >.read a{text-decoration: underline;font-size:14px;color:#5dd8e7;}
+.invitation-resume-list >.state{width:20%;margin-left: 40px;font-weight: bold;}
+.treat-resume-header{width: 87%;}
+.invitation-resume-list >.read1{ margin-left: 41px !important; }
+.invitation-resume-list >.state1{ width: 10% !important; margin-left: 77px !important;}
+                 

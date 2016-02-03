@@ -1,0 +1,61 @@
+<extend name="Common:resumepost_frame" />
+<block name="title"><title>高顿实习-不合适简历</title></block>
+<block name="right">
+    <div class="col-md-9">
+        <div class="fail-resume-right resume-right-list">
+            <div class="resume-right-top">
+                <p>不合适简历</p>
+                <i></i>
+                <a href="/ResumePost/improper"><img src="__PUBLIC__/static/images/enterprise-practice/refresh.png">
+                    <span>刷新</span></a>
+            </div>
+            <notempty name="resumePostList">
+                <div class="treat-resume-header">
+                    <p class="p32">学生姓名</p>
+                    <p class="p33">面试职位</p>
+                    <p class="p34">企业反馈</p>
+                    <p class="p35">处理时间</p>
+                </div>
+                <foreach name="resumePostList" item="resumePostItem">
+                <div class="fail-resume-list post-invite-list fail-resume-list-fn">
+                    <div class="student">
+                        <eq name="resumePostItem.resume_type" value="4">
+                            <a href="javascript:;" onclick="checkBrowser(this)"
+                               data-action="/Student/resume/id/{$resumePostItem.resume_id|enInt=###}">{$resumePostItem.student_name}
+                            </a>
+                            <else />
+                            <a href="/Student/resume/id/{$resumePostItem.resume_id|enInt=###}"
+                               target="_blank">{$resumePostItem.student_name}
+                            </a>
+                        </eq>                    </div>
+                    <div class="name">
+                        <a href="/Post/info/id/{$resumePostItem.post_id|enInt}" target="_blank">
+                            {$resumePostItem.post_title}
+                        </a>
+                    </div>
+                    <!--<div class="resume"><p>{$resumePostItem['send_type'] == 1 ? '自投简历' : '邀请投递'}</p></div>-->
+                    <div class="audition"><p>不合适</p></div>
+                    <div class="date"><p>{$resumePostItem.deal_time|time2Unit}</p></div>
+                </div>
+                </foreach>
+                <else/>
+                <div class="no-one">暂时没有不合适的简历</div>
+            </notempty>
+            <!--分页按钮-->
+            <div class="container pagination_center">
+                {$page}
+            </div>
+        </div>
+
+
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            $('#v-improper').addClass('resume-active');
+        });
+    </script>
+</block>
+

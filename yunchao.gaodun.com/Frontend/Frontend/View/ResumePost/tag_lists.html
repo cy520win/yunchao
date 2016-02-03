@@ -1,0 +1,23 @@
+<eq name="type" value="choosed">
+    <foreach name="tagLists" item="tag">
+        <li>
+            <span class="pag-title">{$tag.title}</span>
+            <span class="close-button" data-id="{$tag.tag_id}">|</span>
+            <input type="hidden" class="choosed" name="relation[]" value="{$tag.tag_id}">
+        </li>
+    </foreach>
+    <else />
+    <span class="choose-pag-title">可选标签:</span>
+    <ul class="choose-pag-area">
+        <div class="input-area">
+            <input type="text" class="self-input" placeholder="自定义标签(限5字内)" maxlength="5">
+            <span class="click-down" data-number="1">贴上</span>
+        </div>
+        <foreach name="tagLists.lists" key="key" item="tag">
+            <li data-value="{$tag.pkid}" class="{$tag.class} tag-{$tag.pkid}">{$tag.title}</li>
+        </foreach>
+    </ul>
+    <span class="change-account" data-page="{$tagLists.p}" data-count="{$tagLists.count}">
+        换一批
+    </span>
+</eq>

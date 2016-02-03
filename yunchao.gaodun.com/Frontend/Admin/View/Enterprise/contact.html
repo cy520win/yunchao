@@ -1,0 +1,272 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">设置联系人</h3>
+                <h3 class="panel-title-contact"></h3>
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <form role="form" class="form-horizontal" action="/index.php?s=/Admin/Enterprise/dataContact"
+                      method="post" onsubmit="return checkDate();">
+                    <if condition="$info.pkid gt 0">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">创建时间：</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" value="{$info.create_time}" disabled readonly>
+                            </div>
+                        </div>
+                    </if>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">企业账号：</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" value="{$data.email}" disabled readonly>
+                        </div>
+                    </div>
+                    <if condition="$info.pkid gt 0">
+                        <input type="hidden" name="contact_id" value="{$info.pkid}">
+                        <input type="hidden" name="contact_id_enter" value="{$data.enterprise_id}" class="enterprise_id">
+                    <else/>
+                        <input type="hidden" name="enterprise_id" value="{$data.enterprise_id}" class="enterprise_id">
+                    </if>
+                    <input type="hidden" class="data-type" value="{$data.type}">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">联系人*：</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="name" class="form-control" value="{$info.name}" required>
+                            <span style="color:#ff2f32;display: none">&nbsp;</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">联系人邮箱*：</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="contact_mail" class="form-control contact_mail" onblur="chkMail(this)" required value="{$info.contact_mail}">
+                            <span style="color:#ff2f32;display: none">&nbsp;</span>
+                        </div>
+                    </div>
+                                        <div class="form-group">
+                        <label class="col-sm-2 control-label">所在部门：</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="department" class="form-control" value="{$info.department}" >
+                            <span style="color:#ff2f32;display: none">&nbsp;</span>
+                        </div>
+                    </div>
+                                        <div class="form-group">
+                        <label class="col-sm-2 control-label">职务：</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="title" class="form-control" value="{$info.title}">
+                            <span style="color:#ff2f32;display: none">&nbsp;</span>
+                        </div>
+                    </div>
+                                                           <div class="form-group">
+                        <label class="col-sm-2 control-label">手机号码*：</label>
+                        <div class="col-sm-3">
+                            <input type="number" name="mobile" class="form-control mobile focus-input" value="{$info.mobile}">
+                            <span style="color:#ff2f32;display: none">&nbsp;</span>
+                        </div><div class="col-sm-4 control-label" style="color:#ff2f32;">手机或座机二选一，11位如，15812345678</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">座机区号*：</label>
+                        <div class="col-sm-3">
+                            <input type="number" name="phone_code" class="form-control phone_code focus-input" value="{$info.phone_code}">
+                            <span style="color:#ff2f32;display: none">&nbsp;</span>
+                        </div><div class="col-sm-4 control-label" style="color:#ff2f32;">3位或4位如，021、0736</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">电话号*：</label>
+                        <div class="col-sm-3">
+                            <input type="number" name="phone_number" class="form-control phone_number focus-input" value="{$info.phone_number}">
+                            <span style="color:#ff2f32;display: none">&nbsp;</span>
+                        </div><div class="col-sm-4 control-label" style="color:#ff2f32;">7位或8位如，81825306</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">分机号：</label>
+                        <div class="col-sm-3">
+                            <input type="number" name="phone_ext" class="form-control phone_ext" value="{$info.phone_ext}">
+                            <span style="color:#ff2f32;display: none">&nbsp;</span>
+                        </div><div class="col-sm-4 control-label" style="color:#ff2f32;">如，563</div>
+                    </div>
+                    <div class="form-group" style="padding-top:10px;">
+                        <div class="col-sm-12" style="margin:auto text-align:center;">
+                            <div class="container" style="width:145px;">
+                                <button type="submit" class="btn btn-turquoise" id="contact-btn">保存</button>
+                                <eq name="data.tag" value="hr">
+                                  <button type="button" class="btn btn-red" onclick="javascript:location.href='/index.php?s=/Admin/Contacts/hr'">返回
+                                </button>
+                                <else/>
+                                  <button type="button" class="btn btn-red" onclick="javascript:location.href='/index.php?s=/Admin/Enterprise/index'">返回
+                                </button>
+                                </eq>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <!-- 列表 -->
+        <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">联系人列表</h3>
+                            
+                            <div class="panel-options">
+                                <a href="#" data-toggle="panel">
+                                    <span class="collapse-icon">–</span>
+                                    <span class="expand-icon">+</span>
+                                </a>
+                                
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                            <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+                                    
+                                
+                                <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th data-priority="1">ID</th>
+                                            <!-- <th data-priority="6">企业账号</th> -->
+                                            <th data-priority="1">联系人</th>
+                                            <th data-priority="1">联系邮箱</th>
+                                            <th>添加类型</th>
+                                            <th data-priority="1">所在部门</th>
+                                            <th data-priority="1">职务</th>
+                                            <th data-priority="6">手机号码</th>
+                                            <th data-priority="6">座机号码</th>
+                                            <th data-priority="6">创建时间</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <notempty name="list">
+                                            <foreach name="list" item="cd">
+                                                <tr>
+                                                <td>{$cd.pkid}</td>
+                                                <!-- <td>{$data.email}</td> -->
+                                                <td>{$cd.name}</td>
+                                                <td>{$cd.contact_mail}</td>
+                                                <td>{$text[type][$cd[type]]}</td>
+                                                <td>{$cd.department}</td>
+                                                <td>{$cd.title}</td>
+                                                <td>{$cd.mobile}</td>
+                                                <td>{$cd.phone_code}-{$cd.phone_number}
+                                                    <notempty name="cd.phone_ext">
+                                                    -{$cd.phone_ext}
+                                                    </notempty>
+                                                </td>
+                                                <td>{$cd.create_time}</td>
+                                                <td><a href="/index.php?s=/Admin/Enterprise/contact/id/{$data.enterprise_id}/cid/{$cd.pkid}">编辑</a></td>
+                                                </tr>
+                                            </foreach>
+                                        </notempty>                                      
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+    </div>
+</block>
+<block name="script">
+    <script>
+    function chkMail(obj){
+        var v=$(obj).val();
+        if(v){
+            $.post('/index.php?s=/Admin/Enterprise/chkMailType',{'data':v,'eid':$('.enterprise_id').val(),'type':$('.data-type').val()},function(rst){
+                if(!rst.status){
+                    $(obj).next().text(rst.msg);
+                    $(obj).next().css('display','block');
+                    $('#contact-btn').attr('disabled','disabled');
+                }
+                if(rst.status){
+                    $('#contact-btn').removeAttr('disabled');
+                    $(obj).next().text('&nbsp');
+                    $(obj).next().css('display','none');
+                }
+            },'json');
+        }
+    }
+    function checkDate (){
+        var mobile = $('.mobile').val();
+        var phone_code = $('.phone_code').val();
+        var phone_number = $('.phone_number').val();
+        var phone_ext = $('.phone_ext').val();
+        var contact = $('.contact_mail').val();
+        var bool = true;
+        if(!mobile && !phone_code){
+            $('.mobile').addClass('error-border');
+            return false;
+        }
+        if(mobile){
+            var l2 = $('.mobile').val().length;
+            l2 = parseInt(l2);
+            if(l2!=11){
+                $('.mobile').addClass('error-border');
+                bool = false;
+            }
+        }
+        if(phone_code){
+            var l2 = $('.phone_code').val().length;
+            l2 = parseInt(l2);
+            if(l2!=3 && l2!=4){
+                $('.phone_code').addClass('error-border');
+                bool = false;
+            }
+            var l3 = $('.phone_number').val().length;
+            l3 = parseInt(l3);
+            if(l3!=7 && l3!=8){
+                $('.phone_number').addClass('error-border');
+                bool = false;
+            }
+        }
+        if(phone_number){
+            var l3 = $('.phone_number').val().length;
+            l3 = parseInt(l3);
+            if(l3!=7 && l3!=8){
+                $('.phone_number').addClass('error-border');
+                bool = false;
+            }
+
+            var l2 = $('.phone_code').val().length;
+            l2 = parseInt(l2);
+            if(l2!=3 && l2!=4){
+                $('.phone_code').addClass('error-border');
+                bool = false;
+            }
+        }
+        if(phone_ext){
+            var l3 = $('.phone_number').val().length;
+            l3 = parseInt(l3);
+            if(l3!=7 && l3!=8){
+                $('.phone_number').addClass('error-border');
+                bool = false;
+            } 
+            l2 = parseInt(l2);
+            if(l2!=3 && l2!=4){
+                $('.phone_code').addClass('error-border');
+                bool = false;
+            }    
+        }
+        return bool;
+    }
+    $(function(){
+        $('.focus-input').focus(function(){
+            $(this).removeClass('error-border')
+        })
+    })
+    </script>
+</block>

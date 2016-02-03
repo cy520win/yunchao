@@ -1,0 +1,51 @@
+@charset "utf-8";
+body{
+ background:#ffffff;
+
+}
+.container{
+    width:68%;
+    margin:0 auto;
+    padding-top:2%;
+}
+.background-banner{
+    position:relative;
+    width:100%;
+}
+.background-banner img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+.link-other{
+    position:absolute;
+    left:64%;
+    width:50%;
+    height:26px;
+    top:67%;
+} 
+.link-other  a img{
+    width:50%;
+    height:auto;
+}
+.link-other a{
+    width:35%;
+    float:left;
+    display:inline;
+    font-size:1.25em;
+    color:#656565;
+    height:auto;
+
+}
+.link-other .index-link img{
+    width:40%;
+}
+.five-error{
+    left:61%;
+
+}
+.five-error-content{
+    width:60%;
+    
+}
+    

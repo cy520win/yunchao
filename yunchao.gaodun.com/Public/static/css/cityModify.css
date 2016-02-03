@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* 城市编辑修改*/
+.city-box{
+ width:508px;
+ padding:13px;16px;
+ border:none;
+ box-shadow: 0px 0px 5px 0px rgb( 245, 245,245 );
+
+}
+.city-box:before, .city-box:after{
+ box-shadow: 0px 0px 5px 0px rgb( 245, 245,245 );
+ 
+
+}
+.prov-city{
+ border:none;
+
+}
+.prov-city p{
+ text-align: center;
+ color:#57d5e4;
+ font-size:16px;
+ /* font-family: "Adobe Heiti Std"; */
+}
+
+.prov-city li, #js_provCitys li{
+    width:70px;
+    height:40px;
+    text-align: center;
+    line-height:40px;
+}
+.provence li, .prov-city li, #js_provCitys li{
+    padding:0px;
+
+}
+.provence span:hover, .prov-city li:hover, #js_provCitys li:hover{
+    background:#7de0ec;
+    color:#ffffff;
+
+}
+.provence div{
+    font-size:16px;
+    color:#57d5e4;
+    text-align:center;
+ 
+}
+.provence li{
+    width:70px;
+    height:40px;
+    margin:6px 6px;
+    text-align:center;
+    
+}
+.provence span{
+     width:100%;
+     padding:0px;
+     line-height:40px;
+}
+#js_provCitys{
+     margin-top:6px;
+     border:1px solid #57d5e4;
+}
+.laydate_body .laydate_top{
+     height:36px;
+
+}
+.laydate_body .laydate_bottom{
+     height:32px;
+     line-height:18px;
+}
+.laydate-icon, .laydate-icon-default, .laydate-icon-danlan, .laydate-icon-dahong, .laydate-icon-molv{
+     height:40px;
+}

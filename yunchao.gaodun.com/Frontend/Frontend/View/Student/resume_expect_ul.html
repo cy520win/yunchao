@@ -1,0 +1,37 @@
+<ul>
+	<li id="expect-city-li">
+	<h3><span>期望实习地点：</span>
+	<span>{$base.city.region_name}</span>
+	</h3>
+	</li>											
+	<li>
+	<h3><span>每周可实习时间：</span>
+	<span>{$base.week_available}</span>
+	</h3>
+	</li>
+     <li>
+	<h3><span>期望日薪：</span>
+	<span>{$base.salary_range}</span>
+	</h3>
+	</li> 				                            
+	<li>
+	<h3><span>期望岗位类型：</span>
+	<span>{$base.category_text.title}</span>
+	</h3>
+	</li>
+       <li>
+	<h3><span>可实习阶段：</span>
+        <switch name="base.dateType">
+            <case value="1">
+                <span>对时间没有要求,可快速到岗</span>
+            </case>
+            <case value="2">
+                <span>{$base.period_start}</span><span>以后可以开始实习</span>
+            </case>
+            <default />
+                <span>{$base.period_start}</span>至<span>{$base.period_finish}</span>
+        </switch>
+
+	</h3>
+	</li>
+</ul>

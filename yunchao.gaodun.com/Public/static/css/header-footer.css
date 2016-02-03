@@ -1,0 +1,58 @@
+@charset "utf-8";
+/*公用header*/
+#header{width:100%; height:90px; background:#63cdff; position: fixed; top: 0; z-index: 30001;}
+.header-h{ height: 90px; width: 100%; overflow: hidden;}
+.header{ width:100%;max-width:1200px; margin:0 auto; height:90px; position:relative;}
+.header > .logo-gd{float:left;cursor: pointer}
+.header > .logo-gd >img:first-child{ width:140px;}
+.header > .logo-gd >img.last-img{ width:190px;}
+.header > .header-nav{ width:545px; height:40px; float:left; margin-left:30px; overflow:hidden; margin-top:32px;}
+.header > .header-nav >span{ background:url("../images/h-t/v-line-h.png") no-repeat; margin-top:5px; float:left; width:2px; height:29px;}
+.header > .header-nav >a{width:80px; position:relative; height:40px; line-height: 36px; margin:0 26px;float:left; font-size:20px; color:#ffffff; text-align:center;}
+.header > .header-nav >a:after{ content:''; position:absolute; width:0%; background:transparent; display:block; height:3px;bottom: 0; left:50%; transform:translateX(-50%); -moz-transform:translateX(-50%);-ms-transform:translateX(-50%);-webkit-transform:translateX(-50%);-o-transform:translateX(-50%);transition:0.3s;}
+.header > .header-nav >a:hover:after{ width:80%; background:#ffffff;}
+.header > .header-nav > a.active-nav:after{width:80% !important;background:#ffffff !important;}
+.header > .header-nav > a.active-nav.last-nav:after{width:100% !important;}
+.header > .header-nav >a.last-nav:hover:after{ width:100% !important;}
+.header > .user-header{ width:200px; height:40px; float:right; margin-right: 0px; z-index: 999; cursor:pointer; margin-top:30px; line-height:40px; text-align:left; position:relative;}
+.header > .user-header >p{width:160px; padding-left:20px;  color:#ffffff; font-size:16px; height:40px; overflow:hidden; line-height:40px; margin:0;float:left;text-align:left;}
+.header > .user-header >p >i{font-style: normal; overflow: hidden; display: block; max-width: 130px; float: left;}
+.header > .user-header >p > img{ float: left; margin-top: 9px; margin-left: 2px;}
+.header > a.mes-mail{ display: block; float: right; margin-top: 38px;}
+
+
+.header > .user-header > span{  width:0;height:0;border-right: 6px solid transparent;border-left: 6px solid transparent;border-top:10px solid #ffffff; position:absolute; top:16px; right:10px;}
+.header > .user-header >ul{ width:200px; overflow:hidden; height:0;background:#63cdff; position:absolute; top:55px; left:0;transition:0.3s; transition: all 0.3s;}
+.header > .user-header >ul{padding-top: 20px;top:35px}
+.header > .user-header >ul >li {height:40px; line-height:40px; transition:.3s; font-size:16px; color:#ffffff;}
+.header > .user-header >ul >li >a{height:40px; line-height:40px; position: relative;  display:block; transition:.3s; padding-left:25px; font-size:16px; color:#ffffff;}
+.user-header>ul>li>a >img.s-red-s{ position: absolute; top: 9px; left:75px;}
+.header > .user-header >ul >li:first-child{ margin-top:10px;}
+.header > .user-header >ul >li:last-child{ margin-bottom:10px;}
+.header > .user-header >ul >li:hover{ background:#80d6ff;}
+.header > .user-login{ width: 272px;float: right; height: 46px; display: block; margin-right: -12px; margin-top: 28px;}
+.header > .user-login >a{ width: 120px; height: 40px; text-align: center; transition:.3s; line-height: 40px; border-radius: 5px; margin-left: 10px;  font-size: 18px; color: #3e8093; float: left;}
+.header > .user-login >a.first-a{ background: #f4f4f4;}
+.header > .user-login >a.last-a{background: #fffc00;}
+.header > .user-login >a.first-a:hover{ background: #e3e3e3;}
+.header > .user-login >a.last-a:hover{background: #ffe400;}
+#footer{ width:100%; height:100px; background:#63cdff;/*margin-top: 30px;*/clear: both;}
+.footer{ width:100%;max-width: 1200px; height: 100px;margin: 0 auto; font-size: 14px; color: #fffefe;}
+.footer > *{ float: left; display: block;}
+.footer > .footer-l{width: 348px; height: 100px;} 
+.footer > .footer-l >p{ line-height: 14px; padding-left: 50px;color: #fffefe; }
+.footer > .footer-l >p:first-child{ margin: 28px 0 18px;}
+.footer > span{ background:url("../images/h-t/v-line-f.png") no-repeat; width: 2px; height: 80px; margin-top: 10px;}
+.footer > .footer-c{ width:495px;height: 100px;}
+.footer > .footer-c >p{ text-align: center; font-size: 16px; line-height: 16px;}
+.footer > .footer-c >p:first-child{ margin: 28px 0 14px 0;}
+.footer > .footer-c >p >a{ font-size: 16px;line-height: 16px; color: #fffefe; padding-right: 27px;}
+.footer > .footer-c >p >a:hover{ text-decoration: underline;}
+.footer > .footer-r{ width:353px;height: 100px;}
+.footer > .footer-r >*{ display: block; float: left; margin-top: 16px;}
+.footer > .footer-r > .wechat-img{ width:68px; height: 68px; margin-left: 60px;}
+.footer > .footer-r > .wechat{ overflow: hidden;}
+.footer > .footer-r > .wechat >p{font-size: 14px; color: #fffefe; padding-left: 10px; line-height: 14px; position: relative;}
+.footer > .footer-r > .wechat >p:first-child{ margin: 12px 0 17px;}
+.footer > .footer-r > .wechat >p >img{ position: absolute; top: -5px; left: 105px;}
+.header > .user-login >a{height: auto;}

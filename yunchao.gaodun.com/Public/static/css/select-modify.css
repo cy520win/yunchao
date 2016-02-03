@@ -1,0 +1,25 @@
+@charset "utf-8";
+/*selected的样式修改*/
+html .select2-container .select2-choice {border-radius: 5px;-webkit-border-radius: 5px !important;-webkit-background-clip: padding-box !important;-moz-border-radius: 5px !important;-moz-background-clip: padding !important;background:#ffffff !important;}
+
+html .select2-container .select2-choice .select2-arrow {border: none !important;background:#ffffff;}
+html .select2-container .select2-choice .select2-arrow b:before{content:''}
+html .select2-container .select2-choice .select2-arrow b {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #bfbfbf;
+    margin-top: 15px;
+    position: absolute;
+    width:auto;
+    height:auto;
+    margin-left:12px;
+   
+}
+.select2-container .select2-choice .select2-arrow b{width:auto;height:auto;}
+.select2-container .select2-choice .select2-arrow b{width:auto;height:auto;}
+#div >span{width:auto;height:auto;background: #f4f4f4;text-align: center;color: #717272;border-radius: 0px;background-clip: padding-box;top: 16px;right: 10px;position: absolute;border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 8px solid #bfbfbf;transition: 0.3s;}
+.list-comfirm{width:100px;height:42px;text-align: center;display:block;background:#63cdff;border-radius: 5px;float:right;font-size:16px;color:#ffffff;line-height:42px;cursor: pointer;margin-right:18px;margin-top:20px;}
+.div-wrap > .list >li.list-comfirm-area{width:100%;display:block;background-color: transparent;float:right;margin-top:0px;height:60px;}
+.div-wrap #id span i{border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 8px solid #bfbfbf;margin-top: 15px;position: absolute;width: auto;height: auto;margin-left: 12px;}
+.form-control.select2-container{border:2px solid #e4e4e4;}
+.drop-box{width:100px;}

@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,div,ul,dl,li,dt,dd,p,form,input,span{margin:0;padding:0; list-style: none;-webkit-appearance: none; outline: none; border: none;}
+body{font-size:14px;color:#6d6d6d;background:#ffffff; font-family: "微软雅黑";/* -webkit-tap-highlight-color: rgba(0,0,0,0); */}
+img{border:0px;vertical-align:middle;}
+body a{text-decoration:none; cursor:pointer;}
+a,span,p{ outline: none;}
+body a:hover{text-decoration:none;}
+*::-webkit-input-placeholder {
+font-family: "Microsoft Yahei";
+color:#909090;
+font-size:14px;
+}
+
+*:-moz-placeholder {
+font-family: "Microsoft Yahei";
+color:#909090;
+font-size:14px;
+}
+*:-ms-input-placeholder {
+font-family: "Microsoft Yahei";
+color:#909090;
+font-size:14px;
+}
+
+.fl{float:left;}
+.fr{float:right;}
+.cl{ clear: both}
+
+.center-content{width:100%;margin:0 auto;overflow:hidden;padding-top:36px;}
+
+
+
+
+

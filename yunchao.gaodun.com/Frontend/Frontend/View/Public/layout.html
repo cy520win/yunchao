@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+    <title>{$seo.title}</title>
+    <meta name="description" content="{$seo.description}">
+    <meta name="keywords" content="{$seo.keywords}">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/bootstrap.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/public.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/personal_center.css">
+    <script src="__PUBLIC__/static/core/js/jquery-1.11.1.min.js"></script>
+    <script src="__PUBLIC__/static/core/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/static/js/header.js"></script>
+    <!--兼容IE8-->
+    <!--[if lte IE 8]>
+        <script src="__PUBLIC__/static/js/respond.min.js"></script>
+        <link rel="stylesheet" href="__PUBLIC__/static/css/ie8.css">
+    <![endif]-->
+</head>
+<body class="personal_center">
+<!--页头-->
+<include file="Public/header" />
+
+<!--中间部分-->
+<block name="content"></block>
+
+<!-- 页脚 -->
+<include file="Public/footer" />
+<!-- layout层 -->
+<block name="floor"></block>
+<!-- 独立css -->
+<block name="style"></block>
+<!-- 独立javascript -->
+<block name="script"></block>
+</body>
+</html>

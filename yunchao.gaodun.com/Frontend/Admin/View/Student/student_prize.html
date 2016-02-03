@@ -1,0 +1,23 @@
+<if condition="$tpl eq true">
+		<div class="prize-div">
+			<div class="col-sm-4">
+				<input type="month" class="form-control-month form-control-period form-prize" name="prize_experience[period]" data="period">
+				<span onclick="deldiv(this,2)" class="delbutton">删除</span>
+				<span onclick="savepri(this,1)" class="delbutton">保存</span>
+				<textarea class="form-control form-prize" name="prize_experience[description]" cols="6" rows="5" data="description"></textarea>
+			</div>							
+		</div>
+</if>
+
+<if condition="$tpl eq false">
+<foreach name="prize" item="priItem">
+		<div class="prize-div">
+			<div class="col-sm-4">
+				<input type="month" class="form-control-month form-control-period form-prize" name="prize_experience[period]" data="period" value="{$priItem.period|ymdTOym=###}">
+				<span onclick="cur2deldiv(this,{$priItem.pkid})" class="delbutton">删除</span>
+				<span onclick="cur2savepri(this,{$priItem.pkid})" class="delbutton">保存</span>
+				<textarea class="form-control form-prize" name="prize_experience[description]" cols="6" rows="5" data="description">{$priItem.description}</textarea>
+			</div>							
+		</div>
+</foreach>
+</if>

@@ -1,0 +1,571 @@
+.left-section-style{background:#ffffff;box-shadow:0px 1px 1px 0px rgb( 237, 237, 237 );border-bottom: none;}
+.textarea-style{height:100px; border-radius:5px;margin-left: 5px;}
+.md-overlay2 {width: 100%;height: 100%;display: none;top: 0;left: 0;z-index: 2100;}
+.md-overlay{z-index: 1990;}
+.all-module{ height:auto;position:relative;}
+.del-right-menu{font-style: normal;cursor: pointer;display: none;}
+.right-menu-nav>li{cursor: pointer;}
+.right-menu-li{cursor: pointer;position:relative;}
+.right-menu-base{display: block;}
+#editbaseform{display: none;}
+.basic_information{position: relative;padding-left:54px;}
+.edit-base-span{cursor: pointer;color: #a6a6a6;font-size: 16px;margin-left: 10px;line-height:20px;float:left;}
+.edit-base-span b{text-decoration: underline;font-weight: normal;padding-top:4px;margin-left:5px;}
+.del-li-div{width: 93%;margin: 0 auto;text-align:center;box-shadow: 0px 1px 4px 0px rgb( 230, 230, 230 );}
+.btn-sure{background-color:#EACF4F;}
+.btn-cancle{background-color:#E1DCDC;}
+#del-li-div>span{  border-radius: 2px;display: inline-block;height: 30px; margin-right: 0 !important;  width: 64px;padding: 0;line-height: 28px;color: #fff;}
+.del-li-div>p{margin-bottom: 0; letter-spacing: 0; line-height: 16px; font-size: 16px; margin-top: 16px; margin-bottom: 16px;}
+#del-li-div .btn-sure{background-color: #ff7800;margin-left: 0;}
+#del-li-div .btn-sure:hover{background-color:#DD6800;}
+#del-li-div .btn-cancle{background-color: #dddddd; margin-left: 20px;}
+#del-li-div .btn-cancle:hover{background-color:#BFBFBF;}
+.del-li-div{position: absolute;top: -130px;left: 10px;background-color: #ffffff;padding: 14px 0;}
+.complete-circle{cursor: default;}
+.information-button{margin-top: 0;margin-bottom: 40px;padding-bottom: 0;}
+.experience-distance ul li>textarea{width: 400px;height: 70px;border: 1px solid #ffffff;resize:none;}
+.laydate-icon {border: 1px solid #ccc;background-image: url(../images/icon.png);background-repeat: no-repeat;}
+#inputTest2{background-color: #ffffff;}
+#inputTest,#inputTest2{cursor: pointer;}
+#inputTest,#demo,#demo2,#demo3,#demo4,#education-4,#education-3,#edu-edit-starttime,#edu-edit-finishtime,#exprience-1,#exprience-2,#exprience-13,#exprience-14,#honor-1,#honor-2,#activity-1,#activity-3,#certification-1,#certification-11,#school-position-1,#school-position-2,#school-position-12,#school-position-11,#user-birth{height:40px;cursor: pointer;background-color: #ffffff;}
+.Practice_intention{margin-top:5px;margin-bottom:15px;}
+.Practice_intention ul li h3{font-size:16px;color:#656565;margin:0px;line-height:30px;}
+#input-information-Intents ul li{display: inline-block;width: 45%;}
+#input-information-Intents ul{padding-left: 0;}
+.city-text2{background-color: #ffffff;cursor: pointer;}
+.gender-label{width: 18px;height: 18px;margin-right: 30px;cursor: pointer;}
+.politics-label{width: 12px;height: 12px;cursor: pointer;display: inline-block;margin-bottom: -2px;margin-right: 5px;}
+.gender-label>input,.politics-label>input{display: none;width: 18px;height: 18px;}
+.gender-label>span,.politics-label>span{margin-left: 24px;color: #a5a5a5;font-size: 14px;}
+.politics-label2{margin-right: 10px;color: #a5a5a5;font-size: 14px;}
+.gender-label-top{padding-top: 10px;}
+.complete-circle{width: 277px;display: block;}
+.photomodify{position:absolute;left:50%;margin-left:-180px;top:150px;z-index:2105;}
+.background-color{background: rgba(0,0,0,0.6); position:fixed;}
+.photo_form{width:354px;padding:0px;height:293px;}
+.photomodify h1{line-height: 50px; color:#ffffff;background:#57d5e4; font-size:24px; margin:0px;}
+.photomodify h1 span{ margin-left:25px;}
+.button-small{height:32px;width:80px;font-size:16px;padding:0px;margin-left: 0;line-height: 32px;}
+.photomodify_footer{text-align:center;background:#ffffff; padding-bottom:0px;}
+.img-container{margin-bottom: 0px;}
+.perfect-file-button{line-height: 60px;padding: 0}
+.apperance {display: block;}
+.input_column{z-index:2099;padding-bottom: 25px;margin-top: 30px;margin-bottom:22px;}
+.personal_message_column{margin-bottom: 10px;margin-top: 18px;}
+.delete_button {color: #ff5757;padding-top:10px;margin-left: 40px;height: 42px;border: none;background: none;font-size: 12px;padding-left: 20px;}
+.notice_board {position: absolute;top: -112px;left: 46%;width: 260px;text-align: center;box-shadow: 0px 1px 4px 0px rgb( 230, 230, 230 );padding-top: 20px;padding-bottom: 10px;z-index: 10000;background: #ffffff;height: 140px;z-index: 999999;}
+.notice_board button {margin-top: 30px;}
+#notice .delete{margin-left: 40px;margin-right: 14px;}
+.delete {background: #ff7800;color: #ffffff;}
+.button_style {width: 80px;height: 32px;border-radius: 5px;}
+/*.center-content{margin-bottom: 40px;}*/
+.personal-photo{z-index: 499;padding-right: 0;}
+.error-border{border: 1px solid #ff4155;}
+.success-border{border: 1px solid rgb(228, 228, 228);}
+.function-colunm ul li a{margin-top:0; }
+.icon-menu{width: 26px; max-height: 40px;display: block;margin: 0 auto;min-height: 30px;}
+.deliver,.invite,.notice {border:none; }
+ul.colunm-inner li{border-right: 1px solid #dfdfdf; }
+#colunm-inner-lastli{border: none;}
+.dropdown-toggle{width: 180px;}
+.open>.dropdown-menu{width: 100%;}
+textarea.prize-description,textarea.prize-description2,textarea.activity-description,textarea.activity-description2{height: 40px;}
+.del-floor{position: relative;}
+div.form-control{margin-bottom: 8px;}
+.practise_wish_column{margin-bottom: 40px;margin-top:0}
+.menu-a-font{color: #a5a5a5}
+.font-active{color: #373e4a;}
+.delete_button:hover{color: #ff5757;}
+.delete_button:focus {color: #ff5757;}
+.experience-distance{padding-top: 10px;}
+#edit-base-span-icon{font-size: 14px;}
+.p-textarea,.p-textarea2{padding-right: 0;}
+#crop-close{margin-left: 20px;}
+.student-menu-icon ul{margin: 0 auto;}
+.student-menu-icon ul.colunm-inner > li {
+    width: 25%;
+    height: 60px;
+    float: left;
+    padding-left: 0px;
+    border-right: 1px solid #dfdfdf;
+    text-align: center;
+}
+.add-chat i{font-style: normal;}
+.add-chat a:hover{color:#656565}
+.edit-base-span:hover{color:#656565}
+.add-chat:hover{color:#656565}
+.edit_icon:hover{color:#656565}
+.del-right-menu{background: url('../images/del_modul.png')}
+.module-menu ul li i.del-right-menu{width: 12px;height: 12px;float: right;margin-top: 22px;display: none;
+    background-repeat: no-repeat;}
+html .select2-container.select2-dropdown-open{
+    border-radius:5px;
+    -webkit-border-radius: 5px !important;
+    -webkit-background-clip: padding-box !important;
+    -moz-border-radius: 5px !important;
+    -moz-background-clip: padding !important;
+}
+html .select2-container .select2-choice {height: 38px;border-radius:5px;
+    -webkit-border-radius: 5px !important;
+    -webkit-background-clip: padding-box !important;
+    -moz-border-radius: 5px !important;
+    -moz-background-clip: padding !important;}
+#footer{margin-top: 100px;}
+.personal_message_column .information-button{margin-bottom: 0;}
+#input-information-expect{padding-left: 15px;}
+.personal_center .btn{margin-left:5px;margin-right: 40px;}
+#form-Base-edit .information-submit-button{margin-right: 40px;}
+.personal_center .normal-input{color: #656565;}
+.personal_center .normal-input:focus{color:#656565;}
+.personal_center .select2-container .select2-choice .select2-chosen{color:#656565;}
+.personal_center select>option{color: #656565;}
+#cert-linebg{width: 85%;}
+.button-small{margin-left: 0;margin-top: 20px;}
+#crop-img{margin-left: 20px;margin-right:20px;}
+.right-menu-nav li a{color: #a5a5a5;}
+.fided{ position: fixed; top: 0; width: 277.5px; margin-top: 0;}
+.right-menu-li a{display: inline-block;width:84%;height: auto;}
+#module-list ul>li{overflow: hidden;clear: both;}
+.necessary2{padding-left: 16px;padding-right: 5px;text-align: left;}
+.edit-pencil{float:left;padding-top:2px;}
+
+
+.left-section-style{background:#ffffff;box-shadow:0px 1px 1px 0px rgb( 237, 237, 237 );border-bottom: none;}
+.textarea-style{height:100px; border-radius:5px;margin-left: 5px;}
+.md-overlay2 {width: 100%;height: 100%;display: none;top: 0;left: 0;z-index: 2100;}
+.md-overlay{z-index: 1990;}
+.all-module{ height:auto;position:relative;}
+.del-right-menu{font-style: normal;cursor: pointer;display: none;}
+.right-menu-nav>li{cursor: pointer;}
+.right-menu-li{cursor: pointer;position:relative;}
+.right-menu-base{display: block;}
+#editbaseform{display: none;}
+.basic_information{position: relative;padding-left:30px;}
+.edit-base-span{cursor: pointer;color: #a6a6a6;font-size: 16px;float: left;margin-left: 15px;}
+.edit-base-span b{text-decoration: underline;font-weight: normal;}
+.del-li-div{width: 93%;margin: 0 auto;text-align:center;box-shadow: 0px 1px 4px 0px rgb( 230, 230, 230 );}
+.btn-sure{background-color:#EACF4F;}
+.btn-cancle{background-color:#E1DCDC;}
+#del-li-div>span{  border-radius: 2px;display: inline-block;height: 30px; margin-right: 0 !important;  width: 64px;padding: 0;line-height: 28px;color: #fff;}
+.del-li-div>p{margin-bottom: 0; letter-spacing: 0; line-height: 16px; font-size: 16px; margin-top: 16px; margin-bottom: 16px;}
+#del-li-div .btn-sure{background-color: #ff7800;margin-left: 0;}
+#del-li-div .btn-sure:hover{background-color:#DD6800;}
+#del-li-div .btn-cancle{background-color: #dddddd; margin-left: 20px;}
+#del-li-div .btn-cancle:hover{background-color:#BFBFBF;}
+.del-li-div{position: absolute;top: -130px;left: 10px;background-color: #ffffff;padding: 14px 0;}
+.complete-circle{cursor: default;}
+.information-button{margin-top: 0;margin-bottom: 40px;padding-bottom: 0;}
+.experience-distance ul li>textarea{width: 400px;height: 70px;border: 1px solid #ffffff;resize:none;}
+.laydate-icon {border: 1px solid #ccc;background-image: url(../images/icon.png);background-repeat: no-repeat;}
+#inputTest2{background-color: #ffffff;}
+#inputTest,#inputTest2{cursor: pointer;}
+#activity_start,#activity_finish,#inputTest,#demo,#demo2,#demo3,#demo4,#education-4,#education-3,#edu-edit-starttime,#edu-edit-finishtime,#exprience-1,#exprience-2,#exprience-13,#exprience-14,#honor-1,#honor-2,#activity-1,#activity-3,#certification-1,#certification-11,#school-position-1,#school-position-2,#school-position-12,#school-position-11,#user-birth{height:42px;cursor: pointer;background-color: #f4f4f4;background-position:222px center;background-repeat: no-repeat;}
+.Practice_intention{margin-top:5px;margin-bottom:15px;}
+.Practice_intention ul li h3{font-size:16px;color:#656565;margin:0px;line-height:30px;}
+#input-information-Intents ul li{display: inline-block;width: 45%;}
+#input-information-Intents ul{padding-left: 0;}
+.city-text2{background-color: #ffffff;cursor: pointer;}
+.div-wrap-city #inputTest-li{font-size: 14px;color: #a4a4a4;padding-left:0px;}
+.gender-label{width: 18px;height: 18px;margin-right: 30px;cursor: pointer;}
+.politics-label{width: 12px;height: 12px;cursor: pointer;display: inline-block;margin-bottom: -2px;margin-right: 5px;}
+.gender-label>input,.politics-label>input{display: none;width: 18px;height: 18px;}
+.gender-label>span,.politics-label>span{margin-left: 24px;color: #a5a5a5;font-size: 14px;}
+.politics-label2{margin-right: 10px;color: #a5a5a5;font-size: 14px;}
+.gender-label-top{padding-top: 10px;}
+.complete-circle{width: 277px;display: block;}
+.photomodify{position:absolute;left:50%;margin-left:-180px;top:150px;z-index:2105;}
+.background-color{background: rgba(0,0,0,0.6); position:fixed;}
+.photo_form{width:354px;padding:0px;height:293px;}
+.photomodify h1{line-height: 50px; color:#ffffff;background:#57d5e4; font-size:24px; margin:0px;}
+.photomodify h1 span{ margin-left:25px;}
+.button-small{height:32px;width:80px;font-size:16px;padding:0px;margin-left: 0;line-height: 32px;}
+.photomodify_footer{text-align:center;background:#ffffff; padding-bottom:10px;}
+.img-container{margin-bottom: 0px;}
+.perfect-file-button{line-height: 60px;padding: 0}
+.apperance {display: block;}
+.input_column{z-index:2099;padding-bottom: 25px;margin-top: 17px;margin-bottom:12px;}
+.personal_message_column{margin-bottom: 10px;margin-top: 18px;}
+.delete_button {color: #ff5757;padding-top:10px;margin-left: 40px;height: 42px;border: none;background: none;font-size: 12px;padding-left: 20px;}
+.notice_board {position: absolute;top: -112px;left: 48%;width: 260px;text-align: center;box-shadow: 0px 1px 4px 0px rgb( 230, 230, 230 );padding-top: 27px;padding-bottom: 10px;z-index: 10000;background: #ffffff;z-index:999999;border-radius:10px;padding-bottom:20px;}
+.notice_board button {margin-top: 30px;}
+#notice .delete{margin-left: 15px;margin-right:20px;}
+.delete {background: #ff7800;color: #ffffff;}
+.button_style {width: 80px;height: 32px;border-radius: 5px;}
+/*.center-content{margin-bottom: 40px;}*/
+.personal-photo{z-index: 499;padding-right: 0;}
+.error-border{border: 1px solid #ff4155;}
+.success-border{border: 1px solid rgb(228, 228, 228);}
+.function-colunm ul li a{margin-top:0; }
+.icon-menu{width: 26px; max-height: 40px;display: block;margin: 0 auto;min-height: 30px;}
+.deliver,.invite,.notice {border:none; }
+ul.colunm-inner li{border-right: 1px solid #dfdfdf; }
+#colunm-inner-lastli{border: none;}
+.dropdown-toggle{width: 180px;}
+.open>.dropdown-menu{width: 100%;}
+textarea.prize-description,textarea.prize-description2,textarea.activity-description,textarea.activity-description2{height: 40px;  border: 2px solid #f0f0f0;font-size: 14px;}
+.del-floor{position: relative;}
+div.form-control{margin-bottom: 8px;}
+.practise_wish_column{margin-bottom: 40px;margin-top:0}
+.menu-a-font{color: #a5a5a5}
+.font-active{color: #373e4a;}
+.delete_button:hover{color: #ff5757;}
+.delete_button:focus {color: #ff5757;}
+.experience-distance{padding-top: 10px;}
+#edit-base-span-icon{font-size: 14px;margin-right: 6px;}
+.p-textarea,.p-textarea2{padding-right: 0;}
+#crop-close{margin-left: 20px;}
+.student-menu-icon ul{margin: 0 auto;}
+.student-menu-icon ul.colunm-inner > li {width: 25%;height: 60px;float: left;padding-left: 0px;border-right: 1px solid #dfdfdf;text-align: center;}
+.add-chat i{font-style: normal;}
+.add-chat a:hover{color:#656565}
+.edit-base-span:hover{color:#656565}
+.add-chat:hover{color:#656565}
+.edit_icon:hover{color:#656565}
+.del-right-menu{background: url('../images/del_modul.png')}
+.module-menu ul li i.del-right-menu{width: 12px;height: 12px;float: right;margin-top: 22px;display: none;
+    background-repeat: no-repeat;}
+html .select2-container.select2-dropdown-open{border-radius:5px;-webkit-border-radius: 5px !important;
+    -webkit-background-clip: padding-box !important;-moz-border-radius: 5px !important;-moz-background-clip: padding !important;}
+html .select2-container .select2-choice {height: 38px;border-radius:5px;-webkit-border-radius: 5px !important;-webkit-background-clip: padding-box !important;-moz-border-radius: 5px !important;-moz-background-clip: padding !important;background: #f4f4f4 !important;}
+#footer{margin-top: 100px;}
+.personal_message_column .information-button{margin-bottom: 0;}
+#input-information-expect{padding-left: 15px;}
+.personal_center .btn{margin-left:0px;margin-right: 40px;margin-top: 25px;margin-bottom: 0}
+#form-Base-edit .information-submit-button{margin-right: 40px;}
+.personal_center .normal-input{color: #656565;  background-color: #f4f4f4;margin-bottom: 0px;margin-left:0px;}
+.personal_center .normal-input:focus{color:#656565;}
+.personal_center .select2-container .select2-choice .select2-chosen{color:#656565;}
+.personal_center select>option{color: #656565;}
+#cert-linebg{width:622px;}
+.button-small{margin-left: 0;margin-top: 20px;}
+#crop-img{margin-left: 20px;margin-right:20px;}
+.right-menu-nav li a{color: #a5a5a5;}
+.fided{ position: fixed; top: 0; width: 277.5px; margin-top: 0;}
+.right-menu-li a{display: inline-block;width:84%;height: auto;}
+#module-list ul>li{overflow: hidden;clear: both;width:92.5%;}
+.necessary2{padding-left: 16px;padding-right: 5px;text-align: left;}
+.introduce-description{resize:none;font-size: 14px;}
+textarea.introduce-description,{height: 186px;}
+textarea.school-description{border: 2px solid #f0f0f0;}
+textarea.normal-input{border: 2px solid #f0f0f0;}
+textarea.normal-input:focus{border: 2px solid #63cdff;}
+textarea#introduce-2{height: 186px;}
+.p-introduc{font-size: 16px;color: #a5a5a5;padding: 0 30px;line-height: 24px;margin:0px;}
+.p-introduc:hover{cursor:default;}
+.introduce-edit-i i{font-size: 14px;}
+.padding-none{padding-top: 0;}
+.up-photo-headpic{border-radius:5px;width: 120px;height: auto;padding: 2px;}
+.dn{display: none;}
+.upload-header-area {width: 23%;float: left;}
+.basic-information-colunm {float:left;width: 100%;}
+.Party-choosen {width: 100px;height: 42px;border-radius: 5px;border: 2px solid #f0f0f0;display: block;float: left;text-align: center;line-height: 40px;font-size: 14px;color: #a5a5a5;background: #f4f4f4;cursor: pointer;}
+.none-Party {margin-left: 20px;}
+.sex-choose {width: 42px;height: 42px;border-radius: 5px;border: 2px solid #f0f0f0;display: block;float: left;text-align: center;line-height: 40px;font-size: 14px;cursor: pointer;background:#f4f4f4;}
+.sex-man {border: 2px solid #63cdff;border-radius: 5px;}
+.span-checked{border: 2px solid #63cdff;}
+.sex-women {margin-left: 20px;}
+.red-dot-area {color: red;float: left;padding-top: 10px;font-size: 20px;margin-right: 10px;}
+.width250{width:250px;}
+.width260{width: 260px;float:left;}
+.width270{width: 270px;float:left;}
+.width190{width: 190px;float:left;}
+.base-edit-left{float: left;margin-right: 30px;}
+.width480{width: 507px;float:left;}
+.input-pad-info {margin-bottom: 25px;clear: both;}
+#form-Base-edit .select2-container{background-color: #f4f4f4;width: 190px;float: left;}
+.necessary-area {float: left;margin-left: 20px;width: 100%;}
+.red-dot {color: red;float: left;padding-top: 18px;margin-right: 10px;font-size: 20px;}
+.necessary-notice {color: #ff5d39;font-size: 12px;float: left;padding-top: 20px;}
+.mt0{margin-top: 0}
+input.input-grey-style {background-color: #f4f4f4;border: 2px solid #f0f0f0;}
+input.input-grey-style:focus{border: 2px solid #63cdff;}
+.basic-personal-photo {width: 120px;height: 120px;float: left;margin-left: 10px;margin-top: 0px;position: relative;}
+.upload-header {position: absolute;bottom: 2px;left: 2px;background: #000000;width: 116px;font-size: 14px;color: #ffffff;line-height: 35px;text-align: center;border-radius: 0 0 5px 5px;opacity: 0.5;}
+.limit-upload-file {color: #a5a5a5;float: left;width: 100%;height: auto;text-align: center;font-size: 14px;
+    position: relative;bottom: -8px;left: -20px;}
+.pad12{padding-left: 12px;}
+.pt13{padding-top: 13px;padding-bottom: 20px;}
+.look-view{color: #656565;font-size:16px;padding-left:7px}
+#userinfo-form{margin-top: 20px;}
+.personal-photo>.upload{border:1px solid #cecece;border-radius: 5px;margin-bottom: 0;width: 110px;min-height:120px !important;height:154px;background: #ffffff;padding: 2px}
+.personal-photo>#upload{border-radius: 5px;margin-bottom: 0;width: 114px;height:154px;}
+.icon-i{position: relative;float: left;}
+.icon-i i {position: relative;top:10px;left: -18px;transition:0.3s;background-image: url('../images/arrow_down.png');width: 12px;height: 8px;display: inline-block;}
+.icon-i i.active{transform: rotate(-180deg) !important;}
+input.laydate-icon{background-image: url('../images/arrow_down.png');}
+#user-birth{background-position: 170px center;}
+.base-info-i{display: inline-block;font-style: normal;margin-left: 4px;margin-right:4px;}
+.base-dd-four{color: #a5a5a5;}
+.basic_information .look-view dd{line-height: 26px;}
+.add-chat-hover{float: left;margin-left: 15px;color: #a5a5a5;}
+.add-chat-hover i {font-style: normal;}
+.add-chat-hover a {color: #bfbfbf;text-decoration: underline;font-size: 16px;}
+.add-chat-hover a:hover {color: #656565;}
+.certification-honor {position: absolute;background: url("../images/lesson.png") no-repeat;right: 12px;width: 90px;height: 81px;z-index: 2100;}
+.form-title {background: url("../images/article.png") no-repeat left center;padding-left: 20px;font-size: 18px;color: #5dd8e7;margin-left: 15px;margin-top: 25px;}
+.certification-honor li span.lesson-activities-column {margin-top: 14px;}
+.certification-honor li span {text-decoration: none;font-size: 14px;color: #a5a5a5;line-height: 30px;display: block;text-align: center;width: 86px;margin: 0 auto;cursor: pointer;}
+.certification-honor li span:hover {background: #f4f4f4;color: #282828;}
+.pdt0{padding-top: 0;}
+.introduce-number{text-align: right;margin-top: 9px;}
+.experience-distance ul{margin-bottom: 0;}
+#form-Base-edit{width: 77%;}
+/*#expect-div .close-distance{padding-left: 15px;}*/
+input[type=text]{border: 2px solid #f0f0f0;background-color: #f4f4f4; }
+#form-education-add .edu_degree{border: 2px solid #f0f0f0;}
+#form-certification .cert-status{border: 2px solid #f0f0f0;}
+.cert-select{border: 2px solid #f0f0f0;}
+.border-gray{border:1px solid #e4e4e4;}
+/*文本框 地点 、日期 focus*/
+input[type=text]:focus{ border: 2px solid #63cdff;}
+#user-birth:focus{border:2px solid #e4e4e4;}
+#homecity10:focus{border:2px solid #e4e4e4;}
+#education-3:focus{border:2px solid #e4e4e4;}
+#education-4:focus{border:2px solid #e4e4e4;}
+#exprience-1:focus{border:2px solid #e4e4e4;}
+#exprience-2:focus{border:2px solid #e4e4e4;}
+#activity-1:focus{border:2px solid #e4e4e4;}
+#school-position-1:focus{border:2px solid #e4e4e4;}
+#school-position-2:focus{border:2px solid #e4e4e4;}
+#certification-1:focus{border:2px solid #e4e4e4;}
+#honor-1:focus{border:2px solid #e4e4e4;}
+#demo3:focus{border:2px solid #e4e4e4;}
+#demo4:focus{border:2px solid #e4e4e4;}
+#demo:focus{border:2px solid #e4e4e4;}
+#demo2:focus{border:2px solid #e4e4e4;}
+#activity-div,#card-div{min-height: 0px;}
+.expect-form-city{padding-top: 0;}
+.margint40 {margin-top: 40px;margin-bottom:8px;}
+.input-grey-style {background: #f4f4f4;border: 2px solid #f0f0f0;}
+.input-area-style:focus ,.input-grey-style:focus {border: 2px solid #63cdff;}
+.data-line{width: 20px;margin-left: 10px;}
+.data-line-add{margin-right: 10px;}
+.width540{width: 540px;}
+.width246 {width: 250px;}
+.width260{width: 270px;float: left;}
+#expect-form-add .div-wrap-city{width: 540px}
+#expect-form-add .width246 {width: 250px;}
+.limit-counts{font-size: 14px;color: #bfbfbf;float: right;margin-top: 8px;}
+input#demo3,input#demo4{background-position:209px;}
+.input-distance{margin-bottom: 20px;}
+.underline{margin-left: 10px;margin-right:10px;padding:0px;}
+.data-line{margin-right: 0;}
+.form-control .select2-container{margin-bottom:0px;}
+#form-activity .input-distance,#form-introduce .input-distance{margin-top:20px;margin-bottom:25px;}
+#form-certification .input-distance{margin-top:20px;margin-bottom:20px;}
+#form-introduce .form-group .btn {margin-top:0px;margin-bottom:0px;}
+#expect-div .practise_wish_column .information-button .btn{margin-top:23px;}
+#expect-div .practise_wish_column .information-button{margin-bottom:15px;}
+input#school-position-11,input#certification-11,input#honor-2,input#school-position-12,input#activity-3,input#edu-edit-starttime,input#edu-edit-finishtime,input#exprience-13,input#exprience-14{background-position:222px}
+input.input-border-error,.input-border-error{border: 1px solid #ff5d39;!important;}
+textarea.input-border-error{border: 1px solid #ff5d39;}
+#form-education-add  .input-border-error {border: 1px solid #ff5d39;}
+#inputTest2.input-border-error{border: 1px solid #ff5d39;}
+#s2id_sun-3{margin-bottom:0;padding-bottom: 0}
+/* ---------------select插件------------------*/
+html .select2-container .select2-choice .select2-arrow{border:none !important;}
+html .select2-container .select2-choice .select2-arrow b{border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 8px solid #bfbfbf;margin-top: 15px;position: absolute;}
+html .select2-container .select2-choice .select2-arrow b:before {content: '';}
+.select2-container .select2-choice .select2-arrow b{display: inline;width: auto;height: auto;}
+html .select2-drop.select2-drop-active{margin-top:2px;}
+.select2-drop.select2-drop-above.select2-drop-active{border-radius:5px;border:1px solid #f4f4f4;}
+html .select2-drop{border-radius:5px !important;border:none}
+html .select2-drop .select2-results{border:1px solid #bcbcbc;border-radius:5px;}
+html .select2-container .select2-choice .select2-arrow{width:42px;}
+/*---------学生简历导航 icon----------------*/
+.module-menu ul li a>i {padding-left: 0;text-align: center; width: 16px;display: inline-block;height: 16px;margin-left: 36px;background-repeat: no-repeat;background-position: 0 0;position: relative;top:1px;}
+.icon-school{background-image: url('../images/resume-icon/icon-school.png');}
+.icon-base{background-image: url('../images/resume-icon/icon-base.png');}
+.icon-education{background-image: url('../images/resume-icon/icon-education.png');}
+.icon-experice{background-image: url('../images/resume-icon/icon-experice.png');}
+.icon-honor{background-image: url('../images/resume-icon/icon-honor.png');}
+.icon-dearhr{background-image: url('../images/resume-icon/icon-dearhr.png');}
+.icon-expect{background-image: url('../images/resume-icon/icon-expect.png');}
+.icon-school-active{background-image: url('../images/resume-icon/icon-school-active.png');}
+.icon-base-active{background-image: url('../images/resume-icon/icon-base-active.png');}
+.icon-experice-active{background-image: url('../images/resume-icon/icon-experice-active.png');}
+.icon-honor-active{background-image: url('../images/resume-icon/icon-honor-active.png');}
+.icon-dearhr-active{background-image: url('../images/resume-icon/icon-dearhr-active.png');}
+.icon-expect-active{background-image: url('../images/resume-icon/icon-expect-active.png');}
+.icon-education-active{background-image: url('../images/resume-icon/icon-education-active.png');}
+/*2015.8.3修改样式*/
+#expect-form-edit .expect-form-city{padding-bottom:7px;}
+#expect-form-edit .form-group .date_tip{padding-left:16px;}
+#expect-form-edit .information-button{padding-left:26px;}
+#form-Base-edit .select2-container{margin-bottom:0px;}
+.normal-input{height:42px;}
+#expect-div .practise_wish_column .information-button{margin-bottom:25px;}
+#form-education-add .input-distance{margin-bottom:25px;}
+#form-education-add .form-group{margin-bottom:25px;}
+.personal_center .btn{margin-right:15px;}
+.base-edit-right{float:left;}
+.necessary{margin-left:20px;}
+.input-distance{padding-top:40px;}
+#form-exprience .form-group{margin-bottom:25px;}
+#form-exprience .form-group .information-submit-button{margin-top:15px;}
+#form-exprience .form-group .information-cancel-button{margin-top:15px;}
+#module-list ul>li{width:91%;}
+#form-certification .input-distance{padding-top:0px;margin-bottom:25px;}
+#form-certification .form-group .information-submit-button{margin-bottom:10px;}
+#form-certification .form-group .information-cancel-button{margin-bottom:10px;}
+#form-honor .input-distance{padding-top:20px;margin-bottom:25px;}
+#form-activity .input-distance, #form-introduce .input-distance{margin-top:0px;padding-top: 20px;margin-bottom: 25px;}
+#form-introduce .form-group .information-submit-button{margin-bottom:10px;}
+#form-introduce .form-group .information-cancel-button{margin-bottom:10px;}
+.model-title{margin-top:30px;}
+textarea#introduce-2{margin-left:0px;}
+.input_column{margin-bottom:20px;margin-top:19px;}
+.experience-distance{padding-top:0px;}
+#input-certification,#input-honor,#input-school-position,#input-activity{margin-bottom:40px;}
+#expect-div .practise_wish_column{margin-bottom:40px;}
+#form-school-position .input-distance{padding-top:20px;padding-bottom:5px;}
+.form-position-edit .input-distance{padding-top: 40px;}
+#form-activity .input-distance{}
+#form-introduce .input-distance {margin-top: 0px;padding-top: 30px;margin-bottom:5px;}
+.close-distance{padding-left:0px;padding-right:0px;}
+#form-honor .close-distance{padding-left:0px;}
+/*#certification-2{padding-right:12px;}*/
+.add-chat-hover:hover{color: #656565;}
+#form-education-add .input-distance{margin-left:0px}
+.ml0{margin-left: 0;}
+.w160{width:160px;}
+/*倒三角*/
+input#school-position-1,input#school-position-2,input#school-position-11,input#school-position-12{background-position:135px;}
+input#demo3, input#demo4{background-position: 224px;}
+input#exprience-13,input#exprience-14,input#certification-11{background-position:222px;}
+input#demo{background-position:225px;}
+input#demo2{}
+#exprience-1,#exprience-2,#education-3,#education-4,#certification-1{background-position:222px;}
+#user-birth{background-position:165px center;color:#656565;}
+.pl10{padding-left:10px;}
+.margin10{margin-left:10px;padding-left: 0}
+.ml10{margin-left:0px;}
+.mgl20{margin-left: 20px;}
+.width260-2{width: 260px;}
+#expect-form-edit .div-wrap-city{width: 540px;}
+.data-line{padding-left:0px;}
+#school-position-3{width:368px;}
+#input-information-experience,#input-information-position,#input-information-activity,#input-information-certification,#input-information-education{padding:0}
+#form-certification div.adjust-2{padding-top:40px;margin-bottom:25px;margin-top: 0;padding-bottom:0px;}
+#form-activity div.adjust-2{padding-top:40px;margin-bottom:25px;margin-top: 0;padding-bottom:0px;}
+#form-school-position div.adjust-2{padding-top:40px;margin-bottom:25px;margin-top: 0;padding-bottom:0px;}
+.marginb25{margin-bottom:25px;}
+#activity-3,#activity-1,
+.form-control.select2-container{margin-bottom:0px;}
+.input_column{margin-bottom:40px;}
+/*2015-08-04 14:06:09  星期二*/
+#inputTest20.input-border-error{border: 1px solid #ff5d39;}
+.mt12{margin-bottom: 12px;}
+.marginb22{margin-bottom:20px}
+.date_tip{padding-left:10px}
+#expect-add-button{margin-bottom: 26px;}
+.pdlr0{padding-left:0;padding-right:0}
+.input_column{margin-bottom:25px;}
+/*2015-08-05 09:17:09  星期三*/
+.edit-base-span{color: #bfbfbf;}
+.pdlr0{padding-left:0;padding-right:0}
+.module-block{padding-bottom:15px;}
+.p-introduc{line-height:30px;}
+.certification-honor{ -webkit-transform: translateY(10px);-moz-transform: translateY(10px);-ms-transform: translateY(10px);-o-transform: translateY(10px);transform: translateY(10px);-webkit-backface-visibility: hidden;-webkit-transition:  opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;-ms-transition: opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;-moz-transition: opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;transition: opacity 0.3s 0s, visibility 0.3s 0s ,transform 0.5s 0s;opacity:0;visibility:hidden;}
+.is-visible{-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);-o-transform: translateY(0);transform: translateY(0);opacity: 1;visibility: visible;}
+#expect-div{padding-bottom:0px;}
+.icon-i i{top:12px;left:-24px;}
+.module-block{padding-bottom:0px;}
+.input-pad-info{margin-bottom:23px;}
+.personal_center .normal-input{font-size:14px;}
+.personal_center .select2-container .select2-choice .select2-chosen{/*color:#a4a4a4;*/}
+.pdb15{padding-bottom:15px}
+html .select2-drop.select2-drop-active{margin-top:2px;}
+.select2-drop.select2-drop-above.select2-drop-active{border-radius:5px;border:1px solid #f4f4f4;}
+html .select2-drop{border-radius:5px !important;border:none}
+html .select2-drop .select2-results{border:1px solid #bcbcbc;border-radius:5px;}
+.base-edit-left{position:relative;}
+.base-edit-left i{border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 8px solid #bfbfbf;margin-top: 15px;position: absolute;left:185px;top:2px;transition:0.3s;transform:rotate(0deg);}
+.base-edit-left i.change{transform:rotate(-180deg);}
+.pdb15{padding-bottom:15px}
+#notice .button .information-cancel-button{margin-bottom:0px;}
+#notice .button{margin-top:5px;}
+/*#module-list ul.certification-honor>li{width:100%;}*/
+#module-list ul.certification-honor>li{width:116px;margin:0 auto;}
+
+#input-information-introduce{padding-bottom:5px;}
+/*2015-08-10 10:04:43  星期一*/
+.isvisible{-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);-o-transform: translateY(0);transform: translateY(0);opacity: 1;visibility: visible;}
+/*2015-08-12 17:28:17  星期三*/
+/*.personal_center select.sel-color-gray{color:#a4a4a4}
+.personal_center .sel-color-gray .select2-choice .select2-chosen{color:#a4a4a4}*/
+.marginl15{margin-left:15px;}
+.paddingl20{padding-left:20px;}
+.basic_information dl dd{line-height:26px;color:#656565;}
+.basic_information dl dd span.title{color:#656565;font-weight: bolder;}
+.personal_message_content{float: left;}
+.personal_information-area{float:left;}
+.line77{width:77%;}
+/*.honor-awards{position:relative;}*/
+.input-area-style .input-grey-style{background:#f4f4f4;border:2px solid #f0f0f0;padding-left:20px;}
+.input-area-style .input-grey-style:focus{border:2px solid #63cdff;}
+.width180{width:180px;}
+#education-3,#education-4,#exprience-1,#exprience-2{background:#f4f4f4;}
+.no-padding{padding-left:0px;padding-right:0px;}
+.marginl6{margin-left:6px;}
+div.form-control{margin-bottom:0px;}
+.margintb20{margin-top:20px;margin-bottom:25px;}
+.marginb25{margin-bottom:25px;}
+.marginb20{margin-bottom:20px;}
+.margint{margin-top:20px;}
+.margint{margin-top:20px;}
+.marginl20{margin-left:20px;}
+.lesson-activities{position:absolute;background:url("../images/school_ground.png") no-repeat;right:12px;top:51px;width:122px;height:82px;z-index:10000;display:none;}
+.lesson-activities li a{text-decoration: none;font-size:14px;color:#a5a5a5;line-height: 30px;display:block;text-align: center;width:116px;margin:0 auto;}
+.lesson-activities li a.lesson-activities-column{margin-top:14px;}
+.lesson-activities li a:hover{background:#f4f4f4;color:#282828;}
+.certification-honor{position:absolute;background:url("../images/certification.png") no-repeat center center;width:125px;height:85px;}
+/*.certification-honor-area{position:relative;}*/
+.certification-honor li a{text-decoration: none;font-size:14px;color:#a5a5a5;line-height: 30px;display:block;text-align: center;width:100px;margin:0 auto;}
+.certification-honor li a.lesson-activities-column{margin-top:14px;}
+.certification-honor li a:hover{background:#f4f4f4;color:#282828;}
+.marginl10{margin-left:10px;}
+.personal_center .select2-container .select2-choice .select2-chosen{height:42px;background:#f4f4f4;border:2px solid #f0f0f0;color:#a5a5a5;}
+.width190{width:190px;}
+#activity-1,#certification-1,#school-position-1,#school-position-2{background:#f4f4f4;}
+.textarea-style{font-size:14px;}
+#module-list ul>li{width:92.5%;}
+#school-position-4{height:40px;}
+.limit-counts{font-size:14px;color:#bfbfbf;float:right;margin-top:8px;}
+html .select2-container .select2-choice .select2-arrow{width:38px;border-left-color:transparent;}
+html .select2-drop.select2-drop-active{}
+.select2-container .select2-choice .select2-arrow{border-left:none;}
+html .select2-container .select2-choice .select2-arrow{}
+html .select2-container .select2-choice .select2-arrow b{width:12px;}
+html .select2-dropdown-open  .select2-choice .select2-arrow b{transform:rotate(-180) !important;}
+html .select2-container .select2-choice .select2-arrow b:before{content:'';transform:rotate(-180)}
+.form-control.select2-container.select2-dropdown-open a span b{transform:rotate(-180) !important;}
+.no-padding-bottom{padding-bottom:0px;}
+html .select2-container .select2-choice .select2-arrow b{ border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 8px solid #bfbfbf;margin-top: 15px;position: absolute;left:10px;}
+.form-title{background:url("static/images/article.png") no-repeat left center;padding-left:20px;font-size:18px;color:#5dd8e7;margin-left:15px;margin-top:25px;}
+.margint20{margin-top:20px;}
+.div-wrap{ width:530px; height:40px; position:relative;float:left;}
+.five{font-size:14px; color:#fe8b25;float:left;line-height:40px;margin-left:20px;}
+#div{ width:540px; height:40px; font-size:14px; padding:8px 12px; line-height:38px; border:1px solid #e4e4e4 ;cursor:pointer; border-radius:5px; outline:none; overflow:hidden; position:relative;background-color:#f4f4f4;border:2px solid #f0f0f0;}
+#div >span{background: #f5f5f5;text-align: center;color: #717272;width: 35px;-webkit-border-radius: 0px; -webkit-background-clip: padding-box; -moz-border-radius: 0px;-moz-background-clip: padding;border-radius: 0px;background-clip: padding-box; top:0; right:15px; position:absolute;width:12px;}
+#div >span:before{ position: relative; transition:.3s;-webkit-transform:rotate(0deg);-mo-transform:rotate(0deg);-mo-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);font-weight: bold;display: block;content: ''; line-height:38px; text-align:center;border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 8px solid #bfbfbf;margin-top: 15px;position: absolute;}
+.div >span:before{transform:rotate(-180deg) !important;}
+#div >ul{ list-style:none; cursor:pointer; outline:none; padding:0; margin:0;margin-top:-8px;}
+#div >ul >li{ float:left; padding:1px; background:#ffffff; margin:5px 5px 0 0; padding:7px; font-size:12px; line-height:12px; color:#656565;}
+#div >ul >li >span{font-size:14px; padding-left:5px; color:#656565; cursor:default;}
+#div >ul >li >span:hover{ color:#a5a5a5; font-weight:bold;}
+.form-control.select2-container{margin-bottom:0px;}
+.width260{width:260px;}
+.width540{width:540px;}
+.width246{width:246px;float:left;}
+.margint40{margin-top:40px;}
+.personal_center .btn{margin-top:25px;margin-bottom:0px;}
+.english > li{ width: 100%; height: 50px; line-height: 50px;}
+.english > li >a{ display: block; width: 100%; height: 50px; line-height: 50px; vertical-align: middle;}
+.english > li >a >i{ display: block !important; float: left; padding-top: 17px;}
+.english > li >a > span{display: block !important; float: left; }
+.basic-personal-photo {width: 114px;height: auto;float: left;margin-left: 36px;margin-top: 0px;position: relative;}
+.upload-header {position: absolute;bottom: 2px;left: 2px;background: #000000;width: 110px;font-size: 14px;color: #ffffff;line-height: 35px;text-align: center;border-radius: 0 0 5px 5px;opacity: 0.5;}
+.limit-upload-file {color: #a5a5a5;float: left;width: 100%;height: auto;text-align: center;font-size: 14px;position: relative;bottom: -8px;left: -20px;margin-left:25px;}
+.width382{width: 355px !important;float:left;}
+.width110{width: 120px !important;padding-left:0px;padding-right:5px;}

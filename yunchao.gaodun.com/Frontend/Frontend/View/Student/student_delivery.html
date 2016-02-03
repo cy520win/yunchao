@@ -1,0 +1,104 @@
+<extend name="Public/layout" />
+<block name="title"><title>高顿实习-投递反馈</title></block>
+<!--中间部分-->
+<block name="content">
+    <div class="center-content">
+        <!--中间部分右区-->
+        <div class="row">
+            <div class="col-md-9">
+              <!--投递列表-->
+              <div class="left-section-style list-section">
+                  <div class="list-title-model">
+                    <div class="container list-container">
+                        <div class="list-title">
+                        <span>投递反馈</span>
+                        <span class="linebg"></span>
+                        <span class="refresh"><a href="javascript:window.location.reload()"><img src="__PUBLIC__/static/images/enterprise-practice/refresh.png">刷新</a></span>
+                          <div class="Screening_button_area">
+                              <div class="container container-screening" id="screening-area">
+                                <ul class="no_padding">
+                                  <li class="first-margin <if condition='$page.type eq 1'>selected</if>"><a href="/Delivery/student/id/1">全部</a></li>
+                                  <li class="<if condition='$page.type eq 2'>selected</if>"><a href="/Delivery/student/id/2">未查看</a></li>
+                                  <li class="<if condition='$page.type eq 3'>selected</if>"><a href="/Delivery/student/id/3">已查看</a></li>
+                                  <li class="<if condition='$page.type eq 4'>selected</if>"><a href="/Delivery/student/id/4">允许面试</a></li>
+                                  <li class="<if condition='$page.type eq 6'>selected</if>"><a href="/Delivery/student/id/6">待定中</a></li>
+                                  <li class="<if condition='$page.type eq 5'>selected</if>"><a href="/Delivery/student/id/5">不合适</a></li>
+                                </ul>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+            <!--职位列表-->            
+            <div class="list-content col-md-12 no_padding mh">
+              <div class="container list-container-content">
+                <div id="resume-read-box">
+                <!-- item -->
+                      {$deliveryHtml}
+                </div>      
+              </div>
+            </div>
+            </div>
+            </div>
+            <!-- 中间部分左区-->
+            <div class="col-md-3">
+                <div class="right-section">
+                        <include file="Student:menu" />
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-forms.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/jquery.circliful.css">
+    <style>
+.Screening_button_area ul li{margin-left: 44px;}
+    </style>
+</block>
+<block name="script">
+    <script src="__PUBLIC__/static/core/js/resizeable.js"></script>
+    <script src="__PUBLIC__/static/core/js/joinable.js"></script>
+    <script src="__PUBLIC__/static/js/student_common.js"></script>
+    <script>
+    stuMenuDelivery();
+    function  page(i,p){
+      $.get("/Delivery/student/ajax/true/type/"+i+"/page/"+p,function(data){
+          $('#resume-read-box').html(data.data);
+      },'json');
+      return false;
+    }
+    $(function(){
+        $(".q-yx").hover(function() {
+            $(this).find('img').attr('src', '/Public/static/images/delivery-icon1.png');
+
+        }, function() {
+            $(this).find('img').attr('src', '/Public/static/images/delivery-icon2.png');
+        });
+        $(".q-yx").click(function(event) {
+            var type = $(this).attr('data-type');
+            $('.yx-box').css('z-index', '-1');
+            $('.q-yx').attr('data-type','true');
+            if(type == 'true'){
+                $(this).siblings('.yx-box').css('z-index', '99999');
+                $(this).attr('data-type','false');
+            }else{
+                $(this).siblings('.yx-box').css('z-index', '-1');
+                $(this).attr('data-type','true');
+            }
+
+            return false;
+        });
+    });
+
+    $(document).click(function(event) {
+        $('.yx-box').css('z-index', '-1');
+        $('.q-yx').attr('data-type','true');
+    });
+    </script>
+</block>
+

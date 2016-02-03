@@ -1,0 +1,34 @@
+<div class="input_column col-md-12 edit-priactice-input" id="input-education">
+<div class="row">
+<div class="container-fluid">
+<form role="form" class="basic-information-colunm edit-priactice-form" id="form-exprience-edit">
+	<input  type="hidden" name="practice_id" value="{$base.pkid}">
+	<div class="form-group col-md-12 input-distance marginb25">
+	<div class="col-md-4  close-distance ml10">
+	<input type="text" readonly="readonly" class="form-control normal-input priactice-start-time2 laydate-icon" id="exprience-13" name="start_time" value="{$base.start_time}" onclick="getdate('exprience-13',event)" placeholder="开始日期">
+	</div>
+	<span class="col-md-1 underline" style="width:20px;">&nbsp;</span>	
+	<div class="col-md-4  close-distance ml10">
+	<input type="text" readonly="readonly" class="form-control normal-input priactice-finish-time2 laydate-icon" id="exprience-14" name="finish_time" value="{$base.finish_time}" onclick="getdate('exprience-14',event)" placeholder="截止日期">
+	</div>
+	</div>
+	<div class="form-group col-md-12 marginb25">
+	<div class="col-md-3  close-distance ml10">
+	<input type="text" class="form-control normal-input priactice-organization2 " id="exprience-5" placeholder="企业名称" name="organization" value="{$base.organization}">
+	</div>
+	<div class="col-md-4  close-distance">
+	<input type="text" class="form-control normal-input priactice-quarters2" id="exprience-6" placeholder="岗位名称" name="quarters" value="{$base.quarters}">
+	</div>
+	</div>
+	<div class="form-group col-md-12">
+	<textarea class="form-control textarea-style priactice-content2 normal-input" rows="6" id="exprience-5" name="content">{$base.content}</textarea>
+	</div>
+	<div class="form-group col-md-12">                              
+	<input type="submit" class="btn btn-info confirm-button information-submit-button" value="{$Think.config.L_SAVE}" onclick="return savepriactice2(this)">	
+	<button type="button" class="btn confirm-button information-cancel-button" onclick="cancle(this)">{$Think.config.L_CANCLE}</button>
+	<button type="button" class="btn confirm-button delete_button" onclick="return delpri(this,{$base.pkid})">{$Think.config.L_DELETE_SINGLE}</button>
+	</div>
+</form>
+</div>
+</div>
+</div>

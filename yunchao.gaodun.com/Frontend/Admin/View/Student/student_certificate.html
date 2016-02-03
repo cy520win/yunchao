@@ -1,0 +1,68 @@
+<if condition="$tpl eq true">
+<div class="card-div">
+		<div class="col-sm-12">
+			<div class="col-sm-3">
+				<input type="month" class="form-control-month form-control-period form-card" name="student_certificate[finish_time]" data="finish_time">
+			</div>
+			<div class="col-sm-2">
+				<select class="form-control form-card" id="major-type" onchange="majorcard(this)">
+				<option value="">请选择</option>
+				<foreach name="majortype" item="typeItem">
+					<option value="{$key}">{$typeItem}</option>
+				</foreach>			
+				</select>
+			</div>
+			<div class="col-sm-3" >
+			<select class="form-control col-sm-3 form-card" name="student_certificate[certificate_id]" id="major-card" data="certificate_id">	
+			</select>
+			</div>
+			<div class="col-sm-2">
+			<select class="form-control col-sm-3 form-card" name="student_certificate[status]" data="status">
+						<option value="1">在读</option>
+						<option value="2">通过</option>	
+			</select>
+			</div>
+			<div class="col-sm-2">
+					<span onclick="deldiv(this,6)" class="delbutton">删除</span>
+					<span onclick="savecard(this)" class="delbutton">保存</span>
+			</div>
+		</div>
+</div>
+</if>
+
+<if condition="$tpl eq false">
+<foreach name="card" item="cardItem">
+<div class="card-div">
+		<div class="col-sm-12">
+			<div class="col-sm-3">
+				<input type="month" class="form-control-month form-control-period form-card" name="student_certificate[finish_time]" data="finish_time" value="{$cardItem.finish_time|ymdTOym=###}">
+			</div>
+			<div class="col-sm-2">
+				<select class="form-control form-card form-card-opt" id="major-type" onchange="majorcard(this)" key="{$cardItem.card_type}">
+				<option value="">请选择</option>
+				<foreach name="CertificateType" item="typeItem">
+					<option value="{$key}">{$typeItem}</option>
+				</foreach>			
+				</select>
+			</div>
+			<div class="col-sm-3" >
+			<select class="form-control col-sm-3 form-card form-card-opt2" name="student_certificate[certificate_id]" id="major-card" data="certificate_id" key="{$cardItem.certificate_id}">
+					<foreach name="cardItem.all_type" item="typeItem">
+						<option value="{$typeItem.pkid}">{$typeItem.full_name}</option>
+					</foreach>	
+			</select>
+			</div>
+			<div class="col-sm-2">
+			<select class="form-control col-sm-3 form-card form-card-opt" name="student_certificate[status]" data="status">
+						<option value="1" <if condition="$cardItem.status eq 1">selected</if> >在读</option>
+						<option value="2" <if condition="$cardItem.status eq 2">selected</if> >通过</option>	
+			</select>
+			</div>
+			<div class="col-sm-2">
+					<span onclick="cur6deldiv(this,{$cardItem.pkid})" class="delbutton">删除</span>
+					<span onclick="cur6savecard(this,{$cardItem.pkid})" class="delbutton">保存</span>
+			</div>
+		</div>
+</div>	
+</foreach>
+</if>

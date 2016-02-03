@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+body{ background: #f4f4f4;}
+*::-webkit-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+*:-moz-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+*:-ms-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+
+
+
+
+.ipad-wrap{ width: 100%; max-width: 1200px; margin: 0 auto; height: auto; overflow: hidden;}
+
+/* 手机  */
+/* 证书状态 */
+.iphone-div-wrap > .iphone-wrap-right >.iphone-certificate{ float: left; height: 40px; overflow: hidden; line-height: 40px;}
+.iphone-div-wrap > .iphone-wrap-right >.iphone-certificate > span:first-child{ width: 13px; overflow: hidden; margin-top: 11px; height: 13px; line-height: 13px; text-align: center; border-radius: 50%; border: 1px solid #dbdbdb; margin-right: 4px; display: block; float: left;}
+.iphone-div-wrap > .iphone-wrap-right >.iphone-certificate > span:last-child{ margin-right: 34px;}
+.iphone-div-wrap > .iphone-wrap-right >.iphone-certificate > span >i{ width: 6px; height: 6px; display: block; border-radius: 50%; margin-top: 4px; margin-left: 4px;}
+.iphone-div-wrap > .iphone-wrap-right >.iphone-certificate > span >i.active{ background: #63cdff;}
+
+/* dear hr */
+.dear-hr{width: 580px; height: 180px; padding: 5px 0 0 10px; margin: 50px auto; display:block; font-family: "Microsoft Yahei"; resize:none; border-radius: 5px; background: #f6f6f6; border:1px solid #e1e1e1; font-size: 16px; color: #a5a5a5;}
+.hr-ipad-wrap{ width: 450px; height: 40px; border-radius: 5px; font-size: 16px; color: #fff; text-align: center; line-height: 40px; background: #63cdff; display:block; margin: 490px auto 0;}
+.dear-hr-phone{ width: 90%; height: 150px;background: #f6f6f6; border:1px solid #e1e1e1; color: #a5a5a5; display:block; margin: 20px auto; resize:none;border-radius: 5px;font-family: "Microsoft Yahei"; }
+.hr-save-phone{display:block; margin: 0 auto; border-radius: 5px;  color:#fff; font-size: 15px; width: 90%; height: 42px;    background: #63cdff; text-align: center; line-height: 42px;}
+
+
+.iphone-wrap-right >input::-webkit-input-placeholder {
+font-family: "Microsoft Yahei";
+color:#cbcaca;
+font-size:13px;
+letter-spacing: 1px;
+}
+
+.iphone-wrap-right >input:-moz-placeholder {
+font-family: "Microsoft Yahei";
+color:#cbcaca;
+font-size:13px;
+letter-spacing: 1px;
+}
+.iphone-wrap-right >input:-ms-input-placeholder {
+font-family: "Microsoft Yahei";
+color:#cbcaca;
+font-size:13px;
+letter-spacing: 1px;
+}
+
+
+
+@media all and (min-width:992px) {
+	.dear-hr{width: 800px;}
+	.hr-ipad-wrap{ margin-top: 200px;}
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+     
+}
+
+@media ( max-width: 767px){
+	.phone-wrap{ display: block;}
+	.ipad-wrap{ display: none;}
+}
+
+@media ( max-width: 414px){
+}
+
+@media ( max-width: 320px){
+}
+
+
+
+
+

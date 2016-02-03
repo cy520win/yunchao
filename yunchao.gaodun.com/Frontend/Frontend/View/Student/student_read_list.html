@@ -1,0 +1,27 @@
+<notempty name="read">
+                  <foreach name="read" item="rd">
+                      <div class="list-area">
+                        <div class="title">
+                            <span class="post-title"><a href="/Enterprise/info/id/{$rd.enterprise_id|enInt}" target="_blank">{$rd.enterprise}</a></span>
+                            <span class="city">{$rd.city}</span>
+                            <span class="date">最新查看时间：{$rd.create_time}</span>
+                        </div>
+                        <div class="details">
+                        <span class="details-left">企业规模：{$rd.scale}<span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        </span>行业类型：{$rd.industry}</span>
+                        <span class="details-right">简历总共被查看&nbsp;{$rd.view}&nbsp;次</span>
+                        </div>
+                      </div>              
+                  </foreach>
+                  <!--分页按钮-->
+                  <div class="page-list">
+                        <div class="page-list-a">                    
+                          {$page.btn.prev}
+                          {$page.btn.next}
+                        </div>
+                  </div>
+<else/>
+<div class="no-one">
+    多投一些岗位，就会有企业关注你哦！！！！！
+</div>
+</notempty>

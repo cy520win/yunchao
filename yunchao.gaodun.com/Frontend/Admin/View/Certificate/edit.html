@@ -1,0 +1,76 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+<div class="col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">更新证书信息</h3>
+							<div class="panel-options">
+								<a href="#" data-toggle="panel">
+									<span class="collapse-icon">–</span>
+									<span class="expand-icon">+</span>
+								</a>
+							</div>
+						</div>
+						<div class="panel-body">
+							
+							<form role="form" class="form-horizontal" method="post" action="/index.php?s=/Admin/Certificate/update">
+							
+                            <div class="form-group">
+									<label class="col-sm-2 control-label" for="field-1">证书全称：</label>
+									
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="field-1" value="{$info.full_name}" name="full_name" required>
+										<input type="hidden" value="{$info.pkid}" name="cert_id">
+									</div>
+								</div>
+
+							<div class="form-group">
+									<label class="col-sm-2 control-label" for="field-1">英文名称：</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="field-1" name="full_name_en" required value="{$info.full_name_en}">
+									</div>
+							</div>
+				
+						<div class="form-group">
+									<label class="col-sm-2 control-label" for="field-1">证书简称：</label>
+									
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="field-1" value="{$info.short_name}" name="short_name">
+									</div>
+								</div>
+							<div class="form-group">
+									<label class="col-sm-2 control-label" for="field-1">证书描述：</label>
+									
+									<div class="col-sm-8">
+										<textarea class="form-control" cols="8" id="field-5" name="description">{$info.description}</textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="field-5">证书类型：</label>
+									
+									<div class="col-sm-2">
+										<select class="form-control" name="certificate_type">
+										        <notempty name="info.type">
+														<foreach name="info.type" item="typeItem">
+															<option value="{$typeItem.val}" <if condition="$typeItem.check eq true">selected</if> >{$typeItem.text}</option>
+														</foreach>
+										           	<else/>
+										           		<option value="0">暂无数据</option>
+										        </notempty>
+										</select>
+									</div>
+								</div>
+                        <div class="form-group" style="padding-top:10px;">
+                           <div class="col-sm-12" style="margin:auto text-align:center;">
+                           <div class="container" style="width:145px;">
+                                <button type="submit" class="btn btn-turquoise">保存</button>                                 
+                                <a href="javascript:history.back(-1);" class="btn btn-red">返回</a> 
+                            </div>
+                            </div>
+                        </div>		 
+     					</form>	                 	
+						</div>
+					</div>
+</div>
+</block>

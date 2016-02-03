@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+body{ background: #f4f4f4;}
+
+.ipad-wrap > .w{width: 86%; height: auto; padding: 0 3%; background: #ffffff; padding-top: 20px; margin: 20px auto 30px;}
+.ipad-wrap > .job{height: auto; padding-bottom: 25px;}
+.ipad-wrap > .job > .title{ margin-top: 30px; overflow: hidden; height: auto;}
+.ipad-wrap > .job > .title >p { font-size: 22px; vertical-align: bottom; float: left;line-height: 22px; color: #656565;}
+.ipad-wrap > .job > .title >p >i{background: url(../../images/account/city-icon.png) 0 4px no-repeat; padding-left: 11px; font-style: normal;margin-left: 10px;  font-size: 16px; vertical-align: bottom; color: #a5a5a5; line-height: 16px;}
+.ipad-wrap > .job > .title >span{ display: block; float: right; font-size: 16px; color: #999999; vertical-align: bottom;}
+.ipad-wrap > .job > .name{ width: 100%; margin-top: 15px; clear: both; height: auto; font-size: 16px; line-height: 16px; color: #63cdff;}
+.ipad-wrap > .job > .name >a{ color: #63cdff;}
+.ipad-wrap > .job > .name >span{ color: #656565;}
+.ipad-wrap > .job > .line{ width: 100%; height: 1px; background: #e9e9e9; margin: 20px auto;}
+.ipad-wrap > .job > .div-wrap{ width: 100%; height: auto; overflow: hidden;}
+.ipad-wrap > .job > .div-wrap >p{ width: 10%; font-size: 16px; line-height: 30px; color: #a5a5a5; float: left;}
+.ipad-wrap > .job > .div-wrap >div{ width: 90%; float: left; font-size: 16px; color: #656565;}
+.ipad-wrap > .job > .div-wrap >div >span{ float: left; margin-bottom: 10px;border-radius: 5px; margin-right: 10px; font-size: 16px; line-height: 16px; color: #656565; padding: 7px 20px; background: #f0f0f0;}
+.ipad-wrap > .job > .div-wrap >div >span.yellow{ background: #fcab3f; color: #ffffff;}
+.ipad-wrap > .job > .div-wrap >div > i{ display: block; line-height: 18px; font-size: 16px; margin-bottom: 18px; color: #656565;  font-style: normal;}
+.div-wrap >div > i.education{ padding-left: 25px; margin-top: 10px; background: url(../../images/account/icon.png) 0px -152px no-repeat;}
+.div-wrap >div > i.major{padding-left: 25px; background: url(../../images/account/icon.png) 0px -170px no-repeat;}
+.div-wrap >div > i.time{padding-left: 25px; background: url(../../images/account/icon.png) 0px -188px no-repeat;}
+.div-wrap >div > i.date{padding-left: 25px; background: url(../../images/account/icon.png) 0px -208px no-repeat;}
+.ipad-wrap > .job > .div-wrap >div >p{ font-size: 16px; float: left; line-height: 16px; color: #656565; margin-top: 8px;}
+.ipad-wrap > .job > .div-wrap >div >p.collection-p{ margin-left:30px; }
+.ipad-wrap > .job > .div-wrap >div > b{ font-weight: normal; font-size: 16px; float: left; margin-left: 75px; color: #a5a5a5; line-height: 16px; margin-top: 8px;}
+.ipad-wrap > .job > .div-wrap >div > b >span{ font-size: 16px; color: #656565;}
+.ipad-wrap > .job > .div-wrap.ovi{ overflow: inherit;padding-bottom: 40px; position: relative;}
+.ipad-wrap > .job > .div-wrap.ovi >.w60{ width: 60%;}
+.div-wrap.ovi >.wx-ipad{ width: auto !important; position: absolute; right: 0; top: 0;}
+.wx-ipad >p{ float: right !important;cursor: pointer; position: relative;}
+.wx-ipad >p>img{ margin-right: 5px;  margin-top: -5px;}
+.share-div{ width: 167px; height: 94px; top: 20px ;left:-75px;display: none; position: absolute;  z-index: 98; background: url(../../images/account/share-icon4.png) no-repeat;  } /*  */
+.share-div >i{ width: 100%; font-size: 16px; color: #656565; height: 45px; margin-top: 4px; font-style: normal; line-height: 45px; text-align: center; display: block; border-bottom: 1px solid #e9e9e9; }
+.share-div >img{ float: left; display: block; cursor: pointer;}
+.share-div >img:nth-of-type(1){ padding:10px 20px 10px 36px; }
+.share-div >img:nth-of-type(2){ padding:10px 36px 10px 20px; }
+.wx-div{ width: 230px; top: 25px ;right:-50px; overflow: hidden; display: none; background: #fff; height: 270px; position: absolute; z-index: 99; border: 1px solid #06bad2; }
+.wx-div >i{ margin-top: 18px; display: block; overflow: hidden; font-style: normal; text-align: center; }
+.wx-div >i >*{ display: block; float: left; font-style: normal; }
+.wx-div >i >img:nth-of-type(1){ margin-left: 20px; }
+.wx-div >i >img:nth-of-type(2){ float: right; cursor: pointer; margin-right: 12px; }
+.wx-div >img{ margin: 20px auto 0; width: 191px; display: block; }
+.collection-scss{ width: 220px; display: none; opacity: 0; transition: 0.5s; font-size: 14px !important; color: #ffffff !important; line-height: 60px !important; border-radius: 0 !important; text-align: center;height: 60px; z-index: 100; left: -60px; top: 33px;background: #34e2d8 !important; position: absolute;}
+.collection-scss >a{ margin-left: 13px; text-decoration: underline; color: #00acf0; }
+.collection-p >i{ font-style: normal; }
+
+.job-description{ min-height: 350px; padding-bottom: 60px !important;}
+.job-description > .title{ width: 100%; height: auto; overflow: hidden; padding-top: 30px;}
+.job-description > .title > p{ width: 12%;font-size: 20px; line-height: 20px; color: #656565; float: left;}
+.job-description > .title > span{ margin-top: 10px; display: block; float: left; width: 88%; height: 1px; background: #e9e9e9;}
+.job-description >p{ padding: 25px 30px 30px 30px; line-height: 24px; font-size: 16px; color: #656565;}
+.job-description > a{ width: 100px; cursor:pointer; display: block; margin-bottom: 60px; border-radius: 5px; background: #63cdff; height: 42px; margin: 0 auto; font-size: 18px; color: #ffffff; line-height: 42px; text-align: center;}
+.job-description > a.delivered{ background: #bfbfbf !important;}
+
+
+/* 简历完成度 */
+.ipad-wrap > .resume-finish{ width: 600px; height: 340px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -200px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 10;}
+.ipad-wrap > .resume-finish > .resume-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 24px; color: #ffffff;}
+.ipad-wrap > .resume-finish > .resume-title >img { float: right; padding-right: 44px; display: block; padding-top: 17px; cursor: pointer;}
+.ipad-wrap > .resume-finish > p{ font-size: 26px; color: #656565; text-align: center; line-height: 26px; margin:30px auto 25px;}
+.ipad-wrap > .resume-finish > div{ width: 78%; height: auto; overflow: hidden; margin: 0 auto;}
+.ipad-wrap > .resume-finish > div >p{ font-size: 18px; color: #656565; line-height: 30px; margin-bottom: 14px;}
+.ipad-wrap > .resume-finish > div >p >span{ color: #ffab3c;}
+.ipad-wrap > .resume-finish > a{ width: 120px; height: 42px; transition:.3s; display: block; margin: 30px auto 0; line-height: 42px; text-align: center;border-radius: 5px; font-size: 18px; color: #ffffff; background: #63cdff;}
+.ipad-wrap > .resume-finish > a:active{ background: #34b9f7;}
+
+
+/* 邮件发送成功*/
+.ipad-wrap > .box-wrap{ width: 100%; height: 100%; display: none; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.25); z-index: 9;}
+.ipad-wrap > .succes-box{ width: 600px; height: 400px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -200px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 10;}
+.ipad-wrap > .succes-box > .succes-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 24px; color: #ffffff;}
+.ipad-wrap > .succes-box > .succes-box-title >img { float: right; padding-right: 44px; display: block; padding-top: 17px; cursor: pointer;}
+.ipad-wrap > .succes-box > p{ font-size: 26px; color: #656565; text-align: center; line-height: 26px; margin:60px auto 50px;}
+.ipad-wrap > .succes-box > div{ width: 78%; height: auto; overflow: hidden; margin: 0 auto;}
+.ipad-wrap > .succes-box > div >p{ font-size: 18px; color: #656565; line-height: 18px; margin-bottom: 14px; text-align: center;}
+.ipad-wrap > .succes-box > a{ width: 40%; height: 42px; transition:.3s; display: block; margin: 60px auto 0; line-height: 42px; text-align: center;border-radius: 5px; font-size: 20px; color: #ffffff; background: #63cdff;}
+.ipad-wrap > .succes-box > a:active{ background: #34b9f7;}
+
+/* 投递成功 */
+
+.ipad-wrap > .deliver-box{ width: 600px; height: 370px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -185px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 10;}
+.ipad-wrap > .deliver-box > .deliver-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 20px; color: #ffffff;}
+.ipad-wrap > .deliver-box > .deliver-box-title >img { float: right; padding-right: 44px; display: block; padding-top: 17px; cursor: pointer;}
+.ipad-wrap > .deliver-box > p{ font-size: 24px; color: #656565; text-align: center; line-height: 30px; margin:80px auto 55px;}
+.ipad-wrap > .deliver-box > div{ width: 78%; height: auto; overflow: hidden; margin: 0 auto;}
+.ipad-wrap > .deliver-box > div >p{ font-size: 18px; color: #656565; line-height: 18px; margin-bottom: 14px; text-align: center;}
+.ipad-wrap > .deliver-box > a{ width: 40%; height: 42px; transition:.3s; display: block; margin: 60px auto 0; line-height: 42px; text-align: center;border-radius: 5px; font-size: 20px; color: #ffffff; background: #63cdff;}
+.ipad-wrap > .deliver-box > a:active{ background: #34b9f7;}
+
+/* 未创建 */
+.ipad-wrap > .creat-box{ width: 600px; height: 370px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -185px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 10;}
+.ipad-wrap > .creat-box > .creat-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 20px; color: #ffffff;}
+.ipad-wrap > .creat-box > .creat-box-title >img { float: right; padding-right: 44px; display: block; padding-top: 17px; cursor: pointer;}
+.ipad-wrap > .creat-box > p{ font-size: 24px; color: #656565; text-align: center; line-height: 30px; margin:80px auto 55px;}
+.ipad-wrap > .creat-box > div{ width: 78%; height: auto; overflow: hidden; margin: 0 auto;}
+.ipad-wrap > .creat-box > div >p{ font-size: 18px; color: #656565; line-height: 18px; margin-bottom: 14px; text-align: center;}
+.ipad-wrap > .creat-box > a{ width: 40%; height: 42px; transition:.3s; display: block; margin: 60px auto 0; line-height: 42px; text-align: center;border-radius: 5px; font-size: 20px; color: #ffffff; background: #63cdff;}
+.ipad-wrap > .creat-box > a:active{ background: #34b9f7;}
+
+
+/* 验证 */
+.ipad-wrap > .test-box{ width: 600px; height: 415px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -207px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 10;}
+.ipad-wrap > .test-box > .test-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 20px; color: #ffffff;}
+.ipad-wrap > .test-box > .test-box-title >img { float: right; padding-right: 44px; display: block; padding-top: 17px; cursor: pointer;}
+.ipad-wrap > .test-box > p{ font-size: 24px; color: #656565; text-align: center; line-height: 24px; margin: 50px 0 30px 0;}
+.ipad-wrap > .test-box > span{ display: block; margin-top: 20px; text-align: center; font-size: 16px; line-height: 16px; color: #656565;}
+.ipad-wrap > .test-box > a{ width: 40%; height: 42px; transition:.3s; display: block; margin: 50px auto 0; line-height: 42px; text-align: center;border-radius: 5px; font-size: 20px; color: #ffffff; background: #63cdff;}
+.ipad-wrap > .test-box > a:active{ background: #34b9f7;}
+.ipad-wrap > .test-box > i{ font-style: normal; letter-spacing: 1px; margin-top: 20px; display: block; font-size: 16px; line-height: 16px; text-align: center;}
+.ipad-wrap > .test-box > i >a{ color: #63cdff;}
+
+/* 验证 */
+.ipad-wrap > .resume-box{ width: 600px; height: 415px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -207px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 10;}
+.ipad-wrap > .resume-box > .resume-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 20px; color: #ffffff;}
+.ipad-wrap > .resume-box > .resume-box-title >img { float: right; padding-right: 44px; display: block; padding-top: 17px; cursor: pointer;}
+.ipad-wrap > .resume-box > p{ font-size: 24px; color: #656565; text-align: center; line-height: 24px; margin: 38px 0 20px 0;}
+.ipad-wrap > .resume-box > span{ display: block; margin-top: 10px; text-align: center; font-size: 16px; line-height: 16px; color: #656565;}
+.ipad-wrap > .resume-box > .resume{width: 350px; height: 105px; margin:20px 0 0 148px;} 
+.ipad-wrap > .resume-box > .resume > div{ position: relative; float: left; margin-right: 25px; width: 138px; height: 98px; border: 1px solid #dadada; border-radius: 5px;}
+.ipad-wrap > .resume-box > .resume > div > img{ position: absolute; top: 10px; left: 16px;}
+.ipad-wrap > .resume-box > .resume > div >p{ text-align: center; margin-top: 72px;}
+.ipad-wrap > .resume-box > .resume > div >span{ width: 20px; display: none; height: 20px; position: absolute; top: 82px; left: 122px; background: url(../../images/account/resume-ok.png) no-repeat;}
+.ipad-wrap > .resume-box > .resume > div.active{ border: 1px solid #63cdff;}
+.ipad-wrap > .resume-box > .resume > div.active >span{ display: block;}
+.ipad-wrap > .resume-box > .resume > div >.prompt{ font-size: 16px; line-height: 16px; padding-top: 14px; color: #656565; text-align: center;background: url(../../images/account/prompt.png) no-repeat; width: 254px; height: 52px; top: -52px; left: -55px; position: absolute; }
+.ipad-wrap > .resume-box > .resume > div >.prompt >a{ color: #63cdff; text-decoration: underline;}
+.ipad-wrap > .resume-box > .button{ width: 270px; height: 50px;margin-top: 26px; margin-left: 177px;}
+.ipad-wrap > .resume-box > .button a{ display: block; border-radius: 5px; font-size: 20px; color: #ffffff; background: #dadada; float: left; width: 110px; height: 42px; line-height: 42px; text-align: center; margin-right: 25px;}
+.ipad-wrap > .resume-box > .button a:first-child{ background: #63cdff;}
+
+
+
+
+/* 登录框大于992 */
+.regist{ width: 684px; position: fixed;display: none; z-index: 999; top: 50%; left: 50%; margin-left:-342px; margin-top: -222px;   height: auto; padding-bottom: 50px; padding-top: 45px;overflow: hidden; background:#f7f7f7; border-radius: 5px;}
+.regist > .close{ position: absolute; cursor: pointer; top: 0px ; right: 0px; padding-right: 20px; padding-top: 20px;}
+.regist > .regist-left{ width: 462px; height: auto; margin-left: 50px; overflow: hidden;}
+.regist > .regist-left > ul{ overflow: hidden;margin-bottom:-2px;}
+.regist > .regist-left > ul >li{ float: left; width: 65px;font-size: 20px; color: #999999; margin-left: 5px; text-align: center; cursor:pointer; transition:color .3s;}
+.regist > .regist-left > ul >li.active{ color: #63cdff; border-bottom:solid 2px #63cdff; padding-bottom: 7px;}
+
+.form{ overflow: hidden; display:none;}
+.form > .input-wrap{ width: 462px; height: auto; overflow: hidden;}
+.form > .input-wrap > .input{ width: 398px; margin-top: 19px; height: 38px;background: #ffffff;border: 1px solid #e4e4e4; border-radius: 5px;}
+.form > .input-wrap > .input >span{float: left;  margin:13px 8px 0 16px; display: block;}
+.form > .input-wrap > .input >span.address{ background: url(../../images/account/icon.png) 0 -1px no-repeat;height: 11px;width: 14px;}
+.form > .input-wrap > .input >span.password{ background: url(../../images/account/icon.png) -1px -13px no-repeat; width: 13px; height: 15px;}
+.form > .input-wrap >.focused{ border: 1px solid #76e0ff !important;}
+.form > .input-wrap >.error{ border: 1px solid #ff5d38 !important;}
+
+.form > .input-wrap > .input >input{ width: 353px; height: 38px; line-height: 38px; color: black; border: none; outline: none;}
+.form > .input-wrap >i{width: 17px; height: 17px; float: left; margin-top: 27px; display: none; margin-left: 13px;background: url(../../images/account/icon.png) -1px -30px no-repeat;}
+.form .input-error{ clear: both; padding-left: 16px; margin-top: 9px; float: left; display: none;background: url(../../images/account/icon.png) -1px -48px no-repeat; font-size: 14px; color: #ff5d39; line-height: 14px;}
+
+.form >span.login{ width: 400px; height: 40px; display:block; transition:.3s; cursor: pointer; color: #f7f7f7; line-height: 40px; border-radius: 5px;font-size: 18px; margin-top: 12px; text-align: center; background: #63cdff; border: none; outline: none;}
+.form >span.login:active{  background: #34b9f7;}
+
+
+.regist-center{ width: 1px; height: 345px; background: #d9d9d9; border-left: 1px solid #ffffff;}
+.regist-right{ width: 150px; height: 350px; overflow: hidden;}
+.regist-right > p.haved{ font-size: 14px; line-height: 14px;margin-top: 100px;  color: #656565; text-align: left;}
+
+.regist-right > .other-div > p.other{margin-top: 120px; padding-left: 20px; margin-bottom: 15px;font-size: 14px; line-height: 14px;color: #656565; text-align: left;}
+.regist-right > span{ display: block; margin-left: 20px; margin-top: 12px;}
+.regist-right > span >a{ color:#63cdff; display:block; float: left; margin-top: -2px; margin-right: 5px;}
+.regist-right > span >a:active{ text-decoration: underline;}
+.regist-right > span >i{ width: 17px; height: 17px; float: left; display:block; background: url(../../images/account/icon.png) -1px -63px no-repeat;}
+.regist-right > .other-div > a.qq{ width: 33px; margin-left: 17px; float: left; margin-right: 10px; height: 33px;background: url(../../images/account/icon.png) 0px -81px no-repeat; display:block;}
+.regist-right > .other-div > a.sina{background: url(../../images/account/icon.png) 0px -115px no-repeat; display:block; width: 33px; height: 33px; float: left;}
+.regist-right > .other-div > img.sina{display:block; width: 33px; height: 33px; float: left;margin-left: 40px}
+
+
+
+/* 登录框992-768 */
+.regist-ipad{ width: 640px; height: auto; display: none; position: fixed; z-index: 999; top: 50%; left: 50%; margin-top: -350px; margin-left: -320px; padding-bottom: 50px; padding-top: 45px; overflow: hidden; background:#f7f7f7; border-radius: 5px;}
+.regist-ipad > .close{ position: absolute;cursor: pointer; top: 0px ; right: 0px; padding-right: 20px; padding-top: 20px;}
+.regist-ipad > .regist-ipad-top{ width: 583px; height: auto; margin-left: 57px; }
+.regist-ipad > .regist-ipad-top > ul{ width: 524px; height: 44px; border: 1px solid #63cdff; border-radius: 5px; overflow: hidden;margin-bottom:-2px;}
+.regist-ipad > .regist-ipad-top > ul >li{ float: left; width: 262px; height:44px; line-height: 44px;font-size: 20px; color: #999999;text-align: center; cursor:pointer; transition:color .3s;}
+.regist-ipad > .regist-ipad-top > ul >li.active{ background: #63cdff; color: #fff;}
+
+.form-ipad{ display:none;}
+.form-ipad > .input-wrap{ width: 583px; height: auto; overflow: hidden;}
+.form-ipad > .input-wrap > .input{ width: 524px; margin-top: 29px; height: 38px;background: #ffffff; position: relative; border: 1px solid #e4e4e4; border-radius: 5px;}
+.form-ipad > .input-wrap > .input >span{float: left;  margin:13px 8px 0 16px; display: block;}
+.form-ipad > .input-wrap > .input >span.address{ background: url(../../images/account/icon.png) 0 -1px no-repeat;height: 11px;width: 14px;}
+.form-ipad > .input-wrap > .input >span.password{ background: url(../../images/account/icon.png) -1px -13px no-repeat; width: 13px; height: 15px;}
+.form-ipad > .input-wrap >.focused{ border: 1px solid #76e0ff !important;}
+.form-ipad > .input-wrap >.error{ border: 1px solid #ff5d38 !important;}
+
+
+.form-ipad > .input-wrap > .input >input{ width: 353px; height: 38px; line-height: 38px; color: black; border: none; outline: none;}
+.form-ipad > .input-wrap > .input >i{width: 17px; height: 17px; position:absolute;top: 11px; display: none; right: -30px; background: url(../../images/account/icon.png) -1px -30px no-repeat;}
+.form-ipad .input-error{ clear: both; padding-left: 16px; margin-top: 9px; float: left; display: none;background: url(../../images/account/icon.png) -1px -48px no-repeat; font-size: 14px; color: #ff5d39; line-height: 14px;}
+
+
+.form-ipad >span.login{ width: 526px; height: 40px; display:block; transition:.3s; cursor: pointer; color: #f7f7f7; line-height: 40px; border-radius: 5px;font-size: 20px; font-family: "Microsoft Yahei"; margin-top: 50px; text-align: center; background: #63cdff; border: none; outline: none;}
+.form-ipad >span.login:active{  background: #34b9f7;}
+
+
+
+/* 登陆 大于992 */
+
+.regist > .login-left{ width: 462px; height: auto; margin-left: 50px; margin-top: 25px; overflow: hidden;}
+.auto-login{ width: 400px;  height: auto; margin-top: 20px; font-size: 12px; color: #a5a5a5;}
+
+.auto-login > span{ width: 12px; cursor: pointer; margin-right: 7px; margin-top: 2px; float: left; height: 12px; border: 1px solid #bfbfbf; border-radius: 3px; display: block;} 
+.auto-login > span.checked{ background:url(../../images/account/ok.png) 3px 3px no-repeat;}
+.auto-login >a { float: right;font-size: 12px; color: #a5a5a5;}
+
+.regist > .login-left > .form >span.login{ width: 400px; margin-top: 100px; height: 40px; transition:.3s; cursor: pointer; color: #f7f7f7; line-height: 40px; border-radius: 5px;font-size: 18px;  text-align: center; background: #63cdff; border: none; outline: none;}
+.regist > .login-left > .form >span.login:active{  background: #34b9f7;}
+ 
+
+
+/* 登陆 768-992 */
+
+.form-ipad > .auto-login{ font-size: 14px; width: 526px;}
+.form-ipad > .auto-login > span{ width: 16px; cursor: pointer; margin-right: 7px; margin-top: 1px; float: left; height: 16px; border: 1px solid #bfbfbf; border-radius: 3px; display: block;} 
+.form-ipad > .auto-login > span.checked{ background:url(../../images/account/ok.png) 5px 5px no-repeat;}
+.form-ipad > .auto-login > a{ font-size: 14px;}
+
+.login-ipad-bottom{ width: 100%; height: auto; overflow: hidden;}
+.login-ipad-bottom > p{ font-size: 16px; line-height: 16px;margin-top: 40px;  color: #bfbfbf; text-align: center}
+.login-ipad-bottom > p >a{ color: #63cdff;}
+.login-ipad-bottom > .other-div > span{ width: 526px; height: 1px; background: #d9d9d9; display: block; margin:180px auto 0;}
+.login-ipad-bottom > .other-div > p.other{margin: -12px  auto 0; text-align: center; width: 126px; height: 16px; background: #f7f7f7;  font-size: 16px; line-height: 16px;color: #656565;}
+
+.login-ipad-bottom > .other-div > a.qq{ width: 33px; margin-left: 280px; margin-top: 17px; float: left; margin-right: 10px; height: 33px;background: url(../../images/account/icon.png) 0px -81px no-repeat; display:block;}
+.login-ipad-bottom > .other-div > a.sina{background: url(../../images/account/icon.png) 0px -115px no-repeat; margin-top: 17px;display:block; width: 33px; height: 33px; float: left;}
+.phone-wrap{ width: 100%; display: none; height: auto; overflow: hidden;}
+.job-m{width: 90%; padding-bottom: 17px; height: auto; overflow: hidden; margin: 17px auto 0;}
+.job-m >p.p1{ font-size: 17px; line-height: 17px; color: #656565;}
+.job-m >p.p1 >span{ font-size: 12px; line-height: 20px;float: right;}
+.job-m >a.p2{font-size: 13px;-webkit-tap-highlight-color: rgba(0,0,0,0); display: block; line-height: 13px; color: #63cdff; margin-top: 12px;}
+.job-m >p.p3{ margin-top: 7px;font-size: 13px; line-height: 13px; color: #999999;}
+.job-m >span{ width: 100%; height: 1px; background: #e9e9e9; margin-bottom: 7px; display: block; margin-top: 12px;}
+.job-m >i{ width: 100%; height: 10px;display: block;} 
+.job-m >p.p4{ font-size: 14px;line-height: 14px; clear: both; color: #656565; overflow: hidden;}
+.job-m >p >span.s1{ width: 13px; margin-right: 4px; height: 13px; float: left; display: block; background: url(../../images/account/i1.png) no-repeat;background-size: cover;-webkit-background-size: cover;}
+.job-m >p >span.s2{ width: 13px; margin-right: 4px; height: 10px; float: left; display: block; background: url(../../images/account/i2.png) no-repeat;background-size: cover;-webkit-background-size: cover;}
+.job-m >p >span.s3{ width: 11px; margin-right: 6px; height: 10px; float: left; display: block; background: url(../../images/account/i3.png) no-repeat;background-size: cover;-webkit-background-size: cover;}
+.job-m >p >span.s4{ width: 11px; margin-right: 6px; height: 11px; float: left; display: block; background: url(../../images/account/i4.png) no-repeat;background-size: cover;-webkit-background-size: cover;}
+.job-m >p >span.s5{ width: 13px; margin-right: 4px; height: 13px; float: left; display: block; background: url(../../images/account/i5.png) no-repeat;background-size: cover;-webkit-background-size: cover;}
+.job-m >p >span.s6{ width: 11px; margin-right: 6px; height: 11px; float: left; display: block; background: url(../../images/account/i6.png) no-repeat;background-size: cover;-webkit-background-size: cover;}
+.job-m >p >span.s7{ width: 13px; margin-right: 4px; height: 10px; float: left; display: block; background: url(../../images/account/i7.png) no-repeat;background-size: cover;-webkit-background-size: cover;}
+.job-m >p >span.s8{ width: 8px; margin-right: 8px; height: 12px; float: left; display: block; background: url(../../images/account/i8.png) no-repeat;background-size: cover;-webkit-background-size: cover;}
+.job-m >p.p4 >i{ float: left; width: 85%; font-style: normal; line-height: 21px;}
+.center-m{ width: 100%; height: 12px; background: #f4f4f4;}
+.job-description-m{width: 90%; padding: 17px 0 72px; height: auto; overflow: hidden; margin: 0 auto;}
+.job-description-m >h3{ font-size: 15px; color: #656565; line-height: 15px; margin: 0; padding: 0; font-weight: normal;}
+.job-description-m >span{ width: 100%; height: 1px; font-size: 13px; color: #656565; line-height: 20px; background: #e9e9e9; margin-bottom: 17px; display: block; margin-top: 12px;}
+.job-description-m >p{ font-size: 14px; line-height: 24px; color: #656565;}
+.deliver-wrap-m{ width: 100%; height: 55px; background: #efefef; position: fixed; bottom: 0;z-index: 10;}
+.deliver-wrap-m >a{-webkit-tap-highlight-color: rgba(0,0,0,0); width: 60%; margin: 7.5px 5% 7.5px 0; float: right; background: #63cdff; border-radius: 5px; display: block; height: 40px; text-align: center; line-height: 40px; font-size: 15px; color: #fff;}
+.deliver-wrap-m >a.delivered-m{ background: #bfbfbf;}
+.deliver-l-m{ width: 30%; float: left;height: auto; overflow: hidden; margin: 7.5px 0 7.5px 5%; }
+.deliver-l-m >span{ width: 50%; vertical-align: middle; cursor: pointer; height: 40px; text-align: center; display: block; float: left; }
+.deliver-l-m >span >img{ margin-top: 7px;}
+
+.share-phone{ width: 90%; transition: 0.3s; height: 100px; position: fixed;bottom: -100px; left: 5%; z-index: 999; }
+.share-phone >a{ display: block; letter-spacing: 2px; line-height: 40px; font-size: 15px; color: #1b1b1b; text-align: center; border-radius: 5px; width: 100%; height: 40px; background: #ffffff; margin-top: 7.5px; }
+.share-phone >a:first-child{ color: #00acf0; }
+
+
+
+
+
+
+/* 未创建简历 */
+.creat-resume{ background: #f4f4f4 !important;}
+.phone-wrap > .top-enterprise {width: 100%;height: 47px; position: relative; color: #fff; background: #63cdff;line-height: 47px;text-align: center;font-size: 16px;}
+.phone-wrap > .top-enterprise a{ position: absolute; width: 47px;height: 47px; top:0; left: 0;}
+.creat-resume >.phone-wrap >p{ text-align: center; margin-top: 120px; color: #656565; font-size: 17px; line-height: 28px;}
+.creat-resume >.phone-wrap >a{ width: 40%; height: 40px; text-align: center; line-height: 40px; color: #fff; border-radius: 5px; display:block; background: #63cdff; margin: 65px auto 0; font-size: 15px;}
+
+/* 中英文简历 */
+.resume-wrap{width: 100%;height: 100%; display: none;position: fixed;top: 0;left: 0;background: rgba(0,0,0,0.25);z-index: 99;}
+.resume-box{ width: 100%; transition:.3s; -webkit-transition:.3s;height: 200px; background: #ffffff;position: fixed; bottom: -200px; left: 0;z-index: 9999;}
+.resume-box >p{ font-size: 15px; margin-bottom: 29px; text-align: center; line-height: 15px; margin-top: 24px; color: #656565;}
+.resume-box > span{-webkit-tap-highlight-color: rgba(0,0,0,0); outline: none; text-align: center; margin-top: 12px; display: block; position: relative; font-size: 15px; height: 25px; line-height: 25px; color: #a5a5a5;}
+.resume-box > span >img{ position: absolute; display: none; top: 0; right: 17px;}
+.resume-box > span.active >img { display: block;}
+.resume-box > span.active{ color: #63cdff;}
+.resume-box > span.disabled{ color: #a5a5a5;}
+.resume-box > a{-webkit-tap-highlight-color: rgba(0,0,0,0); width: 42.5%; display: block; margin-top: 23px; border-radius: 5px; float: left; margin-left: 5%; height: 40px; line-height: 40px; text-align: center;  background: #bfbfbf; color: #fff; font-size: 15px;}
+.resume-box > a:first-of-type{ background: #63cdff;}
+.resume-box.activein{ bottom:0 !important;}
+.resume-box.activeout{ bottom:-200px !important;}
+
+/* 简历完成度 */
+
+.resume-fnish-phone{width: 192px; height: 106px; z-index: 999; border-radius: 5px; background: #fff; position:fixed; top: 50%; left: 50%; margin-left: -95px; margin-top: -53px;}
+.resume-fnish-phone >img{ position: absolute; top: -15px; right: -15px; width: 30px; height: 30px; display: block;}
+.resume-fnish-phone >p{ font-size: 14px; line-height: 14px; color: #656565; margin-top: 14px; text-align: center;}
+.resume-fnish-phone >span{ display: block; margin: 5px auto 10px;  text-align: center; width: 165px; font-size: 12px; color: #656565; line-height: 16px;}
+.resume-fnish-phone >i{ display: block; width: 100%; height: 1px; background: #bbbbbb;}
+.resume-fnish-phone >a{ text-align: center; color: #63cdff; font-size: 13px; line-height: 30px; width: 100%; display:block;}
+
+@media all and (min-width:992px) {
+	.regist-ipad{ display: none !important; }
+
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+  .job-description > .title > span{ width: 84%;}
+  .job-description > .title > p{ width: 16%;}
+  .regist{ display: none !important; }
+  .ipad-wrap > .job > .div-wrap >div{ width: 87%;}
+  .ipad-wrap > .job > .div-wrap >p{ width: 13%;}
+  
+
+}
+
+
+
+@media ( max-width: 767px){
+	body{ background: #fff;}
+	.phone-wrap{ display: block;}
+    .ipad-wrap{ display: none;}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

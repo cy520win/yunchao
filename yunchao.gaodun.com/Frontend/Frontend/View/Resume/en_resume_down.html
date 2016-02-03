@@ -1,0 +1,252 @@
+
+<body style="font-family: '微软雅黑';color:#656565;">
+<!--中间部分  主要内容开始 -->
+<div style=" width:880px;margin:0 auto;background:#ffffff;overflow:hidden;margin-top:40px;margin-bottom:40px;">
+    <!-- LEFT START -->
+    <div class="title-logo" style="padding-top:50px;margin-bottom:40px;">
+        <div style="width:650px;margin:0 auto;">
+            <div style="background:#63cdff;width:400px;height:1px;float:left;margin-top:13px;"></div>
+            <img src="__PUBLIC__/static/images/gaodun-logo.png" alt="" style="margin-left:410px;margin-top:-15px">
+
+        </div>
+    </div>
+    <div style="width: 650px;margin: 0 auto;">
+        <div class="container-fluid container-content">
+            <div style="border-bottom:1px solid #bfbfbf;padding-bottom:31px;">
+                <!--个人照片上传开始-->
+                <div style="overflow:hidden;width:100%;">
+                    <!-- 基本信息开始-->
+                    <table>
+                        <tr>
+                            <td style="display:table;margin-top:-10px;"><table style=" margin-top:10px;margin-right:10px;"><tr><td
+                                    style="width:114px;padding:2px 2px 0 2px;border:1px solid #cecece;border-radius:5px;height:154px;"><img style='border-radius:5px;' width="{$width}px;" height="{$height}px;" src="{$headpic}"></td></tr></table></td>
+                            <td style="width:550px;">
+                                <table style="color:#202020;width:550px">
+                                    <tr>
+                                        <td>{$baseInfo.name_en} | {$baseInfo.gender_text} | {$baseInfo.birth_date}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="line-height: 25px;"><span style="color:#202020;font-weight: bolder">School:</span>{$baseInfo.graduate_school_en} </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="
+    line-height: 25px;"><span style="color:#202020;font-weight: bolder">Major: </span>{$baseInfo.major_type_text}({$baseInfo.detail_major_en}){$baseInfo.education_text} | Graduated in {$baseInfo.current_grade_text}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="
+    line-height: 30px;">
+                                            {$baseInfo.contact_email}| {$baseInfo.contact_mobile}
+                                            <eq name="baseInfo.mobile_type" value="2">
+                                                (Not China Mainland Mobile)
+                                            </eq>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" color:#a5a5a5; font-size:14px;">
+                                            <notempty name="baseInfo.id_number">
+                                                {$baseInfo.id_number}(I.D.)
+                                            </notempty>
+                                            <if condition="$baseInfo.politics_status eq 1">
+                                                <notempty name="baseInfo.id_number">
+                                                    |
+                                                </notempty>
+                                                Communit
+                                            </if>
+                                            <notempty name="baseInfo.living_city">
+                                                <if condition="$baseInfo.politics_status eq 1 or $baseInfo['id_number']">
+                                                    |
+                                                </if>
+                                                Living in {$baseInfo.living_city}
+                                            </notempty>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- 基本信息结束-->
+
+                </div>
+            </div>
+        </div>
+        <div class="left-section-style other-information-colunm">
+            <div class="container-fluid container-content">
+                <div class="row">
+                    <!-- 全部模块输入开始 -->
+                    <div style="overflow:hidden;">
+                        <!--教育背景模块-->
+                        <notempty name="education">
+                        <div style="border-bottom:1px solid #bfbfbf;padding-bottom:18px;" name="education-div">
+                            <div style="font-size:20px; margin-top:26px;">
+                                <img src="__PUBLIC__/static/images/list-logo.png" alt="" style="padding-bottom:2px;">
+                                <span style="font-size:20px;padding-left:4px;">Education background
+                            </span>
+                            </div>
+
+                            <div class="container-fluid experience-distance top_distance">
+                                <ul style="width:87.7%;margin:0 auto;margin-top:9px;margin-left:0px;">
+                                    <foreach name="education" item="ed">
+                                    <li style="list-style: none;">
+                                        <h3 style="font-size:16px; font-weight: normal; line-height:40px;margin:0px">
+                                            <span>From {$ed.start_time|date2ToFormate}</span> To
+                                            <span>{$ed.finish_time|date2ToFormate}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>{$ed.school_name}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>{$ed.major_title}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            ({$ed.degree|getDegreeTextSTU='EN'})
+                                        </h3>
+                                    </li>
+                                    </foreach>
+                                </ul>
+                            </div>
+                        </div>
+                        </notempty>
+
+                        <!--实习模块-->
+                        <notempty name="practice">
+                            <div style="border-bottom:1px solid #bfbfbf;padding-bottom:28px;"  id="exprience-div" name="exprience-div">
+                                <div style="font-size:20px; margin-top:26px;">
+                                    <img src="__PUBLIC__/static/images/list-logo.png" alt="" style="padding-bottom:2px;">
+                                    <span style="font-size:20px;padding-left:4px;">Internship experience</span>
+                                    <span class="linebg view-linebg"></span>
+
+                                </div>
+
+                                <ul style="width:87.7%;margin:0 auto;margin-top:9px;margin-left:0px;">
+                                    <foreach name="practice" item="pr">
+                                        <li style="list-style: none;">
+                                            <h3 style="font-size:16px; font-weight: normal; line-height:40px;margin:0px">
+                                                <span>From {$pr.start_time|date2ToFormate}</span> To
+                                                <span>{$pr.finish_time|date2ToFormate}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <span>{$pr.organization}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <span>{$pr.quarters}</span>
+                                            </h3>
+                                            <p style="margin:0px;color:#a5a5a5;">{$pr.content|delMoreBr}</p>
+                                        </li>
+                                    </foreach>
+                                </ul>
+                            </div>
+                        </notempty>
+                    </div>
+
+                    <!--获奖荣誉-->
+                <if condition='$exist.school_acticity_bool eq true'>
+                    <div style="border-bottom:1px solid #bfbfbf;padding-bottom:18px;"  id="awards-div" name="awards-div">
+                        <div style="font-size:20px; margin-top:26px;">
+                            <img src="__PUBLIC__/static/images/list-logo.png" alt="" style="padding-bottom:2px;">
+                            <span  style="font-size:20px;padding-left:4px;">Campus experience</span>
+                            <span class="linebg view-linebg"></span>
+
+                        </div>
+
+                        <div class="container-fluid experience-distance top_distance" id="input-information-honor">
+                            <ul style="width:87.7%;margin:0 auto;margin-top:9px;margin-left:0px;">
+                                <foreach name="school" item="sc">
+                                    <li style="list-style: none;">
+                                        <h3 style="font-size:16px; font-weight: normal; line-height:40px;color:#a5a5a5;margin:0px">
+                                            <span>From {$sc.start_time|date2ToFormate} To
+                                                {$sc.finish_time|date2ToFormate}&nbsp;&nbsp;&nbsp;{$sc.job_title}
+                                            </span>
+                                        </h3>
+                                        <p style="margin:0px;">{$sc.description|delMoreBr}</p>
+                                    </li>
+                                </foreach>
+                                <foreach name="activity" item="ac">
+                                    <li style="list-style: none;">
+                                        <h3 style="font-size:16px; font-weight: normal; line-height:40px;margin:0px">
+                                            <span>From {$ac.period|date2ToFormate} To {$ac.period_end|date2ToFormate}</span>
+                                            <span>{$ac.description}</span>
+                                        </h3>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                </if>
+
+                    <!--课外活动-->
+                <if condition='$exist.cert_prize_bool eq true'>
+                    <div style="border-bottom:1px solid #bfbfbf;padding-bottom:18px;"  id="activity-div" name="activity-div">
+                        <div style="font-size:20px; margin-top:26px;">
+                            <img src="__PUBLIC__/static/images/list-logo.png" alt="" style="padding-bottom:2px;">
+                            <span style="font-size:20px;padding-left:4px;">Certification and Awards</span>
+                            <span class="linebg view-linebg"></span>
+
+                        </div>
+
+                        <div class="container-fluid" id="input-information-activity">
+                            <ul style="width:87.7%;margin:0 auto;margin-top:9px;margin-left:0px;">
+                                <foreach name="cert" item="ce">
+                                    <li style="list-style: none;">
+                                        <h3 style="font-size:16px; font-weight: normal; line-height:40px;margin:0px">
+                                            <span>{$ce.finish_time|date2ToFormate}</span>  — "{$ce.certificate}"Certificate
+                                            &nbsp;&nbsp;&nbsp;({$ce.status|getCertStatusText='EN'})
+                                        </h3>
+                                    </li>
+                                </foreach>
+                                <foreach name="prize" item="pr">
+                                    <li>
+                                        <h3 style="font-size:16px; font-weight: normal; line-height:40px;margin:0px">
+                                            <span>{$pr.period|date2ToFormate}</span> —
+                                            <span>{$pr.description}</span>
+                                        </h3>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                </if>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div style="overflow:hidden;" id="module-list">
+            <!--实习意向模块-->
+            <notempty name="expect">
+                <div style="padding-bottom:18px;"  id="education-div" style="display:block;" name="education-div">
+                    <div style="font-size:20px; margin-top:26px;">
+                        <img src="__PUBLIC__/static/images/list-logo.png" alt="" style="padding-bottom:2px;">
+                        <span style="font-size:20px;padding-left:4px;">Intents</span>
+                    </div>
+                    <div style="padding-top:10px;overflow:hidden;"id="input-information-education">
+                        <h3  style="font-size:16px;font-weight: normal;line-height:40px;padding-left:40px;margin:0px">
+                            <span style="color:#a5a5a5;">Expected location:</span>
+                            <span>{$expect.expect_city_text}</span>
+                        </h3>
+                        <ul style="float:left;margin-left:40px;list-style:none;margin-left:0px;margin:0px;margin-left:0px;">
+                            <li style=" width:50%;line-height:40px;list-style:none;">
+                                <h3 style="font-size:16px; margin-left:40px;font-weight:normal; line-height:40px;margin:0px">
+                                    <span  style="color:#a5a5a5;">Available days per week:</span>
+                                    <span>{$expect.week_day}</span>
+                                </h3>
+                            </li>
+                            <li style=" width:50%;line-height:40px;list-style:none;">
+                                <h3 style="font-size:16px; font-weight: normal; line-height:40px;margin:0px">
+                                    <span style="color:#a5a5a5;">Daily wage:</span>
+                                    <span>{$expect.salary_range_text}</span>
+                                </h3>
+                            </li>
+                            <li style=" width:50%;line-height:40px;list-style: none;">
+                                <h3 style="font-size:16px; font-weight: normal; line-height:40px;margin:0px">
+                                    <span style="color:#a5a5a5;">Expected position:</span>
+                                    <span>{$expect.expect_category_text}</span>
+                                </h3>
+                            </li>
+                            <li style=" width:50%;line-height:40px;list-style: none;">
+                                <h3 style="font-size:16px; font-weight: normal; line-height:40px;margin:0px">
+                                    <span style="color:#a5a5a5;">Intern period:</span>
+                                    <span>{$expect.dateText}</span>
+                                </h3>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </notempty>
+        </div>
+    </div>
+
+</div>
+</body>

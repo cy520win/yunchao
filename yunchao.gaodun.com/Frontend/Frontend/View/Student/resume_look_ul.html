@@ -1,0 +1,30 @@
+<notempty name="recommand">
+<foreach name="recommand" item="rm">
+    <div class="enterprise-list hot-active">
+        <notempty name="post_id">
+    	<a href="/Student/resumeInvite/id/{$rm.resume_id|enInt}/pid/{$post_id|enInt}" target="_blank" class="enterprise-list-logo">
+        	<img src="{$rm.avatar|imageExist}">
+        </a>
+        <else/>
+        <a href="/Student/resume/id/{$rm.resume_id|enInt}" target="_blank" class="enterprise-list-logo">
+            <img src="{$rm.avatar|imageExist}">
+        </a>       
+        </notempty>
+        <div class="enterprise-information">
+            <notempty name="post_id">
+        	<a href="/Student/resumeInvite/id/{$rm.resume_id|enInt}/pid/{$post_id|enInt}" target="_blank" class="students">{$rm.name}</a>
+            <else/>
+            <a href="/Student/resume/id/{$rm.resume_id|enInt}" target="_blank" class="students">{$rm.name}</a>
+            </notempty>
+            <p>{$rm.graduate_school}</p>
+            <p>{$rm.detail_major}</p>
+            <p>{$rm.education}</p>
+        </div>
+    </div>
+</foreach>
+<a href="javascript:getrecom({$student});" class="more" data-id="{$student}">换一批 <img src="__PUBLIC__/static/images/refresh-img.png"></a> 
+<else/>
+    <div class="enterprise-list hot-active no-one">
+        <b>暂无</b>
+    </div>
+</notempty>

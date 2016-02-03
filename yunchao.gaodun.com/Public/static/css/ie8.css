@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+
+/* 此样式只在ie8下加载*/
+/* 公用头部*/
+.header > .header-nav > A:after{ left: 0 !important;}
+.header{position: relative !important;}
+
+.fail-invitation{ filter:alpha(opacity=80);}
+.fail-invitation1{ filter:alpha(opacity=80);}
+.ie8first{  padding-top: 20px; margin-bottom: 10px;}
+
+/* 企业实习右侧*/
+.allow-resume-list > div >*{ top:37% !important;}
+.fail-resume-list > div >*{ top:37% !important;}
+.treat-resume-list > .list-left-resume > div >*{ top:37% !important;}
+.invitation-resume-list > div >*{ top:37% !important;}
+.effective-resume-list > .list-left > div >*{ top:37% !important;}
+.treat-resume-list > .list-left > div > *{ top:37% !important;}
+.offline-resume-list > div > p{ top:37% !important;}
+.offline-resume-list > div > a{ top:37% !important;}
+
+
+/* 允许面试  编辑职位 */
+.first-ms{margin:27px 10px 0 25px;}
+/* 发布职位 */
+.first-fb{  margin-left: 155px;  margin-right: 40px;  background: #63cdff !important;}
+.first-fb:hover{background: #46a6d4 !important;}
+
+
+/*订阅栏图标*/
+.deliver{background:url("../images/deliver.png") no-repeat top center;}
+.invite{ background:url("../images/mail.png") no-repeat top center;}
+.notice{ background:url("../images/notice.png") no-repeat top center;}
+.subscribe{ background:url("../images/reserve.png") no-repeat top center;} 
+
+.deliver:hover{background:url("../images/deliver_gray.png") no-repeat top center;}
+.invite:hover{ background:url("../images/mail_gray.png") no-repeat top center;}
+.notice:hover{ background:url("../images/notice_gray.png") no-repeat top center;}
+.subscribe:hover{ background:url("../images/reserve_gray.png") no-repeat top center;} 
+
+
+
+.logo-selected{background:url("../images/choosen-deliver.png") no-repeat top center}
+.function-colunm ul li{  padding-top: 8px;  margin-top: 8px; height: 52px;}
+.function-colunm ul li >a{ margin-top: 26px;}
+
+/* 企业列表的图片*/
+/*.enterpraise > a{ width: 100%; height: 270px; line-height: 270px; display: table-cell;  vertical-align: middle;}
+.enterpraise >a > img{ position: static !important;} */
+
+/* 下拉框按钮*/
+.select2-container .select2-choice .select2-arrow B:before{ text-indent: 1em;}
+
+
+.icon-menu{ height: 26px;}
+
+.ie8-prompt{ width:100%; height:50px; background:#fff000; display:none; text-align:center; line-height:50px; font-size:16px; color:#000000;position:fixed;bottom:0; opacity:0.85;filter:alpha(opacity=85);z-index:999999;  }
+.ie8-prompt >a{ text-decoration:underline;color:#000000;}
+
+/*首页ie8bug*/
+/*.navbar-content{ padding-top: 10px;}*/
+.navbar-content > li > a.my-resume{ letter-spacing: 3px;}
+.wrap{ top:-30px; margin-top: 0;}
+.wrap > .wrap-img > a >img{ width: 640px;}
+.header{ position: relative !important;}
+.navbar-content li a:after{ left: 0 !important;transform: translateX(0%) !important;-ms-transform: translateX(0%) !important;-o-transform: translateX(0%)  !important;-moz-transform: translateX(0%) !important;-webkit-transform: translateX(0%) !important;}
+.navbar-content>li>a.my-resume{ width: 100%;}
+
+
+/*首页ie8nav*/
+.ie8nav{ padding-top: 10px !important;}
+.ie8nav > li > a{ padding-bottom: 5px !important;}
+
+/*内页ie8nav*/
+.header > .ie8-nav > a:hover:after{ width:80%; background:#ffffff; left: 8px !important; }
+.header > .ie8-nav > a.active-nav:after{width:80% !important;background:#ffffff !important;left: 8px !important;}
+.header > .ie8-nav > a.last-nav:after{left: 0px !important;}
+.header > .ie8-nav > a.last-nav:hover:after{ width:100% !important;left: 0px !important;}

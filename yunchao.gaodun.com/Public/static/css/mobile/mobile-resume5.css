@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+body{ background: #f4f4f4;}
+*::-webkit-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+*:-moz-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+*:-ms-input-placeholder {
+color:#a5a5a5;
+font-size:16px;
+letter-spacing: 1px;
+}
+
+
+
+.ipad-wrap{ width: 100%; max-width: 1200px; margin: 0 auto; height: auto; overflow: hidden;}
+
+.mail-wrap{width: 84%; /*display: none; */height: auto; min-height:410px;overflow: hidden; border-bottom: 1px solid #e6e6e6; padding: 0 4% 30px; margin: 20px auto; background: #fff;}
+.mail-wrap > p{ font-size: 20px; line-height: 20px; color: #656565; text-align: center;}
+.mail-wrap > p.p1{margin: 120px 0 20px 0;}
+.mail-wrap > a{ width: 52%; font-size: 18px; border-radius: 5px; background: #63cdff; margin: 140px auto 0; color: #ffffff; height: 42px; line-height: 42px; text-align: center; display: block;}
+
+.pas-mail{ width: 505px; height: 38px; overflow: hidden; border-radius: 5px; border: 1px solid #fff; margin: 15px auto;}
+.pas-mail > li{ float: left; font-size: 18px; color: #ffffff; width: 25%; height: 38px; line-height: 38px; text-align: center;    border-right: 1px solid #ffffff;  box-sizing: border-box;}
+.pas-mail > li.active{ background: #fff; color: #63cdff;}
+
+.mail-con-wrap{ width: 480px; height: auto;overflow: hidden; margin: 0 auto;}
+.mail-con-wrap >p.p1{ font-size: 20px;  margin-top: 60px;line-height: 20px; color: #656565;}
+.mail-con-wrap >p.p2{font-size: 19px; line-height: 28px; color: #656565; margin: 40px 0 45px;}
+.mail-con-wrap > a{ width: 450px; font-size: 18px; border-radius: 5px; background: #63cdff; color: #ffffff; height: 42px; line-height: 42px; text-align: center; display: block;}
+.mail-line{ width:550px; height: 1px; background: #d9d9d9; margin: 50px auto; }
+
+.mail-con-wrap >p.p3{font-size: 20px; margin-bottom: 30px;line-height: 20px; color: #656565;}
+.mail-con-wrap >p.p4{font-size: 16px; margin-bottom: 20px;line-height: 16px; color: #999999;}
+.mail-con-wrap >p.p4>a{color:#63cdff; text-decoration: underline;}
+
+.succes-wrap{ width: 100%; height: 100%; display: none; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.25); z-index: 10009;}
+.succes-box{ width: 600px; height: 400px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -200px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 10010;}
+.succes-box > .succes-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 24px; color: #ffffff;}
+.succes-box > .succes-box-title >img { float: right; margin-right: 44px; display: block; margin-top: 17px; cursor: pointer;}
+.succes-box > p{ font-size: 26px; color: #656565; text-align: center; line-height: 26px; margin:60px auto 50px;}
+.succes-box > div{ width: 78%; height: auto; overflow: hidden; margin: 0 auto;}
+.succes-box > div >p{ font-size: 18px; color: #656565; line-height: 18px; margin-bottom: 14px; text-align: center;}
+.succes-box > a{ width: 40%; height: 42px; transition:.3s; display: block; margin: 60px auto 0; line-height: 42px; text-align: center;border-radius: 5px; font-size: 20px; color: #ffffff; background: #63cdff;}
+.succes-box > a:active{ background: #34b9f7;}
+
+.mail ,.password{ display: none;}
+
+.password-wrap{width: 84%;height: auto; display: none; min-height:400px;overflow: hidden; border-bottom: 1px solid #e6e6e6; padding: 0 4% 30px; margin: 20px auto; background: #fff;}
+.password-con-wrap{ width: 450px; height: auto; overflow: hidden;margin: 60px auto 0;}
+.password-con-wrap >input{ width: 428px; padding-left: 20px; border-radius: 5px; outline: none; height: 40px; margin-bottom: 30px; background: #f6f6f6; border:1px solid #e1e1e1;  line-height: 40px;}
+.password-con-wrap >.error-ipad > img{ margin-left: 0!important;}
+.password-con-wrap > a{ width: 450px; margin-top: 60px; font-size: 18px; border-radius: 5px; background: #63cdff; color: #ffffff; height: 42px; line-height: 42px; text-align: center; display: block;}
+.password-wrap >img{ display: block; margin: 110px auto 40px;}
+.password-wrap >p{ text-align: center; font-size: 26px; line-height: 26px; color: #656565;}
+
+
+
+/* 手机 */
+.phone-wrap{ display: none;}
+.one-phone{ display: block;}
+.input-phone-wrap{width: 100%; height: auto; margin: 0 auto; overflow: hidden;} 
+.input-phone-wrap > .input-phone{ width: 90%; height: 40px;position: relative; line-height: 40px; border:1px solid #e9e9e9; border-radius: 3px;background: #ffffff; margin:40px auto 0;}
+.input-phone-wrap > .input-phone >span{float: left;display: block;}
+.input-phone-wrap > .input-phone >span.address{ margin: 14px 7px 0 15px; background: url(../../images/account/address-phone.png) no-repeat;height: 12px;width: 14px; background-size:cover;}
+.input-phone-wrap > .input-phone >span.password{margin: 13px 9px 0 15px;  background: url(../../images/account/password-phone.png) no-repeat; width: 11px; height: 14px;background-size:cover;}
+.input-phone-wrap >.focused{ border: 1px solid #76e0ff !important;}
+.input-phone-wrap >.error{ border: 1px solid #ff5d38 !important;}
+
+.input-phone-wrap > .input-phone >input{ width: 85%; float: left; height: 15px; line-height: 15px; margin-top: 13px; color: black; border: none; outline: none;}
+
+.input-phone-wrap > .input-phone >i{width: 17px; height: 17px; display: block;background: url(../../images/account/icon.png) -1px -30px no-repeat; position: absolute; top: 9px; right: -25px;}
+.input-phone-wrap > .input-phone >a{ width: 17px; height: 10px;display: block;background: url(../../images/account/eye-b.png) no-repeat; background-size:cover; position: absolute; top: 15px; right: 14px;}
+.input-phone-wrap > .input-phone >a.eye{background: url(../../images/account/eye-l.png) no-repeat;background-size:cover;}
+.input-phone-wrap > .input-error{ clear: both; margin-left: 5%;  float: left; margin-top: 9px; display: none;}
+.input-phone-wrap > .input-error >p{ float: left;font-size: 14px; color: #ff5d39; line-height: 14px;}
+.input-phone-wrap > .input-error >span{background: url(../../images/account/errorlogo.png) no-repeat; background-size: cover; margin-right: 3px; width: 13px; height: 13px; float: left;  display:block;}
+.mail-pas-phone{ display: none;}
+.mail-phone-wrap{ width: 90%; display:none; height: auto; overflow: hidden; margin: 0 auto;}
+.mail-phone-wrap > p{ text-align: center; font-size: 17px; color: #656565; line-height: 24px;}
+.mail-phone-wrap > p:first-child{ margin-top: 110px;margin-bottom: 15px;}
+.mail-phone-wrap >a{ width: 42%; display:block; margin: 55px auto 0; height: 42px; line-height: 42px; text-align: center; color: #fff; border-radius: 5px; background: #63cdff; font-size: 18px;}
+
+.mail-phone > .main{ width: 90%; display:block; margin: 0 auto; overflow: hidden;}
+.mail-phone > .main >p.p1{ font-size: 17px; color: #656565; line-height: 17px; margin-top: 29px;}
+.mail-phone > .main >p.p2{font-size: 15px; color: #656565; line-height: 20px; margin-top: 5px;}
+.mail-phone > .main >i{ margin-top: 15px; display: block; font-style: normal; font-size: 15px; color: #a5a5a5; line-height: 20px;}
+.mail-phone > .main >span{width: 100%; height: 1px; background: #d9d9d9; display:block;margin-top: 29px;}
+.mail-phone > .main >p.p3{font-size: 17px; color: #656565; line-height: 17px; margin-top: 29px; margin-bottom: 28px;}
+.mail-phone > .main >p.p4{font-size: 15px; color: #a5a5a5; line-height: 15px;  margin-bottom: 22px;}
+.mail-phone > .main >p.p5{font-size: 15px; color: #a5a5a5; line-height: 20px;  margin-bottom: 22px;}
+.mail-phone > .main >p >a{ color: #63cdff; border-bottom: 1px solid #63cdff; line-height: 15px;}
+
+
+
+
+@media all and (min-width:992px) {
+	
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+     
+
+}
+
+@media ( max-width: 767px){
+	.phone-wrap{ display: block;}
+	.ipad-wrap{ display: none;}
+	.pas-mail{ width: 90%; height: 30px; margin-top: 8.5px;margin-left: 3%;float:left}
+	.pas-mail > li{ height: 30px; line-height: 30px; font-size: 13px;}
+}
+
+@media ( max-width: 414px){
+}
+
+@media ( max-width: 320px){
+}
+
+
+
+
+

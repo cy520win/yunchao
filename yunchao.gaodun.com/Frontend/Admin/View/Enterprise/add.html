@@ -1,0 +1,249 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="style">
+	<link rel="stylesheet" href="__PUBLIC__/static/js/wysihtml5/src/bootstrap-wysihtml5.css">
+	<link rel="stylesheet" href="__PUBLIC__/static/js/uikit/vendor/codemirror/codemirror.css">
+	<link rel="stylesheet" href="__PUBLIC__/static/js/uikit/uikit.css">
+	<link rel="stylesheet" href="__PUBLIC__/static/js/uikit/css/addons/uikit.almost-flat.addons.min.css">	
+</block>
+<block name="script">
+	<script src="__PUBLIC__/static/js/wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="__PUBLIC__/static/js/wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	<script src="__PUBLIC__/static/js/uikit/vendor/codemirror/codemirror.js"></script>
+	<script src="__PUBLIC__/static/js/uikit/vendor/marked.js"></script>
+	<script src="__PUBLIC__/static/js/uikit/js/uikit.min.js"></script>
+	<script src="__PUBLIC__/static/js/uikit/js/addons/htmleditor.min.js"></script>
+	<script src="__PUBLIC__/static/js/ckeditor/ckeditor.js"></script>
+	<script src="__PUBLIC__/static/js/ckeditor/adapters/jquery.js"></script>
+	<script src="__PUBLIC__/static/js/ajaxfileupload.js"></script>
+	<script src="__PUBLIC__/sys/static/js/admin/ajaxup.js"></script>
+	<script>
+	$(function(){
+		$('#addentform').submit(function(){
+			var bool = true;
+			$.ajax({
+				   type: "post",
+				   async:false,
+				   url: "/index.php?s=/Admin/Enterprise/checkMail",
+				   dataType:"json",
+				   data: {'mail':$('input[name=login_email]').val()},
+				   success: function(data){
+						if(data==false){
+							$('input[name=login_email]').css('border','1px solid #ffcc00');
+							bool = false;
+						}
+				   },
+				   error:function(){}
+				});
+				return bool;
+		})
+	})
+function citychild(obj){
+	var url = "/index.php?s=/Admin/Student/getCity";
+	var data = {'id':$(obj).val()}
+	$.post(url,data,function(data){
+			$('#city-child').html(data.data);
+			return;
+	},'json')
+}
+</script>
+</block>
+<block name="right-main">
+				<div class="col-sm-12">
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">增加企业账号</h3>
+							<div class="panel-options">
+								<a href="#" data-toggle="panel">
+									<span class="collapse-icon">&ndash;</span>
+									<span class="expand-icon">+</span>
+								</a>
+							</div>
+						</div>
+						<div class="panel-body">
+							
+							<form role="form" class="form-horizontal" method="post" action="/index.php?s=/Admin/Enterprise/save" id="addentform">
+                            <div class="form-group">
+									<label class="col-sm-2 control-label" >企业名称：<span style="color:red">*</span></label>
+									
+									<div class="col-sm-5">
+										<input type="text" class="form-control"  name="full_name" required>
+									</div>
+								</div>
+			
+							<div class="form-group">
+									<label class="col-sm-2 control-label" >企业规模：</label>
+									
+									<div class="col-sm-2">
+										
+											<select name="scale_id" class="form-control">
+											<notempty name="scale">
+												<option value="0">请选择</option>
+												<foreach name="scale" item="scaleItem">
+												<option value="{$scaleItem.pkid}">{$scaleItem.title}</option>
+												</foreach>
+												<else/>
+												<option>暂无数据</option>
+
+											</notempty>
+											</select>
+									</div>
+								</div>
+								<div style="clear:both"></div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" >用人理念：</label>
+									<div class="col-sm-5">
+										<textarea class="form-control" cols="8"  name="ideality"></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" >企业寄语：</label>
+									<div class="col-sm-5">										
+										<input type="text" class="form-control"  name="editor_note"  maxlength="17"  placeholder="最多输入17个字">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" >接收简历邮箱：</label>
+									
+									<div class="col-sm-4">
+										<input type="email" class="form-control"  name="subscribe_email">
+
+									</div>
+								</div>
+								
+									<div class="form-group">
+									<label class="col-sm-2 control-label" >登陆邮箱：<span style="color:red">*</span></label>
+									
+									<div class="col-sm-4">
+										<input type="email" class="form-control"  name="login_email">
+
+									</div>
+								</div>
+								 <div class="form-group">
+									<label class="col-sm-2 control-label" >城市：</label>
+									<div class="col-sm-7">
+										<select name="province_id" onchange="citychild(this)" class="form-control">
+											<notempty name="hotcity">
+													<option value="">请选择</option>
+													<foreach name="hotcity" item="cityItem">
+														<option value="{$cityItem.region_id}">{$cityItem.region_name}</option>
+													</foreach>												
+												<else/>
+														<option >暂无数据</option>
+											</notempty>
+										</select>
+										<select id="city-child" name="city_id" class="form-control">
+											<option value="">请选择</option>
+										</select>
+									</div>
+								</div>
+											<div class="form-group">
+									<label class="col-sm-2 control-label">登陆邮箱验证：</label>
+									
+									<div class="col-sm-2">
+										<select class="form-control" name="email_verify">
+											<option value="1">已验证</option>
+											<option value="2" selected="true">末验证</option>
+										</select>
+									</div>
+								</div>
+									<div class="form-group">
+									<label class="col-sm-2 control-label" >所属行业：</label>
+									
+									<div class="col-sm-3">
+										<select name="industry_id" class="form-control">
+											<notempty name="industry">
+													<foreach name="industry" item="industryItem">
+														<option value="{$industryItem.pkid}">{$industryItem.title}</option>
+													</foreach>
+												<else/>
+												<option value="">暂无数据</option>
+											</notempty>
+										</select>
+									</div>
+								</div>
+									<div class="form-group">
+									<label class="col-sm-2 control-label" for="field-4">企业LOGO：</label>
+									<div class="user-image col-sm-2">
+							<a href="javascript:;">
+								<img src="" class="img-responsive img-rounded headpic" alt="logo显示区域" />
+								<input type="hidden" name="logo" class="heapcic-2">
+							</a>
+						</div>
+									
+									<div class="col-sm-4">
+										<input type="file" class="form-control" id="field-4" onchange="upimagebus()" name="headpic">
+									</div>
+								</div>
+						
+							    <div class="form-group">
+									<label class="col-sm-2 control-label" >联系电话：</label>
+									
+									<div class="col-sm-3">
+										<input type="text" class="form-control"  name="telephone">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">企业认证：</label>
+									<div class="col-sm-2">
+										<select class="form-control" name="approve_status">
+											<option value="1">已认证</option>
+											<option value="2" selected="true">末认证</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label" >官网：</label>
+									
+									<div class="col-sm-5">
+										<input type="text" class="form-control"  name="website">
+									</div>
+								</div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">是否热门企业：</label>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" name="is_hot">
+                                            <option value="1">是</option>
+                                            <option value="2" selected="true">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" >排序号：</label>
+
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control"  name="order_num">
+                                    </div>
+                                </div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">企业福利：</label>
+									<div class="col-sm-5">
+										<foreach name="fare" item="fare" key="key">
+										<label>
+												<input type="checkbox" class="cbr cbr-secondary" value="{$key}" name="welfare[]"> {$fare} 
+										</label>&nbsp;&nbsp;
+										</foreach>
+									</div>
+								</div>
+              			<div class="form-group">
+                          <label class="col-sm-2 control-label" >企业简介：</label>
+                          	<div class="col-sm-5">
+					<textarea cols="80" rows="10" name="description" id="description">{$info.description}</textarea>
+					</div>
+				</div>
+                        <div class="form-group" style="padding-top:10px;">
+                           <div class="col-sm-12" style="margin:auto text-align:center;">
+                           <div class="container" style="width:145px;">
+                                <button type="submit" class="btn btn-turquoise">提交</button>                                 
+                                <a href="javascript:history.back(-1);" class="btn btn-red">返回</a> 
+                            </div>
+                            </div>
+                        </div>
+							</form>               	
+						</div>
+					</div>
+					
+				</div>
+</block>

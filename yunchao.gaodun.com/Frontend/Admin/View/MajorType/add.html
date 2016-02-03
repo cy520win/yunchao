@@ -1,0 +1,67 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">增加专业分类信息</h3>
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <form role="form" class="form-horizontal" action="/index.php?s=/Admin/MajorType/save" method="post">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="field-1">专业分类名称：</label>
+
+                        <div class="col-sm-3">
+                            <input type="text" name="title" class="form-control" id="field-1" required>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-sm-2 control-label" for="field-1">英文名称：</label>-->
+
+                        <!--<div class="col-sm-3">-->
+                            <!--<input type="text" name="title_en" class="form-control" id="field-1" required>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="form-group" style="padding-top:10px;">
+
+                        <div class="col-sm-12" style="margin:auto text-align:center;">
+                            <div class="container" style="width:145px;">
+                                <button type="submit" class="btn btn-turquoise">保存</button>
+                                <button type="button" class="btn btn-red"
+                                        onclick="javascript:location.href='/index.php?s=/Admin/MajorType/index'">返回
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            $('form').submit(function(){
+                if($('input[name=title]').val() == '')
+                {
+                    $('input[name=title]').css('border','1px solid #ffcc00');
+                    return false;
+                }
+            });
+        })
+    </script>
+</block>

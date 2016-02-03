@@ -1,0 +1,88 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-sm-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">发布公有标签</h3>
+                <div class="panel-options">
+                    <a href="#" data-toggle="panel">
+                        <span class="collapse-icon">&ndash;</span>
+                        <span class="expand-icon">+</span>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <form role="form" class="form-horizontal" action="/index.php?s=/Admin/Tag/save" method="post">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="field-1">标签名称：</label>
+                        <div class="col-sm-2">
+                            <input type="text" name="title" class="form-control" id="field-1" placeholder="最多输入5个字" maxlength="5">
+                            <span id="error" style="color: #ff2f32;display: none"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="field-1">标签范围(多选)：</label>
+                        <div class="col-sm-6">                            
+                            <input type="checkbox" name="range[]" value="1" class="cbr cbr-secondary ck">&nbsp;&nbsp;职位
+                            <input type="checkbox" name="range[]" value="2" class="cbr cbr-secondary ck">&nbsp;&nbsp;企业
+                            <input type="checkbox" name="range[]" value="3" class="cbr cbr-secondary ck">&nbsp;&nbsp;简历
+                            <input type="checkbox" name="range[]" value="4" class="cbr cbr-secondary ck">&nbsp;&nbsp;学生&nbsp;&nbsp;
+                            <span id="error2" style="color: #ff2f32;display: none;"></span>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group" style="padding-top:10px;">
+
+                        <div class="col-sm-12" style="margin:auto text-align:center;">
+                            <div class="container" style="width:145px;">
+                                <button type="submit" class="btn btn-turquoise">保存</button>
+                                <button type="button" class="btn btn-red"
+                                        onclick="javascript:location.href='/index.php?s=/Admin/Tag/index'">返回
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</block>
+<block name="script">
+    <script>
+        $(function(){ 
+            $('form').submit(function(){
+                var parm = $(this).serialize();
+                var bool = true;                
+                $.ajax({
+                    type: "post",
+                    async:false,
+                    url: "/index.php?s=/Admin/Tag/checkMessage",
+                    dataType:"json",
+                    data: parm,
+                    success: function(msg){
+                        if(msg.title){
+                            $('#error').show();
+                            $('#error').html('*'+msg.title);
+                            bool = false;
+                        }
+                        if(msg.range){
+                            $('#error2').show();
+                            $('#error2').html('*'+msg.range);
+                            bool = false;
+                        }
+                    },
+                    error:function(){}
+                });
+                return bool;
+            });
+        })
+    </script>
+</block>

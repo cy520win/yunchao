@@ -1,0 +1,20 @@
+<div class="photomodify" style="display: none">
+    <h1><span>请选择裁剪区域</span></h1>
+    <div class="panel-body photo_form">
+        <div class="img-container">
+            <img id="headpic_img" class="img-responsive"/>
+        </div>
+        <div style="display: none">
+            <div id="img-1-x"></div>
+            <div id="img-1-y"></div>
+            <div id="img-1-w"></div>
+            <div id="img-1-h"></div>
+        </div>
+        <div class="photomodify_footer">
+            <input type="hidden" name="img">
+            <button id="crop-img" style="background: #63cdff" class="btn btn-info  confirm-button button-small mt20">{$Think.config.L_SAVE}</button>
+            <button id="crop-close" style="background: #dddddd" class="btn confirm-button information-cancel-button button-small mt20">{$Think.config.L_CANCLE}</button>
+        </div>
+    </div>
+</div>
+<div class="md-overlay2 background-color"></div>

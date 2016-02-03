@@ -1,0 +1,116 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">简历列表</h3>
+							
+							<div class="panel-options">
+								<a href="#" data-toggle="panel">
+									<span class="collapse-icon">–</span>
+									<span class="expand-icon">+</span>
+								</a>
+								
+							</div>
+						</div>
+						<div class="panel-body">
+									<div class="form-group">
+									<div class="row">
+									<div class="col-md-9">
+										<form action="/index.php?s=/Admin/Resume/index" method="post">
+										<label class="control-label" for="" style="padding-top:5px;float:left;margin-right:8px;">查询:</label>
+											<input type="text" class="form-control search-input" placeholder="请输入姓名" style="width:20%;float:left;margin-right:8px;" name="n" value="{$search_n}">
+											<input type="text" class="form-control search-input" placeholder="学校" style="width:20%;float:left;margin-right:8px;" name="s" value="{$search_s}">
+											<input type="text" class="form-control search-input" placeholder="专业" style="width:20%;float:left;margin-right:8px;" name="m" value="{$search_m}">
+										<div class="col-sm-2" style="width:20%;float:left;margin-right:8px;">
+										   <select class="form-control" name="e">
+										   			<option value="" class="search-opt">请选择</option>
+										          	<foreach name="major" item="majorItem">
+										          		<option value="{$key}" <if condition="$key eq $search_e">selected</if> >{$majorItem}</option>
+										          	</foreach>
+										    </select>
+										</div>		
+										 <input type="submit" class="btn btn-warning" style="float:left;" value="搜索">
+										 	
+		                                 <form> 
+									</div>
+									<div class="col-md-3"><a class="btn btn-default" style="float:left;" href="javascript:clearsearch();">清空搜索条件</a></div>	
+		<div class="col-md-3">
+			   <div class="row">
+			   <div class="col-md-10">
+									
+				</div>			
+                               <div class="col-md-2">
+                               </div>
+                                </div>		 
+									</div>
+									
+								</div>
+								
+									</div>
+							<div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+									
+								
+								<table cellspacing="0" class="table table-small-font table-bordered table-striped">
+									<thead>
+										<tr>
+											
+											<th data-priority="1">ID</th>
+											<th data-priority="6">姓名</th>
+								            <th data-priority="6">就读学校</th>
+											<th data-priority="1">就读专业</th>
+											<th data-priority="3">最高学历</th>
+											<th>毕业年份</th>
+											<th data-priority="6">联系方式</th>
+											<th data-priority="6">政治面貌</th>
+											<th data-priority="6">创建时间</th>
+											<th data-priority="6">操作</th>
+										</tr>
+									</thead>
+									<tbody>
+											<notempty name="resume">
+												<foreach name="resume" item="resumeItem">
+													<tr>
+														<td>{$resumeItem.pkid}</td>
+														<td>{$resumeItem.name}</td>
+														<td>{$resumeItem.graduate_school}</td>
+														<td>{$resumeItem.detail_major}</td>
+														<td>{$resumeItem.education}</td>
+														<td>{$resumeItem.graduate_year}</td>
+														<td>{$resumeItem.contact_mobile}<br>{$resumeItem.contact_email}</td>
+														<td>{$resumeItem.politics_status}</td>
+														<td>{$resumeItem.create_time}</td>
+														<td style="text-align:center">
+															<!-- <a href="/index.php?s=/Admin/Resume/info/id/{$resumeItem.pkid}" class="btn btn-success btn-sm btn-icon icon-left">详情</a>
+ -->															<a href="{$resumeItem.view_uri}" target="_blank" class="btn btn-success btn-sm btn-icon icon-left">详情</a>
+														</td>
+													</tr>
+												</foreach>
+											<else/>
+											<tr>
+												<td colspan="9">暂无数据</td>
+											</tr>
+											</notempty>
+									</tbody>
+								</table>
+								<div class="row">
+								<div class="col-md-12" style="text-align:right;">
+									{$page}		
+								</div>
+							</div>
+							
+							</div>
+						</div>
+					
+					</div>
+				</div>
+</block>
+<block name="script">
+<script>
+	function clearsearch(){
+		$('.search-input').val('');
+		$('.search-opt').attr('selected','selected');
+	}
+</script>
+</block>

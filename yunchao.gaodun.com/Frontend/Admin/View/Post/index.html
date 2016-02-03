@@ -1,0 +1,164 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+    <div class="col-md-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="index.php?s=/Admin/Post/index" <neq name="param_form[tag]" value="offline">class=panel-active-span</neq> >上线职位</a></h3>
+                <h3 class="panel-title panel-title-join"><a href="index.php?s=/Admin/Post/index/tag/offline" <eq name="param_form[tag]" value="offline">class=panel-active-span</eq> >下线职位</a></h3>
+
+                <div class="panel-options">
+                    <div class="">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <button class="btn btn-red" style="float:right;"
+                                            onclick="javascript:location.href='index.php?s=/Admin/Post/add'">增加职位
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <eq name="param_form[tag]" value="offline">
+                                <form action="index.php?s=/Admin/Post/index/tag/offline" method="post">
+                            <else/>
+                                <form action="index.php?s=/Admin/Post/index" method="post">
+                            </eq>
+                            <label class="control-label" for="field-1" style="padding-top:5px;float:left;margin-right:8px;">查询:</label>
+
+                            <input name="title" type="text" class="form-control" id="field-1" placeholder="职位或企业名称"
+                                    style="width:20%;float:left;margin-right:8px;"
+                                    value="{$param_form['title'] ? $param_form['title'] : ''}">
+                            <label  for="field-1"  style="width:8%;float:left;margin-right:8px;padding-top:5px;text-align:right;">学历要求：</label>
+
+                            <div class="col-sm-2" style="width:14%;float:left;margin-right:8px;">
+                                <select class="form-control" name="education">
+                                    <option value="0">请选择</option>
+                                    <foreach name="list.edulist" key="key" item="eduItem">
+                                        <option value="{$key}" <present
+                                            name="param_form.education"><eq
+                                            name='param_form.education' value="$key">selected</eq></present>>
+                                            {$eduItem}
+                                        </option>
+                                    </foreach>
+                                </select>
+                            </div>
+
+                            <label  style="width:8%;float:left;margin-right:8px;padding-top:5px;text-align:right;">日薪范围：</label>
+
+                            <div style="width:12%;float:left;margin-right:8px;">
+                                <select class="form-control" name="salary">
+                                    <option value="0">请选择</option>
+                                    <foreach name="list.salarylist" key="key" item="salaryItem">
+                                        <option value="{$key}" <present
+                                            name="param_form.salary"><eq
+                                            name='$param_form.salary' value='$key'>selected</eq></present>>
+                                            {$salaryItem}
+                                        </option>
+                                    </foreach>
+                                </select>
+                            </div>
+                            
+<!--                             <label  style="width:8%;float:left;margin-right:8px;padding-top:5px;text-align:right;">职位状态：</label>
+                           <div style="width:12%;float:left;margin-right:8px;">
+                                <select class="form-control" name="active">
+                                    <option value="0">请选择</option>
+                                    <option value="1" <eq
+                                            name='param_form.active' value='1'>selected</eq> >有效</option>
+                                    <option value="2" <eq
+                                            name='param_form.active' value='2'>selected</eq> >下线</option>
+                                </select>
+                            </div> -->
+                            <button class="btn btn-warning" style="float:left;">搜索</button>
+                            </form>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+
+                    <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                        <thead>
+                        <tr>
+
+                            <th data-priority="1">ID</th>
+                            <th data-priority="6">职位名称</th>
+                            <th data-priority="6">企业名称</th>
+                            <th data-priority="3">学历要求</th>
+                            <th data-priority="6">日薪范围</th>
+                            <th data-priority="6">热门岗位</th>
+                            <th data-priority="6">首页展示</th>
+                            <th data-priority="6">排序号</th>
+                            <th data-priority="6">发布时间</th>
+                            <th data-priority="6">刷新时间</th>
+                            <th data-priority="6">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <notempty name="postlist">
+                            <foreach name="postlist" item="postItem">
+                                <tr>
+                                    <td>
+                                    <input type="checkbox" class="post-box-input" value="{$postItem.id}">
+                                        {$postItem.id}
+                                    </td>
+                                    <td><a href="{$postItem.id|postUrl}" target="_blank">{$postItem.title}</a></td>
+                                    <td>
+                                        <a href="{$postItem.enterprise_id|enterpriseUrl}" target="_blank">{$postItem.full_name}</a>
+                                        <br />
+                                        {$postItem.telephone}
+                                    </td>
+                                    <td>{$list['edulist'][$postItem['education']]}</td>
+                                    <td>{$list['salarylist'][$postItem['salary_range']]}</td>
+                                    <td><eq name="postItem.is_hot" value="1">是<else/>否</eq></td>
+                                    <td><eq name="postItem.home_show" value="1">是<else/>否</eq></td>
+                                    <td>{$postItem.order_num}</td>
+                                    <td>{$postItem.create_time}</td>
+                                    <td>{$postItem.refresh_time}</td>
+                                    <td>
+                                        <a href="index.php?s=Admin/Post/modify/id/{$postItem.id}"
+                                           class="btn btn-secondary btn-sm btn-icon icon-left">
+                                            修改
+                                        </a>
+
+                                        <a href="index.php?s=Admin/Post/delete/id/{$postItem.id}"
+                                           class="btn btn-danger btn-sm btn-icon icon-left">
+                                            删除
+                                        </a>
+                                    </td>
+                                </tr>
+                            </foreach>
+                        <else />
+                            <tr>
+                                <td colspan="9">
+                                    暂无数据
+                                </td>
+                            </tr>
+                        </notempty>
+                        </tbody>
+
+                    </table>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align:right;">
+                            {$page}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</block>

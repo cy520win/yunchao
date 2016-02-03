@@ -1,0 +1,186 @@
+<extend name="Common:resumepost_frame" />
+<block name="title"><title>高顿实习-待处理简历</title></block>
+<block name="right">
+    <div class="col-md-9">
+        <div class="fail-resume-right">
+            <div class="resume-right-top">
+                <p>待处理简历</p>
+                <i></i>
+                <a href="/ResumePost/index"><img src="__PUBLIC__/static/images/enterprise-practice/refresh.png"> <span>刷新</span></a>
+            </div>
+
+            <!--<gt name="total" value="30">-->
+                <!-- <div class="prompt">您目前未处理简历已达到上限30封，已无法接受新的简历，请尽快处理！</div> -->
+            <!--</gt>-->
+
+            <div class="qiuz">
+                <p>还没有收到合适的简历吗？去秋招学生人气榜看看吧！</p>
+                <a href="/Special/memberJoin">学生人气榜</a>
+                <span id="qz-close"><img src="__PUBLIC__/static/images/qz-close.png" alt=""></span>
+            </div>
+
+            <eq name="show" value="1">
+                <form action="/ResumePost/index" method="get">
+                    <div class="form-group top-distance col-md-4 no_padding drop-box">
+                        <select class="form-control edu_degree" id="post_id" placeholder="全部岗位" name="pt">
+                            <option></option>
+                            <option value="">请选择职位</option>
+                            <foreach name="postList" key="key" item="postItem">
+                                <option value="{$key}" <eq name="param.pt" value="$key">selected</eq>>{$postItem}</option>
+                            </foreach>
+                        </select>
+                        <input type="hidden" name="oldPt" value="{$param.pt}">
+                    </div>
+                    <div class="form-group top-distance col-md-4 no_padding drop-box mar10" style="display:none;">
+                        <select class="form-control edu_degree" id="degree_id" placeholder="请选择学历" name="dt">
+                            <option></option>
+                            <option value="">请选择学历</option>
+                            <foreach name="degreList" key="key" item="postItem">
+                                <option value="{$key}" <eq name="param.dt" value="$key">selected</eq>>{$postItem}</option>
+                            </foreach>
+                        </select>
+                        <input type="hidden" name="oldDt" value="{$param.dt}">
+                    </div>
+                    <div class="form-group top-distance expertise-choose" style="display:none;">
+                         <div class="div-wrap">
+                            <div id="div">
+                                <empty name="majorLi">
+                                        <p>请选择专业</p>
+                                </empty>
+                                <span><i></i></span>
+                                <ul class="major-ul">
+                                        <notempty name="majorLi">
+                                            <foreach name="majorLi" item="mli">
+                                                <li>{$mli}
+                                                    <span class="span">×</span>
+                                                    <input type="hidden" name="major_wish[]" value="{$key}">
+                                                </li>
+                                            </foreach>
+                                        </notempty>
+                                </ul>
+                                <input type="hidden" name="oldMt" value="{$param.mt}">
+                            </div>
+                                <ul class="list">
+                                    <li data-id="0">不限</li>
+                                    <foreach name="majorList" key="key" item="majorItem">
+                                        <li data-id="{$key}">{$majorItem}</li>
+                                    </foreach>
+                                    <span class="list-comfirm" id="major-btn">确定</span>
+                                </ul>
+                        </div>
+                        <span class="five">最多选5项</span>
+                     </div>
+                </form>
+            </eq>
+            <notempty name="resumePostList">
+                <div class="treat-resume-header">
+                    <p class="p1">学生姓名</p>
+                    <p class="p2">投递职位</p>
+                    <p class="p3">投递时间</p>
+                    <p class="p4">简历类型</p>
+                    <p class="p5">企业反馈</p>
+                </div>
+                <foreach name="resumePostList" item="resumePostItem">
+                    <div id="check-{$resumePostItem.pkid}" class="treat-resume-list <neq name='resumePostItem.status' value='1'>readed</neq>">
+                        <div class="list-left post-invite-list">
+                            <div class="student">
+                                <eq name="resumePostItem.resume_type" value="4">
+                                    <a href="javascript:;" onclick="checkBrowser(this)"
+                                       class="resume-view" data-action="/Student/resume/id/{$resumePostItem.resume_id|enInt=###}"
+                                       data-id="{$resumePostItem.pkid}">{$resumePostItem.student_name}
+                                    </a>
+                                    <else />
+                                    <a href="/Student/resume/id/{$resumePostItem.resume_id|enInt=###}"
+                                       target="_blank" class="resume-view"
+                                       data-id="{$resumePostItem.pkid}">{$resumePostItem.student_name}
+                                    </a>
+                                </eq>
+                            </div>
+                            <div class="name">
+                                    <a href="/Post/info/id/{$resumePostItem.post_id|enInt}" target="_blank">
+                                    {$resumePostItem.post_title}（<?php echo $majorList[$resumePostItem['major_type']] ;?>）
+                                </a>
+                            </div>
+                            <div class="date">
+                            <p>{$resumePostItem.create_time|time2Unit}</p>
+                            </div>
+                            <div class="read">
+                                <eq name="resumePostItem.resume_type" value="4">
+                                    <a href="javascript:;" class="resume-view" onclick="checkBrowser(this)"
+                                       data-id="{$resumePostItem.pkid}" data-action="/Student/resume/id/{$resumePostItem.resume_id|enInt=###}">
+                                        <?php echo resumePostType($resumePostItem['resume_type']);?>
+                                    </a>
+                                    <else />
+                                    <a href="/Student/resume/id/{$resumePostItem.resume_id|enInt=###}" class="resume-view"
+                                       data-id="{$resumePostItem.pkid}" target="_blank">
+                                        <?php echo resumePostType($resumePostItem['resume_type']);?>
+                                    </a>
+                                </eq>
+                            </div>
+                        </div>
+                        <div class="list-right">
+                            <span class="waiting">待定</span>
+                            <span class="allow" data-id="{$resumePostItem.pkid}">允许面试</span>
+                            <span class="improper" data-id="{$resumePostItem.pkid}">不合适</span>
+                            <div class="permit-interview-box waiting-box fn-waiting dn">
+                                <span>是否将此简历放入待定简历库？</span>
+                                <a class="yes" href="javascript:;" data-id="{$resumePostItem.pkid}" onclick="wait_post(this);">是</a>
+                                <a class="no" href="javascript:;" onclick="refuse_post(this);">否</a>
+                                <i></i>
+                            </div>
+                            <div class="copy-box fn-allow permit-interview-box2 dn">
+                                <span>确定后，请您尽快与学生进行电话沟通并安排面试。同时，这份简历也将移动至“面试箱”。</span>
+                                <a class="yes" href="javascript:;" data-id="{$resumePostItem.pkid}" onclick="allow_post(this);">确定</a>
+                                <a class="no" href="javascript:;" onclick="refuse_post(this);">取消</a>
+                                <i></i>
+                            </div>
+                            <div class="copy-box fn-improper dn">
+                                <span>是否确定拒绝此学生面试，确定后此记录将进入回收站？</span>
+                                <a class="yes" href="javascript:;" data-id="{$resumePostItem.pkid}" onclick="improper_post(this);">是</a>
+                                <a class="no" href="javascript:;" onclick="refuse_post(this);">否</a>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                </foreach>
+            </notempty>
+            <div class="no-one" <notempty name="resumePostList">style="display: none"</notempty>>暂时没有待处理简历</div>
+
+
+
+            <div class="interview-box" id="interview-box" style="display: none">
+                <div>
+                    此条信息移动到了“面试箱” <span class="close">×</span>
+                </div>
+            </div>
+            <div class="interview-box" id="recovery-box" style="display: none">
+                <div>
+                    此条信息移动到了“回收站” <span class="close">×</span>
+                </div>
+            </div>
+
+            <!--分页按钮-->
+            <div class="container pagination_center">
+                {$page}
+            </div>
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            $('#v-index').addClass('resume-active');
+            $("#qz-close").click(function(event) {
+                $(".qiuz").hide();
+            });
+        });
+    </script>
+    <script src="__PUBLIC__/static/js/major.js"></script>
+</block>
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/recomond.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/pending.css"> 
+</block>
+

@@ -1,0 +1,406 @@
+<extend name="Public/layout" />
+<block name="title"><title>名企实习岗位推荐-高顿实习</title></block>
+<block name="content">
+
+<!--中间部分  主要内容开始 -->
+<div class="center-content" style="padding-top: 0px">
+    <div class="row">
+        <!-- LEFT START -->
+        <div class="col-md-3">
+            <div class="left-section-style margin_border" id="param"  <notempty name="param.keep"><eq
+                name="param.keep" value="hide">style="display: none"</eq></notempty>>
+            <div class="container-content choosen_condition">
+                <form action="{:U('/Post/index')}" method="get">
+                    <input type="hidden" name="ct" value="<notempty name='param.ct'>{$param.ct}</notempty>">
+                    <input type="hidden" name="ci" value="<notempty name='param.ci'>{$param.ci}</notempty>">
+                    <input type="hidden" name="wa" value="<notempty name='param.wa'>{$param.wa}</notempty>">
+                    <input type="hidden" name="ed" value="<notempty name='param.ed'>{$param.ed}</notempty>">
+                    <input type="hidden" name="kp" value="<notempty name='param.kp'>{$param.kp}</notempty>">
+                    <input type="hidden" name="gy" value="<notempty name='param.gy'>{$param.gy}</notempty>">
+                    <input type="hidden" name="key" value="<notempty name='param.key'>{$param.key}</notempty>">
+                    <input type="hidden" name="keyword" value="<notempty name='param.keyword'>{$param.keyword}</notempty>">
+                    <input type="hidden" name="p" value="<notempty name='p'>{$p}</notempty>">
+                </form>
+                <dl>
+                    <dt>已选条件</dt>
+                    <dd id="city_name" <empty name="param.ct">class="dn"</empty>>
+                    实习地点：<notempty name='param.ct'>{$param.ct|mb_substr=0,7,utf8}</notempty>
+                    <span class="choosen_close" data-type="city" onclick="choosen_close(this)"></span>
+                    </dd>
+                    <dd id="category_name" <empty name="param.ci">class="dn"</empty>>
+                    职位类别：<notempty name='param.ci'>{$list['categoryList'][$param['ci']]|mb_substr=0,7,utf8}</notempty>
+                    <span class="choosen_close" data-type="category" onclick="choosen_close(this)"></span>
+                    </dd>
+                    <dd id="week_name" <empty name="param.wa">class="dn"</empty>>
+                    每周可实习天数：<notempty name='param.wa'>{$param.wa}天</notempty>
+                    <span class="choosen_close" data-type="week" onclick="choosen_close(this)"></span>
+                    </dd>
+                    <dd id="education_name" <empty name="param.ed">class="dn"</empty>>
+                    最低学历：<notempty name='param.ed'>{$list['eduList'][$param['ed']]}</notempty>
+                    <span class="choosen_close" data-type="education" onclick="choosen_close(this)"></span>
+                    </dd>
+                    <dd id="keep_name" <empty name="param.kp">class="dn"</empty>>
+                    留用机会：<notempty name='param.kp'>是</notempty>
+                    <span class="choosen_close" data-type="keep" onclick="choosen_close(this)"></span>
+                    </dd>
+                    <dd id="graduate_name" <empty name="param.gy">class="dn"</empty>>
+                    毕业年份：<notempty name='param.gy'>{$list['graduateList'][$param['gy']]}</notempty>
+                    <span class="choosen_close" data-type="graduate" onclick="choosen_close(this)"></span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+            <div class="left-section-style margin_border">
+                <div class="chose_condition" id="chose_condition">
+                    <dl id="city">
+                        <dt><h3 class="left_column_title">所在城市<span class="slide-icon"></span></h3></dt>
+                        <notempty name="hotCityList">
+                            <foreach name="hotCityList" item="hotCityItem">
+                                <dd><span>{$hotCityItem}</span></dd>
+                            </foreach>
+                        </notempty>
+                        <dd id="inputTest"><span class="more">更多</span></dd>
+                    </dl>
+                    <dl id="week">
+                        <dt><h3 class="left_column_title">每周实习天数<span class="slide-icon"></span></h3></dt>
+                        <dd><span data-value="1">1天</span></dd>
+                        <dd><span data-value="2">2天</span></dd>
+                        <dd><span data-value="3">3天</span></dd>
+                        <dd><span data-value="4">4天</span></dd>
+                        <dd><span data-value="5">5天</span></dd>
+                    </dl>
+                    <dl id="position-category">
+                        <dt><h3 class="left_column_title">职位类别<span class="slide-icon"></span></h3></dt>
+                        <notempty name="list.categoryList">
+                            <foreach name="list.categoryList" key="key" item="categoryItem">
+                                <dd><span data-value="{$key}">{$categoryItem}</span></dd>
+                            </foreach>
+                        </notempty>
+                        <dd id="inputTest1" class="inputTest1" data-type="true"><span class="more">更多</span><span class="retract">收起
+                        </span></dd>
+                    </dl>
+
+                    <dl id="education">
+                        <dt><h3 class="left_column_title">最低学历<span class="slide-icon"></span></h3></dt>
+                        <notempty name="list.eduList">
+                            <foreach name="list.eduList" key="key" item="eduItem">
+                                <dd><span data-value="{$key}">{$eduItem}</span></dd>
+                            </foreach>
+                        </notempty>
+                    </dl>
+                    <dl id="graduated-years">
+                        <dt><h3 class="left_column_title">毕业年份<span class="slide-icon"></span></h3></dt>
+                        <notempty name="list.graduateList">
+                            <foreach name="list.graduateList" key="key" item="gyItem">
+                                <dd><span data-value="{$key}">{$gyItem}</span></dd>
+                            </foreach>
+                        </notempty>
+                        <dd class="inputTest1" data-type="true"><span class="more">更多</span><span class="retract">收起
+                        </span></dd>
+                    </dl>
+                    <dl id="leave-work">
+                        <dt><h3 class="left_column_title">留用机会<span class="slide-icon"></span></h3></dt>
+                        <dd><span data-value="1">有</span></dd>
+                    </dl>
+                </div>
+            </div>
+
+        </div>
+        <!-- LEFT END -->
+        <!-- RIGHT START-->
+
+        <div class="col-md-9">
+            <div class="job-list">
+                <div class="job-list-serch">
+                    <input type="text" id="keyword" value="<notempty name='param.keyword'>{$param.keyword}</notempty>"
+                           placeholder="输入职位名称进行搜索">
+                    <div class="serch-left" id="serch-left">
+                        <p data-value="2" data-item="输入职位名称进行搜索">职 位</p>
+                        <span></span>
+                        <ul>
+                            <li data-value="1" data-item="输入企业名称进行搜索">企 业</li>
+                            <li data-value="3" data-item="输入城市，地域进行搜索">地 域</li>
+                        </ul>
+                    </div>
+                    <div class="serch-right" id="search"></div>
+                </div>
+                <notempty name="postList">
+                    <foreach name="postList" item="postItem">
+                        <div class="col-md-6 results-list">
+                            <div class="search-results">
+                                <div class="results-title">
+                                    <a href="/Post/info/id/{$postItem.pkid|enInt}" target="_blank" class="tiName">{$postItem.title}</a>
+                                    <p class="ciName">{$postItem.region_name}</p>
+                                </div>
+                                <p>最低学历：<span>{$list['eduList'][$postItem['education']]}</span></p>
+                                <p>专业要求：<span>{$postItem['major_wish']|majorNameOther}</span></p>
+                                <p>日薪：<span>{$list['rangeList'][$postItem['salary_range']]}</span></p>
+                                <p>每周工作：<span>{$postItem.week_available|getWorkDayText}</span></p>
+                                <a class="enName" href="/Enterprise/info/id/{$postItem.enterprise_id|enInt}" target="_blank"
+                                   title="{$postItem.enterprise_name}">
+                                    {$postItem.enterprise_name|name2ellipsis=18}
+                                </a>
+                                <p></p>
+                                <p>行业：<span>{$list['industryList'][$postItem['industry_id']]}</span></p>
+                                <p></p>
+                                <p>发布时间：<span>{$postItem.create_time|time2Unit}</span></p>
+                            </div>
+                        </div>
+                    </foreach>
+                    <else/>
+                    <div class="no-one">抱歉，暂时没有您需要的信息。</div>
+                </notempty>
+
+                <!--分页按钮-->
+                <div class="container pagination_center">
+                    <notempty name="postList">
+                        {$page}
+                    </notempty>
+                </div>
+            </div>
+        </div>
+        <!-- RIGHT END -->
+    </div>
+</div>
+</block>
+
+<block name="style">
+    <style>
+        dl dd{cursor: pointer}
+        .left_column_title{cursor: pointer}
+        .job-list-serch > .serch-left >ul >li{padding-right:15px;}
+        .highlight{background-color: #ff7800;color:#FFFFFF}
+    </style>
+    <!--<link rel="stylesheet" href="__PUBLIC__/static/css/student_resume.css">-->
+    <link rel="stylesheet" href="__PUBLIC__/static/css/enterprise-practice.css">
+</block>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/static/js/lazyload-min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/static/js/jquery.textSearch-1.0.js"></script>
+    <script>
+        hotcity("inputTest");
+        var pub = "__PUBLIC__"+'/static/';
+        //获取热门城市
+        function hotcity(cy){
+            $.ajax({
+                type: "get",
+                url: "/Enterprise/hotcity",
+                async: false,
+                dataType:'json',
+                success: function(msg){
+                    LazyLoad.css(["__PUBLIC__/static/css/cityStyle.css"], function () {
+                        LazyLoad.js(["__PUBLIC__/static/js/newCity.js?v=1.3"], function () {
+                            var test = new citySelector.cityInit(cy,msg);
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+    <!--行业更多框-->
+    <!--删除条件标签-->
+    <script>
+        $(function(){
+            var a=true;
+            $("#position-category ,#graduated-years").find("dd:gt(2)").not($(".inputTest1")).addClass("dn");
+            $(".inputTest1").on("click",function(){
+                var a = $(this).attr('data-type');
+                if(a == 'true'){
+                    $(this).parent('dl').find("dd:gt(2)").not($(".inputTest1")).show();
+                    $(this).children(".more").css("display","none");
+                    $(this).children(".retract").css("display","block");
+                    $(this).attr('data-type','false')
+                }else{
+                    $(this).parent('dl').find("dd:gt(2)").not($(".inputTest1")).hide();
+                    $(this).children(".more").css("display","block");
+                    $(this).children(".retract").css("display","none");
+                    $(this).attr('data-type','true')
+                }
+            });
+        });
+    </script>
+    <!--搜索关键词高亮-->
+    <notempty name="param.keyword">
+        <script>
+            jQuery(document).ready(function(){
+                var high = $('input[name=keyword]').val();
+                var k = $('input[name=key]').val();
+                switch(k){
+                    case '1':
+                        $('.enName').textSearch(high,{markClass: "highlight"});
+                        break;
+                    case '2':
+                        $('.tiName').textSearch(high,{markClass: "highlight"});
+                        break;
+                    default:
+                        $('.ciName').textSearch(high,{markClass: "highlight"});
+                        break;
+                }
+            })
+        </script>
+    </notempty>
+    <script>
+        $(function(){
+            var chose_condition=$("#chose_condition");
+            var title=$(".left_column_title");
+            var aa=false;
+            title.on("click",function(){
+                if($(this).find("span").attr("class")=="slide-icon"){
+                    $(this).find("span").attr("class","slide-icon-1");
+                    $(this).parent().siblings().hide();
+
+                }else{
+                    $(this).find("span").attr("class","slide-icon");
+                    $(this).parent().siblings().show();
+                    $(this).parent('dt').parent('dl').find("dd:gt(2)").not($(".inputTest1")).hide();
+                }
+            });
+
+            $('#keyword').focus(function(){
+                $(this).attr('placeholder','');
+            })
+
+            $('#keyword').blur(function(){
+                if($(this).val() == ''){
+                    $(this).attr('placeholder',$('#serch-left p').attr('data-item'));
+                }
+            })
+        });
+    </script>
+
+    <!--查询框-->
+    <script>
+        $(function(){
+            var key = $('input[name=key]').val();
+            switch(key){
+                case '1':
+                    $('#serch-left').children('p').attr({'data-value':1,'data-item':'输入企业名称进行搜索'}).text('企 业');
+                    $('#serch-left').children('ul').html('<li data-value="2" data-item="输入职位名称进行搜索">职 位</li><li data-value="3" data-item="输入城市，地域进行搜索">地 域</li>');
+                    $('#keyword').attr('placeholder','输入企业名称进行搜索');
+                    break;
+                case '3':
+                    $('#serch-left').children('p').attr({'data-value':3,'data-item':'输入城市，地域进行搜索'}).text('地 域');
+                    $('#serch-left').children('ul').html('<li data-value="1" data-item="输入企业名称进行搜索">企 业</li><li data-value="2" data-item="输入职位名称进行搜索">职 位</li>');
+                    $('#keyword').attr('placeholder','输入城市，地域进行搜索');
+                    break;
+                default :
+                    $('#serch-left').children('p').attr({'data-value':2,'data-item':'输入职位名称进行搜索'}).text('职 位');
+                    $('#serch-left').children('ul').html('<li data-value="1" data-item="输入企业名称进行搜索">企 业</li><li data-value="3" data-item="输入城市，地域进行搜索">地 域</li>');
+                    $('#keyword').attr('placeholder','输入职位名称进行搜索');
+                    break;
+            }
+
+            var oP=$("#serch-left >p");
+            var aLi=$("#serch-left > ul >li");
+            var oUl=$("#serch-left > ul");
+            var temp="";
+            var tip="";
+            var item="";
+            var a=true;
+            $("#serch-left").on("click",function(){
+                if(a){
+                    oUl.css('height', '90');
+                    a=false;
+                }
+                else{
+                    oUl.css('height', '0');
+                    a=true;
+                }
+                return false;
+            });
+            aLi.on("click",function(){
+                temp=oP.html();
+                tip=oP.attr('data-value');
+                item=oP.attr('data-item');
+                oP.html($(this).html());
+                oP.attr('data-value',$(this).attr('data-value'));
+                oP.attr('data-item',$(this).attr('data-item'));
+                $('#keyword').attr('placeholder',$(this).attr('data-item'));
+                $(this).html(temp);
+                $(this).parent().css('height', '0');
+                $(this).attr('data-value',tip);
+                $(this).attr('data-item',item);
+//                $(this).parent().hide();
+                a=true;
+                return false;
+            });
+            $(document).on("click",function(){
+                oUl.css('height', '0');
+                a=true;
+            });
+        });
+    </script>
+    <script>
+        jQuery(document).ready(function(){
+            var ct = $('input[name=ct]').val();
+            var ci = $('input[name=ci]').val();
+            var wa = $('input[name=wa]').val();
+            var ed = $('input[name=ed]').val();
+            var kp = $('input[name=kp]').val();
+            var gy = $('input[name=gy]').val();
+            if(ct != ''){
+                $('#city .left_column_title').find("span").attr("class","slide-icon-1");
+                $('#city .left_column_title').parent().siblings().hide();
+            }
+            if(ci != ''){
+                $('#position-category .left_column_title').find("span").attr("class","slide-icon-1");
+                $('#position-category .left_column_title').parent().siblings().hide();
+            }
+            if(wa != ''){
+                $('#week .left_column_title').find("span").attr("class","slide-icon-1");
+                $('#week .left_column_title').parent().siblings().hide();
+            }
+            if(ed != ''){
+                $('#education .left_column_title').find("span").attr("class","slide-icon-1");
+                $('#education .left_column_title').parent().siblings().hide();
+            }
+            if(kp != ''){
+                $('#leave-work .left_column_title').find("span").attr("class","slide-icon-1");
+                $('#leave-work .left_column_title').parent().siblings().hide();
+            }
+            if(gy != ''){
+                $('#graduated-years .left_column_title').find("span").attr("class","slide-icon-1");
+                $('#graduated-years .left_column_title').parent().siblings().hide();
+            }
+
+            var key = '{$param.key}';
+            var keyword = '{$param.keyword}';
+            if(key == 3 && ignoreSpaces(keyword) != ''){
+                $('#city').hide();
+            }
+        })
+    </script>
+    <script src="__PUBLIC__/static/js/post.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+    var map = new BMap.Map("container");
+    map.centerAndZoom("徐州", 12);
+    map.enableScrollWheelZoom();    //启用滚轮放大缩小，默认禁用
+    map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+    map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+    map.addControl(new BMap.OverviewMapControl()); //添加默认缩略地图控件
+    // map.addControl(new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT }));   //右下角，打开
+    var localSearch = new BMap.LocalSearch(map);
+    localSearch.enableAutoViewport(); //允许自动调节窗体大小
+function searchByStationName() {
+    map.clearOverlays();//清空原来的标注
+    var keyword = document.getElementById("text_").value;
+    localSearch.setSearchCompleteCallback(function (searchResult) {
+        var poi = searchResult.getPoi(0);
+        document.getElementById("result_").value = poi.point.lng + "," + poi.point.lat;
+        map.centerAndZoom(poi.point, 13);
+        var marker = new BMap.Marker(new BMap.Point(poi.point.lng, poi.point.lat));  // 创建标注，为要查询的地方对应的经纬度
+        map.addOverlay(marker);
+        var content = document.getElementById("text_").value + "<br/><br/>经度：" + poi.point.lng + "<br/>纬度：" + poi.point.lat;
+        var infoWindow = new BMap.InfoWindow("<p style='font-size:14px;'>" + content + " ");
+        marker.addEventListener("click", function () { this.openInfoWindow(infoWindow); });
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+});
+
+    localSearch.search(keyword);
+
+} 
+
+</script>
+</block>
+

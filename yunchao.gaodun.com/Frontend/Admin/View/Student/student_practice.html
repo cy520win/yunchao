@@ -1,0 +1,45 @@
+<if condition="$tpl eq true">
+	<div class="practice-div">
+		<div class="col-sm-4">
+				<input type="month" class="form-control-month form-tice" name="practice[start_time]" data="start_time">
+				<input type="month" class="form-control-month form-tice" name="practice[finish_time]" data="finish_time">
+		</div>
+		<div class="col-sm-3">
+				<input type="text" data="organization" class="form-control-month form-control-school form-tice" name="practice[organization]" placeholder="输入企业名">
+		</div>	
+		<div class="col-sm-3">
+				<input type="text" data="quarters" class="form-control-month form-control-major form-tice" name="practice[quarters]" placeholder="输入岗位名称">
+		</div>								
+		<div class="col-sm-2">
+				<span onclick="deldiv(this,3)" class="delbutton">删除</span>
+				<span onclick="savetice(this,1)" class="delbutton">保存</span>
+		</div>	
+		<div class="col-sm-8 practice-content">
+				<textarea class="form-control form-tice" name="practice[content]" cols="6" rows="5" data="content"></textarea>
+		</div>
+	</div>
+</if>
+
+<if condition="$tpl eq false">
+<foreach name="practice" item="ticeItem">
+	<div class="practice-div">
+		<div class="col-sm-4">
+				<input type="month" class="form-control-month form-tice" name="practice[start_time]" data="start_time" value="{$ticeItem.start_time|ymdTOym=###}">
+				<input type="month" class="form-control-month form-tice" name="practice[finish_time]" data="finish_time" value="{$ticeItem.finish_time|ymdTOym=###}">
+		</div>
+		<div class="col-sm-3">
+				<input type="text" data="organization" class="form-control-month form-control-school form-tice" name="practice[organization]" placeholder="输入企业名" value="{$ticeItem.organization}">
+		</div>	
+		<div class="col-sm-3">
+				<input type="text" data="quarters" class="form-control-month form-control-major form-tice" name="practice[quarters]" placeholder="输入岗位名称" value="{$ticeItem.quarters}">
+		</div>								
+		<div class="col-sm-2">
+				<span onclick="cur3deldiv(this,{$ticeItem.pkid})" class="delbutton">删除</span>
+				<span onclick="cur3savetice(this,{$ticeItem.pkid})" class="delbutton">保存</span>
+		</div>	
+		<div class="col-sm-8 practice-content">
+				<textarea class="form-control form-tice" name="practice[content]" cols="6" rows="5" data="content">{$ticeItem.content}</textarea>
+		</div>
+	</div>
+</foreach>
+</if>

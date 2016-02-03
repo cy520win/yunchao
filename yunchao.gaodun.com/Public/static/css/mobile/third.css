@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+body{ background: #ffffff;}
+/* 1*/
+.ipad-wrap > .top{ width: 100%; height: 215px; background: #63cdff;}
+.ipad-wrap > .logo{ width: 83%; height: auto; margin: -110px auto 0;}
+.ipad-wrap > .logo >img{ max-width: 100%;}
+.ipad-wrap > .main{ width: 83%; height: auto; overflow: hidden; padding-bottom: 150px; background: #fff; border: 1px solid #e2e2e2; border-radius: 8px; margin: 8px auto 0; }
+.ipad-wrap > .main > p{ color: #656565; text-align: center;}
+.ipad-wrap > .main > p.p1{ font-size: 26px; line-height: 26px; margin-top: 80px;}
+.ipad-wrap > .main > p.p2{ font-size: 18px; line-height: 18px; margin-top: 18px;}
+.ipad-wrap > .main > p.p3{ font-size: 14px; line-height: 14px; margin-top: 22px;}
+
+.input-wrap{ width: 520px; height: auto; overflow: hidden; margin: 25px auto 0;}
+.input-wrap > .input{ width: 415px; height: 38px;background: #ffffff;border: 1px solid #e4e4e4; border-radius: 5px; margin-left: 52px;}
+.input-wrap > .input >span{float: left;  margin:13px 8px 0 16px; display: block;}
+.input-wrap > .input >span.address{ background: url(../../images/account/icon.png) 0 -1px no-repeat;height: 11px;width: 14px;}
+.input-wrap > .input >span.password{ background: url(../../images/account/icon.png) -1px -13px no-repeat; width: 13px; height: 15px;}
+.input-wrap >.focused{ border: 1px solid #76e0ff !important;}
+.input-wrap >.error{ border: 1px solid #ff5d38 !important;}
+
+.input-wrap > .input >input{ width: 295px; height: 38px; line-height: 38px; color: black; border: none; outline: none;}
+.input-wrap >i{width: 17px; height: 17px; float: left; margin-top: 13px; display: none; margin-left: 13px;background: url(../../images/account/icon.png) -1px -30px no-repeat;}
+.input-wrap > .input-error{ clear: both; padding-left: 16px; margin-left: 52px; margin-top: 9px; float: left; display: none;background: url(../../images/account/icon.png) -1px -48px no-repeat; font-size: 14px; color: #ff5d39; line-height: 14px;}
+
+.main > .creat{ width:415px; display: block; height: 42px; transitian:.3s; font-size: 20px; cursor:pointer; color: #fff; line-height: 45px; text-align: center; background: #63cdff; border-radius: 5px; margin: 50px auto 0; }
+.main > .creat:active{ background: #34b9f7;}
+
+.ipad-wrap > .footer {width: 100%;height: 60px;line-height: 60px;text-align: center; background: #63cdff;font-size: 14px;color: #ffffff; margin-top: 70px;}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+	.ipad-wrap > .footer{ position: fixed; bottom: 0;}
+}
+
+
+/* 2 */
+.ipad-wrap > .main > .main-c{ width: 79%; margin: 0 auto; padding-top: 125px;}
+.ipad-wrap > .main > .main-c >p.p1{ color: #656565; font-size: 26px; line-height: 26px;}
+.ipad-wrap > .main > .main-c >p.p2{ color: #656565; margin-top: 15px; font-size: 20px; line-height: 20px;}
+
+.ipad-wrap > .main > .main-c > .bind-mail{ width: 100%; margin: 45px 0 55px; transition:.3s; border-radius: 5px; text-align: center; background: #63cdff; height: 42px; line-height: 42px; font-size: 20px; color: #fff;}
+.ipad-wrap > .main > .main-c > .bind-mail:active{ background: #34b9f7;}
+.ipad-wrap > .main > .main-c >p.p3{ color: #a5a5a5; font-size: 16px; line-height: 16px;}
+.ipad-wrap > .main > .main-c >p.p4{ color: #a5a5a5; font-size: 16px; margin-top: 18px; line-height: 16px;}
+.ipad-wrap > .main > .main-c >p.p4 >a{ text-decoration: underline; color: #63cdff;}
+.ipad-wrap > .main > .main-c >p.p4 >a:active{color: #34b9f7;}
+
+.ipad-wrap > .succes-wrap{ width: 100%; height: 100%; display: none; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.25); z-index: 9;}
+.ipad-wrap > .succes-box{ width: 600px; height: 400px;display: none; position: fixed;  overflow: hidden;top: 50%; margin-top: -200px; left: 50%; margin-left: -300px; background: #ffffff; border-radius: 8px; z-index: 10;}
+.ipad-wrap > .succes-box > .succes-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #63cdff;font-size: 24px; color: #ffffff;}
+.ipad-wrap > .succes-box > .succes-box-title >img { float: right; margin-right: 44px; display: block; margin-top: 17px; cursor: pointer;}
+.ipad-wrap > .succes-box > p{ font-size: 26px; color: #656565; text-align: center; line-height: 26px; margin:60px auto 50px;}
+.ipad-wrap > .succes-box > div{ width: 78%; height: auto; overflow: hidden; margin: 0 auto;}
+.ipad-wrap > .succes-box > div >p{ font-size: 18px; color: #656565; line-height: 18px; margin-bottom: 14px; text-align: center;}
+.ipad-wrap > .succes-box > a{ width: 40%; height: 42px; transition:.3s; display: block; margin: 60px auto 0; line-height: 42px; text-align: center;border-radius: 5px; font-size: 20px; color: #ffffff; background: #63cdff;}
+.ipad-wrap > .succes-box > a:active{ background: #34b9f7;}
+
+
+/* 3 */
+.ipad-wrap > .main > .center{ width: 250px; height: auto; padding-bottom: 190px; margin: 120px auto 0;}
+.ipad-wrap > .main > .center > p.p1{ background:url(../../images/account/success-small.png) no-repeat; font-size: 26px; color: #656565; padding-left:55px; height:41px; line-height:41px;}
+.ipad-wrap > .main > .center > p.p2{ font-size: 16px; line-height: 16px; color: #656565;margin-top: 20px;}
+.ipad-wrap > .main > .center > p.p3{ font-size: 16px; line-height: 16px; color: #a5a5a5;margin-top: 20px;}
+.ipad-wrap > .main > .center > p.p3 >a{color: #63cdff;}
+.ipad-wrap > .main > .center > p.p3 >a:active{color: #34b9f7;}
+
+
+
+
+

@@ -1,0 +1,33 @@
+@charset "utf-8";
+.feedback-wrap{ width: 100%; height: 100%; background: rgba(0,0,0,0.6); opacity: 0.8; position: fixed; top: 0; left: 0; right: 0; bottom: 0;z-index: 9999}
+.feedback-box{ width: 480px; background: #f4f4f4; height: auto; padding-bottom: 20px; border: 1px solid #bfbfbf;position: fixed; border-radius: 5px; bottom:20px; right:80px; margin-top: -225px; margin-left: -240px;z-index: 999}
+.feedback-box > .feedback-title{ width: 300px; height: 45px; text-align: center; line-height: 45px;font-size: 20px; color: #f4f4f4; background: #60d9e7; margin: 0 auto;border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
+.feedback-box > .feedback-close{ position: absolute; top: 16px; right: 18px;width: 17px; height: 17px; background:url(../images/feedback_popup_icon.png) 0 0 no-repeat; cursor: pointer;}
+.feedback-box > .feedback-textare{ width: 415px; height: 140px; border-radius: 5px;  margin: 30px auto 0;}
+.feedback-box > .feedback-textare > textarea{ width: 415px; height: 135px;border: 1px solid #bfbfbf; outline: none; border-radius: 5px; resize:none; font-size: 14px; color: #656565; padding: 5px 0 0 5px;}
+.feedback-box > .feedback-textare > textarea:focus{ border:1px solid #63cdff; color: #656565;}
+.feedback-box > .feedback-upload{ width: 415px; overflow: hidden; height: auto;margin: 20px auto 0;}
+.feedback-upload > .upload-img{ width: 68px;cursor: pointer; float: left; height: 68px; background: #ffffff; border: 1px solid #bfbfbf; border-radius: 5px;position: relative;}
+.feedback-upload > .upload-img >span{ width: 62px; overflow:hidden; display:block; background:#f4f4f4; border-radius: 5px; height: 62px; margin: 3px auto; text-align: center; font-size: 12px; color: #a5a5a5;}
+.feedback-upload > .upload-img >span >img{ display: block; margin: 10px auto 8px;}
+.feedback-upload > .upload-right{ float: left; height: 68px; line-height: 68px; padding-left: 5px; font-size: 14px; color: #a5a5a5;}
+.feedback-box > .add-img{ width: 415px; height: auto; margin: 15px auto 0; clear: both;}
+.feedback-box > .add-img > p{ font-size: 12px; color: #656565; line-height: 12px; margin-bottom: 15px;}
+.feedback-box > .add-img > p >span{ padding-left: 45px; color: #63cdff; text-decoration: none;cursor: pointer;}
+.feedback-box > .feedback-input{ width:415px; border-radius: 5px; margin: 20px auto 0; height:40px; padding:9px 0 9px 10px; display: block; outline: none; border:1px solid #bfbfbf; font-size: 14px; color: #656565;}
+.feedback-box > .feedback-input:focus{ border:1px solid #63cdff; color: #656565;}
+.feedback-box > .feedback-send{ width: 110px; height: 42px; text-align: center; line-height: 42px; font-size: 18px; color: #ffffff; background: #b2b2b2; border-radius: 5px; float: right; margin-top: 20px; margin-right: 31px; cursor: pointer; transition:0.3s;border: none}
+.send-hover{background:#63cdff !important;}
+#upload-advice{width: 68px;height: 68px;position: absolute;top: 0;left: 0;border: none;text-indent: 12346546456em;cursor: pointer;opacity: 0;filter:alpha(opacity=0);}
+.feed-span{position: fixed;bottom:115px;right:2px; z-index: 301;}
+.feed-span2{position: fixed;bottom:80px;right:2px;background-color: #60d9e7;display: none;}
+.feed-span>span{width: 48px;height:48px;border: none;display: block;text-align: center;padding: 5px;cursor:pointer;}
+.feed-span2>span{width: 100px;border: 1px solid #60d9e7;display: block;text-align: center;padding: 4px 4px;cursor:pointer;color: #ffffff;}
+#feedback-box{display: none;}
+#feed-error{position: absolute;bottom: 30px;left: 34px;color: #ff5d39}
+.return-up{position:fixed;bottom:160px;right:4px;max-width:50px;z-index:20000;cursor:pointer;}
+.return-up a{width:100%;height:auto;}    
+.return-up-area{display:none;} 
+.moible-area{display:none;height:60px;width:100px;float:right;cursor:pointer;}
+.return-up-area img{padding-bottom:5px;} 
+.feedback-box>.input-border-error{border:1px solid #ff5d39;}

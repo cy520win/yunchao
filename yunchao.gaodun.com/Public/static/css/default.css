@@ -1,0 +1,49 @@
+@charset "utf-8";
+/*按钮样式开始*/
+.btn{ border: none;transition:ease-in-out 0.3s;}
+.btn:hover{border: none !important;}
+.information-submit-button{
+    color:#f7f7f7;
+    background:#63cdff;
+    transition：ease-in-out 0.3s
+}
+.information-submit-button:hover{
+    color:#f7f7f7;
+    background-color:#34B9F7; 
+}
+/*取消按钮*/
+.information-cancel-button{
+    color:#f7f7f7;
+    background-color:#dddddd;
+}
+.information-cancel-button:hover{
+    color:#f7f7f7;
+    background-color:#BFBFBF;
+}
+/*disable 按钮*/
+.information-disable-button{
+    color:#f7f7f7;
+    background:#b2b2b2;
+    letter-spacing:6px;
+    cursor:not-allowed;
+}
+/*保存预览按钮*/
+.reserve-Preview-button{
+    color:#f7f7f7;
+    background:#63cdff;
+}
+/*蓝色按钮*/
+.button-blue{
+   background-color:#63cdff;
+}
+/*黄色删除按钮*/
+.delete-button{
+   color:#ffffff;
+   background-color:#ff7800;
+}
+.delete-button:hover{
+ background-color:#DD6800;
+}
+
+/*按钮样式结束*/
+.under-line:hover{text-decoration: underline;}

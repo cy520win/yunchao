@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+    <title>高顿实习-学生简历预览</title>
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/bootstrap.css">
+	<link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-core.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-forms.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/public.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/personal_center.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/resume_look.css">
+	<script src="__PUBLIC__/static/core/js/jquery-1.11.1.min.js"></script>
+    <!--[if lte IE 9]>
+        <script src="__PUBLIC__/static/js/respond.min.js"></script>
+        <script src="__PUBLIC__/static/js/jsml5.js"></script>
+        <link rel="stylesheet" href="__PUBLIC__/static/css/ie8.css">
+    <![endif]-->
+    <style>
+    .model-title .basic-line{width:88%;}
+    .left-section-message{margin-bottom:30px;}
+    .fln {float:left !important;margin-bottom: 10px;}
+    .personal_message_content{overflow:hidden;}
+    .other-information-colunm{margin-top:0px;}
+    .droppable-area {min-height: 130px !important;}
+    .basic-personal-photo{width:130px;height:130px;}
+    .personal-photo>#upload{width:130px;height:auto;}
+    .basic_information dl dd{line-height:26px;}
+    .c-e >li.disable {cursor: default !important;color: #a5a5a5;background: #ffffff !important;}
+    .down-load-area{height:45px;}
+    #look_page .function-area a{float: right;}
+    .other-center-colunm{margin-bottom:0px;padding-bottom:0px;}
+    .other-colunm{padding-bottom:0px;}
+    .header-faction{width:100%;float:left;height:70px;position: fixed;top:0;z-index:20;transition:0.2s;}
+    .center-content{margin-top:0px;height:70px;}
+    .function-area{padding-top:17px;}
+    .pad50{padding-top:70px;}
+    .invite_f_span{padding-top: 3px;display: inline-block;}
+    #look_page .basic_information .look-view dd{clear: both;}
+
+    </style>
+<script>
+    function print2(){
+        $('#recommand-student').hide();
+        $('.printer-area').hide();
+        $('.distance-bottom-2').css('float','none');
+        $('.distance-bottom-2').css('margin','0 auto');
+        window.print();
+    }
+    function getrecom(id){
+        $.post('/Student/ajaxRecomStu',{'data':id,'post':$('#recommand-student2').attr('data-id')},function(data){
+            $('#recommand-student2').html('<div class="title">相似的学生简历</div>'+data.msg);
+        },'json')
+    }
+    
+    $(function(){
+        $("#down-area").bind('click',
+            function(av){
+                av.stopPropagation();
+                var au=$(this).children("ul");
+                if(au.is(":hidden")){
+                    au.removeClass("dn")
+                }else{
+                    au.addClass("dn")
+                }
+            }
+        )
+        $(document).click(function(){
+            var e=$("#down-area").children('ul');
+            if(!e.is(":hidden")){
+                e.addClass("dn")
+            }
+        })
+
+        $('.invite-btn').bind('click',function(){
+            var obj = $(this);
+            $.post('/Invitation/invite',{'data':$(this).attr('data-id'),'pid':$(this).attr('data-pid')},function(rst){
+                if(rst.status){
+                    $('#invite-span').text(rst.data.num);
+                    $('#student-span').text(rst.data.student);
+                    $('#post-span').text(rst.data.post);
+                    $(".login-wrap").fadeIn(300);
+                    $(".remarkable-diag-success").fadeIn(300);
+                }
+                if(!rst.status){
+                    if(rst.code==404){
+                        $(".login-wrap").fadeIn(300);
+                        $(".remarkable-diag").fadeIn(300);
+                    }else{
+                        return alert(rst.msg);
+                    }
+                }
+            },'json')
+        })
+
+        $('.close-btn').bind('click',function(){
+            window.location.reload();
+        })
+
+        // -----------------------
+
+        $(".disable").hover(function(event) {
+            $(".dis-box").fadeIn(300);
+        },function(){
+            $(".dis-box").fadeOut(300);
+        });
+    });
+
+    $(window).scroll(function(){  //只要窗口滚动,就触发下面代码
+        var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度
+        if(scrollt>0){
+            $(".header-faction").css("background-color","rgba(0,0,0,0.7)"); //淡出
+        }else{
+            $(".header-faction").css("background-color","transparent"); 
+        }
+    });
+</script>
+</head>
+<body class="personal_center" id="look_page">
+<!-- header -->
+<div class="header-faction">
+    <div class="center-content">       
+    <div class="function-area col-md-9">
+             <ul class="c-e fln">
+                <li class="c-first active">{$titleHtml}</li>
+            </ul>
+            <a class="printer-area" href="javascript:print2();">
+                <img src="__PUBLIC__/static/images/printer.png" alt="高顿实习">
+            </a>
+            <div class="down-load-area" id="down-area">
+                <a><img src="__PUBLIC__/static/images/load_down.png" alt="高顿实习"></a>
+                <ul class="choose-save-model choose-save-invite-fn dn">
+                    <li><a href="/Resume/resumeDownload/resume_id/{$_GET['id']}/type/1/tag/invite">PDF</a></li>
+                    <li><a href="/Resume/resumeDownload/resume_id/{$_GET['id']}/type/2/tag/invite">DOC</a></li>
+                </ul>
+            </div>
+            <if condition="$info.invite eq false">
+             <a class="invite-area invite-btn" href="javascript:;" data-id="{$info.r_id}" data-pid="{$info.p_id}">
+                <img src="__PUBLIC__/static/images/invite.png" alt="高顿实习" data="{$info.invite}">
+            </a>
+            </if>
+            <if condition="$info.invite eq true">
+                <a class="invite-area" href="javascript:;">
+                    <img src="__PUBLIC__/static/images/ready-invited.png" alt="高顿实习">
+                </a>
+            </if>
+    </div>
+    </div> 
+</div>
+
+<!--中间部分  主要内容开始 -->
+<div class="center-content pad50">
+<div class="row">
+	<!-- LEFT START -->
+    <div class="col-md-9 distance-bottom-2">
+    {$centerHtml}
+    </div>
+	<!-- LEFT END -->
+	<!-- RIGHT START-->
+    <div class="col-md-3" id="recommand-student">
+       <div class="hot-enterprise" id="recommand-student2" data-id="{$info.p_id}">
+            <div class="title">相似的学生简历</div>
+                <empty name="recommand">
+                <div class="enterprise-list hot-active no-one" style="text-align: center;padding: 10px;">
+                 <b>暂无</b>
+                </div>
+                    <else/>
+                    {$recommand}
+                </empty>   
+        </div> 
+	</div>
+	<!-- RIGHT END -->
+</div>
+
+
+        <!--不能邀请请示框  -->
+   <div class="remarkable-diag">
+        <div class="remarkable-title"><span>提示</span><span class="close close-btn"></span></div>
+        <div class="containter-content">
+        <h1 class="containter-content-title">不能邀请啦&nbsp;!</h1>
+        每家企业每天只能邀请10次，明天再来吧！
+        <span class="confirm close-btn">确&nbsp;定</span>
+       </div>
+  </div>
+<!--邀请成功框-->
+    <div class="remarkable-diag-success">
+        <div class="remarkable-title"><span>提示</span><span class="close close-btn"></span></div>
+        <div class="containter-content">
+         <div class="right-logo"></div>
+        <h1 class="containter-content-title">邀请成功&nbsp;!</h1>
+      <span>（今日邀请次数还剩：<span class="eightteen" id="invite-span">{$info.usable_num}</span>次）</span><br>
+      <span class="ready-success">您已成功邀请了<span id="student-span"></span>同学投递<span id="post-span"></span>职位，请耐心等待学生反馈。</span>
+        <span class="confirm close-btn">确&nbsp;定</span>
+       </div>
+    </div>
+<!--遮屏-->
+<div class="login-wrap"></div>
+</div>
+</body>
+</html>

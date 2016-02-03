@@ -1,0 +1,127 @@
+@charset "utf-8";
+.sendsuccess-form{
+    width:600px;
+    min-height: 300px;
+    position:fixed;
+    top:20%;
+    left:50%;
+    margin-left:-300px;
+    border-radius:5px;
+    background-color:#ffffff;
+    box-shadow: 0px 0px 4px 0px rgba( 0, 0, 0,0.3);
+    z-index: 2500;
+    display: none;
+}
+.sendsuccess-form h3{
+    font-weight: normal;
+}
+.sendsuccess-title{
+    width:100%;
+    background:#5dd8e7;
+    height:50px;
+    line-height:50px;
+    border-radius:5px 5px 0 0;
+    font-size:24px;
+    color:#ffffff;
+    font-weight: normal;
+    margin-top: 0 !important;
+}
+.sendsuccess-title-notice{
+    padding-left:20px
+}
+.sendsuccess-title-close{
+    cursor: pointer;
+    float:right;
+    padding-right:23px;
+}
+.notice-title{
+    font-size:26px;
+    color:#656565;
+    text-align: center;
+    margin:50px 0 0 0 !important;
+}
+.sendsuccess-form p{
+    line-height:30px;
+    text-align: left;
+    width:80%;
+    margin:0 auto;
+    font-size:18px;
+    color:#656565;
+    margin-top:34px;
+}
+.login-mail-certicified{
+    width:240px;
+    border-radius: 4px;
+    height:44px;
+    line-height:44px;
+    outline:none;
+    border:none;
+    background-color:#63cdff;
+    color:#ffffff;
+    font-size:18px;
+    text-align:center;
+    cursor: pointer;
+    margin:0 auto;
+    font-family: "微软雅黑";
+    padding: 0;
+}
+.login-mail-certicified:hover{
+    background:#34B9F7;
+    color: #fff;
+}
+.button-area{
+    width:240px;
+    margin:0 auto;
+    margin-top:55px;
+    margin-bottom: 69px;
+}
+/*默认投递类型*/
+.login-wrap{ position: fixed; width: 100%; height: 100%; background:#000000; opacity: 0.25; z-index: 2000; top: 0; left: 0; right: 0;bottom: 0;display: none}
+.delivery-style{display:none;}
+.delivery-style dl{width:85%;margin:0 auto;overflow: hidden;margin-top:15px;}
+.delivery-style dl dt{font-size:18px;color:#656565;font-weight:normal;margin-bottom:10px;}
+.delivery-style dl dd{float:left;padding-left:90px;line-height:40px;background-image:url("../images/no-choose.png");background-repeat:no-repeat;background-position:left 65px center;font-size:16px;color:#656565;cursor:pointer;transition: 0.2s}
+.delivery-style span.only-one{display:block;float:left;padding-left:150px;color:#fe8b25;margin-top:37px;}
+.delivery-style .button-area{float:left;padding-left:210px;width:180px;margin-top:10px;margin-bottom:30px;}
+.delivery-style .button-area a{width:180px;}
+/*附件上传成功*/
+.upload-file-success .right-logo{background:url("../images/right-logo.png") no-repeat center center;width:100%;height:50px;margin-top:20px;}
+
+.upload-file-success .upload-success{font-size:26px;width:100%;text-align:center;display:block;color:#656565;margin-top:10px;}
+.upload-file-success .upload-success-title{font-size:18px;width:100%;text-align:center;display:block;color:#656565;margin-top:10px;}
+.upload-file-success .button-area a{width:120px;}
+.upload-file-success .button-area{padding-left:240px;}
+/*附件上传失败*/
+.upload-file-failure{min-height:240px;height:240px;}
+.upload-file-failure .upload-failure{width:100%;text-align:center;display:block;color:#ff5d39;margin-top:43px;font-size:14px;overflow:hidden;}
+.upload-file-failure .failure-notice{width:100%;text-align:center;display:block;color:#656565;margin-top:10px;font-size:14px;overflow:hidden;}
+.upload-file-failure .button-area{padding-left:190px;margin-top:5px;margin-bottom:25px;}
+.upload-file-failure .button-area a{width:220px;margin-top:0px;}
+/*附件简历插件安装*/
+.sendsuccess-form .container-content{width:65%;}
+.sendsuccess-form .container-content li{height:38px;line-height:38px;margin-top:38px;}
+.sendsuccess-form .container-content li span{display: block;float:left;}
+.sendsuccess-form .container-content li button{float:left;background:#63cdff;padding:0 30px;border-radius: 5px;height:38px;line-height: 38px;color:#ffffff;border:none;outline:none;font-size:16px;margin-left:32px;transition: 0.3s;}
+.sendsuccess-form .container-content li button:hover{background-color:#34B9F7;}
+.sendsuccess-form .container-content li a{float:left;background:#63cdff;padding:0 30px;border-radius: 5px;height:38px;line-height: 38px;color:#ffffff;border:none;outline:none;font-size:16px;margin-left:32px;transition: 0.3s;}
+.sendsuccess-form .container-content li a:hover{background-color:#34B9F7;}
+.sendsuccess-form .container-content li span{font-size:18px;color:#656565;}
+.already-set-up{width:65%;color:#a5a5a5;font-size:16px;margin:0 auto;display:block;padding-left:23px;background:url("../images/qx1-box2.png") no-repeat left center;margin-top:40px;cursor: pointer;}
+.resume-set-up-diag{min-height: 290px;}
+.already-tick{background:url('../images/qx1-box1.png') no-repeat left center}
+.already-non-tick{background:url('../images/qx1-box2.png') no-repeat left center}
+/* 简历完成度 */
+.n1{ margin-top: 30px !important;}
+.n2{ margin-top: 24px !important; width: 455px !important;}
+.n2 > span{ color: #ffab3c;}
+.n3{ width: 120px !important; margin-top: 40px !important; margin-bottom: 15px;}
+.n4{ width: 120px !important;}
+.n5{ text-align: center; display: block; font-size: 16px; line-height: 16px; color: #656565; margin: 0 auto; margin-bottom: 40px;}
+.n5:hover{ color: #63cdff;}
+
+
+
+.choosen{background: url('../images/choosen.png') no-repeat left 65px center !important;}
+
+
+

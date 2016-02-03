@@ -1,0 +1,127 @@
+<extend name="Common:resumepost_frame" />
+<block name="title"><title>高顿实习-已允许面试</title></block>
+<block name="right">
+    <div class="col-md-9">
+        <div class="fail-resume-right resume-right-list">
+            <div class="resume-right-top">
+                <p>已允许面试</p>
+                <i></i>
+                <a href="/ResumePost/allow"><img src="__PUBLIC__/static/images/enterprise-practice/refresh.png">
+                    <span>刷新</span></a>
+            </div>
+            <eq name="show" value="1">
+                <form action="/ResumePost/allow" method="get">
+                    <div class="form-group top-distance col-md-4 no_padding drop-box mar">
+                        <select class="form-control edu_degree" id="post_id" name="pt" placeholder="全部职位">
+                            <option></option>
+                            <foreach name="postList" key="key" item="postItem">
+                                <option value="{$key}" <eq name="param.pt" value="$key">selected</eq>>{$postItem}</option>
+                            </foreach>
+                        </select>
+                        <input type="hidden" name="oldPt" value="{$param.pt}">
+                    </div>
+                </form>
+            </eq>
+            <notempty name="resumePostList">
+                <div class="treat-resume-header">
+                    <p class="p11">学生姓名</p>
+                    <p class="p12">面试职位</p>
+                    <p class="p13">企业反馈</p>
+                    <p class="p14">处理时间</p>
+                    <p class="p15">学生信息</p>
+                </div>
+                <foreach name="resumePostList" item="resumePostItem">
+                    <div class="allow-resume-list allow-resume-list-fn">
+                        <div class="student">
+                            <eq name="resumePostItem.resume_type" value="4">
+                                <a href="javascript:;" onclick="checkBrowser(this)"
+                                   data-action="/Student/resume/id/{$resumePostItem.resume_id|enInt=###}">{$resumePostItem.student_name}
+                                </a>
+                                <else />
+                                <a href="/Student/resume/id/{$resumePostItem.resume_id|enInt=###}"
+                                   target="_blank">{$resumePostItem.student_name}
+                                </a>
+                            </eq>
+                        </div>
+                        <div class="name">
+                            <a href="/Post/info/id/{$resumePostItem.post_id|enInt}" target="_blank">
+                                {$resumePostItem.post_title}
+                            </a>
+                        </div>
+                        <!--<div class="resume"><p>{$resumePostItem['send_type'] == 1 ? '自投简历' : '邀请投递'}</p></div>-->
+                        <div class="audition">
+                            <span class="q-yx" data-type="true">允许面试
+                                <img src="__PUBLIC__/static/images/delivery-icon2.png">
+
+                            </span>
+                            <span class="yx-box">
+                                <i></i>
+                                <p>{$resumePostItem.hr_remark|default='你好，同学！你的简历已通过我们的审核，近期我们会电话联系你，请保持电话畅通。'|delMoreBr}</p>
+                            </span>
+                        </div>
+                        <div class="date"><p>{$resumePostItem.deal_time|time2Unit}</p></div>
+                        <div class="read">
+                            <eq name="resumePostItem.resume_type" value="4">
+                                <a href="javascript:;" onclick="checkBrowser(this)"
+                                   data-action="/Student/resume/id/{$resumePostItem.resume_id|enInt}">
+                                    <?php echo resumePostType($resumePostItem['resume_type']);?>
+                                </a>
+                                <else />
+                                <a href="/Student/resume/id/{$resumePostItem.resume_id|enInt}" target="_blank">
+                                    <?php echo resumePostType($resumePostItem['resume_type']);?>
+                                </a>
+                            </eq>
+                        </div>
+                    </div>
+                </foreach>
+                <else/>
+                <div class="no-one">暂时没有允许面试的简历</div>
+            </notempty>
+
+            <!--分页按钮-->
+            <div class="container pagination_center">
+                {$page}
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            $('#v-allow').addClass('resume-active');
+        });
+        $(function(){
+            $(".q-yx").hover(function() {
+                $(this).find('img').attr('src', '/Public/static/images/delivery-icon1.png');
+
+            }, function() {
+                $(this).find('img').attr('src', '/Public/static/images/delivery-icon2.png');
+            });
+            $(".q-yx").click(function(event) {
+                var type = $(this).attr('data-type');
+                $('.yx-box').css('z-index', '-1');
+                $('.q-yx').attr('data-type','true');
+                if(type == 'true'){
+                    $(this).siblings('.yx-box').css('z-index', '99999');
+                    $(this).attr('data-type','false');
+                }else{
+                    $(this).siblings('.yx-box').css('z-index', '-1');
+                    $(this).attr('data-type','true');
+                }
+
+                return false;
+            });
+        });
+
+        $(document).click(function(event) {
+            $('.yx-box').css('z-index', '-1');
+            $('.q-yx').attr('data-type','true');
+        });
+
+    </script>
+</block>
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/pending.css">
+</block>
+

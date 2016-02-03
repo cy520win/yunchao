@@ -1,0 +1,16 @@
+<ul>
+	<foreach name="activity" item="ac">
+	<li data-id="{$ac.pkid}" onclick="editactivityli(this)">
+	<h3>
+		<span>{$ac.period}至{$ac.period_end}</span>&nbsp;&nbsp;&nbsp;
+		<span>{$ac.description}</span>
+
+		<if condition="$pre neq true">
+		<span class="edit-add"><span>
+		<i class="fa-pencil-square-o"></i>
+		</span><a href="javascript:;">编辑</a></span>
+		</if>
+	</h3>
+	</li>
+	</foreach>
+</ul>

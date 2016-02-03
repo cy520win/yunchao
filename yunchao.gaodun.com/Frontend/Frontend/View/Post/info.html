@@ -1,0 +1,887 @@
+<extend name="Public/layout" />
+<block name="title"><title>{$info.title}-高顿实习</title></block>
+<block name="content">
+
+
+    <!--中间部分  主要内容开始 -->
+    <div class="center-content" style="padding-top: 0px">
+        <div class="row">
+            <!-- LEFT START -->
+            <div class="col-md-9 mb150">
+                <!--企业简介-->
+                <div class="position-information-left position-information-left-area" style="height: auto;min-height: 280px">
+                    <div class="information-title">
+                        <h2>{$info.title}</h2>
+                        <p class="region-name"  data-logo="<?php echo C('APP_URL');?>/Public/static/images/share_logo.png">{$info.region_name}</p>
+                        <span class="publish-time">{$info.create_time|time2Unit}发布</span>
+                        <span>{$enInfo.full_name}招聘</span>
+                    </div>
+                    <div class="position-information-section">
+                        <div class="position-left-section">
+                            <p>职位要求：</p>
+                            <div class="position-require">
+                                <eq name="info.education" value="5">
+                                    <span class="common-degrees">学历不限</span>
+                                    <else/>
+                                    <notempty name="list['eduList'][$info['education']]">
+                                        <span class="common-degrees">{$list['eduList'][$info['education']]}</span>
+                                    </notempty>
+                                </eq>
+                                <notempty name="info.major_title">
+                                <span class="common-expert"> 
+                                {$info.pc_major_title}
+                                </span>
+                                    <else/>
+                                    <span class="common-expert">专业不限</span>
+                                </notempty>
+                                <notempty name="info.week_available">
+                                    <span class="at-least-days">每周工作{$info.week_available}天</span>
+                                </notempty>
+                                <notempty name="info.graduate_year">
+                                <span class="graduation-year">
+                                {$info.pc_graduate_year}
+                                </span>
+                                </notempty>
+                            </div>
+                            <div class="decide-leave">
+                                <neq name="info.keep_on" value="0">
+                                <p class="">是否留用：</p>
+                                <p class="" id="well-fare-date">
+                                    <eq name="info.keep_on" value="1">可留用<else/>不可留用</eq></p>
+                                </neq>
+                                <notempty name="info.quota">
+                                    <p class="recruitment-account <eq name='info.keep_on' value='0'>none-keep-on</eq>">招收人数：</p>
+                                    <p class="" id="well-fare-man">{$info.quota}人</p>
+                                </notempty>
+                            </div>
+                            <div class="q-time3 q-time3-fn">
+                                <p>接收简历：<span>{$info.receive_text}</span></p>
+                                <p>到岗时间：<span>{$info.attend_text}</span></p>
+                            </div>
+                        </div>
+                        <div class="position-right-section">
+                            <div class="baidu-map">
+                                <eq name="info.province_id" value="990000">
+                                    <img src="__PUBLIC__/static/images/map.jpg" style="width:278px; height:224px;">
+                                    <else />
+                                    <div id="smallmap" data="{$info.address|trim}" data-city="{$info.address_map|trim}" data-home="{$info.region_name|trim}" data-mark="{$info.address_map|urlencode}"></div>
+                                    <div class="baidu-map-situation">
+                                        <img src="__PUBLIC__/static/images/position-icon/Magnifier-icon.png" alt="百度地图"><span class="seacher-map" id="seacher-whole-map" data="{$info.address|trim}" data-city="{$info.address_map|trim}" data-home="{$info.region_name|trim}" data-mark="{$info.address_map|urlencode}">查看完整地图</span>
+                                    </div>
+                                </eq>
+                            </div>
+                            <div class="pratice-position">
+                                <span>实习地点：</span>
+                                <p>{$info.address_map}</p>
+                            </div>
+                        </div>
+                        <!-- new start-->
+                        <div class="position-bottom-section">
+                                <!--新添项目-->
+                                <p>职位福利：</p>
+                                <div class="well-fare">                
+                                    <ul>
+                                        <neq name="info.salary_range" value="5">
+                                            <notempty name="list['rangeList'][$info['salary_range']]">
+                                                <li class="well-fare-day">{$info['salary_range']|getDaySalaryText}</li>
+                                            </notempty>
+                                        </neq>
+                                        <notempty name="relation_lists">
+                                            <foreach name="relation_lists" item="tag">
+                                                <li>{$tag.title}</li>
+                                            </foreach>
+                                            <else/>
+                                            <notempty name="enInfo.welfare_id">
+                                                <foreach name="enInfo.welfare_id" item="welfareItem">
+                                                    <li>{$list['welfareList'][$welfareItem['welfare_id']]['title']}</li>
+                                                </foreach>
+                                            </notempty>
+                                        </notempty>
+
+                                    </ul>
+                                </div>
+                                <!--新添项目-->
+                                <div class="share-right-area">
+                                    <div class="share-area share-btn-fn" data-type="false"><span>分享</span></div>
+                                    <neq name="Think.session.account.account_type" value="1">
+                                        <eq name="Think.session.account.account_type" value="2">
+                                            <if condition="$info.collect eq false">
+                                                <div class="collected collected-fn" data-role="collect" data-id="{$info.collect_p_id}" id="collected-btn-fn">收藏</div>
+                                            </if>
+                                            <if condition="$info.collect eq true">
+                                                <div class="Already-collected">已收藏</div>
+                                            </if>
+                                        <else/>
+                                            <div class="collected collected-fn" data-role="login">收藏</div>
+                                        </eq>
+                                    </neq>
+                                <!--页面新加-->
+                                <!--微信扫一扫框-->
+                                    <div class="weixin-code weixin-code-fn <eq name='Think.session.account.account_type' value='1'>right-judge</eq> dn">
+                                        <div class="weixin-code-title">
+                                            <span class="scan-one">微信扫一扫</span>
+                                            <span class="close-area close-area-fn"></span>
+                                        </div>
+                                        <div class="weixin-code-area">
+                                            <img src="{$info.post_qr}" alt="高顿实习" class="post-qr-img">
+                                        </div>
+                                    </div>
+                                <!---->
+                                <!--分享到职业框-->
+                                    <div class="share-position share-position-fn <eq name='Think.session.account.account_type' value='1'>single-share</eq> dn">
+                                          <div class="share-position-title">分享职位到:</div>
+                                          <div class="share-position-logo-area">
+                                              <div class="sina-logo sina-logo-fn"></div>
+                                              <div class="weixin-logo weixin-logo-fn"> </div>
+                                          </div>
+                                    </div>
+                                <!---->
+                                <!--收藏框-->
+                                    <div class="collected-diag dn collected-diag-fn" data-type="{$info.collect|intval}">
+                                        <span class="collected-success">收藏成功</span>
+                                         <a href="/Collect/index">查看所有收藏职位</a>
+                                    </div>
+                                <!---->                  
+                                </div>                  
+                        </div>
+                        <!-- new end -->
+                    </div>
+                </div>
+
+
+                <!--职位描述-->
+                <div class="enterprise-job-description">
+                    <div class="title">
+                        职位描述
+                        <span></span>
+                    </div>
+                    <div id="desc">
+                        {$info.description|nl2br}
+                    </div>
+
+                </div>
+
+                <switch name="postType">
+                    <case value="1">
+                        <div class="job-prompt">你在高顿实习还没简历信息呢，先<a href="/Student/index">完善简历</a></div>
+                        <div class="job-resume jh">
+                            <p></p>
+                            <span id="for_student">投简历</span>
+                        </div>
+                    </case>
+                    <case value="2">
+                        <div class="job-prompt">
+                        <span class="left-area no-margin">
+                            默认投递：{$resumeDefault.name}&nbsp;&nbsp;
+                            <a href="{$resumeDefault.url}">{$resumeInfo.resume_name}</a>
+                        </span><span class="right-area">
+                        <a href="javascript:;" onclick="resetDefault()">重新设置</a>
+                    </span>
+                        </div>
+                        <div class="job-resume">
+                            <p></p>
+                            <span id="post_resume" data-id="1" data-type="{$attend|default='true'}">投简历</span>
+                        <span class="deliveryed" style="display: none">已投递
+                            <div class="resume-box">
+                                <p>你已投递该职位</p>
+                                <p>请耐心等待投递反馈</p>
+                                <i></i>
+                            </div>
+                        </span>
+                        </div>
+                        <input type="hidden" name="enId" value="{$info.enterprise_id|enInt}">
+                        <input type="hidden" name="ptId" value="{$info.pkid|enInt}">
+                        <input type="hidden" name="rsId" value="{$resumeInfo.pkid|enInt}">
+                        <input type="hidden" name="email" value="{$info.receive_email}">
+                        <input type="hidden" name="defaultId" value="{$resumeDefault.pkid|default=0}">
+                    </case>
+                    <case value="3">
+                        <div class="job-prompt">
+                            <span class="left-area no-margin">
+                                默认投递：{$resumeDefault.name}&nbsp;&nbsp;
+                                <a href="{$resumeDefault.url}">{$resumeInfo.resume_name}</a>
+                            </span>
+                            <span class="right-area">
+                                <a href="javascript:;" onclick="resetDefault()">重新设置</a>
+                            </span>
+                        </div>
+                        <div class="job-resume">
+                            <p></p>
+                            <span class="deliveryed">已投递
+                                <div class="resume-box">
+                                    <p>你已投递该职位</p>
+                                    <p>请耐心等待投递反馈</p>
+                                    <i></i>
+                                </div>
+                            </span>
+                        </div>
+                    </case>
+                    <case value="5">
+                        <div class="job-resume">
+                            <p></p>
+                            <span id="no_session">投简历</span>
+                        </div>
+                    </case>
+                    <case value="6">
+                        <div class="job-resume">
+                            <p></p>
+                            <notempty name="Think.session.account.account_email">
+                                <span id="email_verify" class="information-submit-button">投简历</span>
+                            <else/>
+                               <span id="blind-email-fn">投简历</span>
+                            </notempty>
+                        </div>
+                    </case>
+                    <case value="7">
+                        <div class="job-prompt">
+                            <span class="left-area no-margin">
+                                默认投递：{$resumeDefault.name}&nbsp;&nbsp;
+                                <a href="{$resumeDefault.url}">{$resumeInfo.resume_name}</a>
+                            </span>
+                            <span class="right-area">
+                                <a href="javascript:;" onclick="resetDefault()">重新设置</a>
+                            </span>
+                        </div>
+                        <div class="job-resume">
+                            <p></p>
+                            <span id="post_resume" data-id="7">投简历</span>
+                        </div>
+                    </case>
+                    <default />
+                </switch>
+            </div>
+            <!-- LEFT END -->
+            <!-- RIGHT START-->
+            <div class="col-md-3">
+
+                <div class="company-profile">
+                    <div class="company-profile-logo">
+                        <a href="/Enterprise/info/id/{$enInfo.pkid|enInt}"><img src="{$enInfo.logo}" width="178"></a>
+                    </div>
+                    <h2>{$enInfo.full_name}</h2>
+                    <span></span>
+                    <p>企业规模：{$enInfo.scale_title}</p>
+                    <p>行业：{$enInfo.industry_title}</p>
+                    <p>主页：<a href="{$enInfo.website}" target="_blank" style="word-break: break-all;white-space: normal">
+                        {$enInfo.website}</a>
+                    </p>
+                    <p style="word-break: break-all;white-space: normal">所在地：{$enInfo.city_name}</p>
+                </div>
+                <eq name="rightSide" value="0">
+                    <div class="hot-enterprise mb180" id="hot-enterprise">
+                        <div class="title">相似职位</div>
+                        <notempty name="sameList">
+                            <foreach name="sameList" item="sameItem">
+                                <div class="enterprise-list">
+                                    <a class="enterprise-list-logo" href="/Post/info/id/{$sameItem.pkid|enInt}" target="_blank">
+                                        <img src="{$sameItem.logo|imageExist}">
+                                    </a>
+                                    <div class="enterprise-information">
+                                        <a class="students" href="/Post/info/id/{$sameItem.pkid|enInt}" target="_blank">{$sameItem.title}</a>
+                                        <p>{$sameItem.region_name}</p>
+                                        <p>{$sameItem.enterprise_name}</p>
+                                    </div>
+                                </div>
+                            </foreach>
+                            <else/>
+                            <div class="no-one no-one-small">
+                                <b>暂无</b>
+                            </div>
+                        </notempty>
+                        <a href="/Post/index" class="more">更多热门职位
+                            <img src="__PUBLIC__/static/images/enterprise_basic_information/arrow.png"></a>
+                    </div>
+                    <else />
+                    <div class="hot-enterprise" id="hot-enterprise">
+                        <div class="title">合适的学生简历</div>
+                        <notempty name="studentList">
+                            <foreach name="studentList" item="studentItem">
+                                <div class="enterprise-list hot-active">
+                                    <a href="/Student/resume/id/{$studentItem.resume_id|enInt=###}"
+                                       target="_blank" class="enterprise-list-logo enterprise-list-logo-resume">
+                                        <img src="{$studentItem.avatar|studentAvatar}" alt="高顿实习">
+                                    </a>
+                                    <div class="enterprise-information">
+                                        <a  href="/Student/resume/id/{$studentItem.resume_id|enInt=###}"
+                                            target="_blank" class="students">{$studentItem.name}</a>
+                                        <p>{$studentItem.graduate_school}</p>
+                                        <p>{$studentItem.detail_major}</p>
+                                        <p>{$studentItem.education}</p>
+                                    </div>
+                                </div>
+                            </foreach>
+                            <a href="javascript:;" class="more">换一批 <img src="__PUBLIC__/static/images/refresh-img.png"></a>
+                            <else/>
+                            <div class="no-one no-one-small">
+                                <b>暂无</b>
+                            </div>
+                        </notempty>
+                    </div>
+                </eq>
+            </div>
+            <!-- RIGHT END -->
+        </div>
+    </div>
+
+    <div class="login-wrap" id="login-wrap" style="display: none;"></div>
+
+    <div class="login-box" id="login-box" style="display: none;">
+        <span class="feedback-close" id="feedback-close"></span>
+        <div class="container-fluid login-form sign-form">
+            <div class="row">
+
+                <div class="col-md-9 col-sm-12 col-xs-12">
+
+                    <!--登录页面-->
+                    <div class="md-content-form sign-form-content">
+
+                        <div class="form-group">
+                            <div class="input-group input-group-minimal input-group-style ">
+                                <span class="input-group-addon">
+                                    <i class="icon-envelope"></i>
+                                </span>
+                                <input type="email" class="form-control" onfocusout="logmail2(this)"
+                                       placeholder="请输入您的邮箱地址" name="login_email" id="login-mail"></div>
+                            <span id="login-mail-succ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+                        <span class="error-info" id="error-info-mail-log"></span>
+                        <div class="form-group">
+                            <div class="input-group input-group-minimal input-group-style">
+                                <span class="input-group-addon">
+                                    <i class="icon-lock"></i>
+                                </span>
+                                <input type="password" class="form-control" onfocusout="logpwd2(this)"
+                                       placeholder="请输入密码" name="login_pass" id="login-pass"></div>
+                            <span id="login-pass-succ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+                        <span class="error-info error-info-pass-log"></span>
+
+                        <div class="form-group form-checkbox clear-fix">
+
+                            <div class="checkbox">
+                                <label class="checkbox-label checkbox-agreement">
+                                    <input type="checkbox" class="cbr form-control" id="login-check"></label>
+                                <span class="login-sevenday">7天内登录</span>
+                <span class="forget-password">
+                  <a class="toa5" href="/Account/forpwd">忘记密码</a>
+                </span>
+
+                            </div>
+                        </div>
+
+                        <button type="button" id="login" class="ml0 btn btn-info sign-button">登录</button>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  login-other-page hidden-sm hidden-xs">
+                    <div class="login-notice">
+                        <span>还没有高顿实习账号？</span>
+                    </div>
+                    <div class="login-direct">
+            <span class="login-direct-linkage">
+              <a class="direct-sign" href="/Account/login/btn/regin" style="color:#2ab7eb;">直接注册</a>
+            </span>
+                        <span class="direct-login-logo"></span>
+                    </div>
+                    <div class="third-login">
+
+                        <span>第三方登录</span>
+                    </div>
+                    <div class="third_login_logo">
+                        <a href="javascript:;" style="margin-left:10px;">
+                            <img id="wb_connect_btn44" src="__PUBLIC__/static/images/sina_logo.png" alt="高顿实习"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 非企业接收简历时间段 -->
+    <div class="q-time4" id="receive_div" style="display:none;">
+        <h3 class="q-time4-title"><span class="q-time4-title-notice">提示</span>
+            <span class="q-time4-title-close" onclick="closeTime()">
+                <img src="__PUBLIC__/static/images/pro-close.png" >
+            </span>
+        </h3>
+        <p class="p1">非企业接收简历时间段，您无法投递简历！</p>
+        <a href="javascript:;" class="a1" onclick="closeTime()">确 定</a>
+    </div>
+
+    <!-- 不符合该职位要求的到岗时间 -->
+    <div class="q-time4" id="attend_div" style="display:none">
+        <h3 class="q-time4-title"><span class="q-time4-title-notice">提示</span>
+            <span class="q-time4-title-close" onclick="closeTime()"><img src="__PUBLIC__/static/images/pro-close.png" ></span>
+        </h3>
+        <p class="p2">您的可实习时间不符合该职位要求的到岗时间，简历很容易石沉大海，确定要继续投递吗？</p>
+        <div class="div1">
+            <a href="javascript:;" onclick="resumePost(this)" data-id="1">继续投递</a>
+            <a href="/Student/index" target="_blank">修改简历</a>
+        </div>
+    </div>
+
+    <!-- 创建简历框 -->
+    <div class="create-resume-box" style="display: none">
+        <div class="create-resume-box-title">
+            提示<span id="close-span1"></span>
+        </div>
+        <p>你在高顿实习还没有简历，去创建一个吧！</p>
+        <a href="/Student/index" target="_blank">创建简历</a>
+    </div>
+    <!-- 投递成功 -->
+    <div class="success-box" style="display: none">
+        <div class="create-resume-box-title">
+            投递成功<span id="close-span2"></span>
+        </div>
+        <p>你的简历已投递出去了，静候佳音吧！</p>
+        <a href id="close-span3">确 定</a>
+    </div>
+    <!--邮箱验证-->
+    <eq name="postType" value="6">
+        <div class="mailbox-verification" style="display: none">
+            <div class="mailbox-verification-title">
+                邮箱验证 <span id="close-span"></span>
+            </div>
+            <p class="ptop">请先验证登录邮箱</p>
+            <p>验证后你就可以使用高顿实习的所有功能啦！</p>
+            <p>我们已将验证邮件发送到：<span>{$Think.session.account.account_email}</span>  点击邮箱里的</p>
+            <p>链接完成验证。</p>
+            <notempty name="mailtype"><a href="{$mailtype}">登陆邮箱验证</a></notempty>
+            <p class="pa" style="margin-top: 20px"><span id="reset-send">重新发送验证邮件</span> &nbsp;|&nbsp; <a
+                    href="/Account/anewRegin">换个邮箱
+            </a>
+            </p>
+        </div>
+        <div class="sendsuccess-form" id="sendsuccess-form">
+            <h3 class="sendsuccess-title"><span class="sendsuccess-title-notice">提示</span>
+                <span class="sendsuccess-title-close" id="close-send-success"><img src="__PUBLIC__/static/images/pro-close.png" alt="高顿实习"></span></h3>
+            <h3 class="notice-title">验证邮件已发送成功</h3>
+            <p>我们已将验证邮件发送至：{$Think.session.account.account_email}<br>
+                请点击邮箱内的链接完成注册
+            </p>
+            <div class="button-area">
+                <notempty name="mailtype">
+                    <a href="{$mailtype}" date-role="button" class="btn btn-info confirm-button login-mail-certicified" id="login-email" target="_blank">登录邮箱验证</a>
+                </notempty>
+            </div>
+        </div>
+    </eq>
+
+
+    <div class="sendsuccess-form" id="resume-finish">
+        <h3 class="sendsuccess-title"><span class="sendsuccess-title-notice">温馨提示</span>
+            <span class="sendsuccess-title-close" id="close-resume-finish"><img
+                    src="__PUBLIC__/static/images/pro-close.png"
+                    tppabs="http://shixi.gaodun.com/static/images/pro-close.png" alt=""></span></h3>
+        <h3 class="notice-title n1">简历完整度过低！</h3>
+        <p class="n2">同学，你的简历完成度低于<span>60%</span>，很容易石沉大海或被HR拒掉的。不如马上完善简历，提高求职成功率？</p>
+        <div class="button-area n3">
+            <a href="/Student/index" class="btn login-mail-certicified n4" target="_blank">完善简历</a>
+        </div>
+        <a href="javascript:;" onclick="resumePost(this)" class="n5" data-id="1">继续投递</a>
+    </div>
+    <if condition="$postType eq 2 OR $postType eq 3 OR $postType eq 7">
+        <div class="sendsuccess-form delivery-style" id="set-default">
+            <h3 class="sendsuccess-title"><span class="sendsuccess-title-notice">默认投递简历类型</span>
+            <span class="sendsuccess-title-close" id="close-default">
+                <img src="__PUBLIC__/static/images/close-icon.png" alt=""></span></h3>
+            <dl class="reset-default">
+                <dt>请选择默认投递简历类型：</dt>
+                <foreach name="resumeArr" key="key" item="resumeItem">
+                    <dd data-value="{$key}" data-id="{$resumeItem.pkid|enInt}" data-action="{$defaultArr[$key]['url']}"
+                        data-name="{$resumeItem.resume_name}" data-type="{$defaultArr[$key]['name']}"
+                        class="<eq name='default' value='$key'>choosen</eq>">
+                        {$defaultArr[$key]['name']}：{$resumeItem.resume_name}
+                    </dd>
+                </foreach>
+            </dl>
+            <span class="only-one">（此条信息只提示一次，以后直接投递默认简历）</span>
+            <div class="button-area">
+                <a href="javascript:;" class="btn btn-info confirm-button login-mail-certicified" id="reset-default">保存设置
+                </a>
+            </div>
+        </div>
+    </if>
+
+
+    <!-- 弹窗地图 -->
+    <div class="practice-situation-diag" id="practice-diag">
+        <div class="practice-situation-title">实习地点<span id="close-span-3"></span></div>
+        <div id="allmap" style="position:absolute;width:100%;height:inherit;overflow:hidden;">
+        </div>
+    </div>
+</block>
+<!-- 主要内容结束 -->
+<!-- 页脚 -->
+<block name="script">
+    <script src="__PUBLIC__/static/js/regist_login.js"></script>
+    <script src="__PUBLIC__/static/core/js/xenon-custom.js"></script>
+    <script src="__PUBLIC__/static/js/identification.js"></script>
+    <!-- // <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script> -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6605604a7755e5d4f1216b19d8dda1b1"></script>
+    <script src="__PUBLIC__/static/js/baidumap.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#close-send-success').click(function(){
+                $('#sendsuccess-form').fadeOut(500);
+                $('#login-wrap').hide();
+            })
+            $("#close-span-3").on("click",function(){
+                $("#login-wrap").hide();
+                $("#practice-diag").fadeOut(300);
+            });
+            $("#seacher-whole-map").on("click",function(){
+                $("#login-wrap").show();
+                $("#practice-diag").fadeIn(300);
+            });
+        });
+
+        function resetDefault(){
+            $('#set-default').fadeIn(300);
+        }
+    </script>
+    <script>
+        jQuery(document).ready(function(){
+            $('.deliveryed').click(function(){
+                $('.resume-box').show();
+                setTimeout(function(){$('.resume-box').hide()},2000)
+            })
+
+            $('#no_session').click(function(){
+                $("#login-wrap").show();
+                $("#login-box").fadeIn(500);
+            })
+
+            $("#feedback-close").on("click",function(){
+                $("#login-wrap").hide();
+                $("#login-box").fadeOut(500);
+            });
+
+            $('#close-span1').click(function(){
+                $("#login-wrap").hide();
+                $(".create-resume-box").fadeOut(500);
+            })
+
+            $('#close-span').click(function(){
+                $("#login-wrap").hide();
+                $(".mailbox-verification").fadeOut(500);
+            })
+
+            $("#close-span2").on("click",function(){
+                $("#login-wrap").hide();
+                $(".success-box").fadeOut(500);
+            });
+
+            $("#close-span3").on("click",function(){
+                $("#login-wrap").hide();
+                $(".success-box").fadeOut(500);
+            });
+
+            /* 中英文简历关闭 */
+            $('.close').click(function(){
+                $("#login-wrap").hide();
+                $(".resume-box-e").fadeOut(500);
+            });
+
+            $("#close-resume-finish").on("click",function(){
+                $("#login-wrap").hide();
+                $("#resume-finish").fadeOut(500);
+            });
+
+            $("#close-default").on("click",function(){
+                $("#login-wrap").hide();
+                $("#set-default").fadeOut(500);
+            });
+
+            $('#email_verify').click(function(){
+                $("#login-wrap").show();
+                $('.mailbox-verification').children('.ptop').text('请先验证登录邮箱');
+                $(".mailbox-verification").fadeIn(500);
+            })
+
+            $('#for_student').click(function(){
+                $("#login-wrap").show();
+                $(".create-resume-box").fadeIn(500);
+            })
+
+            $('#reset-send').click(function(){
+                $('.mailbox-verification').hide();
+                $.post('/Account/checkMailAgain',"",function(data){
+                    if(data.status){
+                        $('#sendsuccess-form').fadeIn(500);
+                        $('#login-email').attr('href',data.mail);
+                        $('#login-wrap').show();
+                    }
+                },'json');
+            })
+
+            $('#login').click(function(){
+                var login_email = $('#login-mail').val();
+                var login_pass = $('#login-pass').val();
+                $.post('/Account/checkLogin',{'login_email':login_email,'login_pass':login_pass},function(data){
+                    if(data.code==1){
+                        $('.error-info').text('');
+                        $('#error-info-mail-log').text(data.email);
+                        $('.error-info-pass-log').text(data.pass);
+                        $('.error-info').css('display','block');
+                    }
+                    if(data.code==2){
+                        $('.error-info').text('');
+                        $('#error-info-mail-log').text(data.msg);
+                        $('.error-info').css('display','block');
+                    }
+                    if(data.code==3){
+                        $('.error-info').text('');
+                        $('.error-info-pass-log').text(data.msg);
+                        $('.error-info').css('display','block');
+                    }
+                    if(data.code==4){
+                        window.location.reload();
+                    }
+                },'json');
+            })
+
+
+            $('#post_resume').click(function(){
+                var post = this;
+                /*新增判断是否未在投递时间内*/
+                var time_id = $(this).attr('data-id');
+                if(time_id == 7){
+                    $("#login-wrap").show();
+                    $('#receive_div').show();
+                    return false;
+                }
+
+                /*判断到岗时间是否符合*/
+                var attend = $(this).attr('data-type');
+                if(attend == 'false'){
+                    $("#login-wrap").show();
+                    $('#attend_div').show();
+                    return false;
+                }
+
+                var resume_type = $(".choosen").attr('data-value');
+                $.post('/Post/checkComplete',{resume_type : resume_type},function(data){
+                    if(data.status == 'fail'){
+                        $("#login-wrap").show();
+                        $('#resume-finish').fadeIn(300);
+                    }else{
+                        resumePost(post);
+                    }
+                },'json')
+
+            });
+
+
+
+            $('.more').click(function(){
+                top.location.reload();
+            });
+
+            $('#resume-en').click(function(){
+                var v = $(this).attr('data-value');
+                if(v == ''){
+                    return false;
+                }
+                $(this).addClass('active');
+                $('#resume-ch').removeClass('active')
+            });
+            $('#resume-ch').click(function(){
+                $(this).addClass('active');
+                $('#resume-en').removeClass('active')
+            });
+        })
+
+        function resumePost(obj){
+            var d = $(obj).attr('data-id');
+            if(d > 1){  //是否第一次点击
+                return false;
+            }
+            $(obj).attr('data-id',2);
+            var enId = $('input[name=enId]').val();
+            var ptId = $('input[name=ptId]').val();
+            var rsId = $('input[name=rsId]').val();
+            var email = $('input[name=email]').val();
+            var defaultId = $('input[name=defaultId]').val();
+            var button = $('#post_resume');
+            var url = location.href;
+            $.post('/Post/resumePost',{'enId' : enId, 'ptId' : ptId, 'rsId' : rsId, 'email' : email,
+                'defaultId' : defaultId},function(data){
+                if(data.status == 'success'){
+                    button.hide();
+                    $('#resume-finish').hide();
+                    $('.resume-box-e').hide();
+                    $('#attend_div').hide();
+                    $('#close-span3').attr('href',url);
+                    $("#login-wrap").show();
+                    $(".success-box").fadeIn(500);
+                    $('.deliveryed').show();
+                }else{
+                    button.show()
+                    $('.deliveryed').hide();
+                    alert(data.msg);
+                }
+            },'json');
+        }
+
+        function closeTime(){
+            $("#login-wrap").hide();
+            $('.q-time4').hide();
+        }
+    </script>
+    <script>
+        var map_small = document.getElementById("smallmap");
+        var map_big = document.getElementById("allmap");
+        myAddEvent(document, 'mousewheel', onMouseWheel);
+        myAddEvent(document, 'DOMMouseScroll', onMouseWheel);
+        myAddEvent(map_small, 'mousewheel',map_stop);
+        myAddEvent(map_small, 'DOMMouseScroll',map_stop);
+        myAddEvent(map_big, 'mousewheel',map_stop);
+        myAddEvent(map_big, 'DOMMouseScroll',map_stop);
+        function map_stop(ev){
+            var e=event|| ev;
+            e.stopPropagation();
+        }
+    </script>
+    <script>
+        WB2.anyWhere(function (W) {
+            var status = WB2.checkLogin();
+            if(!status){
+                W.widget.connectButton({
+                    id: "wb_connect_btn44",
+                    type: '3,2',
+                    callback: {
+                        login: function (o) { //登录后的回调函数
+                            $.post('/Account/weibo',{'data':o},function(data){
+                                    window.location.reload();
+                            },'json')
+                        },
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script>
+        $(function(){
+            $(".reset-default dd").on("click",function(){
+                $(this).addClass('choosen');
+                $(this).siblings().removeClass('choosen');
+            });
+
+            $('#reset-default').click(function(){
+                var resume_type = $(".choosen").attr('data-value');
+                $.post('/Resume/resumeDefaultChange',{resume_type : resume_type},function(data){
+                    if(data.status == 'success'){
+                        window.location.reload();
+                    }
+                },'json');
+            })
+        })
+    </script>
+    <script>
+        $(function(){
+            $('.collected-fn').click(function(){
+                var btn = $(this).attr('data-role');
+                var t = $('.collected-diag-fn').attr('data-type');
+                if(btn == 'login'){
+                    $("#login-wrap").show();
+                    $("#login-box").fadeIn(500);
+                }
+                if(btn == 'collect'){
+                    if(parseInt(t) == 0){
+                        $.post('/Post/collectAdd',{'data':$(this).attr('data-id')},function(rst){
+                            if(rst.code == 100){
+                                $('#collected-btn-fn').removeClass('collected-fn');
+                                $('#collected-btn-fn').addClass('Already-collected');
+                                $('.collected-diag-fn').removeClass('dn');
+                                $('.collected-diag-fn').attr('data-type',1);
+                                setTimeout(function(){
+                                    $('.collected-diag-fn').addClass('dn');
+                                },5100)
+                            }
+                        },'json')                        
+                    }
+                }
+            })
+
+            $('.share-btn-fn').click(function(event){
+                if(event.stopPropagation){
+                    event.stopPropagation();
+                }else{
+                    event.cancelBubble = true;//ie8以下
+                }; 
+                var t = $(this).attr('data-type');
+                if(t == 'false'){
+                    $('.share-position-fn').removeClass('dn');
+                    $(this).attr('data-type','true');
+                }
+                if(t == 'true'){
+                    $('.share-position-fn').addClass('dn');
+                    $(this).attr('data-type','false');                   
+                }
+            })
+
+            $('.weixin-logo-fn').click(function(){
+                $('.weixin-code-fn').removeClass('dn');
+            })
+
+            $('.close-area-fn').click(function(){
+                $('.weixin-code-fn').addClass('dn');
+            })
+
+            $('.sina-logo-fn').click(function(){
+                var url = location.href;
+                var reply = document.getElementsByTagName('title')[0].text;
+                    reply = reply + '（'+$('.region-name').text()+'）';
+                var imgsrc = $('.region-name').attr('data-logo');
+                var appkey = '3247801202';
+                var uid = '5708047397';
+                shareToWeibo(url,reply,imgsrc,appkey,uid);
+            })
+
+            $(document).click(function(){
+                $('.share-position-fn').addClass('dn');
+                $('.share-btn-fn').attr('data-type','false'); 
+            })
+
+            $('#blind-email-fn').click(function(){
+                window.location.href = '/Account/mailBlind';
+            })
+        })
+//微博分享js
+var shareToWeibo = function(url, reply, imgsrc , appkey ,uid,callback) {
+        callback = callback || function(){}
+        javascript:void((
+            function(s,d,e){
+               var f='http://v.t.sina.com.cn/share/share.php?'; var p=['url='+e(url),'&title=',e(reply),'&appkey=' + appkey].join('');
+               if(imgsrc !== false ) {
+                   p += '&pic='+imgsrc;
+                }
+                r = "&searchPic=false&ralateUid="+uid;
+                function a(){
+                    if(!window.open([f,p,r].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join(''))){
+                    }
+                };
+                if(/Firefox/.test(navigator.userAgent)){
+                    setTimeout(a,0);
+                }else{
+                    a();
+                }
+                callback();
+            }
+        )(screen,document,encodeURIComponent));
+    };
+    </script>
+</block>
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/enterprise-practice.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/enterprise_center.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/fonts/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/login.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/login-box.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/email-success.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/rebulid-position.css">
+</block>

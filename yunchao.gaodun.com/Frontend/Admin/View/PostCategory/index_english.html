@@ -1,0 +1,86 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+<form action="/index.php?s=/Admin/PostCategory/englishSave" method="post">
+<div id="less-classify" class="col-md-12">
+	<div class="panel" id="class-panel">	
+		<div class="panel-heading">
+				<h3 class="panel-title">设置岗位分类英文名称</h3>
+		</div>
+				<notempty name="cate" >
+						<foreach name="cate" item="cateItem">
+							<div class="class-one" item="0">
+									<div class="class-box">
+											<span class="open-cate" onclick=" closecate(this)">-</span>
+											<div class="class-title">{$cateItem.title}</div>
+											<input type="text" class="form-control english-field" placeholder="输入英文名称" name="title_en[{$cateItem.pkid}]" value="{$cateItem.title_en}">
+						
+									</div>
+									<!-- two -->
+								<foreach name="cateItem.second" item="secondItem" key="tkey">
+									<div class="class-two">
+										<div class="class-box class-box-one">
+										<div class="class-title class-title-one">{$secondItem.title}</div>
+										<input class="form-control english-field" type="text" name="title_en[{$secondItem.pkid}]" placeholder="输入英文名称" value="{$secondItem.title_en}">
+										</div>
+										
+									<!-- three -->
+											<foreach name="secondItem.second" item="thirdItem" key="ykey">		<div class="class-box class-box-two">
+														<div class="class-title class-title-one">{$thirdItem.title}</div>
+														<input class="form-control english-field" type="text" name="title_en[{$thirdItem.pkid}]" placeholder="输入英文名称" value="{$thirdItem.title_en}">
+													</div>	
+											</foreach>
+								
+									</div>
+								</foreach>								
+							</div>				
+						</foreach>
+				</notempty>
+
+
+	</div>
+</div>
+
+<div class="form-group" style="padding-top:10px;">
+    <div class="col-sm-12" style="margin:auto text-align:center;">
+        <div class="container" style="width:145px;">
+            <button type="submit" class="btn btn-turquoise">保存</button>
+            <a href="/index.php?s=/Admin/PostCategory/index" role="button" class="btn btn-red">返回</a> 
+        </div>          
+    </div>
+</div>
+</form>
+</block>
+<block name="style">
+<style>
+#new-cate{color: #ffffff;margin-left: 20px;}
+#less-classify .class-box{background: #f6f6f6;height: 36px;margin-bottom: 10px;line-height:36px;padding: 2px;}
+#less-classify .class-title{float: left;padding-left: 10px;}
+#less-classify .class-box-one{margin-left: 40px;}
+#less-classify .class-modify{float: right;width:206px;}	
+#less-classify .add-span{background-color: #00b19d;cursor: pointer;color: #ffffff;padding: 3px 19px;}
+#less-classify .mod-span{background-color:#555555;cursor: pointer;color: #ffffff;padding: 3px 12px; }
+#less-classify .del-span{background-color:#cc3f44;cursor: pointer;color: #ffffff;padding: 3px 12px; }
+#less-classify .open-span{background-color:#114f8e;cursor: pointer;color: #ffffff;padding: 3px 12px; }
+#less-classify .class-box-two{margin-left: 80px;}
+#less-classify .button-class{text-align: center;}
+#less-classify .input-class{width: 120px;height: 34px; border: 1px solid #ccc;padding-left: 5px;}
+#less-classify .class-two{display: block;}
+#less-classify .open-cate{float: left;display: inline-block;width: 36px;height: 36px;text-align: center;color: #666666;font-size: 20px;cursor: pointer;}
+#less-classify  .english-field{width:250px;float:right;}  
+</style>
+</block>
+<block name="script">
+	<script>
+	function opencate(obj){
+		$(obj).parents('.class-one').find('.class-two').show();
+		$(obj).text('-');
+		$(obj).attr('onclick','closecate(this)');
+	}
+	function closecate(obj){
+		$(obj).parents('.class-one').find('.class-two').hide();
+		$(obj).text('+');
+		$(obj).attr('onclick','opencate(this)');
+	}
+    </script>
+</block>

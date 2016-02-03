@@ -1,0 +1,41 @@
+<!--简历安装插件弹框-->
+<div class="sendsuccess-form resume-set-up-diag" id="download-notice">
+    <h3 class="sendsuccess-title"><span class="sendsuccess-title-notice">提示</span>
+        <span class="sendsuccess-title-close" id="close-download">
+            <img src="__PUBLIC__/static/images/close-icon.png" alt="">
+        </span>
+    </h3>
+    <ul class="container-content ready-resume-upload">
+        <li><span>预览附件简历需先下载插件</span>
+            <a href="{$download_url}">
+                插件下载
+            </a>
+        </li>
+        <li><span>如果不清楚如何安装请查看</span>
+            <a href="/Index/other" target="_blank">帮助中心</a>
+        </li>
+    </ul>
+    <span class="already-set-up">本机已安装插件，今后不再弹出此提示！</span>
+</div>
+
+<script>
+    //简历安装插件弹框
+    $(function(){
+        var c=0;
+        $(".already-set-up").on("click",function(){
+            if(c){
+                $(this).removeClass('already-tick').addClass('already-non-tick');
+                c=0;
+            }else{
+                $(this).addClass('already-tick').removeClass('already-non-tick');
+                c=1;
+            }
+            $.get('/Student/cookieSet/status/'+c);
+            $('.preview_resume').children('a').attr('data-status',c);
+        });
+        $('#close-download').click(function(){
+            $('#download-notice').hide();
+            $('#login-wrap').hide();
+        })
+    });
+</script>

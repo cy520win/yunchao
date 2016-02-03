@@ -1,0 +1,92 @@
+<extend name="Public:base" />
+<block name="title"><title>高顿实习</title></block>
+<block name="right-main">
+	<div class="col-md-12">
+				
+					<div class="panel panel-default">
+						<div class="panel-heading">
+					
+							<h3 class="panel-title-contact"><a href="//index.php?s=/Admin/Enterprise/erpLists">ERP联系人</a></h3>
+							<div class="panel-options">
+								<a href="#" data-toggle="panel">
+									<span class="collapse-icon">–</span>
+									<span class="expand-icon">+</span>
+								</a>
+								
+							</div>
+						</div>
+						<div class="panel-body">
+									<div class="form-group">
+									<div class="row">
+									<div class="col-md-9">
+
+										<form action="/index.php?s=/Admin/Enterprise/erplists" method="post">
+									<label class="control-label" for="field-1" style="padding-top:5px;float:left;margin-right:8px;">查询:</label>
+										<input type="text" class="form-control" id="field-1" placeholder="查询企业名、联系人、联系邮箱" style="width:35%;float:left;margin-right:8px;" name="w" value="{$word}">
+                                        <button class="btn btn-warning" style="float:left;">搜索</button>
+                                        </form>
+								</div>	
+									<div class="col-md-3">
+									   <div class="row">
+									   <div class="col-md-10"></div>			
+                               <div class="col-md-2">
+                               </div>
+                                </div>		  
+									</div>
+									
+								</div>
+									</div>
+							<div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+									
+								
+								<table cellspacing="0" class="table table-small-font table-bordered table-striped">
+									<thead>
+										<tr>
+											<th data-priority="1">ID</th>
+											<th data-priority="1">姓名</th>
+											<th data-priority="1">联系邮箱</th>
+											<th data-priority="1">所属公司</th>
+											<th data-priority="1">类型</th>
+											<th data-priority="1">推送状态</th>
+											<th data-priority="1">推送时间</th>
+											<th data-priority="6">备注</th>
+											<th data-priority="6">创建时间</th>
+											<th data-priority="6">查看</th>
+										</tr>
+									</thead>
+									<tbody>
+										<notempty name="enterpriselist">
+										<foreach name="enterpriselist" item="rd">	
+											<tr>
+												<td>{$rd.pkid}</td>
+												<td>{$rd.name}</td>
+												<td>{$rd.contact_mail}</td>
+												<td>{$rd.full_name}</td>
+												<td>
+													{$text[type][$rd[type]]}
+												</td>
+												<td>{$text[status][$rd[erp_status]]}</td>
+												<td>{$rd.erp_post_time}</td>
+												<td>{$rd.erp_msg}</td>
+												<td>{$rd.create_time}</td>
+												<td><a href="/index.php?s=/Admin/Enterprise/contact/id/{$rd.enterprise_id}/cid/{$rd.pkid}">查看</a></td>
+											</tr>
+										</foreach>
+										<else/>
+											<tr>
+												<td colspan="10">暂无数据</td>
+											</tr>
+										</notempty>
+
+								</tbody>
+								</table>
+								<div class="row">
+								<div class="col-md-12" style="text-align:right;">
+									{$page}
+							</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+</block>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+    <title>高顿实习-学生简历预览</title>
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/bootstrap.css">
+	<link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-core.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-forms.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/public.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/personal_center.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/resume_look.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/resume_view_rebuild.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/print.css" media="print">
+    <script src="__PUBLIC__/static/core/js/jquery-1.11.1.min.js"></script>
+    <!--[if lte IE 9]>
+        <script src="__PUBLIC__/static/js/respond.min.js"></script>
+        <script src="__PUBLIC__/static/js/jsml5.js"></script>
+        <link rel="stylesheet" href="__PUBLIC__/static/css/ie8.css">
+    <![endif]-->
+<script>
+    function print2(){
+        $('#recommand-student').hide();
+        $('.printer-area').hide();
+        $('.distance-bottom-2').css('float','none');
+        $('.distance-bottom-2').css('margin','0 auto');
+        window.print();
+    }
+    function getrecom(id){
+        $.post('/Student/ajaxRecomStu',{'data':id},function(data){
+            $('#recommand-student2').html('<div class="title">相似的学生简历</div>'+data.msg);
+        },'json')
+    }
+
+    function upResume(id){
+        $.post('/ResumePost/updateView',{'pkid':$('#invite-area-btn').attr('data-id'),'status':id},function(data){
+            if(data.status){
+                if(id == 3){
+                    window.location.href = "/ResumePost/allow";
+                }
+                if(id == 4){
+                    window.location.href = "/ResumePost/improper";
+                }
+                if(id == 5){
+                    window.location.href = "/ResumePost/wait";
+                }
+            }else{
+                window.location.reload();
+            }
+        },'json')
+    }
+    
+    $(function(){
+        $("#down-area").bind('click',
+            function(av){
+                av.stopPropagation();
+                var au=$(this).children("ul");
+                if(au.is(":hidden")){
+                    au.removeClass("dn")
+                }else{
+                    au.addClass("dn")
+                }
+            }
+        )
+        $(document).click(function(){
+            var e=$("#down-area").children('ul');
+            if(!e.is(":hidden")){
+                e.addClass("dn")
+            }
+        })
+    });
+</script>
+</head>
+<body class="personal_center" id="look_page">
+{$titleHtml}
+<!--中间部分  主要内容开始 -->
+<div class="center-content" style="padding-top:65px">
+		
+    <div class="row">
+    <!-- LEFT START -->
+        <div class="col-md-9 distance-bottom-2">
+            {$centerHtml}
+        </div>
+	<!-- LEFT END -->
+	<!-- RIGHT START-->
+        <div class="col-md-3" id="recommand-student">
+           <div class="hot-enterprise" id="recommand-student2">
+                <div class="title">相似的学生简历</div>
+                    <empty name="recommand">
+                    <div class="enterprise-list hot-active no-one" style="text-align: center;padding: 10px;">
+                     <b>暂无</b>
+                    </div>
+                    <else/>
+                        {$recommand}
+                    </empty>   
+            </div> 
+    	</div>
+    </div>
+	<!-- RIGHT END -->
+</div>
+<!--更新footer-->
+<if condition="$invite.status eq false">
+<div class="bottom-faction">
+    <include file="EnStudent:en_resume_pre_footer" />
+</div>
+</if>
+<!-- 用于推送回调预览操作栏 -->
+<if condition="$invite.status eq true">
+    <div class="bottom-faction" id="invite-area-btn" data-id="{$invite.id}">
+      <div class="center-content">
+            <div class="col-md-9">
+                <div class="button-area button-back button-area-fn">
+                    <button onclick="javascript:window.location.href='/'">回到首页</button>    
+                </div>
+                <div class="button-area button-area-fn">
+                <if condition="$invite.wait eq FALSE">
+                    <button onclick="upResume(5)">待定</button>
+                </if>
+                    <button onclick="upResume(3)">允许面试</button> 
+                    <button onclick="upResume(4)">不合适</button>    
+                </div>
+                <!-- 下载打印 -->
+                <div class="button-area button-area-down-fn">
+                    <a class="printer-area" href="javascript:window.print()">
+                        <img src="__PUBLIC__/static/images/printer.png" alt="">
+                    </a>
+                    <div class="down-load-area" id="down-area">
+                        <a <eq name="CONTROLLER_NAME" value="PageOffice">href="{$resume_type['file_path']}"
+                        download="{$resume_type['resume_name']}"</eq> >
+                        <img src="__PUBLIC__/static/images/load_down.png" alt="">
+                        </a>
+                        <neq name="CONTROLLER_NAME" value="PageOffice">
+                            <ul class="choose-save-model dn">
+                                <eq name="CONTROLLER_NAME" value="Student">
+                                    <li><a href="/Resume/resumeDownload/type/1/resume_id/{$resume_id|enInt}">PDF</a></li>
+                                    <li><a href="/Resume/resumeDownload/type/2/resume_id/{$resume_id|enInt}">DOC</a></li>
+                                    <else/>
+                                    <li><a href="/Resume/enResumeDownload/type/1/resume_id/{$resume_id|enInt}">PDF</a></li>
+                                    <li><a href="/Resume/enResumeDownload/type/2/resume_id/{$resume_id|enInt}">DOC</a></li>
+                                </eq>
+                            </ul>
+                        </neq>
+                    </div>
+                </div>
+          </div>
+      </div>
+    </div>
+</if>
+</body>
+</html>

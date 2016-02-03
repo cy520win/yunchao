@@ -1,0 +1,184 @@
+<extend name="Public:layout" />
+<block name="title"><title>{$info.full_name|name2ellipsis=18}-高顿实习</title></block>
+<block name="content">
+<!--中间部分  主要内容开始 -->
+<div class="center-content">
+    <div class="row">
+        <!-- LEFT START -->
+        <div class="col-md-9">
+            <!--企业简介-->
+            <div class="enterprise-profile">
+                <div class="enterprise-logo enterprise-logo-img">
+                    <p>
+                        <img src="{$info.logo}">
+                    </p>
+                </div>
+                <div class="profile">
+                    <div class="title">
+                        <span>{$info.full_name|name2ellipsis=19}</span>
+                        <img class="city-logo" src="__PUBLIC__/static/images/citylogo.png">
+                        <i class="mt2">{$info.city_name}</i>
+                        <notempty name="info.edit_auth">
+                            <eq name="info.edit_auth" value="1">
+                                <a href="/Enterprise/edit"><i class="fa fa-pencil" style="margin-right:5px;"></i>编辑</a>
+                            </eq>
+                        </notempty>
+                    </div>
+                    <p class="motto">
+                    <notempty name="info.ideality">“{$info.ideality}”</notempty>&nbsp;
+                    </p>
+                    <p class="scale">行业：{$info.industry_title}&nbsp;&nbsp;&nbsp;&nbsp;企业规模：{$info.scale_title}</p>
+                    <div class="link">主页：<a href="{$info.website}" target="_blank">{$info.website}</a></div>
+                    <div class="welfare">
+                        <notempty name="info.welfare_id">
+                            <foreach name="info.welfare_id" item="welfareItem">
+                                <span>{$list['welfareList'][$welfareItem['welfare_id']]['title']}</span>
+                            </foreach>
+                        </notempty>
+                    </div>
+                </div>
+            </div>
+
+            <notempty name="info.edit_auth">
+                <eq name="info.edit_auth" value="1">
+                        <div class="en-introduction">
+                            <div class="en-title">
+                                <p>联系资料</p><span class="wz">（该信息其他企业和学生不可见）</span><span class="line"></span>
+                                <a href="/Enterprise/edit#contact_area"><i class="fa fa-pencil" style="margin-right:5px;"></i>编辑</a>
+                            </div>
+                            <div class="en-cont">
+                                <p>联系人：<span>{$contact.name}</span></p>
+                                <p>手机：<span>{$contact.mobile}</span></p>
+                                <p>座机：<span>
+                                    <notempty name="contact.phone_code">{$contact.phone_code}</notempty><notempty name="contact.phone_number">-{$contact.phone_number}</notempty><notempty name="contact.phone_ext">-{$contact.phone_ext}</notempty>
+                                </span></p>
+                            </div>
+                        </div>                    
+                </eq>
+            </notempty>
+            
+            <!--企业介绍-->
+            <div class="enterprise-introduction">
+                <div class="title">
+                    企业介绍
+                    <span></span>
+                </div>
+                <div id="desc" class="pdl0">{$info.description|nl2br}</div>
+            </div>
+
+            <!--实习职位-->
+            <div class="internship-position">
+                <div class="title">
+                    实习职位
+                    <span></span>
+                </div>
+            </div>
+
+
+
+            <!--职位列表-->
+
+            <div class="internship-list">
+                <notempty name="postList">
+                    <foreach name="postList" item="postItem">
+                        <a class="list"
+                             href="/Post/info/id/{$postItem.pkid|enInt}" target="_blank">
+                            <div class="title">
+                                <span style="color:#06bad2">{$postItem.title}</span>
+                                <img class="city-logo" src="__PUBLIC__/static/images/citylogo.png">
+                                <p>{$postItem.region_name}</p>
+                            </div>
+                            <div class="date">发布时间：{$postItem.create_time|time2Unit}</div>
+                            <div class="details">{$list['eduList'][$postItem['education']]}<span>|
+                            </span>{$postItem['major_title'] ? $postItem['major_title'] : '专业不限'}<span>|
+                            </span>每周工作{$postItem.week_available}天<span>|</span>
+                                日薪
+                                {$list['rangeList'][$postItem['salary_range']] ?
+                                $list['rangeList'][$postItem['salary_range']] : '无'}</div>
+                        </a>
+                    </foreach>
+                    <else/>
+                        <div class="no-one">
+                            暂未发布岗位
+                        <eq name="info.edit_auth" value="1">     
+                        <div class="posting-position-area">
+                            <a  href="/ResumePost/add" class="posting-position-button">发布职位</a>
+                        </div>
+                        </eq>
+                        </div>  
+                </notempty>
+
+                <!--分页按钮-->
+                <notempty name="page">
+                    <div class="container pagination_center">
+                    {$page}
+                    </div>
+                </notempty>
+                <notempty name="postList">
+                <eq name="info.edit_auth" value="1">
+                <div class="posting-position-area">
+                    <a  href="/ResumePost/add" class="posting-position-button">发布职位</a>
+                </div>
+                </eq>
+                </notempty>
+            </div>
+
+        </div>
+        <!-- LEFT END -->
+        <!-- RIGHT START-->
+        <div class="col-md-3">
+            <eq name="info.account_type" value="1">
+                <include file="menu" />
+            <else/>
+                <div class="hot-enterprise" id="hot-enterprise">
+                <div class="title">热门企业</div>
+                    <notempty name="hotEnterprise">
+                        <foreach name="hotEnterprise" item="hotEnterpriseItem">
+                            <div class="enterprise-list">
+                                <div class="enterprise-list-logo">
+                                    <a href="/Enterprise/info/id/{$hotEnterpriseItem.pkid|enInt}" target="_blank"><img src="{$hotEnterpriseItem.logo}"></a>
+                                </div>
+                                <div class="enterprise-information">
+                                    <p class="students">
+                                        <a href="/Enterprise/info/id/{$hotEnterpriseItem.pkid|enInt}" target="_blank">
+                                            {$hotEnterpriseItem.full_name}
+                                        </a>
+                                    </p>
+                                    <p>{$hotEnterpriseItem.city_name}</p>
+                                    <p>{$hotEnterpriseItem.industry_title}</p>
+                                </div>
+                            </div>
+                        </foreach>
+                    </notempty>
+                <a href="/Enterprise/lists" class="more">更多热门企业 <img
+                        src="__PUBLIC__/static/images/enterprise_basic_information/arrow.png"></a>
+            </div>
+            </eq>
+        </div>
+        <!-- RIGHT END -->
+    </div>
+</div>
+</block>
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/enterprise_center.css">
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            var hotE=document.getElementById("hot-enterprise");
+            var scTop=$("#hot-enterprise").offset().top;
+            window.onscroll=function(){
+                var sc=document.body.scrollTop+document.documentElement.scrollTop;
+                if(sc>scTop){
+                    hotE.style.position="fixed";
+                    hotE.style.width="277.5px";
+                    hotE.style.top="0";
+                }else{
+                    hotE.style.position="static";
+                }
+            }
+        })
+    </script>
+</block>

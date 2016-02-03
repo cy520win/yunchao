@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+body{ background: #f3f5f8;}
+
+/* 1*/
+.ipad-wrap > .top{ width: 100%; height: 215px; background:#00abf0;}
+.ipad-wrap > .logo{ width:580px; height: auto; margin: -110px auto 0;text-align: left;}
+.ipad-wrap > .logo img{width:211px;}
+.ipad-wrap > .logo >img{ max-width: 100%;}
+.ipad-wrap > .main{ width: 580px; height: auto; overflow: hidden; padding-bottom: 95px; background: #fff; border: 1px solid #dddddd; border-radius: 8px; margin: 8px auto 0; }
+.ipad-wrap > .main > p{ color: #565656; text-align: center;}
+.ipad-wrap > .main > p span{background:url("../images/account/no-choose.png") no-repeat left center;padding-left:30px;font-size:16px;}
+.ipad-wrap > .main > p.choose-area{margin-top:20px;}
+.ipad-wrap > .main > p span:last-child{margin-left:58px;}
+.ipad-wrap > .main > p span.choosen{background:url("../images/account/choosen.png") no-repeat left center;color:#00acf0;}
+.ipad-wrap > .main > p.p1{ font-size: 20px; line-height: 26px; margin-top: 55px;}
+.ipad-wrap > .main > p.p2{ font-size: 16px; line-height: 18px; margin-top: 18px;}
+.ipad-wrap > .main > p.p3{ font-size: 14px; line-height: 14px; margin-top: 22px;color:#909090;}
+
+.input-wrap{ width: 520px; height: auto; overflow: hidden; margin: 25px auto 0;}
+.input-wrap > .input{ width: 415px; height: 38px;background: #ffffff;border: 2px solid #f2f2f2; border-radius: 5px; margin-left: 52px;background:#f0f0f0;}
+.input-wrap > .input >span{float: left;  margin:13px 8px 0 16px; display: block;}
+.input-wrap > .input >span.address{ background: url(../images/account/address-ipad.png) no-repeat center center;height: 11px;width: 14px;}
+.input-wrap > .input >span.password{ background: url(../images/account/password-ipad.png)  no-repeat center center; width: 13px; height: 15px;}
+.input-wrap >.focused{ border: 2px solid #00acf0 !important;}
+.input-wrap >.error{ border: 2px solid #ff5d38 !important;}
+
+.input-wrap > .input >input{ width: 295px; height: 38px; line-height: 38px; color: black; border: none; outline: none;background:#f2f2f2;}
+.input-wrap >i{width: 17px; height: 17px; float: left; margin-top: 13px; display: block; margin-left: 13px;background: url(../images/account/icon.png) -1px -30px no-repeat;}
+.input-wrap > .input-error{ clear: both; padding-left: 16px; margin-left: 72px; margin-top: 9px; float: left; display: block;background: url(../images/account/icon.png) -1px -48px no-repeat; font-size: 14px; color: #ff5d39; line-height: 14px;}
+
+.main > .creat{ width:415px; display: block; height: 42px; transition:.3s; font-size:18px; cursor:pointer; color: #fff; line-height: 45px; text-align: center; background: #00acf0; border-radius: 5px; margin: 50px auto 0; }
+.main > .creat:active{ background: #34b9f7;}
+
+.ipad-wrap > .footer {width: 100%;height: 60px;line-height: 60px;text-align: center; background: #00acf0;font-size: 14px;color: #ffffff; margin-top: 70px;}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+	.ipad-wrap > .footer{ position: fixed; bottom: 0;}
+}
+
+
+/* 2 */
+.ipad-wrap > .main > .main-c{ width: 79%; margin: 0 auto; padding-top:80px;}
+.ipad-wrap > .main > .main-c >p.p1{ color: #565656; font-size: 20px; line-height:20px;}
+.ipad-wrap > .main > .main-c >p.p2{ color: #565656; margin-top: 15px; font-size: 20px; line-height: 20px;}
+
+.ipad-wrap > .main > .main-c > .bind-mail{ width: 100%; margin: 45px 0 55px; transition:.3s; border-radius: 5px; text-align: center; background: #00acf0; height: 42px; line-height: 42px; font-size: 18px; color: #fff;}
+.ipad-wrap > .main > .main-c > .bind-mail:active{ background: #34b9f7;}
+.ipad-wrap > .main > .main-c >p.p3{ color:#909090; font-size: 16px; line-height: 16px;}
+.ipad-wrap > .main > .main-c >p.p4{ color:#909090; font-size: 16px; margin-top: 18px; line-height: 16px;}
+.ipad-wrap > .main > .main-c >p.p4 >a{ text-decoration: underline; color: #00acf0;}
+.ipad-wrap > .main > .main-c >p.p4 >a:active{color: #34b9f7;}
+
+.ipad-wrap > .succes-wrap{ width: 100%; height: 100%; display: none; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.25); z-index: 9;}
+.ipad-wrap > .succes-box{ width:580px; height: 400px;display:block; position: fixed;  overflow: hidden;top: 50%; margin-top: -200px; left: 50%; margin-left: -290px; background: #ffffff; border-radius: 8px; z-index: 10;}
+.ipad-wrap > .succes-box > .succes-box-title{ width: 100%; height: 50px; line-height: 50px; padding-left: 20px; background: #00acf0;font-size:20px; color: #ffffff;}
+.ipad-wrap > .succes-box > .succes-box-title >img { float: right; margin-right: 44px; display: block; margin-top: 17px; cursor: pointer;}
+.ipad-wrap > .succes-box > p{ font-size: 20px; color: #565656; text-align: center; line-height: 26px; margin:60px auto 50px;}
+.ipad-wrap > .succes-box > div{ width: 78%; height: auto; overflow: hidden; margin: 0 auto;}
+.ipad-wrap > .succes-box > div >p{ font-size: 16px; color: #565656; line-height: 18px; margin-bottom: 14px; text-align: left;}
+.ipad-wrap > .succes-box > a{ width: 78%; height: 42px; transition:.3s; display: block; margin: 60px auto 0; line-height: 42px; text-align: center;border-radius: 5px; font-size:18px; color: #ffffff; background: #00acf0;}
+.ipad-wrap > .succes-box > a:active{ background: #34b9f7;}
+.ipad-wrap > .paddingb60{padding-bottom:60px;}
+
+/* 3 */
+.ipad-wrap > .main > .center{ width: 250px; height: auto;  margin: 60px auto 0;text-align: center;}
+.ipad-wrap > .main > .center > p.p1{ background:url(../images/account/success-small.png) no-repeat; font-size: 20px; color: #565656; padding-left:55px; height:41px; line-height:41px;color:#00abf0;text-align: left;margin-left:51px;}
+.ipad-wrap > .main > .center > p.p2{ font-size: 16px; line-height: 16px; color: #565656;margin-top: 20px;}
+.ipad-wrap > .main > .center > p.p3{ font-size: 16px; line-height: 16px; color:#909090;margin-top: 60px;}
+.ipad-wrap > .main > .center > p.p3 >a{color: #00acf0;}
+.ipad-wrap > .main > .center > p.p3 >a:active{color: #34b9f7;}
+
+
+
+
+

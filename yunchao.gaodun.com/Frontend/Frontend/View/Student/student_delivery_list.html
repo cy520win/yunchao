@@ -1,0 +1,37 @@
+<notempty name="delivery">
+  <foreach name="delivery" item="dy">
+    <div class="list-area">
+      <div class="title">
+          <span class="post-title"><a href="/Post/info/id/{$dy.id}" target="_blank">{$dy.position}</a></span>
+          <span class="city">{$dy.city}</span>
+          <span class="date">{$text}：{$dy.create_time}</span>
+      </div>
+      <div class="details">
+        <span class="details-left">招聘企业：<a href="/Enterprise/info/id/{$dy.enterprise_id}" target="_blank">{$dy.enterprise}</a></span>
+        <span class="details-left">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <span class="details-left">投递类型：{$dy.send_type}</span>
+        <div class="details-right">
+            <notempty name="dy.hr_remark">
+                <span class="q-yx" data-type="true">{$dy.status}<img src="__PUBLIC__/static/images/delivery-icon2.png"></span>
+                <span class="yx-box">
+                    <i></i>
+                    <p>{$dy.hr_remark}</p>
+                </span>
+                <else/>
+                <span>{$dy.status}</span>
+            </notempty>
+        </div>
+      </div>
+    </div>          
+  </foreach>
+  <div class="page-list">
+    <div class="page-list-a">                    
+      <notempty name="page.btn.prev">{$page.btn.prev}</notempty>
+      <notempty name="page.btn.next">{$page.btn.next}</notempty>
+    </div>
+  </div>
+<else/>
+<div class="no-one">
+    暂时还没有查询到相关信息
+</div>  
+</notempty>

@@ -1,0 +1,44 @@
+<div class="input_column col-md-12 input-cert-input" id="input-certification">
+    <div class="row">
+    <div class="container-fluid">
+    <form role="form" class="basic-information-colunm form-certification-edit" id="form-certification">
+    	<input type="hidden" name="cert_id" value="{$base.pkid}">
+		<div class="form-group col-md-12 input-distance adjust-2">
+		      	<div class="col-md-4  close-distance ml10">
+					<input type="text" readonly="readonly" class="form-control normal-input cert-finish-time2 laydate-icon" id="certification-11" name="finish_time" value="{$base.finish_time}" onclick="getdate('certification-11',event)" placeholder="输入日期">
+				</div>
+		    <div class="col-md-3  close-distance" id="certification-2">
+				<select class="form-control normal-input cert-select"  id="sun-3" onchange="getcertEdit(this)">
+						<foreach name="certificate" item="cert">
+							<option value="{$key}" <if condition="$base.certificate_type eq $key">selected</if> >{$cert}</option>
+						</foreach>
+				</select>
+			</div>
+           	<div class="col-md-4  close-distance" id="certification-3">
+			   <select class="form-control certificate-option2 normal-input cert-id cert-select <if condition='$base.certificate_id eq 0'>dn</if>"  id="sun-3-2" name="certificate_id">
+			   		<foreach name="base.child" item="sec">
+			   			<option value="{$key}" <if condition="$base.certificate_id eq $key">selected</if> >{$sec}</option>
+			   		</foreach>
+				</select>
+
+				<input type="text" name="certificate_name" class="form-control certificate-option2 normal-input <if condition='$base.certificate_id gt 0'>dn</if>" placeholder="输入证书名"  value="{$base.certificate_name}" id="cert-name-other-edit" <if condition='$base.certificate_id gt 0'>disabled="disabled" </if> >
+				<span class="error-info col-md-4 necessary span-info-error cert-repeat2 dn"></span>
+			</div>
+		</div>
+		<div class="form-group col-md-12">
+          	<div class="col-md-2  close-distance ml10" id="certification-4">
+				<select class="form-control cert-status2 cert-select"  id="sun-3" name="status">
+					<option value="2" <if condition="$base.status eq 2">selected</if> >通过</option>
+					<option value="1" <if condition="$base.status eq 1">selected</if> >在读</option>
+				</select>
+			</div>
+        </div>
+		<div class="form-group col-md-12">                              
+       		<button type="submit" class="btn btn-info confirm-button information-submit-button" onclick="return savecert2(this)">{$Think.config.L_SAVE}</button>	
+        	<button type="button" class="btn confirm-button information-cancel-button" onclick="cancle(this)">{$Think.config.L_CANCLE}</button>
+        	<button type="button" class="btn confirm-button delete_button" onclick="return delcert(this,{$base.pkid})">{$Think.config.L_DELETE_SINGLE}</button>	
+      	</div>
+    </form>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+/*//有效职位页面的样式*/
+.list-right >span{width:auto;}
+.list-right >span{padding:0 10px;}
+.list-right >span.editor{margin-left:0px;}
+.list-right >span.refrash{background-color:#05b5c3}
+.effective-resume-list > .list-right{width:255px;}
+.refrash-diag{background:#24d3c8;opacity: 0.8;text-align:center;width:190px;position:absolute;right:0px;padding-bottom:34px;-webkit-transform: translateY(30px);-moz-transform: translateY(30px);-ms-transform: translateY(30px);-o-transform: translateY(30px);transform: translateY(30px);-webkit-backface-visibility: hidden;-webkit-transition:  opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;-ms-transition: opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;-moz-transition: opacity 0.3s 0s, visibility 0s 0s,transform 0.5s 0s;transition: opacity 0.3s 0s, visibility 0.3s 0s ,transform 0.5s 0s;opacity:0;visibility:hidden;}
+.refrash-diag span{color:#ffffff;display:block;width:100%;overflow:hidden;}
+.refrash-diag .refrash-close{margin-right: 10px;width: 10px;float: right;cursor: pointer;display:block;margin-top:10px;}
+.is-visible{-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);-o-transform: translateY(0);transform: translateY(0);opacity: 0.8;visibility: visible;}
+.no-refrash-diag{position:relative;position:absolute;right:0px;z-index:2000;display:none;}
+.no-refrash-diag i{width: 0;height: 0;position: absolute;border-left: 8px solid transparent;border-right: 8px solid transparent;border-bottom: 8px solid #01dbce;top: 55px;opacity: 0.8;right:20px;}
+.refrash-content{background: #24d3c8;opacity: 0.8;width: 190px;position: absolute;top: 62px;right:0px;padding:16px 25px;border-radius: 5px;letter-spacing: 2px;box-shadow: 0px 0px 5px 0px rgba( 0, 0, 0,0.3 );color:#ffffff;text-align: left;}
+.refrash-content .refrash-day{color:#fe8b25;display: inline;padding:0 3px;}
+.list-right >span.no-pointer{background-color:#b2b2b2}
+.effective-resume-list{width:87.5%;}
+.treat-resume-header{width:87.5%;}
+.offline-box{right: 122px;}
+.copy-box{right: 50px;}
+.effective-resume-list > .list-left >.date{width:20%;}
+.treat-resume-header >p.p30{width:9%;}
+.copy-box-fn{height: 120px;}
+.copy-button-fn a{color:#ffffff;}

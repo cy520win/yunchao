@@ -1,0 +1,100 @@
+<extend name="Common:resumepost_frame" />
+<block name="title"><title>高顿实习-有效职位</title></block>
+<block name="right">
+    <div class="col-md-9">
+        <div class="fail-resume-right effective-post-list-fn">
+            <div class="resume-right-top">
+                <p>有效职位</p>
+                <i class="line"></i>
+            </div>
+            <notempty name="postList">
+                <div class="treat-resume-header">
+                    <p class="p26">实习职位</p>
+                    <p class="p27">地区</p>
+                    <p class="p28">学历要求</p>
+                    <p class="p29">实习名额</p>
+                    <p class="p30">发布时间</p>
+                    <p class="p31">职位操作</p>
+                </div>
+                <foreach name="postList" item="postItem">
+                    <div class="effective-resume-list" id="offline_{$postItem.pkid}">
+                        <div class="list-left post-invite-list">
+                            <div class="name">
+                                <a href="/Post/info/id/{$postItem.pkid|enInt}" target="_blank">
+                                    {$postItem.title}
+                                </a>
+                            </div>
+                            <div class="city"><p>{$postItem.region_name}</p></div>
+                            <div class="education"><p>
+                                {$list['eduList'][$postItem['education']]}
+                            </p></div>
+                            <div class="num"><p>
+                                <notempty name="postItem.quota">
+                                    {$postItem.quota}人<else/>不限
+                                </notempty>
+                            </p></div>
+                            <div class="date"><p>{$postItem.create_time|time2Unit}</p></div>
+                        </div>
+                        <div class="list-right list-right-effective" >
+                            <span onclick="javascript:location.href='/ResumePost/edit/id/{$postItem.pkid|enInt}'" class="editor">编辑
+                            </span>
+                            <span class="offline" data-id="{$postItem.pkid}">下线</span>
+                            <span class="qrelease copy-button-fn"><a href="/ResumePost/copy/id/{$postItem.pkid|enInt}">复制发布</a></span>
+                            <div class="copy-box copy-box-fn dn">
+                                <!-- <span>复制当前职位信息来</br>发布新职位？</span> -->
+                                <span>复制当前职位信息来</br>发布新职位</span>
+        <!--                         <a class="yes" href="javascript:javascript:location.href='/ResumePost/copy/id/{$postItem.pkid|enInt}'">是</a>
+                                <a class="no" href="javascript:delCopyPost(this)">否</a> -->
+                                <i></i>
+                            </div>
+
+                            <if condition="$postItem.day_diff_disabled eq true">
+                                <span class="reflush refrash" onclick="reflush(this,{$postItem.pkid})">刷新</span>
+                                <div class="refrash-diag">
+                                     <span class="refrash-close"><img src="__PUBLIC__/static/images/enterprise-practice/refrash-close.png" alt=""></span>
+                                    <span class="refrash-span">刷新成功！</span>
+                                </div>
+                            </if>
+                            <if condition="$postItem.day_diff_disabled eq false">
+                                <span class="reflush no-pointer">刷新</span>
+                                <div class="no-refrash-diag">
+                                    <i></i>
+                                    <div class="refrash-content">
+                                    <!-- <span>还有<span class="refrash-day">{$postItem.day_diff_num}</span> --><!-- 天才可以刷新 -->每个职位每1天只能刷新1次</span>
+                                    </div>
+                                </div>
+                            </if>
+
+                        </div>
+
+                        <div class="offline-box box{$postItem.pkid}" style="display: none">
+                            <p>确认下线该职位吗？</p>
+                            <span>下线后将无法接收到任何投递的简历，可在“已下线职位”中重新上线该职位。</span>
+                            <a class="yes" href="javascript:;" data-id="{$postItem.pkid}">是</a>
+                            <a class="no" href="javascript:;" data-id="{$postItem.pkid}">否</a>
+                            <i></i>
+                        </div>
+                    </div>
+                </foreach>
+            </notempty>
+            <div class="no-one" <notempty name="postList">style="display:none"</notempty> >暂时没有有效职位，赶快发布职位吧</div>
+
+            <!--分页按钮-->
+            <div class="container pagination_center">
+                {$page}
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            $('#v-effective').addClass('resume-active');
+        });
+
+    </script>
+</block>
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/rebulid-enterprise.css">
+</block>

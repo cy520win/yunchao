@@ -1,0 +1,211 @@
+<extend name="Public/layout" />
+<block name="title"><title>高顿实习-投递反馈</title></block>
+<!--中间部分-->
+<block name="content">
+    <div class="center-content">
+        <!--中间部分右区-->
+        <div class="row">
+              <div class="col-md-9">
+                              <!--投递列表-->
+                              <div class="left-section-style list-section">
+                                  <div class="list-title-model">
+                                    <div class="container list-container">
+                                        <div class="list-title">
+                                        <span>企业邀请</span>
+                                        <span class="linebg"></span>
+                                        <span class="refresh"><a href="javascript:window.location.reload()"><img src="__PUBLIC__/static/images/enterprise-practice/refresh.png">刷新</a></span>
+                                          <div class="Screening_button_area">
+                                              <div class="container container-screening" id="screening-area">
+                                               <p>累计共收到{$info.invite_total}次邀请</p>
+                                              </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                  </div>
+
+                            <!--职位列表-->            
+                            <div class="list-content col-md-12 no_padding mh">
+
+                              <if condition="$info.type eq 'list'">
+                              <div class="container list-container-content">
+                                <div id="resume-read-box" class="resume-read-box">
+                                    <foreach name="data" item="rd">
+                                        <div class="list-area invited-list-area">
+                                          <div class="title invited-list">
+                                              <span class="post-title"><a href="/Post/info/id/{$rd.post_id|enInt}" target="_blank">{$rd.post_title}</a></span>
+                                              <span class="city">{$rd.city_id|regionIdToname}</span>
+                                              <span class="date">邀请时间：{$rd.invite_time|time2Unit}</span>
+                                          </div>
+                                          <div class="details">
+                                            <span class="details-left invited-post-title"><a href="/Enterprise/info/id/{$rd.enterprise_id|enInt}" target="_blank">企业名称：{$rd.enter_name}</a></span>
+                                            <div class="details-right invited-button-area">
+                                              <if condition="$rd.response_status eq 1 and $rd.valid_status eq 1">
+                                                <span class="accept">接受</span><span class="refuse">拒绝</span>
+                                              </if>
+                                              <if condition="$rd.response_status eq 1 and $rd.valid_status eq 2">
+                                                <span class="down-line">已下线</span>
+                                              </if>
+
+                                              <if condition="$rd.response_status eq 2">
+                                                <span class="accepted">已接受</span>
+                                              </if>
+                                              <if condition="$rd.response_status eq 3">
+                                                <span class="refused">已拒绝</span>
+                                              </if>
+                                            </div>
+                                            <if condition="$rd.response_status eq 1 and $rd.valid_status eq 1">
+                                            <div class="permit-interview-box info-box-invite">
+                                              <span>点击“确定”表示你接受邀请并投简历到该职位</span>
+                                              <a class="yes accepted-btn" href="javascript:;" data-id="{$rd.invite_id|enInt}" data-sid="<?php echo enInt(2);?>">确定</a>
+                                              <a class="no" href="javascript:;">取消</a>
+                                              <i></i>
+                                              </div>
+                                            <div class="refuse-interview-box info-box-invite">
+                                                <span>点击“确定”表示你拒绝投简历到该职位</span>
+                                                <a class="yes accepted-btn" href="javascript:;" data-id="{$rd.invite_id|enInt}" data-sid="<?php echo enInt(3);?>">确定</a>
+                                                <a class="no" href="javascript:;" >取消</a>
+                                                <i></i>
+                                            </div>
+                                            </if>
+                                          </div>
+                                      </div>
+                                    </foreach>
+                                </div>
+                            </div>
+                            <div class="container pagination_center">
+                                {$info.page}
+                            </div>  
+                            </if>
+                            <if condition="$info.type eq 'empty'">
+                                  <div class="no-one">你还没有接受过邀请</div>
+                            </if>
+                                           
+                    </div>
+                  </div>
+            </div>
+            <!-- 中间部分左区-->
+            <div class="col-md-3">
+                <div class="right-section">
+                        <include file="Student:menu" />
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="floor">
+<!--职位以下线 -->
+   <div class="remarkable-diag remarkable-content info-tip">
+        <div class="remarkable-title"><span>提示</span><span class="close close-btn"></span></div>
+        <div class="containter-content">
+        <h1 class="containter-content-title content-title">该职位已下线</h1>
+        <span class="confirm close-btn">确&nbsp;定</span>
+       </div>
+  </div>
+<!--邀请成功框-->
+    <div class="remarkable-diag-success remarkable-content delivery-success invite-tip">
+        <div class="remarkable-title"><span>提示</span><span class="close close-btn"></span></div>
+        <div class="containter-content">
+        <h1 class="containter-content-title">投递成功&nbsp;!</h1>
+      <span class="ready-success">你已投递了该职位，最新的企业反馈请到投递箱中查看。</span>
+        <span class="confirm close-btn">确&nbsp;定</span>
+       </div>
+    </div>
+<!--遮屏-->
+<div class="login-wrap"></div>
+</block>
+
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/core/css/xenon-forms.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/jquery.circliful.css">
+    <link rel="stylesheet" href="__PUBLIC__/static/css/enterprise_invite.css">
+</block>
+<block name="script">
+    <script src="__PUBLIC__/static/core/js/resizeable.js"></script>
+    <script src="__PUBLIC__/static/core/js/joinable.js"></script>
+    <script src="__PUBLIC__/static/js/student_common.js"></script>
+    <script>
+    steMenuInvite();
+    // -----------------
+    $(function(){
+
+        $('.close-btn').bind('click',function(){
+            window.location.reload();
+        })
+
+        $('.accepted-btn').bind('click',function(){
+            var obj = $(this);
+            $.post('/Invitation/inviteAccepted',{'id':$(this).attr('data-id'),'status':$(this).attr('data-sid')},function(rst){
+                if(rst.status){
+                    if(rst.data==2){
+                      $(".login-wrap").fadeIn(300);
+                      $('.invite-tip').fadeIn(300);                      
+                    }
+                    if(rst.data==3){
+                      window.location.reload();
+                    }
+                }
+                if(!rst.status){
+                    if(rst.code!=417){
+                        $(".login-wrap").fadeIn(300);
+                        $('.content-title').text(rst.msg);
+                        $(".info-tip").fadeIn(300);
+                    }else{
+                      $(".login-wrap").fadeIn(300);
+                      $(".info-tip").fadeIn(300);
+                    }
+                }
+            },'json')
+        })
+    })
+    </script>
+
+<script>
+$(function(){
+    
+$(".accept").on("click",function(event){
+  if(event.stopPropagation){
+    event.stopPropagation();
+  }else{
+    event.cancelBubble = true;//ie8以下
+  }
+  $('.info-box-invite').removeClass("is-visible");
+  $(this).parent(".details-right").next().addClass("is-visible");
+});
+$(".refuse").on("click",function(event){
+  if(event.stopPropagation){
+    event.stopPropagation();
+  }else{
+    event.cancelBubble = true;//ie8以下
+  }
+  $('.info-box-invite').removeClass("is-visible");
+  $(this).parent(".details-right").next().next().addClass("is-visible");
+});
+    
+$(document).on("click",function(){
+     $(".permit-interview-box,.refuse-interview-box").removeClass("is-visible");
+});
+
+});                         
+</script>
+<script>
+$(function(){
+$(".close").on("click",function(){
+  $(this).parent().parent().fadeOut(300);
+  $(".login-wrap").fadeOut(300);
+});
+$(".remarkable-content .containter-content .confirm").on("click",function(){
+   $(".login-wrap").fadeOut(300);
+   $(this).parent().parent().fadeOut(300);
+});
+$(".list-right-resume .send-invite").on("click",function(){
+   $(".login-wrap").fadeIn(300);
+   $(".remarkable-diag-success").fadeIn(300);
+});
+});   
+    
+</script>
+</block>
+

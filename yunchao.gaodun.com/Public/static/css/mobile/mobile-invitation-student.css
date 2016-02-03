@@ -1,0 +1,167 @@
+﻿@charset "utf-8";
+
+body{ background: #f4f4f4;}
+*::-webkit-input-placeholder {color:#a5a5a5;font-size:16px;letter-spacing: 1px;}
+*:-moz-placeholder {color:#a5a5a5;font-size:16px;letter-spacing: 1px;}
+*:-ms-input-placeholder {color:#a5a5a5;font-size:16px;letter-spacing: 1px;}
+
+.ipad-wrap{ width: 100%; max-width: 1200px; margin: 0 auto; height: auto; overflow: hidden;}
+
+/* ipad */
+
+
+
+.invitation-wrap-ipad{ width: 90%; height: auto;  overflow: hidden; margin: 0 auto;}
+p.num-ipad{ font-size: 18px; line-height: 18px; color: #999; margin: 25px 0 15px;}
+p.num-ipad >span{ color: #ff8a00; }
+.invitation-wrap-ipad >.invitation-list-ipad{ width: 90%; margin-bottom: 20px; padding: 0 5%; border-bottom: 1px solid #e6e6e6; height: 140px; background: #fff; overflow: hidden; }
+.invitation-list-ipad >.list-title{ width: 100%; margin-top: 28px; height: auto; overflow: hidden; }
+.list-title >*{ display: block; float: left;}
+.list-title >a{ font-size: 22px; color: #63cdff; line-height: 22px; }
+.list-title >span{ color: #a5a5a5; font-size: 16px; line-height: 22px; margin-left: 10px; }
+.list-title >p{  font-size: 16px; line-height: 16px; color: #a5a5a5; float: right; }
+.list-line{ width: 100%; height: 1px; background: #e3e3e3; margin-top: 13px;}
+.list-bottom{ width: 100%; height: auto; overflow: hidden; margin-top: 17px; }
+.list-bottom >p{ font-size: 18px; float: left; line-height: 40px; color: #999999; }
+.list-bottom >p >span{ color: #656565; }
+.list-bottom >span{ width: 110px;cursor: pointer; display: block; font-size: 18px; color: #ffffff; height: 40px; float: right; line-height: 40px; background: #63cdff; border-radius: 5px;}
+.list-bottom >span >img{ margin: -5px 5px 0 10px; }
+.list-bottom >span:first-of-type{background: #f5f5f5;  width: 117px; color: #a5a5a5; margin-left: 20px;}
+.list-bottom >i{ font-size: 18px;  line-height: 40px;color: #656565; font-style:normal; float: right;}
+
+
+/* ipad 弹框 */
+.mask-ipad{width: 100%;height: 100%; display: none; position: fixed; top: 0;left: 0;background: rgba(0,0,0,0.25); z-index: 99998;}
+.invitation-suss-box{ width: 540px; display: none; margin-left: -270px; border-radius: 8px; overflow: hidden; margin-top: -165px; height: 330px; background: #fff; position: fixed; z-index: 99999;  left: 50%; top: 50%; }
+.invitation-suss-box > h2{ width: 100%; height: 50px; position: relative; font-weight: normal;  margin: 0; line-height: 50px; font-size: 24px; color: #ffffff; padding-left: 20px; background: #63cdff; }
+.invitation-suss-box > h2 >img{ position: absolute; width: 19px; height: 19px; top: 15px; right:40px; cursor: pointer;}
+.invitation-suss-box >img{ width: 50px; height: 50px; display: block; margin: 20px auto; }
+.invitation-suss-box >p{text-align: center;  font-size: 24px; line-height: 24px; color: #656565; margin-bottom: 10px;}
+.invitation-suss-box >p.p1{ margin-top: 70px; }
+.invitation-suss-box >a{ width: 180px; font-size: 18px; color: #fff; background: #63cdff; height: 40px; text-align: center; line-height: 40px; display: block; margin: 55px auto 0; border-radius: 5px; }
+.invitation-suss-box > div{ width: 260px; height: 42px; margin: 50px auto 0; overflow: hidden;}
+.invitation-suss-box > div >a{ width: 120px; height: 42px; background: #f3f3f3; display: block; float: left; line-height: 42px; text-align: center; font-size: 18px; color: #999999; border-radius: 5px; }
+.invitation-suss-box > div >a:first-child{ background: #63cdff; color: #fff; margin-right: 20px; }
+
+.mat20{ margin-top: 20px !important; }
+.mat70{ margin-top: 70px !important; }
+
+.invitation-cant-box{ height: 370px; margin-top: -185px;}
+
+.ipad-none{ overflow: hidden; margin-top: 350px;}
+.ipad-none >p:first-child{ font-size: 30px; color: #a5a5a5; text-align: center; line-height: 30px; margin-bottom: 15px;}
+.ipad-none >p:last-child{ font-size: 24px; color: #a5a5a5; line-height: 24px; text-align: center;}
+
+
+
+
+
+/* phone */
+.num-phone{ padding-left: 4%; font-size: 14px; line-height: 37px; color: #999999; }
+.num-phone >span{color: #ff8a00;}
+.list-phone{ width: 100%; margin-bottom: 18px; height: auto;background: #fff; position: relative; border-bottom: 1px solid #f7f7f7; }
+.list-phone > .list-top-phone{ width: 92%;height: auto; border-bottom: 1px solid #f0f0f0; padding:0 4% 9px; overflow: hidden; background: #fff; }
+.list-top-phone >a{ font-size: 18px; display: block; margin-top: 17px; margin-bottom: 15px; line-height: 18px; color: #656565;}
+.list-top-phone >a >span{  font-size: 13px; color: #999999;}
+.list-top-phone >p{ font-size: 14px; line-height: 14px; color: #a5a5a5; margin-bottom: 9px;}
+.list-top-phone >p >span.invite-status-fn{ color: #656565; margin-right: 10px; }
+.list-phone >img.img1{ position: absolute; right: 4%; top: 46px; }
+.list-phone >img.img2{ position: absolute; width: 70px; right: 4%; top: 16px; }
+.list-phone > .list-bottom-phone{ width: 100%; height: auto; position: relative;  overflow: hidden; }
+.list-bottom-phone >a{ display: block; font-size: 15px; color: #63cdff; text-align: center; float: left; width: 50%; height: 24px; padding: 10px 0; }
+.list-bottom-phone >a >img{ display: inline-block; width: 13px; margin-right: 5px;}
+.list-bottom-phone >a:last-child >img{width: 16px;}
+.list-bottom-phone >a:last-child{color:#999999;}
+.list-bottom-phone >i{width: 1px; height: 24px; top: 10px; left: 50%; background: #eaeaea; position: absolute; font-style:normal;}
+
+
+
+.manage-wrap-sus{ width: 100%; display:none;  height: 100%; opacity: 0.5; position: fixed;z-index: 99999;background: #000;top: 0;left: 0;}
+.manage-wrap-box{width: 224px; height: 124px; display:none;  overflow: hidden; background: #fff; border-radius: 8px; z-index: 999999; position: fixed; top: 50%; left: 50%; margin-left: -112px; margin-top: -62px;}
+.manage-wrap-box > .phone-yes-no{ width: 100%; height: 35px; position: absolute; bottom: 0; left: 0; line-height: 35px; border-top: 1px solid #aaaaaa;}
+.manage-wrap-box > .phone-yes-no >a{  display:block; text-align: center; float: left; width: 50%; height: 35px; font-size: 15px; color: #63cdff;}
+.manage-wrap-box > .phone-yes-no >a:first-child{ box-sizing:border-box; -webkit-box-sizing:border-box;border-right: 1px solid #aaa; border-box:box-sizing;}
+.manage-wrap-box > .phone-yes-no >span{ width: 100%;font-size: 15px; color: #63cdff; display: block; text-align: center; cursor: pointer; }
+.manage-wrap-box >p{ text-align: center; font-size: 14px; line-height: 14px; color: #656565; }
+.manage-wrap-box >p:first-child{ margin: 30px auto 6px;}
+
+.accepting-invitations{width: 170px; display: none; height: 140px; border-radius: 5px;background: rgba(0,0,0,0.85);position: fixed;top: 50%;left: 50%;margin-top: -85px; margin-left: -70px;}
+.accepting-invitations >img{ width: 41px; height: 41px; display: block; margin:24px auto 18px; }
+.accepting-invitations >p{ margin-bottom: 4px; font-size: 15px; text-align: center; line-height: 15px; color: #ffffff; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 进场动画 */
+@-webkit-keyframes slideIn {
+	from {
+		opacity: 0;
+		margin-top: 50px;
+	}
+
+	to {
+		opacity: 1;
+		margin-top: 10px;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		margin-top: 50px;
+	}
+
+	to {
+		opacity: 1;
+		margin-top: 10px;
+	}
+}
+
+@media all and (min-width:992px) {
+	
+}
+
+@media all and (min-width:768px) and ( max-width: 992px){
+
+	
+  	.list-wrap-ipad > a >img{margin: 10px 30px 10px 10px;}
+
+
+}
+
+@media ( max-width: 767px){
+	.phone-wrap{ display: block;}
+	.ipad-wrap{ display: none;}
+	.h-center >ul{ width: 85%; border-radius: 5px; box-sizing: border-box;-webkit-box-sizing: border-box;overflow: hidden; height: 30px; margin: 8.5px auto; border: 1px solid #ffffff;}
+	.h-center >ul >li{ float: left; cursor: pointer; border-right: 1px solid #fff; font-size: 13px; color: #fff; width: 25%; height: 28px; line-height: 28px; text-align: center;box-sizing: border-box;-webkit-box-sizing: border-box;}
+	.h-center >ul >li:last-child{ border-right: none;}
+	.h-center >ul >li.active{ background: #f2fbff; color: #63cdff;}
+	.positions-ipad-ul{ width: 50% !important;}
+	.positions-ipad-ul >li{ width: 50% !important;}
+}
+
+@media ( max-width: 320px){
+
+}
+
+.phone-none{margin-top:100px;text-align: center;font-size: 24px;color: #a5a5a5;}
+

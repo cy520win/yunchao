@@ -1,0 +1,65 @@
+<extend name="Common:resumepost_frame" />
+<block name="title"><title>高顿实习-已下线职位</title></block>
+<block name="right">
+    <div class="col-md-9">
+        <div class="fail-resume-right fail-resume-box-fn fail-post-list-fn">
+            <div class="resume-right-top">
+                <p>已下线职位</p>
+                <i class="line"></i>
+            </div>
+
+            <notempty name="postList">
+                <div class="treat-resume-header">
+                    <p class="p16">实习职位</p>
+                    <p class="p17">地区</p>
+                    <p class="p18">学历要求</p>
+                    <p class="p19">实习名额</p>
+                    <p class="p20">修改时间</p>
+                    <p class="p21">职位操作</p>
+                </div>
+                <foreach name="postList" item="postItem">
+                    <div class="offline-resume-list  post-invite-list offline-resume-list-fn">
+                        <div class="name">
+                            <a href="/Post/info/id/{$postItem.pkid|enInt}" target="_blank">
+                                {$postItem.title}
+                            </a>
+                        </div>
+                        <div class="city"><p>{$postItem.region_name}</p></div>
+                        <div class="education"><p>{$list['eduList'][$postItem['education']]}</p></div>
+                        <div class="num"><p>
+                            <notempty name="postItem.quota">
+                                {$postItem.quota}人<else/>不限
+                            </notempty>
+                        </p></div>
+                        <div class="date"><p>{$postItem.modify_time|time2Unit}</p></div>
+                        <div class="online fn-off-online">
+                        <span data-id="{$postItem.pkid}">重新上线</span>
+                        <div class="copy-box dn">
+                            <span>是否确认重新上线职位<br>重新上线后学生可正常投递该职位？</span>
+                            <a class="yes" href="javascript:;" data-id="{$postItem.pkid}" onclick="online_post(this);">是</a>
+                            <a class="no" href="javascript:;" onclick="offline_post(this);">否</a>
+                            <i></i>
+                        </div>
+                        </div>
+                    </div>
+                </foreach>
+            </notempty>
+            <div class="no-one" <notempty name="postList">style="display:none"</notempty>>暂时没有已下线职位</div>
+            <!--分页按钮-->
+            <notempty name="postList">
+                <div class="container pagination_center">
+                    {$page}
+                </div>
+            </notempty>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            $('#v-offline').addClass('resume-active');
+        });
+
+    </script>
+</block>
+

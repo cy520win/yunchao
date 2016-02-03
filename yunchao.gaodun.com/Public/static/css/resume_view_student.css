@@ -1,0 +1,19 @@
+@charset "utf-8";
+.distance-left{margin-left:34px;}
+.personal-photo{float:left;padding-left: 0;margin-right:0px;}
+#input-information-education2 ul li {display: inline-block;width: 45%;padding-left: 25px;}
+.basic_information dl{float:left;}
+.experience-distance ul li > textarea {width: 400px;height: 70px;border: 1px solid rgb(255, 255, 255);border-image-source: initial;border-image-slice: initial; border-image-width: initial;border-image-outset: initial;border-image-repeat: initial;resize: none;}
+.Practice_intention ul li h3 {font-size: 16px;color: #656565;margin: 0px;line-height: 30px;}
+.basic_information{width:70%;}
+.other-information-colunm{margin-bottom: 0;}
+.expect-info{margin-bottom: 100px;}
+#look_page .left-section-style{border-bottom:none;}
+#look_page .expect-info{margin-top: 0;}
+#look_page .look-main{margin-bottom:30px; }
+#input-information-education2 ul li#expect-city-li{width: 100%;}
+.personal_information-area{width:100%;}
+
+/**/
+#look_page .left-section-message-fn{padding-bottom: 0;}
+#look_page .left-section-message-fn2{padding-bottom: 0}

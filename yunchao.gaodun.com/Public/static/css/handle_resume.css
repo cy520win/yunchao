@@ -1,0 +1,10 @@
+.treat-resume-list > .list-left{width:72%;}
+.treat-resume-list > .list-right{width:205px;}
+.treat-resume-header >p.p2{margin-left:125px;}
+.treat-resume-header >p.p3{margin-left:140px;}
+.treat-resume-list > .list-left >.student{padding:0px;width:90px;}
+.treat-resume-list > .list-left >.name{padding:0px;}
+.treat-resume-list > .list-left >.date{padding-left:0px;width:140px;}
+
+.list-right >span.first-ms{border-radius:0 0 0 0;margin-left:1px;}
+.list-right >span.waiting-decision{margin-left:0px;}
