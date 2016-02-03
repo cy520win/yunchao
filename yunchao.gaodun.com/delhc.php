@@ -1,7 +1,7 @@
 <?php 
 /* 
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates2008
+ * To change this template file, choose Tools | Templates2008---
  * and open the template in the editor.
  */ 
 //清空文件缓存，方法：删除runtime文件夹
